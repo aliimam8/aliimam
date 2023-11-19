@@ -20,7 +20,7 @@ export function GridTileImage({
   return (
     <div
       className={clsx(
-        'group flex h-full w-full items-center justify-center overflow-hidden rounded-3xl border ',
+        'group flex h-full w-full items-center justify-center overflow-hidden rounded-3xl',
         {
           relative: label,
           'border border-aired': active,
@@ -37,6 +37,36 @@ export function GridTileImage({
           {...props}
         />
       ) : null}
+      
+    </div>
+  );
+}
+
+
+export function GridTilePrice({
+  active,
+  label,
+}: {
+  isInteractive?: boolean;
+  active?: boolean;
+  label?: {
+    title: string;
+    amount: string;
+    currencyCode: string;
+    position?: 'bottom' | 'center';
+  };
+} ) {
+  return (
+    <div
+      className={clsx(
+        'flex mt-20 items-center justify-center ',
+        {
+          relative: label,
+          'border border-aired': active,
+          '': !active
+        }
+      )}
+    >
       {label ? (
        <div className=''>
         <Label
@@ -47,6 +77,8 @@ export function GridTileImage({
         />
        </div>
       ) : null}
+      
     </div>
   );
 }
+

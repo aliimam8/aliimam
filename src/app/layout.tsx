@@ -3,6 +3,7 @@ import { SiteFooter } from "src/components/layout/footer/SiteFooter";
 import 'src/styles/globals.css';
 import Navbar from '../components/layout/navbar';
 import { ThemeProvider } from "../components/providers";
+import { Analytics } from "@vercel/analytics/react";
 import { ensureStartsWith } from '../lib/utils';
 import { inter } from "./fonts";
 
@@ -52,6 +53,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
         </Suspense>
         <SiteFooter />
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );

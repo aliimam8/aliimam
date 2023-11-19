@@ -35,7 +35,7 @@ export default async function Store({
             className="flex w-[200px] flex-col items-center rounded-xl border border-slate-200 p-2 py-6 text-center hover:bg-slate-100/50 dark:border-slate-800 dark:hover:bg-slate-900/50 sm:p-6"
           >
             <Icons.camera
-              strokeWidth={0.2}
+              strokeWidth={0.3}
               className="h-10 w-10 text-slate-600 dark:text-slate-400 sm:h-16 sm:w-16 "
             />
 
@@ -50,7 +50,7 @@ export default async function Store({
             className="flex w-[200px] flex-col items-center rounded-xl border border-slate-200 p-2 py-6 text-center hover:bg-slate-100/50 dark:border-slate-800 dark:hover:bg-slate-900/50 sm:p-6"
           >
             <Icons.shirt
-              strokeWidth={0.2}
+              strokeWidth={0.3}
               className="h-10 w-10 text-slate-600 dark:text-slate-400 sm:h-16 sm:w-16"
             />
 
@@ -65,7 +65,7 @@ export default async function Store({
             className="flex w-[200px] flex-col items-center rounded-xl border border-slate-200 p-2 py-6 text-center hover:bg-slate-100/50 dark:border-slate-800 dark:hover:bg-slate-900/50 sm:p-6"
           >
             <Icons.packageopen
-              strokeWidth={0.2}
+              strokeWidth={0.3}
               className="h-10 w-10 text-slate-600 dark:text-slate-400 sm:h-16 sm:w-16"
             />
 
@@ -74,12 +74,11 @@ export default async function Store({
             <p className="text-xs">Edit & Use</p>
           </Link>
         </div>
-        </div>
+      </div>
 
-        <hr className="mx-auto my-8 w-full border border-slate-200 dark:border-slate-800"></hr>
+      <hr className="mx-auto my-8 w-full border border-slate-200 dark:border-slate-800"></hr>
 
-
-        <div className="mx-auto mt-10 max-w-3xl px-4 sm:px-6 md:max-w-5xl ">
+      <div className="mx-auto mt-10 max-w-3xl px-4 sm:px-6 md:max-w-5xl ">
         {searchValue ? (
           <p className="mb-4">
             {products.length === 0
