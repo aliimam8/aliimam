@@ -1,0 +1,19 @@
+import { Travell } from "./travell";
+
+export default function Gallery() {
+  return (
+    <main>
+      <div className="mx-auto mt-20 max-w-3xl px-4 sm:px-6 md:max-w-7xl ">
+        
+        <h1 className="my-10 mt-40 text-center font-bold text-2xl sm:text-4xl">
+          Gallery
+          <hr className="w-6 h-1 mx-auto my-4 bg-amber-400 border-0"></hr>
+        </h1>
+
+        <Travell />
+      </div>
+
+      <div className="mx-auto max-w-3xl px-4 sm:px-6 md:max-w-5xl "></div>
+    </main>
+  );
+}
