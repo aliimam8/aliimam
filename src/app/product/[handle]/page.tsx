@@ -81,7 +81,7 @@ export default async function ProductPage({ params }: { params: { handle: string
         }}
       />
       <div className="mx-auto mt-20 max-w-3xl px-4 sm:px-6 md:max-w-5xl">
-        <div className="flex flex-col rounded-3xl border border-slate-200  p-8 dark:border-slate-800  md:p-12 lg:flex-row lg:gap-8">
+        <div className="flex flex-col rounded-3xl border border-slate-200 p-8 dark:border-slate-800  md:p-12 lg:flex-row lg:gap-8">
           <div className="h-full w-full basis-full lg:basis-4/6">
             <Gallery
               images={product.images.map((image: Image) => ({

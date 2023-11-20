@@ -85,7 +85,7 @@ export function Experience() {
     <div className="mt-20">
       <h1 className="text-center text-lg font-bold mt-6">My Journey</h1>
       <MyExp/>
-    <ScrollArea className="mx-auto max-w-3xl mt-4 px-4 sm:px-6 lg:max-w-6xl whitespace-nowrap">
+    <ScrollArea className="mx-auto max-w-3xl mt-4 px-2 lg:max-w-6xl whitespace-nowrap">
       <div className="flex w-max space-x-4">
         {works.map((Experience) => (
           <figure key={Experience.post} className="flex w-[340px] space-x-4 border border-slate-200 dark:border-slate-800 rounded-lg p-4 shrink-0">
