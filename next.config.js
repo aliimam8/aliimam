@@ -1,10 +1,17 @@
+const { withContentlayer } = require('next-contentlayer')
+
 /** @type {import('next').NextConfig} */
-module.exports = {
+
+const nextConfig =  {
   eslint: {
     // Disabling on production builds because we're running checks on PRs via GitHub Actions.
     ignoreDuringBuilds: true
   },
   images: {
+    domains: [
+      'res.cloudinary.com',
+      "images.remotePatterns",
+    ],
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [
       {
@@ -24,3 +31,5 @@ module.exports = {
     ];
   }
 };
+
+module.exports = withContentlayer(nextConfig);

@@ -4,6 +4,7 @@ import About from '../components/common/about';
 import Logos from '../components/common/logos';
 import { Experience } from "../components/common/experience";
 import Hero from '../components/common/hero';
+import Fav from '../components/common/fav';
 
 export const runtime = 'edge';
 
@@ -14,7 +15,7 @@ export const metadata = {
   }
 };
 
-export default async function HomePage() {
+export default function HomePage() {
   return (
     <>
       <Suspense>
