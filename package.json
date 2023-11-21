@@ -48,6 +48,10 @@
     "react-grid-gallery": "^1.0.1-alpha.0",
     "react-image-lightbox": "^5.1.4",
     "react-wrap-balancer": "^1.1.0",
+    "rehype-pretty-code": "^0.10.2",
+    "rehype-slug": "^6.0.0",
+    "remark-gfm": "^4.0.0",
+    "shiki": "^0.14.5",
     "tailwind-merge": "^2.0.0"
   },
   "devDependencies": {
