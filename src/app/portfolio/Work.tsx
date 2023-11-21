@@ -1,19 +1,19 @@
 /* eslint-disable unicorn/filename-case */
-import { ScrollArea, ScrollBar } from "src/components/ui/scroll-area";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "src/components/ui/tabs";
+import { ScrollArea, ScrollBar } from 'src/components/ui/scroll-area';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from 'src/components/ui/tabs';
 
-import Packaging from "./creatives/3d";
-import Campaigns from "./creatives/campaigns";
-import Logos from "./creatives/logos";
-import Music from "./creatives/music";
-import SocialMedia from "./creatives/socialmedia";
-import UIUX from "./creatives/uiux";
-import Videos from "./creatives/videos";
+import Packaging from './creatives/3d';
+import Campaigns from './creatives/campaigns';
+import Logos from './creatives/logos';
+import Music from './creatives/music';
+import SocialMedia from './creatives/socialmedia';
+import UIUX from './creatives/uiux';
+import Videos from './creatives/videos';
 
 export function Work() {
   return (
-    <Tabs defaultValue="1" className=" text-center items-center justify-center">
-      <TabsList className="w-full lg:w-auto text-center items-center justify-center">
+    <Tabs defaultValue="1" className=" items-center justify-center text-center">
+      <TabsList className="w-full items-center justify-center text-center lg:w-auto">
         <ScrollArea className="whitespace-nowrap">
           <div className="space-x-2">
             <TabsTrigger value="1" className="px-6">

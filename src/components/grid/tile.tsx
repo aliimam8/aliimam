@@ -20,7 +20,7 @@ export function GridTileImage({
   return (
     <div
       className={clsx(
-        'group flex h-full w-full items-center border justify-center overflow-hidden rounded-xl',
+        'group flex h-full w-full items-center justify-center overflow-hidden rounded-xl border',
         {
           relative: label,
           'border border-aired': active,
@@ -31,13 +31,12 @@ export function GridTileImage({
       {props.src ? (
         // eslint-disable-next-line jsx-a11y/alt-text -- `alt` is inherited from `props`, which is being enforced with TypeScript
         <Image
-          className={clsx('relative h-full object-cover w-full', {
+          className={clsx('relative h-full w-full object-cover', {
             'transition duration-300 ease-in-out group-hover:scale-105': isInteractive
           })}
           {...props}
         />
       ) : null}
-      
     </div>
   );
 }
@@ -60,7 +59,7 @@ export function GridTileCarousal({
   return (
     <div
       className={clsx(
-        'group flex h-full w-full items-center border justify-center overflow-hidden rounded-3xl',
+        'group flex h-full w-full items-center justify-center overflow-hidden rounded-3xl border',
         {
           relative: label,
           'border border-aired': active,
@@ -77,15 +76,13 @@ export function GridTileCarousal({
           {...props}
         />
       ) : null}
-      
     </div>
   );
 }
 
-
 export function GridTilePrice({
   active,
-  label,
+  label
 }: {
   isInteractive?: boolean;
   active?: boolean;
@@ -95,30 +92,25 @@ export function GridTilePrice({
     currencyCode: string;
     position?: 'bottom' | 'center';
   };
-} ) {
+}) {
   return (
     <div
-      className={clsx(
-        'flex mt-20 items-center justify-center ',
-        {
-          relative: label,
-          'border border-aired': active,
-          '': !active
-        }
-      )}
+      className={clsx('mt-20 flex items-center justify-center ', {
+        relative: label,
+        'border border-aired': active,
+        '': !active
+      })}
     >
       {label ? (
-       <div className=''>
-        <Label
-          title={label.title}
-          amount={label.amount}
-          currencyCode={label.currencyCode}
-          position={label.position}
-        />
-       </div>
+        <div className="">
+          <Label
+            title={label.title}
+            amount={label.amount}
+            currencyCode={label.currencyCode}
+            position={label.position}
+          />
+        </div>
       ) : null}
-      
     </div>
   );
 }
-

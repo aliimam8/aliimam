@@ -2,7 +2,7 @@ import { Suspense } from 'react';
 import { Carousel } from 'src/components/carousel';
 import About from '../components/common/about';
 import Logos from '../components/common/logos';
-import { Experience } from "../components/common/experience";
+import { Experience } from '../components/common/experience';
 import Hero from '../components/common/hero';
 import Fav from '../components/common/fav';
 
@@ -20,10 +20,10 @@ export default function HomePage() {
     <>
       <Suspense>
         <Hero />
-        <Logos/>
+        <Logos />
         <div className="mx-auto mt-10 max-w-3xl px-4 sm:px-6 md:max-w-5xl ">
           <About />
-          <Experience/>
+          <Experience />
         </div>
         <Carousel />
       </Suspense>

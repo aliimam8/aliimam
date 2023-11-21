@@ -1,20 +1,18 @@
-import { v2 as cloudinary } from "cloudinary";
-import "next-cloudinary/dist/cld-video-player.css";
-import CldVideoPlayer from "src/components/CldVideo";
-import type { ImageProps } from "src/utils/types";
+import { v2 as cloudinary } from 'cloudinary';
+import 'next-cloudinary/dist/cld-video-player.css';
+import CldVideoPlayer from 'src/components/CldVideo';
+import type { ImageProps } from 'src/utils/types';
 
 cloudinary.config({
   cloud_name: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,
-  api_secret: process.env.CLOUDINARY_API_SECRET,
+  api_secret: process.env.CLOUDINARY_API_SECRET
 });
 
 export default async function Home({}: { images: ImageProps[] }) {
-  const expression = "folder=creatives/videos";
+  const expression = 'folder=creatives/videos';
 
-  const { resources } = await cloudinary.search
-    .expression(expression)
-    .execute();
+  const { resources } = await cloudinary.search.expression(expression).execute();
 
   return (
     <main className="mt-4">
@@ -24,11 +22,7 @@ export default async function Home({}: { images: ImageProps[] }) {
             return (
               <div key={resource.public_id} className="grid">
                 <div className="w-full p-1">
-                  <CldVideoPlayer
-                    width={1280}
-                    height={720}
-                    src={resource.secure_url}
-                  />
+                  <CldVideoPlayer width={1280} height={720} src={resource.secure_url} />
                 </div>
               </div>
             );

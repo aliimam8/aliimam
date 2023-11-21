@@ -1,44 +1,36 @@
-import Link from "next/link"
+import Link from 'next/link';
 
-import { cn, truncate } from "src/lib/utils"
-import { buttonVariants } from "@/components/ui/button"
+import { cn, truncate } from 'src/lib/utils';
+import { buttonVariants } from '@/components/ui/button';
 
-import { Icons } from "@/components/icons";
+import { Icons } from '@/components/icons';
 
 interface MdxPagerItem {
-  title: string
-  slug: string
+  title: string;
+  slug: string;
 }
 
 interface MdxPagerProps extends React.HTMLAttributes<HTMLDivElement> {
-  currentItem: MdxPagerItem
-  allItems: MdxPagerItem[]
+  currentItem: MdxPagerItem;
+  allItems: MdxPagerItem[];
 }
 
-export function MdxPager({
-  currentItem,
-  allItems,
-  className,
-  ...props
-}: MdxPagerProps) {
-  const pager = getPager(currentItem, allItems)
+export function MdxPager({ currentItem, allItems, className, ...props }: MdxPagerProps) {
+  const pager = getPager(currentItem, allItems);
 
   if (!pager) {
-    return null
+    return null;
   }
 
   return (
-    <div
-      className={cn("flex items-center justify-between", className)}
-      {...props}
-    >
+    <div className={cn('flex items-center justify-between', className)} {...props}>
       {pager?.prev ? (
         <Link
           aria-label="Previous post"
           href={pager.prev.slug}
-          className={cn(buttonVariants({ variant: "ghost" }))}
+          className={cn(buttonVariants({ variant: 'ghost' }))}
         >
-            <Icons.chevronLeft className="w-5 mr-1" aria-hidden="true" />
+          <Icons.chevronLeft className="mr-1 w-5" aria-hidden="true" />
           {truncate(pager.prev.title, 20)}
         </Link>
       ) : null}
@@ -46,29 +38,23 @@ export function MdxPager({
         <Link
           aria-label="Next post"
           href={pager.next.slug}
-          className={cn(buttonVariants({ variant: "ghost" }), "ml-auto")}
+          className={cn(buttonVariants({ variant: 'ghost' }), 'ml-auto')}
         >
-          
           {truncate(pager.next.title, 20)}
-          <Icons.chevronRight className="w-5 ml-1" aria-hidden="true" />
+          <Icons.chevronRight className="ml-1 w-5" aria-hidden="true" />
         </Link>
       ) : null}
     </div>
-  )
+  );
 }
 
 export function getPager(currentItem: MdxPagerItem, allItems: MdxPagerItem[]) {
-  const flattenedLinks = allItems.flat()
-  const activeIndex = flattenedLinks.findIndex(
-    (link) => currentItem.slug === link?.slug
-  )
-  const prev = activeIndex !== 0 ? flattenedLinks[activeIndex - 1] : null
-  const next =
-    activeIndex !== flattenedLinks.length - 1
-      ? flattenedLinks[activeIndex + 1]
-      : null
+  const flattenedLinks = allItems.flat();
+  const activeIndex = flattenedLinks.findIndex((link) => currentItem.slug === link?.slug);
+  const prev = activeIndex !== 0 ? flattenedLinks[activeIndex - 1] : null;
+  const next = activeIndex !== flattenedLinks.length - 1 ? flattenedLinks[activeIndex + 1] : null;
   return {
     prev,
-    next,
-  }
+    next
+  };
 }

@@ -37,9 +37,7 @@ export default function CartModal({ cart }: { cart: Cart | undefined }) {
   return (
     <>
       <div className="mx-auto mt-40 max-w-3xl px-4 sm:px-6 md:max-w-5xl ">
-      <h1 className="my-10 mt-40 text-center font-bold text-2xl sm:text-4xl">
-         My Cart
-        </h1>
+        <h1 className="my-10 mt-40 text-center text-2xl font-bold sm:text-4xl">My Cart</h1>
 
         {!cart || cart.lines.length === 0 ? (
           <div className="mt-20 flex w-full flex-col items-center justify-center overflow-hidden">
@@ -134,7 +132,7 @@ export default function CartModal({ cart }: { cart: Cart | undefined }) {
               <div className="mb-3 flex items-center justify-between border-b border-slate-200 pb-1 pt-1 dark:border-slate-800">
                 <p>Total</p>
                 <Price
-                  className="text-right text-bold text-lg"
+                  className="text-bold text-right text-lg"
                   amount={cart.cost.totalAmount.amount}
                   currencyCode={cart.cost.totalAmount.currencyCode}
                 />

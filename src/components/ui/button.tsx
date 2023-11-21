@@ -1,61 +1,55 @@
-import { Slot } from "@radix-ui/react-slot"
-import { cva, type VariantProps } from "class-variance-authority"
-import * as React from "react"
+import { Slot } from '@radix-ui/react-slot';
+import { cva, type VariantProps } from 'class-variance-authority';
+import * as React from 'react';
 
-import { cn } from "src/lib/utils"
+import { cn } from 'src/lib/utils';
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center rounded-full text-sm font-medium disabled:pointer-events-none",
+  'inline-flex items-center justify-center rounded-full text-sm font-medium disabled:pointer-events-none',
   {
     variants: {
       variant: {
-        default:
-          "bg-primary text-primary-foreground hover:bg-primary/90",
-        destructive:
-          "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+        default: 'bg-primary text-primary-foreground hover:bg-primary/90',
+        destructive: 'bg-destructive text-destructive-foreground hover:bg-destructive/90',
         outline:
-          "border border-slate-200 dark:border-slate-800 bg-transparent hover:bg-slate-200 hover:text-black hover:dark:bg-slate-800 hover:dark:text-white",
-        secondary:
-          "bg-secondary text-secondary-foreground shadow-sm ",
-        ghost: "",
-        link: "text-primary underline-offset-4 hover:underline",
-        aibutton: "px-3 py-2 rounded-full inset-px z-10 grid place-items-center ring-1 ring-aired dark:bg-black hover:bg-aired hover:dark:bg-aired bg-white font-regular hover:text-white hover:dark:text-white text-black dark:text-white text-sm",
-        redbutton: "px-3 py-2 rounded-full inset-px z-10 grid place-items-center bg-aired font-regular text-white dark:text-white text-sm",
-
+          'border border-slate-200 dark:border-slate-800 bg-transparent hover:bg-slate-200 hover:text-black hover:dark:bg-slate-800 hover:dark:text-white',
+        secondary: 'bg-secondary text-secondary-foreground shadow-sm ',
+        ghost: '',
+        link: 'text-primary underline-offset-4 hover:underline',
+        aibutton:
+          'px-3 py-2 rounded-full inset-px z-10 grid place-items-center ring-1 ring-aired dark:bg-black hover:bg-aired hover:dark:bg-aired bg-white font-regular hover:text-white hover:dark:text-white text-black dark:text-white text-sm',
+        redbutton:
+          'px-3 py-2 rounded-full inset-px z-10 grid place-items-center bg-aired font-regular text-white dark:text-white text-sm'
       },
       size: {
-        default: "h-9 px-3 py-2",
-        sm: "h-8 rounded-full px-3 text-xs",
-        md: "h-10 rounded-full px-6 text-xs",
-        lg: "h-10 rounded-full px-8",
-        icon: "h-9 w-9",
-      },
+        default: 'h-9 px-3 py-2',
+        sm: 'h-8 rounded-full px-3 text-xs',
+        md: 'h-10 rounded-full px-6 text-xs',
+        lg: 'h-10 rounded-full px-8',
+        icon: 'h-9 w-9'
+      }
     },
     defaultVariants: {
-      variant: "default",
-      size: "default",
-    },
+      variant: 'default',
+      size: 'default'
+    }
   }
-)
+);
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
-  asChild?: boolean
+  asChild?: boolean;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, ...props }, ref) => {
-    const Comp = asChild ? Slot : "button"
+    const Comp = asChild ? Slot : 'button';
     return (
-      <Comp
-        className={cn(buttonVariants({ variant, size, className }))}
-        ref={ref}
-        {...props}
-      />
-    )
+      <Comp className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...props} />
+    );
   }
-)
-Button.displayName = "Button"
+);
+Button.displayName = 'Button';
 
-export { Button, buttonVariants }
+export { Button, buttonVariants };

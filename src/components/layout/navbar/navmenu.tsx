@@ -5,7 +5,6 @@ import Link from 'next/link';
 import * as React from 'react';
 import { Icons } from 'src/components/icons';
 
-
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -20,7 +19,6 @@ import { cn } from 'src/lib/utils';
 export function NavMenu() {
   return (
     <div className="hidden p-4 lg:block">
-     
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
@@ -101,7 +99,6 @@ export function NavMenu() {
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
-          
 
           <NavigationMenuItem>
             <Link href="/store" legacyBehavior passHref>
@@ -112,7 +109,6 @@ export function NavMenu() {
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
-      
     </div>
   );
 }

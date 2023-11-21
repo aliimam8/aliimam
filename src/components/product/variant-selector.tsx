@@ -86,12 +86,12 @@ export function VariantSelector({
               }}
               title={`${option.name} ${value}${!isAvailableForSale ? ' (Out of Stock)' : ''}`}
               className={clsx(
-                'flex min-w-[50px] px-4 items-center justify-center rounded-full border bg-slate-200 py-1 text-sm border-slate-200 dark:border-slate-800 dark:bg-slate-800',
+                'flex min-w-[50px] items-center justify-center rounded-full border border-slate-200 bg-slate-200 px-4 py-1 text-sm dark:border-slate-800 dark:bg-slate-800',
                 {
                   'cursor-default ring-2 ring-aired': isActive,
-                  'ring-1 ring-transparent transition duration-300 ease-in-out hover:scale-102 hover:ring-aired ':
+                  'hover:scale-102 ring-1 ring-transparent transition duration-300 ease-in-out hover:ring-aired ':
                     !isActive && isAvailableForSale,
-                  'relative z-10 cursor-not-allowed overflow-hidden bg-aired text-white ring-1 ring-slate-200 before:absolute before:inset-x-0 before:-z-10 before:h-px before:-rotate-45 before:bg-slate-300 before:transition-transform  dark:text-white dark:ring-aired before:dark:bg-aired':
+                  'before:bg-slate-300 relative z-10 cursor-not-allowed overflow-hidden bg-aired text-white ring-1 ring-slate-200 before:absolute before:inset-x-0 before:-z-10 before:h-px before:-rotate-45 before:transition-transform  dark:text-white dark:ring-aired before:dark:bg-aired':
                     !isAvailableForSale
                 }
               )}

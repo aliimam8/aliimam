@@ -14,7 +14,6 @@ const navigation = [
 ];
 
 export default function Navbar() {
-  
   return (
     <Disclosure
       as="nav"
@@ -40,7 +39,7 @@ export default function Navbar() {
                       <Icons.shop className="w-5" />
                     </div>
                   </Link>
-                 
+
                   <ThemeToggle />
                   <div className="hidden md:flex lg:flex"></div>
                 </div>
@@ -79,4 +78,3 @@ export default function Navbar() {
     </Disclosure>
   );
 }
-

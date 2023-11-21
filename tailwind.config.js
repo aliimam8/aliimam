@@ -3,25 +3,23 @@ const plugin = require('tailwindcss/plugin');
 /** @type {import('tailwindcss').Config} */
 
 module.exports = {
-  content: ['./src/app/**/*.{js,ts,jsx,tsx}', 
-            './src/components/**/*.{js,ts,jsx,tsx}'],
-  darkMode: ["class"],
+  content: ['./src/app/**/*.{js,ts,jsx,tsx}', './src/components/**/*.{js,ts,jsx,tsx}'],
+  darkMode: ['class'],
   theme: {
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
-      aired: "#f50537",
-      black: "#000000",
-      white: "#ffffff",
+      aired: '#f50537',
+      black: '#000000',
+      white: '#ffffff',
       slate: {
         100: '#f1f5f9',
         200: '#e2e8f0',
         400: '#94a3b8',
         600: '#475569',
         800: '#1e293b',
-        900: '#0f172a',
-      },
-      
+        900: '#0f172a'
+      }
     },
     extend: {
       fontFamily: {

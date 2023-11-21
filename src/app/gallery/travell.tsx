@@ -1,21 +1,21 @@
-import { ScrollArea, ScrollBar } from "src/components/ui/scroll-area";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "src/components/ui/tabs";
+import { ScrollArea, ScrollBar } from 'src/components/ui/scroll-area';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from 'src/components/ui/tabs';
 
-import Agra from "./trips/agra";
-import Delhi from "./trips/delhi";
-import Jaipur from "./trips/jaipur";
-import Kolkata from "./trips/kolkata";
-import Manali from "./trips/manali";
-import Mussorie from "./trips/mussorie";
-import Nainital from "./trips/nainital";
-import Others from "./trips/others";
-import Shimla from "./trips/shimla";
-import Udaipur from "./trips/udaipur";
+import Agra from './trips/agra';
+import Delhi from './trips/delhi';
+import Jaipur from './trips/jaipur';
+import Kolkata from './trips/kolkata';
+import Manali from './trips/manali';
+import Mussorie from './trips/mussorie';
+import Nainital from './trips/nainital';
+import Others from './trips/others';
+import Shimla from './trips/shimla';
+import Udaipur from './trips/udaipur';
 
 export function Travell() {
   return (
-    <Tabs defaultValue="1" className=" text-center items-center justify-center">
-      <TabsList className="w-full lg:w-auto text-center items-center justify-center">
+    <Tabs defaultValue="1" className=" items-center justify-center text-center">
+      <TabsList className="w-full items-center justify-center text-center lg:w-auto">
         <ScrollArea className="whitespace-nowrap">
           <div className="space-x-2">
             <TabsTrigger value="1" className="px-6">
@@ -83,8 +83,6 @@ export function Travell() {
       <TabsContent value="10">
         <Others images={[]} />
       </TabsContent>
-
-
     </Tabs>
   );
 }

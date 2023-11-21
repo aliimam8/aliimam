@@ -99,7 +99,6 @@ export default async function ProductPage({ params }: { params: { handle: string
           <RelatedProducts id={product.id} />
         </Suspense>
       </div>
-      
     </>
   );
 }

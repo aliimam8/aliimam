@@ -2,7 +2,7 @@
 
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { createUrl } from "src/lib/utils";
+import { createUrl } from 'src/lib/utils';
 
 export default function Search() {
   const router = useRouter();
@@ -33,7 +33,7 @@ export default function Search() {
         placeholder="Search for products..."
         autoComplete="off"
         defaultValue={searchParams?.get('q') || ''}
-        className="w-full rounded-lg border bg-white px-4 py-2 text-sm text-black placeholder:text-neutral-500 border-slate-200 dark:border-slate-800 dark:bg-transparent dark:text-white dark:placeholder:text-neutral-400"
+        className="placeholder:text-neutral-500 dark:placeholder:text-neutral-400 w-full rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm text-black dark:border-slate-800 dark:bg-transparent dark:text-white"
       />
       <div className="absolute right-0 top-0 mr-3 flex h-full items-center">
         <MagnifyingGlassIcon className="h-4" />
