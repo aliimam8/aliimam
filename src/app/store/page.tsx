@@ -4,6 +4,7 @@ import Grid from 'src/components/grid';
 import ProductGridItems from 'src/components/layout/product-grid-items';
 import { defaultSort, sorting } from 'src/lib/constants';
 import { getProducts } from 'src/lib/shopify';
+import HeroBanner from 'src/components/common/heroban'
 
 export const runtime = 'edge';
 
@@ -26,6 +27,7 @@ export default async function Store({
   return (
     <main>
       
+    <HeroBanner/>
       <div className="mx-auto mt-10 max-w-3xl px-4 sm:px-6 md:max-w-5xl ">
         {searchValue ? (
           <p className="mb-4">

@@ -1,6 +1,7 @@
 import { Suspense } from 'react';
 import { Carousel } from 'src/components/carousel';
 import About from '../components/common/about';
+import Logos from '../components/common/logos';
 import { Experience } from "../components/common/experience";
 import Hero from '../components/common/hero';
 
@@ -18,6 +19,7 @@ export default async function HomePage() {
     <>
       <Suspense>
         <Hero />
+        <Logos/>
         <div className="mx-auto mt-10 max-w-3xl px-4 sm:px-6 md:max-w-5xl ">
           <About />
           <Experience/>

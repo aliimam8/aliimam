@@ -38,6 +38,7 @@ export default async function CategoryPage({
 
   return (
     <section>
+
       <div className="mx-auto mt-10 max-w-3xl px-4 sm:px-6 md:max-w-5xl ">
         {products.length === 0 ? (
           <p className="py-3 text-lg">{`No products found in this collection`}</p>
