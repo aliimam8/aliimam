@@ -12,7 +12,7 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET
 });
 
-export default async function Home({}: { images: ImageProps[] }) {
+export default async function Favo({}: { images: ImageProps[] }) {
   const onInit = (detail: any) => {
     if (detail) {
       console.log('calling method', detail.instance);

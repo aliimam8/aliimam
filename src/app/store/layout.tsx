@@ -57,7 +57,7 @@ export default function SearchLayout({ children }: { children: React.ReactNode }
           <p className="text-xs">Edit & Use</p>
         </Link>
       </div>
-      <hr className="mx-auto mt-8 w-full border border-slate-200 dark:border-slate-800"></hr>
+      <hr className="mx-auto mt-8 w-full border border-aired"></hr>
 
       <div className="order-last min-h-screen w-full md:order-none">{children}</div>
     </Suspense>

@@ -18,7 +18,7 @@ import { cn } from 'src/lib/utils';
 
 export function MainNav() {
   return (
-    <div className="hidden gap-x-12 px-8 md:flex lg:flex">
+    <div className="gap-x-12 px-8 flex">
       <NavMenu />
     </div>
   );

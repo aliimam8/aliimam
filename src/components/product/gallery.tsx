@@ -4,7 +4,7 @@ import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname, useSearchParams } from 'next/navigation';
-import { GridTileImage } from 'src/components/grid/tile';
+import { GridImage } from 'src/components/grid/tile';
 import { createUrl } from 'src/lib/utils';
 
 export function Gallery({ images }: { images: { src: string; altText: string }[] }) {
@@ -81,7 +81,7 @@ export function Gallery({ images }: { images: { src: string; altText: string }[]
                   scroll={false}
                   className="h-full w-full"
                 >
-                  <GridTileImage
+                  <GridImage
                     alt={image.altText}
                     src={image.src}
                     width={80}

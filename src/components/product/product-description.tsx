@@ -3,6 +3,12 @@ import Price from 'src/components/price';
 import Prose from 'src/components/prose';
 import { Product } from 'src/lib/shopify/types';
 import { VariantSelector } from './variant-selector';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger
+} from 'src/components/ui/accordion';
 
 export function ProductDescription({ product }: { product: Product }) {
   return (
@@ -18,8 +24,17 @@ export function ProductDescription({ product }: { product: Product }) {
       </div>
       <VariantSelector options={product.options} variants={product.variants} />
 
-      {product.descriptionHtml ? (
-        <Prose className="mb-6 text-sm" html={product.descriptionHtml} />
+      {product.descriptionHtml ? ( 
+        <><Accordion type="single" collapsible className="w-full mb-6">
+          <AccordionItem value="item-1">
+            <AccordionTrigger>Description</AccordionTrigger>
+            <AccordionContent>
+            <Prose className="text-sm" html={product.descriptionHtml} />
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
+        </>
+        
       ) : null}
 
       <AddToCart variants={product.variants} availableForSale={product.availableForSale} />

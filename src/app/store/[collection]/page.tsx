@@ -1,7 +1,6 @@
 import { getCollection, getCollectionProducts } from 'src/lib/shopify';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import Banner from 'src/components/common/banner';
 
 import Grid from 'src/components/grid';
 import ProductGridItems from 'src/components/layout/product-grid-items';
@@ -47,7 +46,6 @@ export default async function CategoryPage({
           </Grid>
         )}
       </div>
-      <Banner />
     </section>
   );
 }

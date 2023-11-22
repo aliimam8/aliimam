@@ -29,8 +29,8 @@ export const items: Menus[] = [
     target: ''
   },
   {
-    text: 'Products',
-    href: '/products',
+    text: 'Store',
+    href: '/store',
     target: ''
   },
   {

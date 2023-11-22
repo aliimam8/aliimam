@@ -18,7 +18,7 @@ import { cn } from 'src/lib/utils';
 
 export function NavMenu() {
   return (
-    <div className="hidden p-4 lg:block">
+    <div className="hidden p-4 md:block">
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
