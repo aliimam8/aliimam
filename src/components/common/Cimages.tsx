@@ -1,6 +1,7 @@
 import { v2 as cloudinary } from 'cloudinary';
 
 import CldImage from 'src/components/CldImage';
+import type { ImageProps } from 'src/utils/types';
 
 
 cloudinary.config({
@@ -9,7 +10,7 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET
 });
 
-export default async function Favo() {
+export default async function Favo({}: { images: ImageProps[] }) {
 
   const expression = 'folder=fav';
 

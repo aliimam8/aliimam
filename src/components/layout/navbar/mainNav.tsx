@@ -9,7 +9,7 @@ const navigation = [
   { name: 'About AI', href: '/about', current: true },
   { name: 'Gallery', href: '/gallery', current: true },
   { name: 'Portfolio', href: '/portfolio', current: true },
-  { name: 'Store', href: '/store', current: true }
+  { name: 'Store', href: '/store', current: true },
 ];
 
 import { NavMenu } from './navmenu';
