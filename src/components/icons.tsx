@@ -13,6 +13,7 @@ import {
   Command,
   Contact,
   CreditCard,
+  Square,
   Download,
   Equal,
   Facebook,
@@ -51,6 +52,7 @@ import {
 export const Icons = {
   logo: Command,
   close: X,
+  square: Square,
   spinner: Loader2,
   chevronLeft: ChevronLeft,
   chevronRight: ChevronRight,

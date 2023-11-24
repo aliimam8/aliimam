@@ -1,5 +1,5 @@
-import { ShoppingCartIcon } from '@heroicons/react/24/outline';
-import clsx from 'clsx';
+import Link from 'next/link';
+import { Icons } from 'src/components/icons';
 
 export default function OpenCart({
   className,
@@ -9,13 +9,15 @@ export default function OpenCart({
   quantity?: number;
 }) {
   return (
-    <div className="border-neutral-200 dark:border-neutral-700 relative flex h-11 w-11 items-center justify-center rounded-md border text-black transition-colors dark:text-white">
-      <ShoppingCartIcon
-        className={clsx('h-4 transition-all ease-in-out hover:scale-110 ', className)}
-      />
+    <div className="justify-centertransition-colors relative flex items-center ">
+      <Link href="/" className=" items-center space-x-4 lg:flex">
+        <span className="sr-only">Your Company</span>
+        <Icons.shop className="w-5" />
+        <span className="sr-only">Home</span>
+      </Link>
 
       {quantity ? (
-        <div className="bg-blue-600 absolute right-0 top-0 -mr-2 -mt-2 h-4 w-4 rounded text-[11px] font-medium text-white">
+        <div className="bg-aired absolute right-0 top-0 -mr-2 -mt-2 h-4 w-4 text-white rounded-full text-[11px] font-medium">
           {quantity}
         </div>
       ) : null}

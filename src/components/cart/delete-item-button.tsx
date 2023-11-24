@@ -19,7 +19,7 @@ function SubmitButton() {
       aria-label="Remove cart item"
       aria-disabled={pending}
       className={clsx(
-        'ease flex h-[17px] w-[17px] items-center justify-center rounded-full bg-aired transition-all duration-200',
+        'ease flex h-[17px] w-[17px] items-center justify-center text-white rounded-full bg-aired transition-all duration-200',
         {
           'cursor-not-allowed px-0': pending
         }

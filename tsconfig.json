@@ -31,8 +31,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    ".contentlayer/generated",
-    "src/content/pages/privacy.mdx"
+    ".contentlayer/generated"
   ],
   "exclude": ["node_modules"]
 }
