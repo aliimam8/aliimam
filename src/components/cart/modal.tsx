@@ -7,6 +7,7 @@ import { DEFAULT_OPTION } from 'src/lib/constants';
 import type { Cart } from 'src/lib/shopify/types';
 import { createUrl } from 'src/lib/utils';
 import Image from 'next/image';
+import { Icons } from 'src/components/icons';
 import Link from 'next/link';
 import { Fragment, useEffect, useRef, useState } from 'react';
 import CloseCart from './close-cart';
@@ -75,10 +76,10 @@ export function CartModal({ cart }: { cart: Cart | undefined }) {
 
               {!cart || cart.lines.length === 0 ? (
                 <div className="mt-20 flex w-full flex-col items-center justify-center overflow-hidden">
-                  <ShoppingCartIcon className="h-16" />
+                  <Icons.shop strokeWidth={0.6} className="w-12 h-12" />
                   <p className="mt-6 text-center text-2xl font-bold">Your cart is empty.</p>
                 </div>
-              ) : (
+              ) : ( 
                 <div className="flex h-full flex-col justify-between overflow-hidden p-1">
                   <ul className="flex-grow overflow-auto py-4">
                     {cart.lines.map((item, i) => {

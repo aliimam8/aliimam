@@ -1,15 +1,18 @@
 import { notFound } from 'next/navigation';
 import { allPosts } from 'contentlayer/generated';
+
+import { Mdx } from '@/components/common/mdx-components';
+
 import { type Metadata } from 'next';
-import { Separator } from 'src/components/ui/seperator';
-import { Mdx } from 'src/components/common/mdx-components';
-import { absoluteUrl, cn, formatDate } from '@/lib/utils';
-import { buttonVariants } from '@/components/ui/button';
-import Link from 'next/link';
 import Image from 'next/image';
-import { AspectRatio } from '@/components/ui/aspect-ratio';
+import Link from 'next/link';
 import { ChevronLeftIcon } from '@radix-ui/react-icons';
-import { MdxPager } from 'src/components/common/mdx-pager';
+
+import { cn, formatDate } from '@/lib/utils';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
+import { buttonVariants } from '@/components/ui/button';
+import { Separator } from '@/components/ui/seperator';
+import { MdxPager } from '@/components/common/mdx-pager';
 
 interface PostPageProps {
   params: {
@@ -39,21 +42,9 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
   return {
     title: post.title,
     description: post.description,
-    
-    openGraph: {
-      title: post.title,
-      description: post.description,
-      type: 'article',
-      url: absoluteUrl(post.slug),
-      images: [
-        {
-          url: String(),
-          width: 1200,
-          height: 630,
-          alt: post.title
-        }
-      ]
-    }
+    authors: post.authors.map((author) => ({
+      name: author
+    }))
   };
 }
 
@@ -89,21 +80,21 @@ export default async function PostPage({ params }: PostPageProps) {
           {post.date ? <div>•</div> : null}
           <div>{post.readingTime}min</div>
         </div>
-        <h1 className="inline-block text-4xl font-bold leading-tight lg:text-5xl">{post.title}</h1>
+        <h1 className="inline-block text-3xl font-bold leading-tight lg:text-5xl">{post.title}</h1>
       </div>
+      <div className="my-6">
       {post.image && (
-        <div className='my-6'>
         <AspectRatio ratio={16 / 9}>
           <Image
             src={post.image}
             alt={post.title}
             fill
-            className="bg-muted rounded-md border"
+            className="bg-muted rounded-3xl border"
             priority
           />
         </AspectRatio>
-        </div>
       )}
+      </div>
       <Mdx code={post.body.code} />
       <Separator className="my-4" />
       <MdxPager currentItem={post} allItems={allPosts} />

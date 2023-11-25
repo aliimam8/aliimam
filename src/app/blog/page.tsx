@@ -3,12 +3,12 @@ import { type Metadata } from "next"
 import { allPosts } from "contentlayer/generated"
 import { compareDesc } from "date-fns"
 
-import { Separator } from "src/components/ui/seperator"
+import { Separator } from "@/components/ui/seperator"
 import {
   PageHeader,
   PageHeaderDescription,
   PageHeaderHeading,
-} from "src/components/common/page-header"
+} from "@/components/common/page-header"
 
 import { PostCard } from "./_components/post-card"
 import { PostCardSkeleton } from "./_components/post-card-skeleton"
@@ -32,7 +32,7 @@ export default function BlogPage() {
         </PageHeaderDescription>
       </PageHeader>
       <Separator className="my-6" />
-      <section className="grid grid-cols-1 gap-8 md:grid-cols-3 lg:grid-cols-3">
+      <section className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 ">
         <React.Suspense
           fallback={Array.from({ length: 4 }).map((_, i) => (
             <PostCardSkeleton key={i} />
