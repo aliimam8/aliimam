@@ -4,7 +4,7 @@ import { Icons } from 'src/components/icons';
 import { Coffee } from './coffee';
 import ThemeToogle from './theme';
 
-const Underline = `hover:-translate-y-1 transition-transform text-slate-600 hover:text-black hover:dark:text-white dark:text-slate-400 `;
+const Underline = `hover:-translate-y-1 border border-slate-100 dark:border-slate-900 rounded-xl p-2.5 transition-transform text-slate-600 hover:text-black hover:dark:text-white dark:text-slate-400 `;
 
 export interface Menus {
   text: string;
@@ -87,9 +87,9 @@ export function SiteFooter() {
         </Link>
       </div>
 
-      <div className="flex flex-wrap justify-center gap-8 gap-y-4 px-8">
+      <div className="flex flex-wrap justify-center items-center gap-6 gap-y-4 px-8">
         <Link href="tel:+919650133705" rel="noreferrer" target="_blank" className={Underline}>
-          <Icons.phone className="w-6" />
+          <Icons.phone strokeWidth={1.5} className="w-5 h-5" />
         </Link>
         <Link
           href="mailto:aliimam.original@gmail.com"
@@ -97,7 +97,7 @@ export function SiteFooter() {
           target="_blank"
           className={Underline}
         >
-          <Icons.mail className="w-6" />
+          <Icons.mail strokeWidth={1.5} className="w-5 h-5" />
         </Link>
         <Link
           href="https://wa.me/message/6XOEA2NCD5OFB1"
@@ -105,7 +105,7 @@ export function SiteFooter() {
           target="_blank"
           className={Underline}
         >
-          <Icons.whatsapp className="w-6" />
+          <Icons.whatsapp className="w-5 h-5" />
         </Link>
         <Link
           href="https://www.instagram.com/aliimam.in/"
@@ -113,31 +113,7 @@ export function SiteFooter() {
           target="_blank"
           className={Underline}
         >
-          <Icons.insta className="w-6" />
-        </Link>
-        <Link
-          href="https://www.facebook.com/ali.imam.1804"
-          rel="noreferrer"
-          target="_blank"
-          className={Underline}
-        >
-          <Icons.fb className="w-6" />
-        </Link>
-        <Link
-          href="https://www.linkedin.com/in/ali-imam-579396180/"
-          rel="noreferrer"
-          target="_blank"
-          className={Underline}
-        >
-          <Icons.Linked className="mt-1 w-5" />
-        </Link>
-        <Link
-          href="https://www.youtube.com/channel/UCZYm9jYmDesAGzbyFacUSfA"
-          rel="noreferrer"
-          target="_blank"
-          className={Underline}
-        >
-          <Icons.youTube className="h-7 w-6" />
+          <Icons.insta strokeWidth={1.5} className="w-5 h-5" />
         </Link>
         <Link
           href="https://twitter.com/aiimamoriginal"
@@ -145,8 +121,33 @@ export function SiteFooter() {
           target="_blank"
           className={Underline}
         >
-          <Icons.TweetX className="mt-1 w-5" />
+          <Icons.TweetX className="w-5 h-5" />
         </Link>
+        <Link
+          href="https://www.facebook.com/ali.imam.1804"
+          rel="noreferrer"
+          target="_blank"
+          className={Underline}
+        >
+          <Icons.fb className="w-5 h-5" />
+        </Link>
+        <Link
+          href="https://www.linkedin.com/in/ali-imam-579396180/"
+          rel="noreferrer"
+          target="_blank"
+          className={Underline}
+        >
+          <Icons.Linked className="w-5 h-5" />
+        </Link>
+        <Link
+          href="https://www.youtube.com/channel/UCZYm9jYmDesAGzbyFacUSfA"
+          rel="noreferrer"
+          target="_blank"
+          className={Underline}
+        >
+          <Icons.youTube className="w-5 h-5" />
+        </Link>
+        
       </div>
 
       <ThemeToogle />
@@ -163,6 +164,9 @@ export function SiteFooter() {
           </span>
         </div>
       </div>
+
+      
+      
     </footer>
   );
 }

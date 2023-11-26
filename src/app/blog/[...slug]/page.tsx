@@ -100,9 +100,9 @@ export default async function PostPage({ params }: PostPageProps) {
       <MdxPager currentItem={post} allItems={allPosts} />
       <Link
         href="/blog"
-        className={cn(buttonVariants({ variant: 'ghost', className: 'mx-auto mt-4 w-fit' }))}
+        className={cn(buttonVariants({ variant: 'outline', className: 'mx-auto mt-4 w-fit' }))}
       >
-        <ChevronLeftIcon className="mr-2 h-4 w-4" aria-hidden="true" />
+        <ChevronLeftIcon className="h-4 w-4" aria-hidden="true" />
         See all posts
         <span className="sr-only">See all posts</span>
       </Link>

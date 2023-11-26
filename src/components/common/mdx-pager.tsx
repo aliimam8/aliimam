@@ -28,7 +28,7 @@ export function MdxPager({ currentItem, allItems, className, ...props }: MdxPage
         <Link
           aria-label="Previous post"
           href={pager.prev.slug}
-          className={cn(buttonVariants({ variant: 'ghost' }))}
+          className={cn(buttonVariants({ variant: 'default' }))}
         >
           <Icons.chevronLeft className="mr-1 w-5" aria-hidden="true" />
           {truncate(pager.prev.title, 20)}
@@ -38,7 +38,7 @@ export function MdxPager({ currentItem, allItems, className, ...props }: MdxPage
         <Link
           aria-label="Next post"
           href={pager.next.slug}
-          className={cn(buttonVariants({ variant: 'ghost' }), 'ml-auto')}
+          className={cn(buttonVariants({ variant: 'default' }), 'ml-auto')}
         >
           {truncate(pager.next.title, 20)}
           <Icons.chevronRight className="ml-1 w-5" aria-hidden="true" />

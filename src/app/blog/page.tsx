@@ -24,7 +24,7 @@ export default function BlogPage() {
     .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
 
   return (
-    <div className="mx-auto mt-20 max-w-4xl px-6">
+    <div className="mx-auto mt-40 max-w-4xl px-6">
       <PageHeader>
         <PageHeaderHeading>Blog</PageHeaderHeading>
         <PageHeaderDescription>

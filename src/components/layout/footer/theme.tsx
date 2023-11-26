@@ -16,7 +16,7 @@ const Footer = () => {
   const currentTheme = theme === 'system' ? systemTheme : theme;
   return (
     <div className="m-10 flex justify-center gap-5">
-      <div className="rounded-full border border-aired p-1 dark:border-aired">
+      <div className="rounded-full border border-slate-200 dark:border-slate-800 p-1">
         <button
           onClick={() => setTheme('light')}
           className="mr-3 rounded-full bg-aired p-2 text-white dark:bg-black dark:text-slate-400"
