@@ -13,6 +13,8 @@ import { Fragment, useEffect, useRef, useState } from 'react';
 import CloseCart from './close-cart';
 import { DeleteItemButton } from './delete-item-button';
 import { EditItemQuantityButton } from './edit-item-quantity-button';
+import { buttonVariants } from 'src/components/ui/button';
+import { cn } from 'src/lib/utils';
 import OpenCart from './open-cart';
 
 type MerchandiseSearchParams = {
@@ -65,7 +67,7 @@ export function CartModal({ cart }: { cart: Cart | undefined }) {
             leaveFrom="translate-x-0"
             leaveTo="translate-x-full"
           >
-            <Dialog.Panel className="fixed border-l border-aired/25 bottom-0 right-0 top-0 flex h-full w-full flex-col bg-white/80 p-6 backdrop-blur-xl dark:bg-black/80 md:w-[390px]">
+            <Dialog.Panel className="fixed bottom-0 right-0 top-0 flex h-full w-full flex-col border-l border-aired/25 bg-white/80 p-6 backdrop-blur-xl dark:bg-black/80 md:w-[390px]">
               <div className="flex items-center justify-between">
                 <p className="text-lg font-semibold">My Cart</p>
 
@@ -76,10 +78,22 @@ export function CartModal({ cart }: { cart: Cart | undefined }) {
 
               {!cart || cart.lines.length === 0 ? (
                 <div className="mt-20 flex w-full flex-col items-center justify-center overflow-hidden">
-                  <Icons.shop strokeWidth={0.6} className="w-12 h-12" />
-                  <p className="mt-6 text-center text-2xl font-bold">Your cart is empty.</p>
+                  <Icons.shop strokeWidth={0.6} className="h-12 w-12" />
+                  <p className="mt-6 text-center mb-10 text-2xl font-bold">Your cart is empty.</p>
+                  <Link
+                    href="/store"
+                    className={cn(
+                      buttonVariants({
+                        variant: 'aibutton',
+                        size: 'lg'
+                      })
+                    )}
+                  >
+                    Buy Now
+                    <span className="sr-only">Buy now</span>
+                  </Link>
                 </div>
-              ) : ( 
+              ) : (
                 <div className="flex h-full flex-col justify-between overflow-hidden p-1">
                   <ul className="flex-grow overflow-auto py-4">
                     {cart.lines.map((item, i) => {
@@ -177,7 +191,7 @@ export function CartModal({ cart }: { cart: Cart | undefined }) {
                   </div>
                   <a
                     href={cart.checkoutUrl}
-                    className="bg-aired block w-full rounded-full p-3 text-center text-sm font-medium text-white opacity-90 hover:opacity-100"
+                    className="block w-full rounded-full bg-aired p-3 text-center text-sm font-medium text-white opacity-90 hover:opacity-100"
                   >
                     Proceed to Checkout
                   </a>
@@ -215,8 +229,20 @@ export function CartModalD({ cart }: { cart: Cart | undefined }) {
       <h1 className="my-10 mt-40 text-center text-2xl font-bold sm:text-4xl">My Cart</h1>
       {!cart || cart.lines.length === 0 ? (
         <div className="mt-20 flex w-full flex-col items-center justify-center overflow-hidden">
-          <ShoppingCartIcon className="h-16" />
-          <p className="mt-6 text-center text-2xl font-bold">Your cart is empty.</p>
+          <Icons.shop strokeWidth={0.6} className="h-12 w-12" />
+          <p className="mb-10 mt-6 text-center text-2xl font-bold">Your cart is empty.</p>
+          <Link
+            href="/store"
+            className={cn(
+              buttonVariants({
+                variant: 'aibutton',
+                size: 'lg'
+              })
+            )}
+          >
+            Buy Now
+            <span className="sr-only">Buy now</span>
+          </Link>
         </div>
       ) : (
         <div className="flex h-full flex-col justify-between overflow-hidden p-1">
