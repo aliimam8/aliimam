@@ -1,4 +1,5 @@
 import { Work } from './Work';
+import Projects from '@/components/projects';
 
 export default function Gallery() {
   return (
@@ -8,10 +9,13 @@ export default function Gallery() {
           Portfolio
           <hr className="bg-amber-400 mx-auto my-4 h-1 w-6 border-0"></hr>
         </h1>
+        <div className="my-8">
+        <Projects />
+        </div>
         <Work />
       </div>
 
-      <div className="mx-auto max-w-3xl px-4 sm:px-6 md:max-w-5xl "></div>
+      
     </main>
   );
 }

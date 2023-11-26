@@ -12,7 +12,7 @@ export default function OpenCart({
     <div className="justify-centertransition-colors relative flex items-center ">
       <Link href="/" className=" items-center space-x-4 lg:flex">
         <span className="sr-only">Your Company</span>
-        <Icons.shop className="w-5" />
+        <Icons.shop strokeWidth={1.5} className="w-5" />
         <span className="sr-only">Home</span>
       </Link>
 

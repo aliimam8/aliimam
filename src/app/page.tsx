@@ -4,7 +4,6 @@ import About from '../components/common/about';
 import Logos from '../components/common/logos';
 import { Experience } from '../components/common/experience';
 import Hero from '../components/common/hero';
-import Projects from '../components/projects';
 
 export const runtime = 'edge';
 
@@ -26,7 +25,6 @@ export default function HomePage() {
           <Experience />
         </div>
         <Carousel />
-        <Projects />
         <div className="absolute inset-0 -z-10 overflow-hidden">
         <svg
           className="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-aired/20 dark:stroke-aired/50 [mask-image:radial-gradient(70rem_40rem_at_top,white,transparent)]"
