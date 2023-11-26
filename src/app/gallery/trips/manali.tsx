@@ -27,7 +27,7 @@ export default async function Home({}: { images: ImageProps[] }) {
                   <Dialog>
                     <DialogTrigger asChild>
                       <CldImage
-                        className="block h-full w-full cursor-zoom-in rounded-lg object-cover object-center saturate-100 transition-all duration-100 hover:saturate-0"
+                        className="block transition duration-300 ease-in-out h-full w-full cursor-zoom-in rounded-lg object-cover object-center saturate-100 hover:saturate-0"
                         width={300}
                         height={300}
                         src={resource.secure_url}

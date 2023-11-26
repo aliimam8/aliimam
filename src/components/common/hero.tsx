@@ -6,8 +6,23 @@ import { buttonVariants } from 'src/components/ui/button';
 import { cn } from 'src/lib/utils';
 import 'src/styles/text.css';
 import { renderCanvas } from './render';
+import { TypeWriter } from './type'
+
+
 
 const Hero = () => {
+  const talkAbout = [
+		'Photoshop',
+		'Illustrator',
+		'After Effects',
+		'Premiere Pro',
+		'Cinema 4D',
+		'Autodesk Maya',
+		'Visual Studio Code',
+		'Corel Draw',
+    'ZBrush',
+	];
+
   useEffect(() => {
     renderCanvas();
   }, []);
@@ -68,6 +83,7 @@ const Hero = () => {
             I&#39;m an <span className="font-regular">Art Director </span>
             looking for opportunities as a Level Artist. I have a passion for Graphic Design, UI UX,
             3D, Animation and tools like{' '}
+            <TypeWriter strings={talkAbout} />.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link
