@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import { allPages } from 'contentlayer/generated';
-
+import { type Metadata } from 'next';
 import { Separator } from 'src/components/ui/seperator';
 import { Mdx } from 'src/components/common/mdx-components';
 import {
@@ -26,6 +26,20 @@ async function getPageFromParams(params: PageProps['params']) {
   }
 
   return page;
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const post = await getPageFromParams(params);
+
+  if (!post) {
+    return {};
+  }
+
+  return {
+    title: post.title,
+    description: post.description,
+    
+  };
 }
 
 // eslint-disable-next-line @typescript-eslint/require-await

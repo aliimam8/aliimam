@@ -1,6 +1,14 @@
 import { Work } from './Work';
 import Projects from '@/components/projects';
 
+import { type Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Portfolio",
+  description: "Explore the latest news and updates from the community",
+}
+
+
 export default function Gallery() {
   return (
     <main>

@@ -20,9 +20,11 @@ export default function HomePage() {
       <Suspense>
         <Hero />
         <Logos />
-        <div className="mx-auto mt-10 max-w-3xl px-4 sm:px-6 md:max-w-5xl ">
+        <div className="mx-auto mt-10 max-w-3xl px-8 sm:px-6 md:max-w-5xl ">
           <About />
-          <Experience />
+        </div>
+        <div className="mx-auto mt-10 max-w-3xl px-4 sm:px-6 md:max-w-5xl ">
+        <Experience />
         </div>
         <Carousel />
         <div className="absolute inset-0 -z-10 overflow-hidden">

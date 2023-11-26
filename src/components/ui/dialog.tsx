@@ -22,7 +22,7 @@ const DialogOverlay = React.forwardRef<
   <DialogPrimitive.Overlay
     ref={ref}
     className={cn(
-      'bg-background data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 backdrop-blur-lg',
+      'bg-white/60 dark:bg-black/60 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 backdrop-blur-lg',
       className
     )}
     {...props}
@@ -46,14 +46,7 @@ const DialogContent = React.forwardRef<
     >
       {children}
       <DialogPrimitive.Close className="flex items-center justify-center p-4 text-center">
-        <div
-          className={buttonVariants({
-            size: 'lg',
-            variant: 'redbutton'
-          })}
-        >
-          <Icons.close className="h-4 w-4" />
-        </div>
+        
       </DialogPrimitive.Close>
     </DialogPrimitive.Content>
   </DialogPortal>

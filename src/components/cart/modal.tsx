@@ -1,7 +1,6 @@
 'use client';
 
 import { Dialog, Transition } from '@headlessui/react';
-import { ShoppingCartIcon } from '@heroicons/react/24/outline';
 import Price from 'src/components/price';
 import { DEFAULT_OPTION } from 'src/lib/constants';
 import type { Cart } from 'src/lib/shopify/types';
@@ -79,17 +78,17 @@ export function CartModal({ cart }: { cart: Cart | undefined }) {
               {!cart || cart.lines.length === 0 ? (
                 <div className="mt-20 flex w-full flex-col items-center justify-center overflow-hidden">
                   <Icons.shop strokeWidth={0.6} className="h-12 w-12" />
-                  <p className="mt-6 text-center mb-10 text-2xl font-bold">Your cart is empty.</p>
+                  <p className="mb-10 mt-6 text-center text-2xl font-bold">Your cart is empty.</p>
                   <Link
                     href="/store"
                     className={cn(
                       buttonVariants({
-                        variant: 'aibutton',
+                        variant: 'redbutton',
                         size: 'lg'
                       })
                     )}
                   >
-                    Buy Now
+                    Shop Now
                     <span className="sr-only">Buy now</span>
                   </Link>
                 </div>
@@ -167,8 +166,8 @@ export function CartModal({ cart }: { cart: Cart | undefined }) {
                       );
                     })}
                   </ul>
-                  <div className="text-slate-500 py-4 text-sm dark:text-slate-400">
-                    <div className="dark:border-slate-700 mb-3 flex items-center justify-between border-b border-slate-200 pb-1">
+                  <div className="text-slate-600 py-4 text-sm dark:text-slate-400">
+                    <div className="dark:border-slate-800 mb-3 flex items-center justify-between border-b border-slate-200 pb-1">
                       <p>Taxes</p>
                       <Price
                         className="text-right text-base text-black dark:text-white"
@@ -176,11 +175,11 @@ export function CartModal({ cart }: { cart: Cart | undefined }) {
                         currencyCode={cart.cost.totalTaxAmount.currencyCode}
                       />
                     </div>
-                    <div className="dark:border-slate-700 mb-3 flex items-center justify-between border-b border-slate-200 pb-1 pt-1">
+                    <div className="dark:border-slate-800 mb-3 flex items-center justify-between border-b border-slate-200 pb-1 pt-1">
                       <p>Shipping</p>
                       <p className="text-right">Calculated at checkout</p>
                     </div>
-                    <div className="dark:border-slate-700 mb-3 flex items-center justify-between border-b border-slate-200 pb-1 pt-1">
+                    <div className="dark:border-slate-800 mb-3 flex items-center justify-between border-b border-slate-200 pb-1 pt-1">
                       <p>Total</p>
                       <Price
                         className="text-right text-base text-black dark:text-white"
@@ -195,6 +194,15 @@ export function CartModal({ cart }: { cart: Cart | undefined }) {
                   >
                     Proceed to Checkout
                   </a>
+                  <div className="flex w-full flex-col my-10 items-center">
+                  <Link
+                    href="/cart"
+                    className="mt-4 flex gap-3 hover:text-aired"
+                  >
+                    <p className="text-md">Go to Cart Page</p>
+                    <Icons.shop className="w-4" />
+                  </Link>
+                  </div>
                 </div>
               )}
             </Dialog.Panel>
@@ -235,12 +243,12 @@ export function CartModalD({ cart }: { cart: Cart | undefined }) {
             href="/store"
             className={cn(
               buttonVariants({
-                variant: 'aibutton',
+                variant: 'redbutton',
                 size: 'lg'
               })
             )}
           >
-            Buy Now
+            Shop Now
             <span className="sr-only">Buy now</span>
           </Link>
         </div>
@@ -264,7 +272,7 @@ export function CartModalD({ cart }: { cart: Cart | undefined }) {
               return (
                 <li
                   key={i}
-                  className="border-slate-300 dark:border-slate-700 flex w-full flex-col border-b"
+                  className="border-slate-400 dark:border-slate-600 flex w-full flex-col border-b"
                 >
                   <div className="relative flex w-full flex-row justify-between px-1 py-4">
                     <div className="absolute z-40 -mt-2 ml-[55px]">
@@ -275,7 +283,7 @@ export function CartModalD({ cart }: { cart: Cart | undefined }) {
                       onClick={closeCart}
                       className="z-30 flex flex-row space-x-4"
                     >
-                      <div className="border-slate-300 bg-slate-300 dark:border-slate-700 relative h-16 w-16 cursor-pointer overflow-hidden rounded-md border dark:bg-slate-900 dark:hover:bg-slate-800">
+                      <div className="border-slate-200 bg-slate-300 dark:border-slate-800 relative h-16 w-16 cursor-pointer overflow-hidden rounded-md border dark:bg-slate-900 dark:hover:bg-slate-800">
                         <Image
                           className="h-full w-full object-cover"
                           width={64}
@@ -316,34 +324,36 @@ export function CartModalD({ cart }: { cart: Cart | undefined }) {
               );
             })}
           </ul>
-          <div className="text-slate-500 py-4 text-sm dark:text-slate-400">
-            <div className="dark:border-slate-700 mb-3 flex items-center justify-between border-b border-slate-200 pb-1">
-              <p>Taxes</p>
-              <Price
-                className="text-right text-base text-black dark:text-white"
-                amount={cart.cost.totalTaxAmount.amount}
-                currencyCode={cart.cost.totalTaxAmount.currencyCode}
-              />
+            <div className="text-slate-600 py-4 text-sm dark:text-slate-400">
+              <div className="dark:border-slate-800 mb-3 flex items-center justify-between border-b border-slate-200 pb-1">
+                <p>Taxes</p>
+                <Price
+                  className="text-right text-base text-black dark:text-white"
+                  amount={cart.cost.totalTaxAmount.amount}
+                  currencyCode={cart.cost.totalTaxAmount.currencyCode}
+                />
+              </div>
+              <div className="dark:border-slate-800 mb-3 flex items-center justify-between border-b border-slate-200 pb-1 pt-1">
+                <p>Shipping</p>
+                <p className="text-right">Calculated at checkout</p>
+              </div>
+              <div className="dark:border-slate-800 mb-3 flex items-center justify-between border-b border-slate-200 pb-1 pt-1">
+                <p>Total</p>
+                <Price
+                  className="text-right text-base text-black dark:text-white"
+                  amount={cart.cost.totalAmount.amount}
+                  currencyCode={cart.cost.totalAmount.currencyCode}
+                />
+              </div>
             </div>
-            <div className="dark:border-slate-700 mb-3 flex items-center justify-between border-b border-slate-200 pb-1 pt-1">
-              <p>Shipping</p>
-              <p className="text-right">Calculated at checkout</p>
-            </div>
-            <div className="dark:border-slate-700 mb-3 flex items-center justify-between border-b border-slate-200 pb-1 pt-1">
-              <p>Total</p>
-              <Price
-                className="text-right text-base text-black dark:text-white"
-                amount={cart.cost.totalAmount.amount}
-                currencyCode={cart.cost.totalAmount.currencyCode}
-              />
-            </div>
+          <div className="flex w-full flex-col items-center">
+            <a
+              href={cart.checkoutUrl}
+              className="flex w-[200px] items-center justify-center rounded-full bg-aired p-3 text-sm font-medium text-white opacity-90 hover:opacity-100"
+            >
+              Proceed to Checkout
+            </a>
           </div>
-          <a
-            href={cart.checkoutUrl}
-            className="bg-blue-600 block w-full rounded-full p-3 text-center text-sm font-medium text-white opacity-90 hover:opacity-100"
-          >
-            Proceed to Checkout
-          </a>
         </div>
       )}
     </div>

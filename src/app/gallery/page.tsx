@@ -1,5 +1,11 @@
 import { Travell } from './travell';
 
+import { type Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Gallery",
+  description: "Explore the latest news and updates from the community",
+}
 
 export default function Gallery() {
   return (

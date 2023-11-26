@@ -4,14 +4,12 @@ import About from 'src/components/common/about';
 import Logos from 'src/components/common/logos';
 import { Experience } from 'src/components/common/experience';
 
-export const runtime = 'edge';
+import { type Metadata } from "next"
 
-export const metadata = {
-  description: 'High-performance ecommerce store built with Next.js, Vercel, and Shopify.',
-  openGraph: {
-    type: 'website'
-  }
-};
+export const metadata: Metadata = {
+  title: "About AI",
+  description: "Explore the latest news and updates from the community",
+}
 
 export default async function HomePage() {
   return (

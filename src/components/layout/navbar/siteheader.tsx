@@ -26,29 +26,23 @@ const helps = [
 
 export default function Navbar() {
   return (
-    <Disclosure
-      as="nav"
-      className="w-full"
-    >
+    <Disclosure as="nav" className="w-full">
       {({ open }) => (
         <>
           <header className="">
-            <div className="">
-              
-              <div className="flex flex-1 items-center right-2 top-2 fixed justify-end ">
-                
-                <div className="mr-2 flex transition ease-in-out md:hidden lg:hidden">
-                  <Disclosure.Button className="items-center justify-center p-2 text-center text-slate-600 dark:text-slate-400">
-                    <span className="sr-only">Open main menu</span>
-                    {open ? (
-                      <Icons.close className="block h-6 w-6" aria-hidden="true" />
-                    ) : (
-                      <Icons.menu className="block h-6 w-6" aria-hidden="true" />
-                    )}
-                  </Disclosure.Button>
-                </div>
+            <div className="fixed right-2 top-2 flex flex-1 items-center justify-end ">
+              <div className="mr-2 flex transition ease-in-out md:hidden lg:hidden">
+                <Disclosure.Button className="items-center justify-center p-2 text-center text-slate-600 dark:text-slate-400">
+                  <span className="sr-only">Open main menu</span>
+                  {open ? (
+                    <Icons.close strokeWidth={1.5} className="block h-6 w-6" aria-hidden="true" />
+                  ) : (
+                    <Icons.menu strokeWidth={1.5} className="block h-6 w-6" aria-hidden="true" />
+                  )}
+                </Disclosure.Button>
               </div>
             </div>
+
             <Disclosure.Panel className="md:hidden">
               <div className="flex flex-col px-6 py-6">
                 {navigation.map((item) => (
@@ -71,7 +65,7 @@ export default function Navbar() {
                           key={item.name}
                           as="a"
                           href={item.href}
-                          className="flex py-3 px-4 text-xl font-semibold"
+                          className="flex px-4 py-3 text-xl font-semibold"
                           aria-current={item.current ? 'page' : undefined}
                         >
                           {item.name}
@@ -85,7 +79,7 @@ export default function Navbar() {
                   <Link
                     href="/Ali-CV.pdf"
                     target="_blank"
-                    className="flex mt-4 gap-3 text-aired"
+                    className="mt-4 flex gap-3 text-aired"
                     download={true}
                   >
                     <p className="text-xl font-semibold">Download CV</p>

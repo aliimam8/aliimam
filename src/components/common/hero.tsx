@@ -47,7 +47,7 @@ const Hero = () => {
 
         <div className="md:w-50% mb-10 mt-4 md:mt-6 ">
           <div className="">
-            <h1 className="tracking-tightest flex select-none flex-col py-2 text-center text-6xl font-extrabold leading-none sm:text-8xl md:flex-col lg:flex-row">
+            <h1 className="tracking-tightest flex select-none flex-col py-2 text-center text-7xl font-extrabold leading-none sm:text-8xl md:flex-col lg:flex-row">
               <span
                 data-content="Coffee."
                 className="before:animate-gradient-background-1 relative before:absolute before:bottom-4 before:left-0 before:top-0 before:z-0  before:w-full before:px-2 before:content-[attr(data-content)]  sm:before:top-0"
@@ -75,11 +75,11 @@ const Hero = () => {
             </h1>
           </div>
 
-          <h1 className="text-xl font-semibold sm:text-3xl md:mt-0 md:text-4xl">
+          <h1 className="text-2xl font-semibold md:text-4xl lg:text-4xl mt-4">
             Hello and welcome! I&#39;m <span className="font-bold text-aired">Ali </span>
           </h1>
 
-          <p className="md:text-1xl mx-auto mb-16 mt-2 max-w-2xl px-4 text-lg text-slate-600 dark:text-slate-400 sm:px-6 md:max-w-4xl">
+          <p className="md:text-md mx-auto mb-16 mt-2 max-w-2xl px-8 md:px-20 lg:text-lg text-sm text-slate-600 dark:text-slate-400 sm:px-6 md:max-w-4xl">
             I&#39;m an <span className="font-regular">Art Director </span>
             looking for opportunities as a Level Artist. I have a passion for Graphic Design, UI UX,
             3D, Animation and tools like{' '}

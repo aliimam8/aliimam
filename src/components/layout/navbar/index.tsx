@@ -5,6 +5,7 @@ import SiteHeader from './siteheader';
 import { NavMenu } from './navmenu';
 import Link from 'next/link';
 import { Icons } from 'src/components/icons';
+import { DSearch } from './search';
 import { ThemeToggle } from './themetoggle';
 
 export default function Navbar() {
@@ -20,7 +21,10 @@ export default function Navbar() {
           <NavMenu />
 
           <div className="mx-auto flex h-12 flex-1 items-center justify-end gap-4 px-12 md:px-0 lg:px-0">
-            
+            <div className=' text-slate-600 hover:text-black dark:text-slate-400 hover:dark:text-white'>
+            <DSearch />
+            </div>
+           
             <div className="flex justify-end text-slate-600 hover:text-black dark:text-slate-400 hover:dark:text-white">
               <Suspense fallback={<OpenCart />}>
                 <Cart />
@@ -30,7 +34,8 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-      <div className="relative mx-auto flex flex-1 items-center justify-end">
+
+      <div className="relative mx-auto flex flex-1 items-center">
         <SiteHeader />
       </div>
     </nav>

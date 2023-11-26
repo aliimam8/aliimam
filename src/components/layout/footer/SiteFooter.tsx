@@ -4,7 +4,7 @@ import { Icons } from 'src/components/icons';
 import { Coffee } from './coffee';
 import ThemeToogle from './theme';
 
-const Underline = `hover:-translate-y-1 border border-slate-100 dark:border-slate-900 rounded-xl p-2.5 transition-transform text-slate-600 hover:text-black hover:dark:text-white dark:text-slate-400 `;
+const Underline = `hover:-translate-y-1 border border-slate-100 dark:border-slate-900 rounded-xl p-2.5 transition-transform text-slate-600 hover:border-slate-200 dark:hover:border-slate-800 hover:text-black hover:dark:text-white dark:text-slate-400 `;
 
 export interface Menus {
   text: string;
@@ -52,6 +52,11 @@ export const items: Menus[] = [
     text: 'Privacy',
     href: '/privacy',
     target: ''
+  },
+  {
+    text: 'Cart',
+    href: '/cart',
+    target: ''
   }
 ];
 
@@ -70,7 +75,7 @@ export function SiteFooter() {
       <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 p-8">
         {items.map((Menus) => (
           <figure key={Menus.text}>
-            <div className="text-sm text-slate-600 hover:text-black dark:text-slate-400 hover:dark:text-white ">
+            <div className="text-sm text-slate-600 hover:text-black dark:text-slate-400 hover:dark:text-white hover:scale-103">
               <span className="">
                 <Link href={Menus.href}>{Menus.text}</Link>
               </span>
@@ -159,8 +164,10 @@ export function SiteFooter() {
           <span>Made with</span>
           <span className="animate-pulse text-aired">❤</span>
           <span> by </span>
-          <span className="cursor-pointer font-bold text-black hover:text-aired dark:text-white">
-            Ali Imam<a href="/" className="hover:underline "></a>
+          <span className="cursor-pointer font-bold text-black hover:text-aired dark:hover:text-aired dark:text-white">
+           <a href="/">
+           Ali Imam
+            </a>
           </span>
         </div>
       </div>
