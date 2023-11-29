@@ -1,4 +1,3 @@
-import { Image } from "react-grid-gallery";
 
 export interface ImageProps {
   id: number;
@@ -23,10 +22,6 @@ export interface AIImage {
   alt: string;
 }
 
-export interface CustomImage extends Image {
-  original: string;
-  src: string;
-}
 
 
 
