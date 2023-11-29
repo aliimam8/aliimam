@@ -1,5 +1,6 @@
 import { Travell } from './travell';
 
+
 import { type Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -15,7 +16,6 @@ export default function Gallery() {
           Gallery
           <hr className="bg-amber-400 mx-auto my-4 h-1 w-6 border-0"></hr>
         </h1>
-        
         <Travell />
       </div>
 

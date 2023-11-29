@@ -1,4 +1,5 @@
-/* eslint-disable no-unused-vars */
+import { Image } from "react-grid-gallery";
+
 export interface ImageProps {
   id: number;
   height: string;
@@ -11,9 +12,21 @@ export interface ImageProps {
 export interface SharedModalProps {
   index: number;
   images?: ImageProps[];
-  currentPhoto?: ImageProps;
-  changePhotoId: (newVal: number) => void;
-  closeModal: () => void;
-  navigation: boolean;
-  direction?: number;
+  src?: ImageProps[];
 }
+
+export interface AIImage {
+  id: number;
+  width: number;
+  height: number;
+  src: string;
+  alt: string;
+}
+
+export interface CustomImage extends Image {
+  original: string;
+  src: string;
+}
+
+
+

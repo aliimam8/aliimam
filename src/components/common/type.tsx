@@ -21,3 +21,4 @@ export const TypeWriter = ({ strings }: TypeWriterProps) => {
 		/>
 	);
 };
+

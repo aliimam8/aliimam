@@ -1,7 +1,6 @@
 import { v2 as cloudinary } from 'cloudinary';
 
-import CldImage from 'src/components/CldImage';
-
+import CldImage from 'src/components/common/pictures';
 
 cloudinary.config({
   cloud_name: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
@@ -10,7 +9,6 @@ cloudinary.config({
 });
 
 export default async function Favo() {
-
   const expression = 'folder=fav';
 
   const { resources } = await cloudinary.search.expression(expression).execute();
@@ -23,13 +21,10 @@ export default async function Favo() {
             return (
               <div key={resource.public_id} className="grid">
                 <div className="w-full p-1">
-                  <CldImage
-                    className="block h-full w-full cursor-zoom-in rounded-lg object-cover object-center saturate-100 transition-all duration-100 hover:saturate-0"
-                    width={300}
-                    height={300}
+                  <CldImage 
                     src={resource.secure_url}
-                    alt=""
-                  />
+                    alt={[]}                    
+                    />
                 </div>
               </div>
             );

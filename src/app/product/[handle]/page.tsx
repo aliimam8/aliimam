@@ -9,6 +9,7 @@ import { ProductDescription } from 'src/components/product/product-description';
 import { HIDDEN_PRODUCT_TAG } from 'src/lib/constants';
 import { getProduct, getProductRecommendations } from 'src/lib/shopify';
 import { Image } from 'src/lib/shopify/types';
+import { Carousel } from 'src/components/carousel';
 
 export const runtime = 'edge';
 
@@ -99,6 +100,7 @@ export default async function ProductPage({ params }: { params: { handle: string
           <RelatedProducts id={product.id} />
         </Suspense>
       </div>
+      <Carousel />
     </>
   );
 }
