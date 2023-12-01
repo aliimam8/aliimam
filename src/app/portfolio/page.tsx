@@ -1,6 +1,5 @@
 import { Work } from './Work';
 import Projects from '@/components/projects';
-import Favo from '@/components/common/fav';
 
 import { type Metadata } from "next"
 
@@ -18,7 +17,6 @@ export default function Gallery() {
           Portfolio
           <hr className="bg-amber-400 mx-auto my-4 h-1 w-6 border-0"></hr>
         </h1>
-        <Favo/>
         <div className="my-8">
         <Projects />
         </div>
