@@ -1,9 +1,10 @@
 import { Suspense } from 'react';
 import { Carousel } from 'src/components/carousel';
-import About from '../components/common/about';
-import Logos from '../components/common/logos';
-import { Experience } from '../components/common/experience';
-import Hero from '../components/common/hero';
+import Logos from 'src/components/common/logos';
+import Hero from 'src/components/common/hero';
+import Favo from '@/components/common/fav';
+import About from 'src/components/common/about';
+import Projects from '@/components/projects';
 
 export const runtime = 'edge';
 
@@ -20,35 +21,41 @@ export default function HomePage() {
       <Suspense>
         <Hero />
         <Logos />
-        <div className="mx-auto mt-10 max-w-3xl px-8 sm:px-6 md:max-w-5xl ">
+        <div className="mx-auto mt-10 max-w-3xl px-4 sm:px-6 md:max-w-5xl ">
           <About />
         </div>
-        <div className="mx-auto mt-10 max-w-3xl px-4 sm:px-6 md:max-w-5xl ">
-        <Experience />
-        </div>
         <Carousel />
-        
+        <h1 className="my-10 mt-40 text-center text-2xl font-bold sm:text-4xl">
+          Projects
+          <hr className="bg-amber-400 mx-auto my-4 h-1 w-6 border-0"></hr>
+        </h1>
+        <Projects />
         <div className="absolute inset-0 -z-10 overflow-hidden">
-        <svg
-          className="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-aired/20 dark:stroke-aired/50 [mask-image:radial-gradient(70rem_40rem_at_top,white,transparent)]"
-          aria-hidden="true"
-        >
-          <defs>
-            <pattern
-              id="e813992c-7d03-4cc4-a2bd-151760b470a0"
-              width={100}
-              height={3}
-              x="50%"
-              y={-1}
-              patternUnits="userSpaceOnUse"
-            >
-              <path d="M100 100V.5M.5 .5H200" fill="none" />
-            </pattern>
-          </defs>
-          
-          <rect width="100%" height="100%" strokeWidth={0} fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)" />
-        </svg>
-      </div>
+          <svg
+            className="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-aired/20 [mask-image:radial-gradient(70rem_40rem_at_top,white,transparent)] dark:stroke-aired/50"
+            aria-hidden="true"
+          >
+            <defs>
+              <pattern
+                id="e813992c-7d03-4cc4-a2bd-151760b470a0"
+                width={100}
+                height={3}
+                x="50%"
+                y={-1}
+                patternUnits="userSpaceOnUse"
+              >
+                <path d="M100 100V.5M.5 .5H200" fill="none" />
+              </pattern>
+            </defs>
+
+            <rect
+              width="100%"
+              height="100%"
+              strokeWidth={0}
+              fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)"
+            />
+          </svg>
+        </div>
       </Suspense>
     </>
   );

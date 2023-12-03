@@ -45,6 +45,7 @@ import {
   SunMedium,
   Trash,
   Twitter,
+  Eye,
   User,
   X,
   Youtube
@@ -62,6 +63,7 @@ export const Icons = {
   trash: Trash,
   post: FileText,
   search: Search,
+  eye: Eye,
   camera: Camera,
   page: File,
   LayoutGrid: LayoutGrid,

@@ -21,7 +21,7 @@ export default function Gallery() {
           My Favourite
           <hr className="bg-amber-400 mx-auto my-4 h-1 w-6 border-0"></hr>
         </h1>
-        <Favo />
+        <Favo /> 
       </div>
 
       <div className="mx-auto max-w-3xl px-4 sm:px-6 md:max-w-5xl "></div>

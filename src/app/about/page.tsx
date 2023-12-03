@@ -3,13 +3,14 @@ import Image from 'next/image';
 import About from 'src/components/common/about';
 import Logos from 'src/components/common/logos';
 import { Experience } from 'src/components/common/experience';
+import Writing from 'src/components/common/writing';
 
-import { type Metadata } from "next"
+import { type Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "About AI",
-  description: "Explore the latest news and updates from the community",
-}
+  title: 'About AI',
+  description: 'Explore the latest news and updates from the community'
+};
 
 export default async function HomePage() {
   return (
@@ -26,13 +27,13 @@ export default async function HomePage() {
             />
           </div>
         </div>
-
         <div className="mx-auto mt-10 max-w-3xl px-4 sm:px-6 md:max-w-5xl ">
           <About />
 
           <Experience />
         </div>
         <Logos />
+        <Writing />
       </Suspense>
     </>
   );
