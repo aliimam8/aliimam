@@ -27,7 +27,7 @@ export default function HomePage() {
         <Carousel />
         <h1 className="my-10 mt-40 text-center text-2xl font-bold sm:text-4xl">
           Projects
-          <hr className="bg-amber-400 mx-auto my-4 h-1 w-6 border-0"></hr>
+          <hr className="bg-aired rounded-full mx-auto my-4 h-1 w-6 border-0"></hr>
         </h1>
         <Projects />
         <div className="absolute inset-0 -z-10 overflow-hidden">

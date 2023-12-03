@@ -6,6 +6,22 @@ module.exports = {
   content: ['./src/app/**/*.{js,ts,jsx,tsx}', './src/components/**/*.{js,ts,jsx,tsx}'],
   darkMode: ['class'],
   theme: {
+    screens: {
+      'sm': '640px',
+      // => @media (min-width: 640px) { ... }
+
+      'md': '768px',
+      // => @media (min-width: 768px) { ... }
+
+      'lg': '1024px',
+      // => @media (min-width: 1024px) { ... }
+
+      'xl': '1280px',
+      // => @media (min-width: 1280px) { ... }
+
+      '2xl': '1536px',
+      // => @media (min-width: 1536px) { ... }
+    },
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
@@ -13,12 +29,12 @@ module.exports = {
       black: '#000000',
       white: '#ffffff',
       slate: {
-        100: '#f1f5f9',
-        200: '#e2e8f0',
-        400: '#94a3b8',
-        600: '#475569',
-        800: '#1e293b',
-        900: '#0f172a'
+        100: '#f3f4f6',
+        200: '#e5e7eb',
+        400: '#9ca3af',
+        600: '#4b5563',
+        800: '#1f2937',
+        900: '#111827'
       }
     },
     extend: {

@@ -39,10 +39,10 @@ const About = () => {
           <hr className="mx-auto my-4 h-1 w-6 rounded border-0 bg-aired"></hr>
         </h1>
 
-        <div className="items-center justify-center text-center align-top  md:flex-row">
+        <div className="items-center px-6 justify-center text-center align-top  md:flex-row">
           <div className="">
-            <h1 className="text-1xl font-semi-bold mb-6 text-center">Get to know me!</h1>
-            <p className="">
+            <h1 className="text-xl font-semi-bold mb-6 text-center">Get to know me!</h1>
+            <p className="text-md">
               Hi, my name is
               <span className="font-bold text-aired">{' Ali Imam '}</span>
               and I am a <span className="font-bold">{'highly ambitious'}</span>,
@@ -52,8 +52,8 @@ const About = () => {
               based in New Delhi, India.
             </p>
             <br />
-            <p className="text-slate-600 dark:text-slate-400">
-              I believe that you should <span className="font-bold ">never stop growing</span> and
+            <p className="text-sm text-slate-600 dark:text-slate-400">
+              I believe that you should never stop growing and
               that&#39;s what I strive to do, I have a passion for graphic design and a desire to
               always push the limits of what is possible. I am excited to see where my career takes
               me and am always open to new opportunities.
