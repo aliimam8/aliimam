@@ -1,6 +1,6 @@
 import { v2 as cloudinary } from 'cloudinary';
 
-import CldImage from 'src/components/common/pictures';
+import AliImage from 'src/components/common/pictures';
 import type { ImageProps } from 'src/utils/types';
 
 cloudinary.config({
@@ -22,7 +22,7 @@ export default async function Home({}: { images: ImageProps[] }) {
             return (
               <div key={resource.public_id} className="grid">
                 <div className="w-full p-1">
-                  <CldImage src={resource.secure_url} alt={[]} />
+                  <AliImage src={resource.secure_url} alt={[]} />
                 </div>
               </div>
             );

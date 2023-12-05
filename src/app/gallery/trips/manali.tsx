@@ -1,9 +1,8 @@
 import { v2 as cloudinary } from 'cloudinary';
 
-import CldImage from 'src/components/CldImage';
+import AliImage from 'src/components/common/pictures';
 import type { ImageProps } from 'src/utils/types';
 
-import { Dialog, DialogContent, DialogTrigger } from 'src/components/ui/dialog';
 
 cloudinary.config({
   cloud_name: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
@@ -24,29 +23,7 @@ export default async function Home({}: { images: ImageProps[] }) {
             return (
               <div key={resource.public_id} className="grid">
                 <div className="w-full p-1">
-                  <Dialog>
-                    <DialogTrigger asChild>
-                      <CldImage
-                        className="block transition duration-300 ease-in-out h-full w-full cursor-zoom-in rounded-lg object-cover object-center saturate-100 hover:saturate-0"
-                        width={300}
-                        height={300}
-                        src={resource.secure_url}
-                        alt=""
-                      />
-                    </DialogTrigger>
-                    <DialogContent className="max-w-[700px]">
-                      <div className="flex items-center justify-center text-center">
-                        <CldImage
-                          className="cursor-close block h-full w-full object-center"
-                          width={1000}
-                          height={1000}
-                          src={resource.secure_url}
-                          alt=""
-                          sizes="100vw"
-                        />
-                      </div>
-                    </DialogContent>
-                  </Dialog>
+                  <AliImage src={resource.secure_url} alt={[]} />
                 </div>
               </div>
             );

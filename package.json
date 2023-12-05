@@ -17,6 +17,7 @@
     "*": "prettier --write --ignore-unknown"
   },
   "dependencies": {
+    "@angular/cdk": "^17.0.2",
     "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^2.0.18",
     "@nextui-org/react": "^2.2.9",
@@ -46,12 +47,14 @@
     "next-cloudinary": "^5.7.0",
     "next-contentlayer": "^0.3.4",
     "next-themes": "^0.2.1",
+    "ng-gallery": "^11.0.0",
     "path": "^0.12.7",
     "pliny": "^0.1.6",
     "react": "^18.2.0",
     "react-bootstrap": "^2.9.1",
     "react-dom": "^18.2.0",
     "react-fast-marquee": "^1.6.2",
+    "react-photo-album": "^2.3.0",
     "react-spring-lightbox": "^1.8.0",
     "react-typed": "^1.2.0",
     "react-wrap-balancer": "^1.1.0",
@@ -63,7 +66,8 @@
     "stream": "^0.0.2",
     "swr": "^2.2.4",
     "tailwind-merge": "^2.0.0",
-    "use-breakpoint": "^4.0.1"
+    "use-breakpoint": "^4.0.1",
+    "yet-another-react-lightbox": "^3.15.6"
   },
   "devDependencies": {
     "@tailwindcss/container-queries": "^0.1.1",
