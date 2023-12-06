@@ -4,7 +4,9 @@ import Logos from 'src/components/common/logos';
 import Hero from 'src/components/common/hero';
 import Favo from '@/components/common/fav';
 import About from 'src/components/common/about';
+import Intro from 'src/components/common/intro';
 import Projects from '@/components/projects';
+import { ScrollProvider } from '@/components/ScrollProvider';
 
 export const runtime = 'edge';
 
@@ -21,6 +23,7 @@ export default function HomePage() {
       <Suspense>
         <Hero />
         <Logos />
+        <Intro/>
         <div className="mx-auto mt-10 max-w-3xl px-4 sm:px-6 md:max-w-5xl ">
           <About />
         </div>

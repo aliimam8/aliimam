@@ -5,6 +5,7 @@ import Navbar from '../components/layout/navbar';
 import { ThemeProvider } from '../components/providers';
 import { Analytics } from '@vercel/analytics/react';
 import { ensureStartsWith } from '../lib/utils';
+import LenisProvider from '@/components/LenisProvider';
 import { inter } from './fonts';
 
 const { TWITTER_CREATOR, TWITTER_SITE, SITE_NAME } = process.env;
@@ -48,9 +49,9 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
       <body className="bg-white dark:bg-black">
         <ThemeProvider enableSystem={true} attribute="class">
           <Navbar />
-          <Suspense>
+          <LenisProvider>
             <main>{children}</main>
-          </Suspense>
+            </LenisProvider>
           <SiteFooter />
         </ThemeProvider>
         <Analytics />

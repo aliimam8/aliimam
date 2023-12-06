@@ -9,7 +9,7 @@ cloudinary.config({
 });
 
 export default async function Favo() {
-  const expression = 'folder=fav';
+  const expression = 'folder=travell/manali';
 
   const { resources } = await cloudinary.search.expression(expression).execute();
 

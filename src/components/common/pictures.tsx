@@ -4,6 +4,7 @@ import CldImage from 'src/components/CldImage';
 import { AIImage } from 'src/utils/types';
 import { Icons } from 'src/components/icons';
 import { Dialog, DialogContent, DialogTrigger } from 'src/components/ui/dialog';
+import { Button } from '../ui/button';
 
 export default function AliImage({ src, alt }: { src: AIImage[]; alt: AIImage[] }) {
   return (
@@ -22,7 +23,6 @@ export default function AliImage({ src, alt }: { src: AIImage[]; alt: AIImage[] 
           <div className="mb-4 flex items-center justify-center text-center">
             <Icons.download className="w-10" />
           </div>
-
           <div className="flex items-center justify-center text-center">
             <CldImage
               className="cursor-close block h-full w-full object-center"

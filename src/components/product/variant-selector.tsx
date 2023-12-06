@@ -91,7 +91,7 @@ export function VariantSelector({
                   'cursor-default ring-2 ring-aired': isActive,
                   'hover:scale-102 ring-1 ring-transparent transition duration-300 ease-in-out hover:ring-aired ':
                     !isActive && isAvailableForSale,
-                  'before:bg-slate-300 relative z-10 cursor-not-allowed overflow-hidden bg-aired text-white ring-1 ring-slate-200 before:absolute before:inset-x-0 before:-z-10 before:h-px before:-rotate-45 before:transition-transform  dark:text-white dark:ring-aired before:dark:bg-aired':
+                  'before:bg-aired relative z-10 cursor-not-allowed overflow-hidden bg-aired ring-1 before:absolute before:inset-x-0 before:-z-10 before:h-px before:-rotate-45 before:transition-transform ring-aired dark:bg-aired':
                     !isAvailableForSale
                 }
               )}
