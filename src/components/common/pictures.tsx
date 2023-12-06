@@ -19,18 +19,20 @@ export default function AliImage({ src, alt }: { src: AIImage[]; alt: AIImage[] 
           />
         </DialogTrigger>
         <DialogContent className="max-w-[700px]">
+          <div className="mb-4 flex items-center justify-center text-center">
+            <Icons.download className="w-10" />
+          </div>
+
           <div className="flex items-center justify-center text-center">
             <CldImage
               className="cursor-close block h-full w-full object-center"
               width={1000}
               height={1000}
-              target="_blank"
               src={src}
               download={true}
               alt=""
               sizes="100vw"
             />
-            <Icons.download className="w-5 h-5" />
           </div>
         </DialogContent>
       </Dialog>
