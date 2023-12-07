@@ -6,10 +6,12 @@ import Link from 'next/link';
 import { usePathname, useSearchParams } from 'next/navigation';
 import { GridImage } from 'src/components/grid/tile';
 import { createUrl } from 'src/lib/utils';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
 
 export function Gallery({ images }: { images: { src: string; altText: string }[] }) {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
+  const searchParams = useSearchParams(); 
   const imageSearchParam = searchParams.get('image');
   const imageIndex = imageSearchParam ? parseInt(imageSearchParam) : 0;
 
@@ -30,14 +32,18 @@ export function Gallery({ images }: { images: { src: string; altText: string }[]
     <>
       <div className="relative aspect-square h-full max-h-[550px] w-full overflow-hidden">
         {images[imageIndex] && (
-          <Image
-            className="h-full w-full object-cover"
-            fill
-            sizes="(min-width: 1024px) 66vw, 100vw"
-            alt={images[imageIndex]?.altText as string}
-            src={images[imageIndex]?.src as string}
-            priority={true}
-          />
+          <PhotoProvider maskOpacity={0.9}>
+            <PhotoView src={images[imageIndex]?.src as string} >
+              <Image
+                className="h-full w-full object-cover"
+                fill
+                sizes="(min-width: 1024px) 66vw, 100vw"
+                alt={images[imageIndex]?.altText as string}
+                src={images[imageIndex]?.src as string}
+                priority={true}
+              />
+            </PhotoView>
+          </PhotoProvider>
         )}
 
         {images.length > 1 ? (
@@ -51,7 +57,7 @@ export function Gallery({ images }: { images: { src: string; altText: string }[]
               >
                 <ArrowLeftIcon className="h-5" />
               </Link>
-              <div className="bg-black dark:bg-white mx-1 h-6 w-px"></div>
+              <div className="mx-1 h-6 w-px bg-black dark:bg-white"></div>
               <Link
                 aria-label="Next product image"
                 href={nextUrl}
@@ -81,13 +87,13 @@ export function Gallery({ images }: { images: { src: string; altText: string }[]
                   scroll={false}
                   className="h-full w-full"
                 >
-                  <GridImage
-                    alt={image.altText}
-                    src={image.src}
-                    width={80}
-                    height={80}
-                    active={isActive}
-                  />
+                      <GridImage
+                        alt={image.altText}
+                        src={image.src}
+                        width={80}
+                        height={80}
+                        active={isActive}
+                      />
                 </Link>
               </li>
             );

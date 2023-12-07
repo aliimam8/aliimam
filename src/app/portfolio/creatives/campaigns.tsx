@@ -21,7 +21,7 @@ export default async function Home({}: { images: ImageProps[] }) {
             return (
               <div key={resource.public_id} className="grid">
                 <div className="w-full p-1">
-                  <AliImage src={resource.secure_url} alt={[]} />
+                <AliImage images={resource.secure_url}/>
                 </div>
               </div>
             );

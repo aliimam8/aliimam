@@ -162,7 +162,7 @@ export function SiteFooter() {
           <span> © </span>
           <span>{new Date().getFullYear()}</span>
           <span>Made with</span>
-          <span className="animate-pulse text-aired">❤</span>
+          <Icons.heart className="w-4 h-4 mx-1 animate-pulse"/>
           <span> by </span>
           <span className="cursor-pointer font-bold text-black hover:text-aired dark:hover:text-aired dark:text-white">
            <a href="/">

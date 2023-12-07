@@ -1,5 +1,5 @@
 import { v2 as cloudinary } from 'cloudinary';
-
+import { AIImage } from 'src/utils/types';
 import AliImage from 'src/components/common/pictures';
 
 cloudinary.config({
@@ -21,7 +21,7 @@ export default async function Favo() {
             return (
               <div key={resource.public_id} className="grid">
                 <div className="w-full p-1">
-                  <AliImage src={resource.secure_url} alt={[]} />
+                  <AliImage images={resource.secure_url}/>
                 </div>
               </div>
             );

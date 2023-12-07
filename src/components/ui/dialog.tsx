@@ -46,7 +46,7 @@ const DialogContent = React.forwardRef<
     >
       {children}
       <DialogPrimitive.Close className="flex items-center justify-center p-4 text-center">
-        
+      <Icons.close className="h-8 p-1 border border-aired/25 w-8 rounded-lg bg-aired text-white" />
       </DialogPrimitive.Close>
     </DialogPrimitive.Content>
   </DialogPortal>

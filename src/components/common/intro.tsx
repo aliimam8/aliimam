@@ -44,10 +44,10 @@ export default function Intro() {
       className="relative z-10 "
       id="intro"
     >
-      <div className="mx-auto text-center flex px-8 my-20 md:my-40 max-w-7xl flex-col items-center justify-center text-3xl font-extrabold tracking-tight md:text-6xl">
-        <div className="leading-[1.15] flex flex-col gap-10">
+      <div className="mx-auto text-center flex px-8 my-20 md:my-40 max-w-7xl flex-col items-center justify-center text-3xl font-extrabold tracking-tighter md:text-6xl">
+        <div className="leading-[1.2] flex flex-col gap-10">
           <div className="introText flex items-center justify-center" style={{ opacity: opacityForBlock(progress, 0) }}>
-            I <span className="animate-pulse text-2xl md:text-5xl mt-1 md:mt-2 px-1 md:px-3 text-aired">❤</span> design.
+            I <Icons.heart className="animate-pulse mt-2 h-7 w-7 md:h-12 md:w-12 mx-2 md:mx-3 text-aired" /> design.
           </div>
           <span
             className="introText inline-block after:content-['_']"
