@@ -1,5 +1,4 @@
 import { v2 as cloudinary } from 'cloudinary';
-import { AIImage } from 'src/utils/types';
 import AliImage from 'src/components/common/pictures';
 
 cloudinary.config({
@@ -9,7 +8,7 @@ cloudinary.config({
 });
 
 export default async function Favo() {
-  const expression = 'folder=travell/manali';
+  const expression = 'folder=fav';
 
   const { resources } = await cloudinary.search.expression(expression).execute();
 

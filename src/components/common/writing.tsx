@@ -16,7 +16,7 @@ const config: SWRConfiguration = {
 const fetcher: Fetcher<Dev> = (input: RequestInfo | URL) => fetch(input).then((res) => res.json());
 
 const Writing: FC = () => {
-  const { data } = useSWR<Dev>('/api/dev', fetcher, config);
+  const { data } = useSWR<Dev>('/api/send', fetcher, config);
 
   return (
     <div className="mx-auto mt-20 max-w-3xl px-4 sm:px-6 md:max-w-5xl ">
