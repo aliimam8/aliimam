@@ -11,7 +11,7 @@ import 'react-photo-view/dist/react-photo-view.css';
 
 export function Gallery({ images }: { images: { src: string; altText: string }[] }) {
   const pathname = usePathname();
-  const searchParams = useSearchParams(); 
+  const searchParams = useSearchParams();
   const imageSearchParam = searchParams.get('image');
   const imageIndex = imageSearchParam ? parseInt(imageSearchParam) : 0;
 
@@ -31,9 +31,9 @@ export function Gallery({ images }: { images: { src: string; altText: string }[]
   return (
     <>
       <div className="relative aspect-square h-full max-h-[550px] w-full overflow-hidden">
-        {images[imageIndex] && (
-          <PhotoProvider maskOpacity={0.9}>
-            <PhotoView src={images[imageIndex]?.src as string} >
+        <PhotoProvider maskOpacity={0.9}>
+          <PhotoView src={images[imageIndex]?.src as string}>
+            {images[imageIndex] && (
               <Image
                 className="h-full w-full object-cover"
                 fill
@@ -42,9 +42,9 @@ export function Gallery({ images }: { images: { src: string; altText: string }[]
                 src={images[imageIndex]?.src as string}
                 priority={true}
               />
-            </PhotoView>
-          </PhotoProvider>
-        )}
+            )}
+          </PhotoView>
+        </PhotoProvider>
 
         {images.length > 1 ? (
           <div className="absolute bottom-[2%] flex w-full justify-center">
@@ -87,13 +87,13 @@ export function Gallery({ images }: { images: { src: string; altText: string }[]
                   scroll={false}
                   className="h-full w-full"
                 >
-                      <GridImage
-                        alt={image.altText}
-                        src={image.src}
-                        width={80}
-                        height={80}
-                        active={isActive}
-                      />
+                  <GridImage
+                    alt={image.altText}
+                    src={image.src}
+                    width={80}
+                    height={80}
+                    active={isActive}
+                  />
                 </Link>
               </li>
             );

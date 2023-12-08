@@ -1,4 +1,5 @@
 import { v2 as cloudinary } from 'cloudinary';
+import { AIImage } from 'src/utils/types';
 import AliImage from 'src/components/common/pictures';
 
 cloudinary.config({
