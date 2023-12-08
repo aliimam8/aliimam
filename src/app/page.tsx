@@ -23,6 +23,7 @@ export default function HomePage() {
       <Suspense>
         <Hero />
         <Logos />
+        <Favo/>
         <Intro/>
         <div className="mx-auto mt-10 max-w-3xl px-4 sm:px-6 md:max-w-5xl ">
           <About />

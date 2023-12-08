@@ -11,7 +11,7 @@ export default function Logos() {
       </h1>
       <div>
         <Marquee direction="left" speed={40} delay={0} pauseOnHover={true}>
-          <div className="image_wrapper relative mx-auto mb-10 flex w-full justify-start gap-6 overflow-hidden sm:gap-10 lg:mt-6 ">
+          <div className="image_wrapper relative mx-auto flex w-full justify-start gap-6 overflow-hidden sm:gap-10 lg:mt-6 ">
             <Link href="/" passHref>
               <span className="block dark:hidden">
                 <Image alt="Ali Imam" height={100} width={100} src="/logos/c1-2.png" />

@@ -1,32 +1,71 @@
 'use client';
-import Link from 'next/link';
+import React from 'react';
 import CldImage from 'src/components/CldImage';
-import { usePathname, useSearchParams } from 'next/navigation';
+import { Icons } from 'src/components/icons';
+import Link from 'next/link';
 
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
 
 export default function AliImage({ images }: { images: { src: string; altText: string }[] }) {
-  const searchParams = useSearchParams();
-  const imageSearchParam = searchParams.get('image');
-  const imageIndex = imageSearchParam ? parseInt(imageSearchParam) : 0;
-
-  const nextSearchParams = new URLSearchParams(searchParams.toString());
-  const nextImageIndex = imageIndex + 1 < images.length ? imageIndex + 1 : 0;
-  nextSearchParams.set('image', nextImageIndex.toString());
-
-  const previousSearchParams = new URLSearchParams(searchParams.toString());
-  const previousImageIndex = imageIndex === 0 ? images.length - 1 : imageIndex - 1;
-  previousSearchParams.set('image', previousImageIndex.toString());
-
+  function toggleFullScreen() {
+    if (document.fullscreenElement) {
+      document.exitFullscreen();
+    } else {
+      const element = document.querySelector('.PhotoView-Portal');
+      if (element) {
+        element.requestFullscreen();
+      }
+    }
+  }
   return (
     <div className="w-full">
-      <PhotoProvider maskOpacity={0.9}>
+      <PhotoProvider
+        maskOpacity={0.9}
+        toolbarRender={({ onScale, scale }) => {
+          return (
+            <div className="flex items-center gap-4 px-1">
+              <Link
+                href={images as unknown as string}
+                target="_blank"
+                className="hover:opacity-80"
+                download={true}
+              >
+                <div className="flex items-center gap-2">
+                  <Icons.download
+                    onClick={() => onScale(scale + 0.5)}
+                    strokeWidth={1.5}
+                    className="w-5 hover:opacity-80"
+                  />
+                  <p className="text-md">Free Download</p>
+                </div>
+              </Link>
+              <Icons.zoomin
+                onClick={() => onScale(scale + 0.5)}
+                strokeWidth={1.5}
+                className="w-5 hover:opacity-80"
+              />
+              <Icons.zoomout
+                onClick={() => onScale(scale - 0.5)}
+                strokeWidth={1.5}
+                className="w-5 hover:opacity-80"
+              />
+              {document.fullscreenEnabled && (
+                <Icons.maximize
+                  strokeWidth={2}
+                  className="w-5 hover:opacity-80"
+                  onClick={toggleFullScreen}
+                />
+              )}
+            </div>
+          );
+        }}
+      >
         <PhotoView src={images as unknown as string}>
           <CldImage
             className="block h-full w-full cursor-zoom-in rounded-lg object-cover object-center saturate-100 transition-all duration-100 hover:saturate-0"
-            width={200}
-            height={200}
+            width={300}
+            height={300}
             src={images}
             alt={images}
             priority={true}

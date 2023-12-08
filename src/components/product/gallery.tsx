@@ -8,8 +8,20 @@ import { GridImage } from 'src/components/grid/tile';
 import { createUrl } from 'src/lib/utils';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
+import { Icons } from 'src/components/icons';
 
 export function Gallery({ images }: { images: { src: string; altText: string }[] }) {
+  function toggleFullScreen() {
+    if (document.fullscreenElement) {
+      document.exitFullscreen();
+    } else {
+      const element = document.querySelector('.PhotoView-Portal');
+      if (element) {
+        element.requestFullscreen();
+      }
+    }
+  }
+
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const imageSearchParam = searchParams.get('image');
@@ -31,9 +43,45 @@ export function Gallery({ images }: { images: { src: string; altText: string }[]
   return (
     <>
       <div className="relative aspect-square h-full max-h-[550px] w-full overflow-hidden">
-        <PhotoProvider maskOpacity={0.9}>
-          <PhotoView src={images[imageIndex]?.src as string}>
-            {images[imageIndex] && (
+        {images[imageIndex] && (
+          <PhotoProvider
+            maskOpacity={0.9}
+            toolbarRender={({ onScale, scale }) => {
+              return (
+                <div className="flex items-center gap-4 px-1">
+                  <Link
+                    href={images[imageIndex]?.src as string}
+                    target="_blank"
+                    className="hover:opacity-80"
+                    download={true}
+                  >
+                    <div className='flex gap-2 items-center'>
+                    <Icons.download
+                      onClick={() => onScale(scale + 0.5)}
+                      strokeWidth={1.5}
+                      className="w-5 hover:opacity-80"
+                    />
+                    <p className="text-md">Free Download</p>
+                    </div>
+                  </Link>
+                  <Icons.zoomin
+                    onClick={() => onScale(scale + 0.5)}
+                    strokeWidth={1.5}
+                    className="w-5 hover:opacity-80"
+                  />
+                  <Icons.zoomout
+                    onClick={() => onScale(scale - 0.5)}
+                    strokeWidth={1.5}
+                    className="w-5 hover:opacity-80"
+                  />
+                  {document.fullscreenEnabled && (
+                    <Icons.maximize strokeWidth={2} className="w-5 hover:opacity-80" onClick={toggleFullScreen} />
+                  )}
+                </div>
+              );
+            }}
+          >
+            <PhotoView src={images[imageIndex]?.src as string}>
               <Image
                 className="h-full w-full object-cover"
                 fill
@@ -42,9 +90,9 @@ export function Gallery({ images }: { images: { src: string; altText: string }[]
                 src={images[imageIndex]?.src as string}
                 priority={true}
               />
-            )}
-          </PhotoView>
-        </PhotoProvider>
+            </PhotoView>
+          </PhotoProvider>
+        )}
 
         {images.length > 1 ? (
           <div className="absolute bottom-[2%] flex w-full justify-center">

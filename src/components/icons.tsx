@@ -50,6 +50,9 @@ import {
   Twitter,
   Eye,
   User,
+  Maximize,
+  ZoomIn,
+  ZoomOut,
   X,
   Youtube
 } from 'lucide-react';
@@ -69,6 +72,7 @@ export const Icons = {
   eye: Eye,
   camera: Camera,
   page: File,
+  zoomin: ZoomIn,
   undo2: Undo2,
   truck: Truck,
   LayoutGrid: LayoutGrid,
@@ -85,6 +89,8 @@ export const Icons = {
   send: Send,
   coffee: Coffee,
   mail: Mail,
+  zoomout: ZoomOut,
+  maximize: Maximize,
   packageopen: PackageOpen,
   minus: Minus,
   YouTube: Youtube,
