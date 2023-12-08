@@ -6,7 +6,7 @@ import Link from 'next/link';
 export default function Logos() {
   return (
     <div className="lg:mt-20">
-      <h1 className="mt-20 text-center text-sm font-semibold uppercase tracking-[.3em] text-slate-400 ">
+      <h1 className="mt-20 mb-6 text-center text-sm font-semibold uppercase tracking-[.3em] text-slate-400 ">
         Worked with Brands Like
       </h1>
       <div>

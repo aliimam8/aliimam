@@ -43,7 +43,7 @@ const About = () => {
 
         <div className="items-center justify-center px-6 text-center align-top  md:flex-row">
           <div className="">
-            <h1 className="my-10 text-center text-sm font-semibold uppercase tracking-[.3em] text-slate-400 ">
+            <h1 className="mt-10 mb-4 text-center text-sm font-semibold uppercase tracking-[.3em] text-slate-400 ">
               Get to know me!
             </h1>
             <p className="text-md">
