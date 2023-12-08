@@ -21,20 +21,18 @@ export default function AliImage({ images }: { images: { src: string; altText: s
 
   return (
     <div className="w-full">
-        <PhotoProvider maskOpacity={0.9}>
-          <PhotoView src={images}>  
-           
-            <CldImage
-              className="block h-full w-full cursor-zoom-in rounded-lg object-cover object-center saturate-100 transition-all duration-100 hover:saturate-0"
-              width={200}
-              height={200}
-              src={images}
-              alt={images}
-              priority={true}
-            />
-          </PhotoView>
-        </PhotoProvider>
-      
+      <PhotoProvider maskOpacity={0.9}>
+        <PhotoView src={images as unknown as string}>
+          <CldImage
+            className="block h-full w-full cursor-zoom-in rounded-lg object-cover object-center saturate-100 transition-all duration-100 hover:saturate-0"
+            width={200}
+            height={200}
+            src={images}
+            alt={images}
+            priority={true}
+          />
+        </PhotoView>
+      </PhotoProvider>
     </div>
   );
 }
