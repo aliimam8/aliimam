@@ -23,16 +23,16 @@ export default function HomePage() {
       <Suspense>
         <Hero />
         <Logos />
-        <Favo/>
-        <Intro/>
+        <Favo />
+        <Intro />
         <div className="mx-auto mt-10 max-w-3xl px-4 sm:px-6 md:max-w-5xl ">
           <About />
         </div>
         <Carousel />
-        <h1 className="my-10 mt-40 text-center text-2xl font-bold sm:text-4xl">
+        <h1 className="my-10 text-center text-sm font-semibold uppercase tracking-[.3em] text-slate-400 ">
           Projects
-          <hr className="bg-aired rounded-full mx-auto my-4 h-1 w-6 border-0"></hr>
         </h1>
+
         <Projects />
         <div className="absolute inset-0 -z-10 overflow-hidden">
           <svg

@@ -30,6 +30,8 @@ const stats = [
   { id: 3, name: 'Brands', value: '+100' }
 ];
 
+const Underline = `hover:-translate-y-1 border border-slate-100 dark:border-slate-900 rounded-xl p-2.5 transition-transform text-slate-600 hover:border-slate-200 dark:hover:border-slate-800 hover:text-black hover:dark:text-white dark:text-slate-400 `;
+
 const About = () => {
   return (
     <section id="about">
@@ -39,9 +41,11 @@ const About = () => {
           <hr className="mx-auto my-4 h-1 w-6 rounded border-0 bg-aired"></hr>
         </h1>
 
-        <div className="items-center px-6 justify-center text-center align-top  md:flex-row">
+        <div className="items-center justify-center px-6 text-center align-top  md:flex-row">
           <div className="">
-            <h1 className="text-xl font-semi-bold mb-6 text-center">Get to know me!</h1>
+            <h1 className="my-10 text-center text-sm font-semibold uppercase tracking-[.3em] text-slate-400 ">
+              Get to know me!
+            </h1>
             <p className="text-md">
               Hi, my name is
               <span className="font-bold text-aired">{' Ali Imam '}</span>
@@ -53,10 +57,10 @@ const About = () => {
             </p>
             <br />
             <p className="text-sm text-slate-600 dark:text-slate-400">
-              I believe that you should never stop growing and
-              that&#39;s what I strive to do, I have a passion for graphic design and a desire to
-              always push the limits of what is possible. I am excited to see where my career takes
-              me and am always open to new opportunities.
+              I believe that you should never stop growing and that&#39;s what I strive to do, I
+              have a passion for graphic design and a desire to always push the limits of what is
+              possible. I am excited to see where my career takes me and am always open to new
+              opportunities.
             </p>
           </div>
           <h1 className="mt-6 text-center text-lg font-bold">My Age</h1>
@@ -93,6 +97,8 @@ const About = () => {
               </span>
             </Link>
           </div>
+
+          
 
           <div className="pt-10">
             <div className="flex flex-wrap justify-center">

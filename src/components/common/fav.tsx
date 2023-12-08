@@ -32,11 +32,7 @@ export default function Favo() {
     }
   }
   return (
-    <main className="">
-      <h1 className="my-10 mt-20 text-center text-2xl font-bold sm:text-4xl">
-          Images Captured
-          <hr className="bg-aired rounded-full mx-auto my-4 h-1 w-6 border-0"></hr>
-        </h1>
+    <main className="mt-20">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:max-w-6xl">
         <div className="grid grid-cols-3 lg:grid-cols-6">
           <PhotoProvider
