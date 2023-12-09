@@ -19,7 +19,7 @@ export default async function HomePage() {
         <div className="mx-auto mt-20 max-w-3xl px-4 sm:px-6 md:max-w-5xl ">
           <div className="flex items-center justify-center text-center">
             <Image
-              src="/ali.png"
+              src="/ali.jpg"
               alt="Your Image"
               height={1000}
               width={1000}

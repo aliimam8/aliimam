@@ -28,7 +28,7 @@ export function NavMenu() {
                 <NavigationMenuLink asChild>
                   <a className="flex flex-col justify-end rounded-lg" href="/about">
                     <Image
-                      src="/ali.png"
+                      src="/ali.jpg"
                       alt="Your Image"
                       height={1000}
                       width={1000}

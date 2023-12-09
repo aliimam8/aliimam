@@ -11,6 +11,7 @@ import { getProduct, getProductRecommendations } from 'src/lib/shopify';
 import { Image } from 'src/lib/shopify/types';
 import { Carousel } from 'src/components/carousel';
 import Info from '../tabs';
+import { FAQ } from '../faq';
 
 export const runtime = 'edge';
 
@@ -104,6 +105,7 @@ export default async function ProductPage({ params }: { params: { handle: string
 
       <Carousel />
       <Info />
+      <FAQ />
     </>
   );
 }

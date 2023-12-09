@@ -101,7 +101,7 @@ const About = () => {
           <h1 className="mb-4 mt-10 text-center text-sm font-semibold uppercase tracking-[.3em] text-slate-400 ">
             Tools
           </h1>
-          <div className="flex flex-wrap items-center justify-center gap-6 gap-y-4 px-8">
+          <div className="flex flex-wrap items-center justify-center gap-6 gap-y-4 px-2">
             <Link
               href="https://www.adobe.com/in/products/photoshop.html"
               rel="noreferrer"
@@ -143,14 +143,6 @@ const About = () => {
               <Icons.cinema4d className="h-5 w-5" />
             </Link>
             <Link
-              href="https://code.visualstudio.com/"
-              rel="noreferrer"
-              target="_blank"
-              className={Underline}
-            >
-              <Icons.visualstudio className="h-5 w-5" />
-            </Link>
-            <Link
               href="https://www.autodesk.in/products/maya/"
               rel="noreferrer"
               target="_blank"
@@ -158,6 +150,15 @@ const About = () => {
             >
               <Icons.maya className="h-5 w-5" />
             </Link>
+            <Link
+              href="https://code.visualstudio.com/"
+              rel="noreferrer"
+              target="_blank"
+              className={Underline}
+            >
+              <Icons.visualstudio className="h-5 w-5" />
+            </Link>
+            
             <Link
               href="https://www.typescriptlang.org/"
               rel="noreferrer"

@@ -15,7 +15,8 @@ const navigation = [
   { name: 'Gallery', href: '/gallery', current: true },
   { name: 'Portfolio', href: '/portfolio', current: true },
   { name: 'Store', href: '/store', current: true },
-  { name: 'Blogs', href: '/blog', current: true }
+  { name: 'Blogs', href: '/blog', current: true },
+  { name: 'Account', href: 'https://shopify.com/63673860265/account', current: true }
 ];
 
 const helps = [
