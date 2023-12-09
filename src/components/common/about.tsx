@@ -43,7 +43,7 @@ const About = () => {
 
         <div className="items-center justify-center px-6 text-center align-top  md:flex-row">
           <div className="">
-            <h1 className="mt-10 mb-4 text-center text-sm font-semibold uppercase tracking-[.3em] text-slate-400 ">
+            <h1 className="mb-4 mt-10 text-center text-sm font-semibold uppercase tracking-[.3em] text-slate-400 ">
               Get to know me!
             </h1>
             <p className="text-md">
@@ -98,7 +98,78 @@ const About = () => {
             </Link>
           </div>
 
-          
+          <h1 className="mb-4 mt-10 text-center text-sm font-semibold uppercase tracking-[.3em] text-slate-400 ">
+            Tools
+          </h1>
+          <div className="flex flex-wrap items-center justify-center gap-6 gap-y-4 px-8">
+            <Link
+              href="https://www.adobe.com/in/products/photoshop.html"
+              rel="noreferrer"
+              target="_blank"
+              className={Underline}
+            >
+              <Icons.photoshop strokeWidth={1.5} className="h-5 w-5" />
+            </Link>
+            <Link
+              href="https://www.adobe.com/in/products/illustrator.html"
+              rel="noreferrer"
+              target="_blank"
+              className={Underline}
+            >
+              <Icons.illustrator strokeWidth={1.5} className="h-5 w-5" />
+            </Link>
+            <Link
+              href="https://www.adobe.com/in/products/aftereffects.html"
+              rel="noreferrer"
+              target="_blank"
+              className={Underline}
+            >
+              <Icons.aftereffects className="h-5 w-5" />
+            </Link>
+            <Link
+              href="https://www.adobe.com/in/products/premiere.html"
+              rel="noreferrer"
+              target="_blank"
+              className={Underline}
+            >
+              <Icons.premierepro strokeWidth={1.5} className="h-5 w-5" />
+            </Link>
+            <Link
+              href="https://www.maxon.net/en/cinema-4d"
+              rel="noreferrer"
+              target="_blank"
+              className={Underline}
+            >
+              <Icons.cinema4d className="h-5 w-5" />
+            </Link>
+            <Link
+              href="https://code.visualstudio.com/"
+              rel="noreferrer"
+              target="_blank"
+              className={Underline}
+            >
+              <Icons.visualstudio className="h-5 w-5" />
+            </Link>
+            <Link
+              href="https://www.autodesk.in/products/maya/"
+              rel="noreferrer"
+              target="_blank"
+              className={Underline}
+            >
+              <Icons.maya className="h-5 w-5" />
+            </Link>
+            <Link
+              href="https://www.typescriptlang.org/"
+              rel="noreferrer"
+              target="_blank"
+              className={Underline}
+            >
+              <Icons.typescript className="h-5 w-5" />
+            </Link>
+            <Link href="https://react.dev/" rel="noreferrer" target="_blank" className={Underline}>
+              <Icons.react className="h-5 w-5" />
+            </Link>
+          </div>
 
           <div className="pt-10">
             <div className="flex flex-wrap justify-center">

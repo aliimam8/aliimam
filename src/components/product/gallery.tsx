@@ -49,21 +49,6 @@ export function Gallery({ images }: { images: { src: string; altText: string }[]
             toolbarRender={({ onScale, scale }) => {
               return (
                 <div className="flex items-center gap-4 px-1">
-                  <Link
-                    href={images[imageIndex]?.src as string}
-                    target="_blank"
-                    className="hover:opacity-80"
-                    download={true}
-                  >
-                    <div className='flex gap-2 items-center'>
-                    <Icons.download
-                      onClick={() => onScale(scale + 0.5)}
-                      strokeWidth={1.5}
-                      className="w-5 hover:opacity-80"
-                    />
-                    <p className="text-md">Free Download</p>
-                    </div>
-                  </Link>
                   <Icons.zoomin
                     onClick={() => onScale(scale + 0.5)}
                     strokeWidth={1.5}
