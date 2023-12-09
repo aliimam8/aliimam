@@ -32,7 +32,7 @@ export default function Favo() {
     }
   }
   return (
-    <main className="mt-20">
+    <main className="mt-10 md:mt-20">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:max-w-6xl">
         <div className="grid grid-cols-3 lg:grid-cols-6">
           <PhotoProvider
