@@ -1,6 +1,6 @@
 import { v2 as cloudinary } from 'cloudinary';
 
-import AliImage from 'src/components/common/pictures';
+import { AliImage } from 'src/components/common/pictures';
 import type { ImageProps } from 'src/utils/types';
 
 

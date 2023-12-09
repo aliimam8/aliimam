@@ -12,7 +12,7 @@ export default function SearchLayout({ children }: { children: React.ReactNode }
         <h1 className="mt-40 text-center text-2xl font-bold sm:text-4xl">AI Store</h1>
       </Link>
       <ScrollArea className="mx-auto mt-10 whitespace-nowrap">
-        <div className="flex items-center justify-center gap-3 px-4">
+        <div className="flex items-center justify-center gap-3 px-10">
           <Link
             href="/store/apparel"
             rel="noreferrer"

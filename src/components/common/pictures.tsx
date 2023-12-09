@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
 
-export default function AliImage({ images }: { images: { src: string; altText: string }[] }) {
+export function AliImage({ images }: { images: { src: string; altText: string }[] }) {
   function toggleFullScreen() {
     if (document.fullscreenElement) {
       document.exitFullscreen();
@@ -75,3 +75,58 @@ export default function AliImage({ images }: { images: { src: string; altText: s
     </div>
   );
 }
+
+
+export function ImamImage({ images }: { images: { src: string; altText: string }[] }) {
+  function toggleFullScreen() {
+    if (document.fullscreenElement) {
+      document.exitFullscreen();
+    } else {
+      const element = document.querySelector('.PhotoView-Portal');
+      if (element) {
+        element.requestFullscreen();
+      }
+    }
+  }
+  return (
+    <div className="w-full">
+      <PhotoProvider
+        maskOpacity={0.9}
+        toolbarRender={({ onScale, scale }) => {
+          return (
+            <div className="flex items-center gap-4 px-1">
+              <Icons.zoomin
+                onClick={() => onScale(scale + 0.5)}
+                strokeWidth={1.5}
+                className="w-5 hover:opacity-80"
+              />
+              <Icons.zoomout
+                onClick={() => onScale(scale - 0.5)}
+                strokeWidth={1.5}
+                className="w-5 hover:opacity-80"
+              />
+              {document.fullscreenEnabled && (
+                <Icons.maximize
+                  strokeWidth={2}
+                  className="w-5 hover:opacity-80"
+                  onClick={toggleFullScreen}
+                />
+              )}
+            </div>
+          );
+        }}
+      >
+        <PhotoView src={images as unknown as string}>
+          <CldImage
+            className="block h-full w-full cursor-zoom-in rounded-lg object-cover object-center saturate-100 transition-all duration-100 hover:saturate-0"
+            width={300}
+            height={300}
+            src={images}
+            alt={images}
+          />
+        </PhotoView>
+      </PhotoProvider>
+    </div>
+  );
+}
+
