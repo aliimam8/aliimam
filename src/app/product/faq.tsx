@@ -7,7 +7,7 @@ import {
 
 export function FAQ() {
   return (
-    <div className="mx-auto mt-20 max-w-3xl px-4 md:max-w-3xl">
+    <div className="mx-auto mt-20 max-w-3xl px-8 md:max-w-3xl">
       <Accordion type="single" collapsible className="w-full">
         <AccordionItem value="item-1">
           <AccordionTrigger className="text-xl font-semibold md:text-2xl">
