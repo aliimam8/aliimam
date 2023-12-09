@@ -1,6 +1,5 @@
 'use client';
 import Image from 'next/image';
-import Link from 'next/link';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
 import { Icons } from 'src/components/icons';
@@ -40,16 +39,6 @@ export default function Favo() {
             toolbarRender={({ onScale, scale }) => {
               return (
                 <div className="flex items-center gap-4 px-1">
-                  <Link href={''} target="_blank" className="hover:opacity-80" download={true}>
-                    <div className="flex items-center gap-2">
-                      <Icons.download
-                        onClick={() => onScale(scale + 0.5)}
-                        strokeWidth={1.5}
-                        className="w-5 hover:opacity-80"
-                      />
-                      <p className="text-md">Free Download</p>
-                    </div>
-                  </Link>
                   <Icons.zoomin
                     onClick={() => onScale(scale + 0.5)}
                     strokeWidth={1.5}

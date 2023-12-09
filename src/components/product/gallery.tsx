@@ -68,7 +68,7 @@ export function Gallery({ images }: { images: { src: string; altText: string }[]
           >
             <PhotoView src={images[imageIndex]?.src as string}>
               <Image
-                className="h-full w-full object-cover"
+                className="h-full cursor-zoom-in w-full object-cover"
                 fill
                 sizes="(min-width: 1024px) 66vw, 100vw"
                 alt={images[imageIndex]?.altText as string}
