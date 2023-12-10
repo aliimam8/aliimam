@@ -6,7 +6,6 @@ import Favo from '@/components/common/fav';
 import About from 'src/components/common/about';
 import Intro from 'src/components/common/intro';
 import Projects from '@/components/projects';
-import { ScrollProvider } from '@/components/ScrollProvider';
 
 export const runtime = 'edge';
 

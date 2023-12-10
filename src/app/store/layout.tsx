@@ -50,7 +50,7 @@ export default function SearchLayout({ children }: { children: React.ReactNode }
             <p className="text-xs">Images & Videos</p>
           </Link>
           <Link
-            href="/store/ai-assets"
+            href="/store/assets"
             rel="noreferrer"
             className="flex w-[125px] flex-col items-center rounded-xl border border-slate-200 p-2 py-6 text-center hover:bg-slate-100/50 dark:border-slate-800 dark:hover:bg-slate-900/50 md:p-6 md:w-[150px]"
           >
