@@ -43,32 +43,36 @@ export function Gallery({ images }: { images: { src: string; altText: string }[]
   return (
     <>
       <div className="relative aspect-square h-full max-h-[550px] w-full overflow-hidden">
-        {images[imageIndex] && (
-          <PhotoProvider
-            maskOpacity={0.9}
-            toolbarRender={({ onScale, scale }) => {
-              return (
-                <div className="flex items-center gap-4 px-1">
-                  <Icons.zoomin
-                    onClick={() => onScale(scale + 0.5)}
-                    strokeWidth={1.5}
+        <PhotoProvider
+          maskOpacity={0.9}
+          toolbarRender={({ onScale, scale }) => {
+            return (
+              <div className="flex items-center gap-4 px-1">
+                <Icons.zoomin
+                  onClick={() => onScale(scale + 0.5)}
+                  strokeWidth={1.5}
+                  className="w-5 hover:opacity-80"
+                />
+                <Icons.zoomout
+                  onClick={() => onScale(scale - 0.5)}
+                  strokeWidth={1.5}
+                  className="w-5 hover:opacity-80"
+                />
+                {document.fullscreenEnabled && (
+                  <Icons.maximize
+                    strokeWidth={2}
                     className="w-5 hover:opacity-80"
+                    onClick={toggleFullScreen}
                   />
-                  <Icons.zoomout
-                    onClick={() => onScale(scale - 0.5)}
-                    strokeWidth={1.5}
-                    className="w-5 hover:opacity-80"
-                  />
-                  {document.fullscreenEnabled && (
-                    <Icons.maximize strokeWidth={2} className="w-5 hover:opacity-80" onClick={toggleFullScreen} />
-                  )}
-                </div>
-              );
-            }}
-          >
+                )}
+              </div>
+            );
+          }}
+        >
+          {images[imageIndex] && (
             <PhotoView src={images[imageIndex]?.src as string}>
               <Image
-                className="h-full cursor-zoom-in w-full object-cover"
+                className="h-full w-full cursor-zoom-in object-cover"
                 fill
                 sizes="(min-width: 1024px) 66vw, 100vw"
                 alt={images[imageIndex]?.altText as string}
@@ -76,8 +80,8 @@ export function Gallery({ images }: { images: { src: string; altText: string }[]
                 priority={true}
               />
             </PhotoView>
-          </PhotoProvider>
-        )}
+          )}
+        </PhotoProvider>
 
         {images.length > 1 ? (
           <div className="absolute bottom-[2%] flex w-full justify-center">
