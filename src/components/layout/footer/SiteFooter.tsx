@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Icons } from 'src/components/icons';
 import { Coffee } from './coffee';
 import ThemeToogle from './theme';
+import CurrentVisitors from 'src/components/common/current-visitors'
 
 const Underline = `hover:-translate-y-1 border border-slate-100 dark:border-slate-900 rounded-xl p-2.5 transition-transform text-slate-600 hover:border-slate-200 dark:hover:border-slate-800 hover:text-black hover:dark:text-white dark:text-slate-400 `;
 
@@ -68,6 +69,11 @@ export function SiteFooter() {
           <Icons.aiLogo className="w-10" />
         </Link>
       </div>
+
+      <div className='mt-20 flex flex-wrap justify-center text-sm'>
+        {process.env.NODE_ENV === 'production' && <CurrentVisitors />}
+      </div>
+
       <div className="mt-10 flex flex-wrap justify-center gap-8 ">
         <Coffee />
       </div>
