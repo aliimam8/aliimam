@@ -4,6 +4,7 @@ import About from 'src/components/common/about';
 import Logos from 'src/components/common/logos';
 import { Experience } from 'src/components/common/experience';
 import Writing from 'src/components/common/writing';
+import Dashboard from 'src/components/common/dashboard';
 
 import { type Metadata } from 'next';
 
@@ -27,9 +28,11 @@ export default async function HomePage() {
             />
           </div>
         </div>
-        <div className="mx-auto mt-10 max-w-3xl px-4 sm:px-6 md:max-w-5xl ">
-          <About />
 
+        <div className="mx-auto mt-10 max-w-3xl px-4 sm:px-6 md:max-w-5xl ">
+
+        <Dashboard/>
+          <About />
           <Experience />
         </div>
         <Logos />

@@ -70,7 +70,7 @@ export function SiteFooter() {
         </Link>
       </div>
 
-      <div className='mt-20 flex flex-wrap justify-center text-sm'>
+      <div className='mt-10 flex flex-wrap justify-center text-sm'>
         {process.env.NODE_ENV === 'production' && <CurrentVisitors />}
       </div>
 
