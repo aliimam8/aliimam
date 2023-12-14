@@ -129,7 +129,7 @@ export function SiteFooter() {
         <Link
           href="https://twitter.com/aiimamoriginal"
           rel="noreferrer"
-          target="_blank"
+          target="_blank" 
           className={Underline}
         >
           <Icons.TweetX className="w-5 h-5" />

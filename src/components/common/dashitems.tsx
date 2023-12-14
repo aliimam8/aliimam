@@ -2,6 +2,7 @@
 
 import React from 'react'
 import useSWR from 'swr'
+import { Icons } from 'src/components/icons';
 
 import fetcher from '@/lib/fetcher'
 import {
@@ -33,7 +34,7 @@ const Items = () => {
       title: 'YouTube Subscribers',
       link: 'https://youtube.com/@aiimamoriginal',
       value: youtubeData?.subscribers,
-      icon: "",
+      icon: <Icons.youTube color='#f50537' className="w-7" />,
       linkText: 'YouTube',
       gradient: {
         startColor: '#ff0000',
@@ -44,7 +45,7 @@ const Items = () => {
       title: 'YouTube Views',
       link: 'https://youtube.com/@aiimamoriginal',
       value: youtubeData?.views,
-      icon: "",
+      icon: <Icons.youTube className="w-6" />,
       linkText: 'YouTube',
       gradient: {
         startColor: '#ff0000',
@@ -55,7 +56,7 @@ const Items = () => {
       title: 'Website Total Views',
       link: 'https://aliimam.in',
       value: viewsData?.views,
-      icon: "",
+      icon: <Icons.logo className="w-7" />,
       linkText: 'Blog',
       gradient: {
         startColor: '#ff0f7b',
@@ -83,7 +84,7 @@ const Items = () => {
               target='_blank'
               rel='noopener noreferrer'
               href={link}
-              className='group relative overflow-hidden rounded-lg border p-4 transition-colors duration-150 hover:bg-accent'
+              className='group relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800  p-4 transition-colors duration-150 hover:bg-accent'
             >
               <div className='flex flex-col items-center justify-center gap-2 transition-transform duration-300 group-hover:-translate-y-24 group-focus:-translate-y-24'>
                 <div className='flex items-center gap-2 text-3xl font-bold text-foreground'>
