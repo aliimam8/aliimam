@@ -3,12 +3,11 @@ import { SiteFooter } from 'src/components/layout/footer/SiteFooter';
 import 'src/styles/globals.css';
 import Navbar from '../components/layout/navbar';
 import { ThemeProvider } from '../components/providers';
-import { Analytics } from '@vercel/analytics/react';
 import { ensureStartsWith } from '../lib/utils';
 import LenisProvider from '@/components/LenisProvider';
 import { inter } from './fonts';
-import { SpeedInsights } from "@vercel/speed-insights/next"
-import AiAnalytics from '@/components/common/analytics'
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import Analytics from '@/components/common/analytics';
 
 const { TWITTER_CREATOR, TWITTER_SITE, SITE_NAME } = process.env;
 const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL
@@ -53,11 +52,10 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
           <Navbar />
           <LenisProvider>
             <main>{children}</main>
-            </LenisProvider>
+          </LenisProvider>
           <SiteFooter />
-          <AiAnalytics/>
         </ThemeProvider>
-        <SpeedInsights/>
+        <SpeedInsights />
         <Analytics />
       </body>
     </html>

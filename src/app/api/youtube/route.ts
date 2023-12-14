@@ -5,7 +5,7 @@ export const dynamic = 'force-dynamic'
 
 export const GET = async () => {
   const res = await fetch(
-    `https://www.googleapis.com/youtube/v3/channels?id=UC2hMWOaOlk9vrkvFVaGmn0Q&part=statistics&key=${process.env.GOOGLE_API_KEY}`
+    `https://www.googleapis.com/youtube/v3/channels?id=UCZYm9jYmDesAGzbyFacUSfA&part=statistics&key=${process.env.GOOGLE_API_KEY}`
   )
   const data = await res.json()
 

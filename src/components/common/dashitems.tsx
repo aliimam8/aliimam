@@ -6,10 +6,7 @@ import { Icons } from 'src/components/icons';
 
 import fetcher from '@/lib/fetcher'
 import {
-  type Github,
-  type Likes,
   type Views,
-  type Wakatime,
   type YouTube
 } from '@/types'
 
@@ -45,29 +42,19 @@ const Items = () => {
       title: 'YouTube Views',
       link: 'https://youtube.com/@aiimamoriginal',
       value: youtubeData?.views,
-      icon: <Icons.youTube className="w-6" />,
+      icon: <Icons.youTube color='#f50537' className="w-7" />,
       linkText: 'YouTube',
       gradient: {
         startColor: '#ff0000',
         endColor: '#ca1a1a'
       }
     },
-    {
-      title: 'Website Total Views',
-      link: 'https://aliimam.in',
-      value: viewsData?.views,
-      icon: <Icons.logo className="w-7" />,
-      linkText: 'Blog',
-      gradient: {
-        startColor: '#ff0f7b',
-        endColor: '#f945ff'
-      }
-    }
+    
   ]
 
   return (
-    <>
-      <div className='mb-20 mt-16 grid gap-4 sm:grid-cols-2 md:grid-cols-3'>
+    <div className='mx-auto md:max-w-3xl'>
+      <div className='mb-20 mt-16 grid gap-4 sm:grid-cols-2 md:grid-cols-2'>
         {data.map((item) => {
           const {
             icon,
@@ -115,7 +102,7 @@ const Items = () => {
           )
         })}
       </div>
-    </>
+    </div>
   )
 }
 

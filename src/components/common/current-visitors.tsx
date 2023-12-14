@@ -28,7 +28,7 @@ const CurrentVisitors = () => {
             <span className='absolute inline-flex h-full w-full animate-ping rounded-full bg-aired opacity-75' />
             <span className='relative inline-flex h-3 w-3 rounded-full bg-aired' />
           </span>
-          {data.visitors} current visitors
+          <p className='font-bold'>{data.visitors}</p> current visitors
         </>
       ) : (
         <div>
@@ -36,7 +36,6 @@ const CurrentVisitors = () => {
           className='h-5 w-32 rounded-md'
           data-testid='skeleton-loader'
         />
-        <p>current visitors</p>
         </div>
       )}
     </a>
