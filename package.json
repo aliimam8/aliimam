@@ -7,12 +7,8 @@
     "lint": "next lint",
     "lint-staged": "lint-staged",
     "prettier": "prettier --write --ignore-unknown .",
-    "postinstall": "prisma generate && contentlayer build",
     "prettier:check": "prettier --check --ignore-unknown .",
     "test": "pnpm lint && pnpm prettier:check"
-  },
-  "prisma": {
-    "schema": "db/schema.prisma"
   },
   "git": {
     "pre-commit": "lint-staged"
@@ -36,6 +32,7 @@
     "@t3-oss/env-nextjs": "^0.7.1",
     "@vercel/analytics": "^1.1.1",
     "@vercel/speed-insights": "^1.0.0",
+    "canvas-confetti": "^1.9.2",
     "class-variance-authority": "^0.7.0",
     "cloudinary": "^1.41.0",
     "clsx": "^2.0.0",
@@ -61,6 +58,7 @@
     "react-bootstrap": "^2.9.1",
     "react-dom": "^18.2.0",
     "react-fast-marquee": "^1.6.2",
+    "react-hot-toast": "^2.4.1",
     "react-photo-album": "^2.3.0",
     "react-photo-view": "^1.2.3",
     "react-typed": "^1.2.0",
@@ -73,7 +71,8 @@
     "stream": "^0.0.2",
     "swr": "^2.2.4",
     "tailwind-merge": "^2.0.0",
-    "use-breakpoint": "^4.0.1"
+    "use-breakpoint": "^4.0.1",
+    "use-debounce": "^10.0.0"
   },
   "devDependencies": {
     "@tailwindcss/container-queries": "^0.1.1",
@@ -91,7 +90,6 @@
     "postcss": "^8.4.31",
     "prettier": "3.0.3",
     "prettier-plugin-tailwindcss": "^0.5.6",
-    "prisma": "^5.7.0",
     "tailwindcss": "^3.3.5",
     "typescript": "5.2.2"
   }

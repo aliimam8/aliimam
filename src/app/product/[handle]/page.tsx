@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { Suspense } from 'react';
+import { Key, Suspense } from 'react';
+import * as React from "react"
 
 import Link from 'next/link';
 import { GridTileImage } from 'src/components/grid/tile';
@@ -12,6 +13,8 @@ import { Image } from 'src/lib/shopify/types';
 import { Carousel } from 'src/components/carousel';
 import Info from '../tabs';
 import { FAQ } from '../faq';
+import AIProductPage from '../products'
+
 
 export const runtime = 'edge';
 
@@ -102,9 +105,9 @@ export default async function ProductPage({ params }: { params: { handle: string
           <RelatedProducts id={product.id} />
         </Suspense>
       </div>
-
-      <Carousel />
+      <AIProductPage params={{  handle: product.handle }} />
       <Info />
+      <Carousel />
       <FAQ />
     </>
   );
@@ -143,3 +146,4 @@ async function RelatedProducts({ id }: { id: string }) {
     </div>
   );
 }
+

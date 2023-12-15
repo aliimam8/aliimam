@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description: 'Explore the latest news and updates from the community'
 };
 
-export default async function HomePage() {
+export default function AboutAI () {
   return (
     <>
       <Suspense>
@@ -28,7 +28,6 @@ export default async function HomePage() {
             />
           </div>
         </div>
-
         <div className="mx-auto mt-10 max-w-3xl px-4 sm:px-6 md:max-w-5xl ">
 
         <Dashboard/>

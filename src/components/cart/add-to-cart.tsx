@@ -18,7 +18,7 @@ function SubmitButton({
   const { pending } = useFormStatus();
   const buttonClasses =
     'relative flex w-full items-center justify-center rounded-full bg-aired p-4 tracking-wide text-white';
-  const disabledClasses = 'cursor-not-allowed hover:opacity-90';
+  const disabledClasses = 'cursor-not-allowed ';
 
   if (!availableForSale) {
     return (
@@ -55,10 +55,11 @@ function SubmitButton({
         disabledClasses: pending
       })}
     >
-      <div className="absolute left-0 ml-4">
-        {pending ? <LoadingDots className="mb-3 bg-white" /> : <PlusIcon className="h-5" />}
+      <div className="">
+        {pending ? <LoadingDots className="mb-3 mx-4 bg-white" /> : <PlusIcon className="h-5" />}
       </div>
-      Add To Cart
+      <p className='mx-3'>Add To Cart</p>
+      
     </button>
   );
 }

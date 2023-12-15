@@ -4,9 +4,8 @@ import clsx from 'clsx';
 
 const Price = ({
   amount,
-  className,
+  className='font-bold',
   currencyCode = '',
-  currencyCodeClassName
 }: {
   amount: string;
   className?: string;
