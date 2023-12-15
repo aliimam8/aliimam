@@ -35,10 +35,10 @@ function SubmitButton({
         aria-disabled
         className={clsx(buttonClasses, disabledClasses)}
       >
-        <div className="absolute left-0 ml-4">
+        <div className="">
           <PlusIcon className="h-5" />
         </div>
-        Add To Cart
+        <p className='mx-3'>Add To Cart</p>
       </button>
     );
   }

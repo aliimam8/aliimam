@@ -9,6 +9,7 @@ import { createUrl } from 'src/lib/utils';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
 import { Icons } from 'src/components/icons';
+import { ScrollArea, ScrollBar } from 'src/components/ui/scroll-area';
 
 export function Gallery({ images }: { images: { src: string; altText: string }[] }) {
   function toggleFullScreen() {
@@ -41,8 +42,8 @@ export function Gallery({ images }: { images: { src: string; altText: string }[]
     'h-full px-4 transition-all ease-in-out hover:scale-110 hover:text-black dark:hover:text-white flex items-center justify-center';
 
   return (
-    <>
-      <div className="relative aspect-square h-full max-h-[550px] w-full overflow-hidden">
+    <div className='h-full w-full '>
+      <div className="relative aspect-square basis-full lg:basis-4/6 h-full max-h-[550px] w-full overflow-hidden">
         <PhotoProvider
           maskOpacity={0.9}
           toolbarRender={({ onScale, scale }) => {
@@ -108,35 +109,40 @@ export function Gallery({ images }: { images: { src: string; altText: string }[]
         ) : null}
       </div>
 
-      {images.length > 1 ? (
-        <ul className="my-2 flex items-center justify-center gap-2 overflow-auto py-1 lg:mb-0">
-          {images.map((image, index) => {
-            const isActive = index === imageIndex;
-            const imageSearchParams = new URLSearchParams(searchParams.toString());
+      <ScrollArea className="mx-auto mt-4 max-w-3xl whitespace-nowrap px-2 lg:max-w-6xl">
+        {images.length > 1 ? (
+          <ul className="relative my-2 flex items-center justify-center gap-2 py-1 lg:mb-0">
+            {images.map((image, index) => {
+              const isActive = index === imageIndex;
+              const imageSearchParams = new URLSearchParams(searchParams.toString());
 
-            imageSearchParams.set('image', index.toString());
+              imageSearchParams.set('image', index.toString());
 
-            return (
-              <li key={image.src} className="h-20 w-20">
-                <Link
-                  aria-label="Enlarge product image"
-                  href={createUrl(pathname, imageSearchParams)}
-                  scroll={false}
-                  className="h-full w-full"
-                >
-                  <GridImage
-                    alt={image.altText}
-                    src={image.src}
-                    width={80}
-                    height={80}
-                    active={isActive}
-                  />
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      ) : null}
-    </>
+              return (
+                <li key={image.src} className="h-20 w-20">
+                  <Link
+                    aria-label="Enlarge product image"
+                    href={createUrl(pathname, imageSearchParams)}
+                    scroll={false}
+                    className="h-full w-full"
+                  >
+                    {index < 3 ? (
+                      <GridImage
+                        alt={image.altText}
+                        src={image.src}
+                        width={80}
+                        height={80}
+                        active={isActive}
+                      />
+                    ) : undefined}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        ) : null}
+        <ScrollBar orientation="horizontal" />
+      </ScrollArea>
+    </div>
   );
 }
