@@ -7,7 +7,6 @@ import { Image } from 'src/lib/shopify/types';
 
 import { HIDDEN_PRODUCT_TAG } from 'src/lib/constants';
 import { getProduct } from 'src/lib/shopify';
-import Info from './tabs';
 import Prose from 'src/components/prose';
 
 

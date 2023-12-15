@@ -109,7 +109,7 @@ export function Gallery({ images }: { images: { src: string; altText: string }[]
         ) : null}
       </div>
 
-      <ScrollArea className="mx-auto mt-4 max-w-3xl whitespace-nowrap px-2 lg:max-w-6xl">
+      <ScrollArea className="mx-auto mt-4 max-w-3xl whitespace-nowrap lg:max-w-6xl">
         {images.length > 1 ? (
           <ul className="relative my-2 flex items-center justify-center gap-2 py-1 lg:mb-0">
             {images.map((image, index) => {
@@ -126,7 +126,6 @@ export function Gallery({ images }: { images: { src: string; altText: string }[]
                     scroll={false}
                     className="h-full w-full"
                   >
-                    {index < 3 ? (
                       <GridImage
                         alt={image.altText}
                         src={image.src}
@@ -134,7 +133,6 @@ export function Gallery({ images }: { images: { src: string; altText: string }[]
                         height={80}
                         active={isActive}
                       />
-                    ) : undefined}
                   </Link>
                 </li>
               );

@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { Key, Suspense } from 'react';
 import * as React from "react"
 
 import Link from 'next/link';
@@ -101,14 +100,14 @@ export default async function ProductPage({ params }: { params: { handle: string
             <ProductDescription product={product} />
           </div>
         </div>
-        <Suspense>
-          <RelatedProducts id={product.id} />
-        </Suspense>
       </div>
       <AIProductPage params={{  handle: product.handle }} />
       <Info />
       <Carousel />
       <FAQ />
+      <div className='mx-auto mt-20 max-w-3xl px-4 sm:px-6 md:max-w-5xl'>
+          <RelatedProducts id={product.id} />
+        </div>
     </>
   );
 }
@@ -120,12 +119,16 @@ async function RelatedProducts({ id }: { id: string }) {
 
   return (
     <div className="py-8">
-      <h2 className="mb-4 text-2xl font-bold">Related Products</h2>
-      <ul className="flex w-full gap-4 overflow-x-auto pt-1">
+      <h2 className="mb-12 text-2xl text-center font-bold">
+        Related Products
+        <hr className="bg-aired rounded-full mx-auto my-4 h-1 w-6 border-0"></hr>
+      </h2>
+      
+      <ul className="flex w-full justify-center gap-4 overflow-x-auto ">
         {relatedProducts.map((product) => (
           <li
             key={product.handle}
-            className="aspect-square w-full flex-none min-[475px]:w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5"
+            className="aspect-square flex-none w-[300px] "
           >
             <Link className="relative h-full w-full" href={`/product/${product.handle}`}>
               <GridTileImage
