@@ -5,6 +5,11 @@ import Logos from 'src/components/common/logos';
 import { Experience } from 'src/components/common/experience';
 import Writing from 'src/components/common/writing';
 import Dashboard from 'src/components/common/dashboard';
+import LikeButton from 'src/components/ui/like-button'
+
+type ContentProps = {
+  slug: string
+}
 
 import { type Metadata } from 'next';
 
@@ -13,7 +18,8 @@ export const metadata: Metadata = {
   description: 'Explore the latest news and updates from the community'
 };
 
-export default function AboutAI () {
+const AboutAI = (props: ContentProps) => {
+  const { slug } = props
   return (
     <>
       <Suspense>
@@ -29,7 +35,7 @@ export default function AboutAI () {
           </div>
         </div>
         <div className="mx-auto mt-10 max-w-3xl px-4 sm:px-6 md:max-w-5xl ">
-
+        <LikeButton slug={slug} />
         <Dashboard/>
           <About />
           <Experience />
@@ -40,3 +46,5 @@ export default function AboutAI () {
     </>
   );
 }
+
+export default AboutAI

@@ -7,7 +7,6 @@ import { ensureStartsWith } from '../lib/utils';
 import LenisProvider from '@/components/LenisProvider';
 import { inter } from './fonts';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import Analytics from '@/components/common/analytics';
 
 const { TWITTER_CREATOR, TWITTER_SITE, SITE_NAME } = process.env;
 const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL
@@ -56,7 +55,6 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
           <SiteFooter />
         </ThemeProvider>
         <SpeedInsights />
-        <Analytics />
       </body>
     </html>
   );

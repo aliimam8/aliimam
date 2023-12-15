@@ -77,6 +77,7 @@
   "devDependencies": {
     "@tailwindcss/container-queries": "^0.1.1",
     "@tailwindcss/typography": "^0.5.10",
+    "@types/canvas-confetti": "^1.6.4",
     "@types/node": "20.8.9",
     "@types/react": "18.2.33",
     "@types/react-dom": "18.2.14",
@@ -90,6 +91,7 @@
     "postcss": "^8.4.31",
     "prettier": "3.0.3",
     "prettier-plugin-tailwindcss": "^0.5.6",
+    "prisma": "^5.7.0",
     "tailwindcss": "^3.3.5",
     "typescript": "5.2.2"
   }
