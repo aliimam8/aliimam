@@ -17,7 +17,6 @@ import { Separator } from '@/components/ui/seperator';
 import { MdxPager } from '@/components/common/mdx-pager';
 
 interface PostPageProps {
-  slug: string
   params: {
     slug: string[];
   };
@@ -58,9 +57,8 @@ export async function generateStaticParams(): Promise<PostPageProps['params'][]>
   }));
 }
 
-export default async function PostPage({ params }: PostPageProps, props: PostPageProps) {
+export default async function PostPage({ params }: PostPageProps) {
   const post = await getPostFromParams(params);
-  const slug = params
 
   if (!post) {
     notFound();
