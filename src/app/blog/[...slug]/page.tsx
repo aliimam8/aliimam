@@ -1,7 +1,9 @@
 import { notFound } from 'next/navigation';
 import { allPosts } from 'contentlayer/generated';
+import ImageZoom from '@/components/common/image-zoom';
 
 import { Mdx } from '@/components/common/mdx-components';
+import LikeButton from '@/components/ui/like-button'
 
 import { type Metadata } from 'next';
 import Image from 'next/image';
@@ -15,6 +17,7 @@ import { Separator } from '@/components/ui/seperator';
 import { MdxPager } from '@/components/common/mdx-pager';
 
 interface PostPageProps {
+  slug: string
   params: {
     slug: string[];
   };
@@ -55,8 +58,9 @@ export async function generateStaticParams(): Promise<PostPageProps['params'][]>
   }));
 }
 
-export default async function PostPage({ params }: PostPageProps) {
+export default async function PostPage({ params }: PostPageProps, props: PostPageProps) {
   const post = await getPostFromParams(params);
+  const slug = params
 
   if (!post) {
     notFound();
@@ -83,17 +87,24 @@ export default async function PostPage({ params }: PostPageProps) {
         <h1 className="inline-block text-3xl font-bold leading-tight lg:text-5xl">{post.title}</h1>
       </div>
       <div className="my-6">
-      {post.image && (
-        <AspectRatio ratio={16 / 9}>
-          <Image
-            src={post.image}
-            alt={post.title}
-            fill
-            className="bg-muted rounded-3xl border"
-            priority
-          />
-        </AspectRatio>
-      )}
+        {post.image && (
+          <ImageZoom
+            zoomImg={{
+              src: post.image,
+              alt: post.title
+            }}
+          >
+            <AspectRatio ratio={16 / 9}>
+              <Image
+                src={post.image}
+                alt={post.title}
+                fill
+                className="bg-muted rounded-3xl border"
+                priority
+              />
+            </AspectRatio>
+          </ImageZoom>
+        )}
       </div>
       <Mdx code={post.body.code} />
       <Separator className="my-4" />

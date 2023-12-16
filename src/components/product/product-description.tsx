@@ -26,7 +26,7 @@ export function ProductDescription({ product }: { product: Product }) {
       <p className='my-6 font-semibold uppercase'>100% Original</p>
       <div className='grid grid-cols-1 gap-2 md:grid-cols-2 h-auto w-full '>
       <button aria-disabled className={clsx(buttonClasses)}>
-      <Icons.heart className="w-5" />
+      <Icons.heart className="w-5 animate-pulse " />
       <p className='text-md mx-3'>Favourite</p>
       </button>
       <AddToCart variants={product.variants} availableForSale={product.availableForSale} />

@@ -12,7 +12,7 @@ export default function Error({ reset }: { reset: () => void }) {
         className="bg-aired mx-auto mt-4 flex w-auto items-center justify-center rounded-full p-2 tracking-wide hover:opacity-90"
         onClick={() => reset()}
       >
-        <p className="px-6 font-medium text-sm">
+        <p className="px-6 text-white font-medium text-sm">
         Try Again
         </p>
       </button>

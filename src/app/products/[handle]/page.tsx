@@ -130,7 +130,7 @@ async function RelatedProducts({ id }: { id: string }) {
             key={product.handle}
             className="aspect-square flex-none w-[300px] "
           >
-            <Link className="relative h-full w-full" href={`/product/${product.handle}`}>
+            <Link className="relative h-full w-full" href={`/products/${product.handle}`}>
               <GridTileImage
                 alt={product.title}
                 label={{

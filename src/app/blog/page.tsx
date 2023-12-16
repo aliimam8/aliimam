@@ -2,13 +2,7 @@ import * as React from "react"
 import { type Metadata } from "next"
 import { allPosts } from "contentlayer/generated"
 import { compareDesc } from "date-fns"
-
-import { Separator } from "@/components/ui/seperator"
-import {
-  PageHeader,
-  PageHeaderDescription,
-  PageHeaderHeading,
-} from "@/components/common/page-header"
+import PageTitle from '@/components/common/page-title'
 
 import { PostCard } from "./_components/post-card"
 import { PostCardSkeleton } from "./_components/post-card-skeleton"
@@ -25,14 +19,14 @@ export default function BlogPage() {
 
   return (
     <div className="mx-auto mt-40 max-w-4xl px-6">
-      <PageHeader>
-        <PageHeaderHeading>Blog</PageHeaderHeading>
-        <PageHeaderDescription>
-          Explore the latest news and updates from the community
-        </PageHeaderDescription>
-      </PageHeader>
-      <Separator className="my-6" />
-      <section className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 ">
+      <PageTitle
+        title='Blog'
+        description={`I started writing articles in December 2020, mainly about software and
+        sharing knowledge. I have written a total of ${posts.length} articles on
+        my blog. You can search for articles by title in the search box below.`}
+      />
+      <section className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+      
         <React.Suspense
           fallback={Array.from({ length: 4 }).map((_, i) => (
             <PostCardSkeleton key={i} />

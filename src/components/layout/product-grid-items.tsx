@@ -11,7 +11,7 @@ export default function ProductGridItems({ products }: { products: Product[] }) 
           key={product.handle}
           className="animate-fadeIn rounded-3xl border border-slate-200 dark:border-slate-800"
         >
-          <Link className="relative inline-block h-full w-full" href={`/product/${product.handle}`}>
+          <Link className="relative inline-block h-full w-full" href={`/products/${product.handle}`}>
             <GridTileImage
               alt={product.title}
               label={{
@@ -24,7 +24,7 @@ export default function ProductGridItems({ products }: { products: Product[] }) 
               sizes="(min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"
             />
           </Link>
-          <Link className="" href={`/product/${product.handle}`}>
+          <Link className="" href={`/products/${product.handle}`}>
             <GridTilePrice
               label={{
                 title: product.title,

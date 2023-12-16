@@ -42,8 +42,8 @@ export function Gallery({ images }: { images: { src: string; altText: string }[]
     'h-full px-4 transition-all ease-in-out hover:scale-110 hover:text-black dark:hover:text-white flex items-center justify-center';
 
   return (
-    <div className='h-full w-full '>
-      <div className="relative aspect-square basis-full lg:basis-4/6 h-full max-h-[550px] w-full overflow-hidden">
+    <div className="h-full w-full ">
+      <div className="relative aspect-square h-full max-h-[550px] w-full basis-full overflow-hidden lg:basis-4/6">
         <PhotoProvider
           maskOpacity={0.9}
           toolbarRender={({ onScale, scale }) => {
@@ -71,7 +71,7 @@ export function Gallery({ images }: { images: { src: string; altText: string }[]
           }}
         >
           {images[imageIndex] && (
-            <PhotoView src={images[imageIndex]?.src as string}>
+            <PhotoView src={images[imageIndex]?.src}>
               <Image
                 className="h-full w-full cursor-zoom-in object-cover"
                 fill
@@ -126,13 +126,13 @@ export function Gallery({ images }: { images: { src: string; altText: string }[]
                     scroll={false}
                     className="h-full w-full"
                   >
-                      <GridImage
-                        alt={image.altText}
-                        src={image.src}
-                        width={80}
-                        height={80}
-                        active={isActive}
-                      />
+                    <GridImage
+                      alt={image.altText}
+                      src={image.src}
+                      width={80}
+                      height={80}
+                      active={isActive}
+                    />
                   </Link>
                 </li>
               );

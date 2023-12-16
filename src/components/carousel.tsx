@@ -19,7 +19,7 @@ export async function Carousel() {
             key={`${product.handle}${i}`}
             className="relative aspect-square h-[18vh] max-h-[275px] max-w-[475px] flex-none sm:h-[25vh] "
           >
-            <Link href={`/product/${product.handle}`} className="relative h-full  w-full">
+            <Link href={`/products/${product.handle}`} className="relative h-full  w-full">
               <GridTileCarousal
                 alt={product.title}
                 label={{
