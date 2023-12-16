@@ -27,6 +27,60 @@ const computedFields = {
   },
 }
 
+export const Project = defineDocumentType(() => ({
+  name: 'Project',
+  filePathPattern: 'projects/**/*.mdx',
+  contentType: 'mdx',
+  fields: {
+    name: {
+      type: 'string',
+      description: 'The name of the project',
+      required: true
+    },
+    description: {
+      type: 'string',
+      description: 'The description of the project',
+      required: true
+    },
+    homepage: {
+      type: 'string',
+      description: "The link to the project's homepage",
+      required: false
+    },
+    github: {
+      type: 'string',
+      description: "The url to the project's github page",
+      required: true
+    },
+    icon: {
+      type: 'string',
+      description: 'The name of the icon to use',
+      required: true
+    },
+    image: {
+      type: 'string',
+      description: 'Image for the project',
+      required: true
+    },
+    repo: {
+      type: 'string',
+      description: 'The name of the repo of the project',
+      required: true
+    },
+    techstack: {
+      type: 'list',
+      of: Techstack,
+      required: true
+    }
+  },
+  computedFields: {
+    slug: {
+      type: 'string',
+      resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx$/, '')
+    }
+  }
+}))
+
 export const Post = defineDocumentType(() => ({
   name: "Post",
   filePathPattern: `blog/**/*.mdx`,
@@ -104,9 +158,21 @@ export const Page = defineDocumentType(() => ({
   computedFields,
 }))
 
+export const Uses = defineDocumentType(() => ({
+  name: "Uses",
+  filePathPattern: `uses/**/*.mdx`,
+  contentType: "mdx",
+  computedFields: {
+    slug: {
+      type: 'string',
+      resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx$/, '')
+    }
+  }
+}))
+
 export default makeSource({
   contentDirPath: "./src/content",
-  documentTypes: [Post, Author, Page],
+  documentTypes: [Post, Author, Page, Uses],
   mdx: {
     // remarkPlugins: [remarkGfm],
     rehypePlugins: [
