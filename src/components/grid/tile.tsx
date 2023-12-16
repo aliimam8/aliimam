@@ -109,7 +109,7 @@ export function GridAIImage({
       {props.src ? (
         // eslint-disable-next-line jsx-a11y/alt-text -- `alt` is inherited from `props`, which is being enforced with TypeScript
         <Image
-          className='relative h-full w-full object-cover'
+          className='relative h-full w-full object-cover saturate-100 transition-all duration-100 hover:saturate-0'
           {...props}
         />
       ) : null}
