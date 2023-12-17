@@ -20,7 +20,7 @@ export default function BlogPage() {
   return (
     <div className="mx-auto mt-40 max-w-4xl px-6">
       <PageTitle
-        title='Blog'
+        title='Posts'
         description={`I started writing articles in December 2020, mainly about software and
         sharing knowledge. I have written a total of ${posts.length} articles on
         my blog. You can search for articles by title in the search box below.`}

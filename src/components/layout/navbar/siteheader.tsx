@@ -15,14 +15,14 @@ const navigation = [
   { name: 'Gallery', href: '/gallery', current: true },
   { name: 'Portfolio', href: '/portfolio', current: true },
   { name: 'Store', href: '/store', current: true },
-  { name: 'Blogs', href: '/blog', current: true },
+  { name: 'Posts', href: '/posts', current: true },
   { name: 'Uses', href: '/uses', current: true },
   { name: 'Account', href: 'https://shopify.com/63673860265/account', current: true }
 ];
 
 const helps = [
+  { name: 'Cart', href: '/cart', current: true },
   { name: 'Contact', href: '/contact', current: true },
-  { name: 'Card', href: '/cart', current: true },
   { name: 'Privacy', href: '/privacy', current: true },
   { name: 'Terms', href: '/terms', current: true }
 ];

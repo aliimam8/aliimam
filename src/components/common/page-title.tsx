@@ -12,7 +12,7 @@ type PageTitleProps = {
 
 const animation = {
   hide: {
-    x: -30,
+    x: 0,
     opacity: 0
   },
   show: {
@@ -41,7 +41,7 @@ const PageTitle = (props: PageTitleProps) => {
           initial: animation.hide,
           animate: animation.show,
           transition: {
-            delay: 0.1
+            delay: 0.05
           }
         })}
       >

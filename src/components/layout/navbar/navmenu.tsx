@@ -109,9 +109,9 @@ export function NavMenu() {
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <Link href="/blog" legacyBehavior passHref>
+            <Link href="/posts" legacyBehavior passHref>
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Blogs
+                Posts
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
