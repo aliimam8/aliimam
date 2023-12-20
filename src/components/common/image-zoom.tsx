@@ -13,7 +13,7 @@ const ImageZoom = (props: ImageZoomProps) => {
   const { children, ...rest } = props
 
   return (
-    <Zoom zoomMargin={40} {...rest}>
+    <Zoom zoomMargin={20} {...rest}>
       {children}
     </Zoom>
   )

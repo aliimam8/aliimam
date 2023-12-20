@@ -21,9 +21,9 @@ export default function BlogPage() {
     <div className="mx-auto mt-40 max-w-4xl px-6">
       <PageTitle
         title='Posts'
-        description={`I started writing articles in December 2020, mainly about software and
+        description={`I started writing articles in December 2023, mainly about Graphic Design and
         sharing knowledge. I have written a total of ${posts.length} articles on
-        my blog. You can search for articles by title in the search box below.`}
+        my blog.`}
       />
       <section className="grid grid-cols-1 gap-8 lg:grid-cols-2">
       

@@ -65,9 +65,9 @@ export default async function PostPage({ params }: PostPageProps) {
   }
 
   return (
-    <div className="mx-auto mt-20 max-w-4xl px-6">
+    <div className="mx-auto mt-40 max-w-4xl px-6">
       <Link
-        href="/blog"
+        href="/posts"
         className={cn(
           buttonVariants({ variant: 'ghost' }),
           'absolute left-[-200px] top-14 hidden xl:inline-flex'
@@ -76,13 +76,13 @@ export default async function PostPage({ params }: PostPageProps) {
         <ChevronLeftIcon className="mr-2 h-4 w-4" aria-hidden="true" />
         See all posts
       </Link>
-      <div className="space-y-2">
+      <div className="space-y-8">
+        <h1 className="inline-block text-3xl font-bold leading-tight lg:text-5xl">{post.title}</h1>
         <div className="text-muted-foreground flex items-center space-x-2 text-sm">
           {post.date && <time dateTime={post.date}>{formatDate(post.date)}</time>}
           {post.date ? <div>•</div> : null}
           <div>{post.readingTime}min</div>
         </div>
-        <h1 className="inline-block text-3xl font-bold leading-tight lg:text-5xl">{post.title}</h1>
       </div>
       <div className="my-6">
         {post.image && (
@@ -97,7 +97,7 @@ export default async function PostPage({ params }: PostPageProps) {
                 src={post.image}
                 alt={post.title}
                 fill
-                className="bg-muted rounded-3xl border"
+                className="bg-muted object-cover rounded-3xl border"
                 priority
               />
             </AspectRatio>
@@ -108,7 +108,7 @@ export default async function PostPage({ params }: PostPageProps) {
       <Separator className="my-4" />
       <MdxPager currentItem={post} allItems={allPosts} />
       <Link
-        href="/blog"
+        href="/posts"
         className={cn(buttonVariants({ variant: 'outline', className: 'mx-auto mt-4 w-fit' }))}
       >
         <ChevronLeftIcon className="h-4 w-4" aria-hidden="true" />

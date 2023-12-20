@@ -81,7 +81,7 @@ export default async function AIProductPage({ params }: { params: { handle: stri
         }}
       />
       <div className="">
-      <div className='mx-auto mt-20 max-w-3xl px-10'>
+      <div className='mx-auto mt-20 max-w-4xl px-8'>
       {product.descriptionHtml ? ( 
       
       <Prose className="text-sm my-8" html={product.descriptionHtml} />
