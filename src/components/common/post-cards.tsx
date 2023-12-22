@@ -55,7 +55,7 @@ const PostCard = (props: PostCardProps) => {
       key={_id}
       href={`/blog/${slug}`}
       className={cn(
-        'relative flex flex-col space-y-3 rounded-2xl border p-6 group-hover:after:opacity-100',
+        'relative flex flex-col space-y-3 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 group-hover:after:opacity-100',
         'hover:before:opacity-100',
         'before:absolute before:inset-0 before:-z-10 before:rounded-[inherit] before:bg-[radial-gradient(800px_circle_at_var(--mouse-x)_var(--mouse-y),_rgba(0,_0,_0,_0.06),transparent_40%)] before:opacity-0 before:transition-opacity before:duration-500 dark:before:bg-[radial-gradient(800px_circle_at_var(--mouse-x)_var(--mouse-y),_rgba(255,_255,_255,_0.06),transparent_40%)]',
         'after:absolute after:inset-0 after:-z-30 after:rounded-[inherit] after:bg-[radial-gradient(600px_circle_at_var(--mouse-x)_var(--mouse-y),_rgba(0,0,0,_0.4),transparent_40%)] after:opacity-0 after:transition-opacity after:duration-500 dark:after:bg-[radial-gradient(600px_circle_at_var(--mouse-x)_var(--mouse-y),_rgba(255,_255,_255,_0.4),transparent_40%)]'
