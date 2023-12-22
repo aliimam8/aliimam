@@ -17,7 +17,7 @@ export default function Gallery() {
           Portfolio
           <hr className="bg-aired rounded-full mx-auto my-4 h-1 w-6 border-0"></hr>
         </h1>
-        <div className="my-8">
+        <div className="mb-20">
         <Projects />
         </div>
         <Work />

@@ -93,10 +93,10 @@ export default function ProjectPreview({ modal, projects }: ProjectModalProps) {
                 key={`modal_${index}`}
               >
                 <Image
-                  className="h-full p-4 rounded-3xl w-full"
+                  className="h-auto p-4 object-cover rounded-3xl w-full"
                   src={`/project/${src}`}
                   width={300}
-                  height={150}
+                  height={200}
                   alt="image"
                 />
               </div>

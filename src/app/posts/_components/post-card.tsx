@@ -40,7 +40,7 @@ export function PostCard({ post, i }: PostCardProps) {
         </AspectRatio>
         <div className="space-y-2">
           <CardHeader className="space-y-2.5 p-0">
-            <CardTitle className="line-clamp-1">{post.title}</CardTitle>
+            <CardTitle className="line-clamp-1 py-2">{post.title}</CardTitle>
             <CardDescription className="line-clamp-2 text-sm text-slate-600 dark:text-slate-400">
               {post.description}
             </CardDescription>
