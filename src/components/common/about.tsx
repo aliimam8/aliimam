@@ -4,6 +4,7 @@ import Link from 'next/link';
 import MyAge from 'src/components/common/age';
 import { buttonVariants } from 'src/components/ui/button';
 import { cn } from 'src/lib/utils';
+import CountUpNumber from './countnumber';
 
 import { Icons } from 'src/components/icons';
 
@@ -22,12 +23,6 @@ const skills = [
   { skill: 'Animations' },
   { skill: 'eBooks' },
   { skill: 'Brochures' }
-];
-
-const stats = [
-  { id: 1, name: 'Projects', value: '+1000' },
-  { id: 2, name: 'Design Creatives', value: '+10,000' },
-  { id: 3, name: 'Brands', value: '+100' }
 ];
 
 const Underline = `hover:-translate-y-1 border border-slate-100 dark:border-slate-900 rounded-xl p-2.5 transition-transform text-slate-600 hover:border-slate-200 dark:hover:border-slate-800 hover:text-black hover:dark:text-white dark:text-slate-400 `;
@@ -158,7 +153,7 @@ const About = () => {
             >
               <Icons.visualstudio className="h-5 w-5" />
             </Link>
-            
+
             <Link
               href="https://www.typescriptlang.org/"
               rel="noreferrer"
@@ -190,19 +185,37 @@ const About = () => {
           <div className="mt-10">
             <div className="mx-auto max-w-7xl">
               <dl className="grid grid-cols-1 gap-y-10 text-center lg:grid-cols-3">
-                {stats.map((stat) => (
-                  <div key={stat.id} className="mx-auto flex max-w-xs flex-col gap-y-2">
-                    <dt className="ml-6 text-sm font-semibold uppercase tracking-[.3em] text-slate-400">
-                      {stat.name}
-                    </dt>
-                    <dd className="order-first text-6xl font-extrabold tracking-tight text-aired">
-                      {stat.value}
-                    </dd>
-                  </div>
-                ))}
+                <div className="mx-auto flex max-w-xs flex-col gap-y-2">
+                  <dt className="ml-6 text-sm font-semibold uppercase tracking-[.3em] text-slate-400">
+                    <p className="">Projects</p>
+                  </dt>
+                  <dd className="order-first flex text-6xl font-extrabold tracking-tight text-aired">
+                    <p className="">+</p>
+                    <CountUpNumber duration={3000} endValue={1000} />
+                  </dd>
+                </div>
+                <div className="mx-auto flex max-w-xs flex-col gap-y-2">
+                  <dt className="ml-6 text-sm font-semibold uppercase tracking-[.3em] text-slate-400">
+                    <p className="">Design Creatives</p>
+                  </dt>
+                  <dd className="order-first flex text-6xl font-extrabold tracking-tight text-aired">
+                    <p className="">+</p>
+                    <CountUpNumber duration={5000} endValue={10000} />
+                  </dd>
+                </div>
+                <div className="mx-auto flex max-w-xs flex-col gap-y-2">
+                  <dt className="ml-6 text-sm font-semibold uppercase tracking-[.3em] text-slate-400">
+                    <p className="">Brands</p>
+                  </dt>
+                  <dd className="order-first flex text-6xl font-extrabold tracking-tight text-aired">
+                    <p className="">+</p>
+                    <CountUpNumber duration={2000} endValue={100} />
+                  </dd>
+                </div>
               </dl>
             </div>
           </div>
+
         </div>
       </div>
     </section>
