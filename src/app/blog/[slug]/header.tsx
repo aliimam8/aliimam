@@ -1,34 +1,34 @@
-'use client'
+'use client';
 
-import dayjs from 'dayjs'
-import React from 'react'
-import { useEvent } from 'react-use'
-import useSWR from 'swr'
+import dayjs from 'dayjs';
+import React from 'react';
+import useSWR from 'swr';
 
-import ImageZoom from '@/components/common/image-zoom'
-import Image from '@/components/mdx/image'
-import { Skeleton } from '@/components/ui/skeleton'
-import fetcher from '@/lib/fetcher'
-import { type Views } from '@/types'
+import ImageZoom from '@/components/common/image-zoom';
+import Image from '@/components/mdx/image';
+import { Skeleton } from '@/components/ui/skeleton';
+import fetcher from '@/lib/fetcher';
+import { type Views } from '@/types';
+import LikeButton from './like-button';
 
 type HeaderProps = {
-  date: string
-  title: string
-  slug: string
-}
+  date: string;
+  title: string;
+  slug: string;
+};
 
 const Header = (props: HeaderProps) => {
-  const { date, title, slug } = props
-  const [formattedDate, setFormattedDate] = React.useState('')
+  const { date, title, slug } = props;
+  const [formattedDate, setFormattedDate] = React.useState('');
   const { data: viewsData, isLoading: viewsIsLoading } = useSWR<Views>(
     `/api/views?slug=${slug}`,
     fetcher
-  )
-  const [commentCounter, setCommentCounter] = React.useState(-1)
+  );
+  const [commentCounter, setCommentCounter] = React.useState(-1);
 
   React.useEffect(() => {
-    setFormattedDate(dayjs(date).format('MMMM DD, YYYY'))
-  }, [date])
+    setFormattedDate(dayjs(date).format('MMMM DD, YYYY'));
+  }, [date]);
 
   React.useEffect(() => {
     const increment = async () => {
@@ -40,75 +40,63 @@ const Header = (props: HeaderProps) => {
         headers: {
           'Content-Type': 'application/json'
         }
-      })
-    }
+      });
+    };
 
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    increment()
+    increment();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
-
-  useEvent('message', (e: MessageEvent) => {
-    if (e.origin !== 'https://giscus.app') return
-    if (!(typeof e.data === 'object' && e.data.giscus)) return
-
-    const giscus = e.data.giscus
-
-    if (giscus.error) {
-      setCommentCounter(0)
-      return
-    }
-
-    if (giscus.discussion) {
-      setCommentCounter(
-        (giscus.discussion.totalCommentCount as number) +
-          (giscus.discussion.totalReplyCount as number)
-      )
-    }
-  })
+  }, []);
 
   return (
-    <div className='space-y-16 py-16'>
-      <div className='space-y-16 sm:px-8'>
-        <h1 className='text-center font-calcom text-4xl font-bold md:text-5xl'>
-          {title}
-        </h1>
-        <div className='grid grid-cols-2 text-sm max-md:gap-4 md:grid-cols-4'>
-          <div className='space-y-1 md:mx-auto'>
-            <div className='text-muted-foreground'>Written by</div>
-            <a
-              href='https://github.com/tszhong0411'
-              rel='noopener noreferrer'
-              target='_blank'
-              className='flex items-center gap-2'
-            >
-              <Image
-                src='/images/avatar.png'
-                className='rounded-full'
-                width={24}
-                height={24}
-                alt='Hong'
-              />
-              Hong
-            </a>
+    <div className="space-y-10">
+      <h1 className="text-center text-3xl font-bold md:text-5xl">{title}</h1>
+      <div className="grid grid-cols-2 text-sm max-md:gap-8 md:grid-cols-4">
+        <div className="space-y-3 md:mx-auto">
+          <div className="text-xs text-slate-600 dark:border-slate-800 dark:text-slate-400">
+            Written by
           </div>
-          <div className='space-y-1 md:mx-auto'>
-            <div className='text-muted-foreground'>Published on</div>
-            <div>
-              {formattedDate || <Skeleton className='h-6 w-32 rounded-md' />}
-            </div>
+          <a
+            href="https://www.aliimam.in/"
+            rel="noopener noreferrer"
+            target=""
+            className="flex items-center gap-2"
+          >
+            <Image
+              src="/ali.jpeg"
+              className="rounded-full object-cover"
+              width={24}
+              height={24}
+              alt="Ali"
+            />
+            <p className="text-lg font-bold">Ali Imam</p>
+          </a>
+        </div>
+
+        <div className="space-y-3 md:mx-auto">
+          <div className="text-xs text-slate-600 dark:border-slate-800 dark:text-slate-400">
+            Published on
           </div>
-          <div className='space-y-1 md:mx-auto'>
-            <div className='text-muted-foreground'>Views</div>
-            {viewsIsLoading ? (
-              <Skeleton className='h-6 w-32 rounded-md' />
-            ) : (
-              <div>{viewsData?.views}</div>
-            )}
+          <div className="text-lg font-bold">
+            {formattedDate || <Skeleton className="h-6 w-32 rounded-md" />}
           </div>
-          
+        </div>
+
+        <div className="space-y-3 md:mx-auto">
+          <div className="text-xs text-slate-600 dark:border-slate-800 dark:text-slate-400">
+            Views
+          </div>
+          {viewsIsLoading ? (
+            <Skeleton className="h-6 w-32 rounded-md" />
+          ) : (
+            <div className="text-lg font-bold">{viewsData?.views}</div>
+          )}
+        </div>
+        <div className='mt-2'>
+          <LikeButton slug={slug} />
         </div>
       </div>
+
       <ImageZoom
         zoomImg={{
           src: `/images/blog/${slug}/cover.png`,
@@ -117,7 +105,7 @@ const Header = (props: HeaderProps) => {
       >
         <Image
           src={`/images/blog/${slug}/cover.png`}
-          className='rounded-lg'
+          className="rounded-lg"
           width={1200}
           height={630}
           lazy={false}
@@ -125,7 +113,7 @@ const Header = (props: HeaderProps) => {
         />
       </ImageZoom>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

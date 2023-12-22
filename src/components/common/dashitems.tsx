@@ -7,6 +7,7 @@ import { Icons } from 'src/components/icons';
 import fetcher from '@/lib/fetcher'
 import {
   type Views,
+  type Likes,
   type YouTube
 } from '@/types'
 
@@ -24,8 +25,33 @@ type Card = {
 
 const Items = () => {
   const { data: youtubeData } = useSWR<YouTube>('/api/youtube', fetcher)
+  const { data: likesData } = useSWR<Likes>('/api/likes', fetcher)
+  const { data: viewsData } = useSWR<Views>('/api/views', fetcher)
 
   const data: Card[] = [
+
+    {
+      title: 'Website Total Views',
+      link: 'https://www.aliimam.in/',
+      value: viewsData?.views,
+      icon: <Icons.eye color='#f50537' className="w-7" />,
+      linkText: 'Ali Imam',
+      gradient: {
+        startColor: '#ff0f7b',
+        endColor: '#f945ff'
+      }
+    },
+    {
+      title: 'Website Total Likes',
+      link: 'https://www.aliimam.in/',
+      value: likesData?.likes,
+      icon: <Icons.heart color='#f50537' className="w-7" />,
+      linkText: 'Ali Imam',
+      gradient: {
+        startColor: '#ff0f7b',
+        endColor: '#f945ff'
+      }
+    },
     {
       title: 'YouTube Subscribers',
       link: 'https://youtube.com/@aiimamoriginal',
@@ -47,7 +73,7 @@ const Items = () => {
         startColor: '#ff0000',
         endColor: '#ca1a1a'
       }
-    },
+    }
     
   ]
 

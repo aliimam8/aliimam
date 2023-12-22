@@ -71,8 +71,8 @@ const PostCard = (props: PostCardProps) => {
         alt={title}
       />
       <div className='grow space-y-4'>
-        <h2 className='text-xl font-bold'>{title}</h2>
-        <div className='text-muted-foreground'>{summary}</div>
+        <h2 className='text-xl font-semibold mt-3'>{title}</h2>
+        <div className='text-sm text-slate-600 dark:text-slate-400'>{summary}</div>
       </div>
       <div className='flex items-center gap-2 text-sm'>
         {formattedDate || <Skeleton className='h-5 w-10' />}

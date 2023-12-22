@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { color, motion } from 'framer-motion'
 import React from 'react'
 import toast from 'react-hot-toast'
 import useSWR from 'swr'
@@ -96,13 +96,14 @@ const LikeButton = (props: LikeButtonProps) => {
     return onLikeSaving(value)
   }
 
+
   return (
-    <div className='mt-12 flex justify-center'>
+    <div className=''>
       <button
         ref={buttonRef}
         className={cn([
-          'group relative h-12 w-24 rounded-lg bg-transparent',
-          'before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-br before:from-[#f50537] before:to-[#f50537] before:content-[""]'
+          'group relative h-12 w-24 rounded-lg bg-aired',
+          'before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-br before:from-[#ffffff] before:to-[#ffffff]'
         ])}
         type='button'
         onClick={handleLike}
@@ -110,22 +111,22 @@ const LikeButton = (props: LikeButtonProps) => {
       >
         <motion.span
           className='absolute inset-0 rounded-lg bg-gradient-to-br from-[#f50537] to-[#f50537] blur-xl'
-          animate={{ scale: isBreathing ? scale : 1.2 }}
+          animate={{ scale: isBreathing ? scale : 1.5 }}
           transition={{ duration: 1, ease: 'linear' }}
         />
         <span
           className={cn([
-            'absolute inset-0.5 z-10 flex items-center text-white justify-center gap-2 rounded-md bg-background text-lg font-bold transition-[background-color] duration-150',
-            'group-hover:bg-transparent group-hover:text-background dark:group-hover:text-foreground'
+            'absolute inset-0 z-10 flex items-center border border-aired text-black dark:text-white justify-center gap-2 rounded-lg w-full h-full bg-white dark:bg-black text-lg font-bold transition-[background-color] duration-150',
+            'group-hover:bg-aired group-hover:text-white'
+            
           ])}
         >
           <Icons.heart
             className={cn(
-              'group-hover:fill-background w-7 h-7  dark:group-hover:fill-foreground',
-              
-              data &&
-                data.currentUserLikes + cacheCount === 3 &&
-                'fill-foreground'
+              ' w-7 h-7',
+              data && data.currentUserLikes + cacheCount === 2 &&
+                'text-aired'
+                
             )}
           />
           {isLoading || !data ? (

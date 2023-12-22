@@ -6,7 +6,6 @@ import { type Article, type WithContext } from 'schema-dts'
 import site from '@/config/site'
 
 import Content from './content'
-import Footer from './footer'
 import Header from './header'
 
 // export const runtime = 'edge'
@@ -58,7 +57,7 @@ export const generateMetadata = async (
         {
           url: `${site.url}/api/og?title=${post.title}&date=${
             post.date.split('T')[0]
-          }&url=honghong.me/blog`,
+          }&url=aliimam.in/blog`,
           width: 1200,
           height: 630,
           alt: post.title,
@@ -73,7 +72,7 @@ export const generateMetadata = async (
       images: [
         `${site.url}/api/og?title=${post.title}&date=${
           post.date.split('T')[0]
-        }&url=honghong.me/blog`
+        }&url=aliimam.in/blog`
       ]
     }
   }
@@ -100,7 +99,7 @@ const BlogPostPage = (props: BlogPostPageProps) => {
     dateModified: modifiedTime,
     image: `${site.url}/api/og?title=${title}&date=${
       date.split('T')[0]
-    }&url=honghong.me/blog`,
+    }&url=aliimam.in/blog`,
     author: {
       '@type': 'Person',
       name: site.name,
@@ -122,7 +121,6 @@ const BlogPostPage = (props: BlogPostPageProps) => {
 
       <Header date={date} title={title} slug={slug} />
       <Content slug={slug} post={post} />
-      <Footer slug={slug} modifiedTime={modifiedTime} />
     </div>
   )
 }

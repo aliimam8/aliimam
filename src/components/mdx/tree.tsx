@@ -39,7 +39,7 @@ const Inner = (props: InnerType) => {
             >
               
             </div>
-            <div className='font-monaspace-neon'>{node.name}</div>
+            <div className='text-xs'>{node.name}</div>
           </div>
 
           {node.children ? (

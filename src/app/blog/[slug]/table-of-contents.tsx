@@ -19,7 +19,7 @@ const TableOfContents = (props: TableOfContentsProps) => {
 
   return (
     <div className='hidden lg:block'>
-      <div className='mb-4 pl-4'>On this page</div>
+      <div className='mb-4 text-xs text-slate-600 dark:text-slate-400 pl-4'>On this page</div>
       <div>
         {headings.map((heading) => {
           const { id, level, title } = heading
@@ -29,9 +29,9 @@ const TableOfContents = (props: TableOfContentsProps) => {
               key={id}
               href={`#${id}`}
               className={cn(
-                'block pb-[10px] pr-[10px] pt-[10px] text-sm leading-[1.2] text-muted-foreground transition-all duration-300 hover:text-foreground',
+                'block pb-[10px] pr-[10px] pt-[10px] text-sm leading-[1.2] transition-all duration-300 hover:text-foreground',
                 {
-                  ['text-foreground']: id === activeId
+                  ['text-aired font-semibold text-md']: id === activeId
                 }
               )}
               style={{

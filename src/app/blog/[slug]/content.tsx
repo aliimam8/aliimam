@@ -21,11 +21,13 @@ const Content = (props: ContentProps) => {
         <Mdx code={post.body.code} />
       </article>
       <aside className='lg:min-w-[270px] lg:max-w-[270px]'>
-        <div className='sticky top-24'>
+        <div className='sticky top-24 mt-10'>
           {headings && headings.length > 0 && (
             <TableOfContents headings={headings} />
           )}
+          <div className='mt-10 flex px-4 justify-center md:justify-start'>
           <LikeButton slug={slug} />
+          </div>
         </div>
       </aside>
     </div>
