@@ -5,6 +5,7 @@ import Logos from 'src/components/common/logos';
 import { Experience } from 'src/components/common/experience';
 import Writing from 'src/components/common/writing';
 import Dashboard from 'src/components/common/dashboard';
+import CurrentVisitors from './current';
 
 import { type Metadata } from 'next';
 
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
   description: 'Explore the latest news and updates from the community'
 };
 
-export default function AboutAI () {
+export default function AboutAI() {
   return (
     <>
       <Suspense>
@@ -29,8 +30,8 @@ export default function AboutAI () {
           </div>
         </div>
         <div className="mx-auto mt-10 max-w-3xl px-4 sm:px-6 md:max-w-5xl ">
-
-        <Dashboard/>
+          <CurrentVisitors />
+          <Dashboard />
           <About />
           <Experience />
         </div>
