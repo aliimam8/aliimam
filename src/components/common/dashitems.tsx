@@ -24,7 +24,6 @@ type Card = {
 
 const Items = () => {
   const { data: youtubeData } = useSWR<YouTube>('/api/youtube', fetcher)
-  const { data: viewsData } = useSWR<Views>('/api/views', fetcher)
 
   const data: Card[] = [
     {

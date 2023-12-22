@@ -51,7 +51,7 @@ const DashboardPage = () => {
             <p className='text-center text-xs mx-auto max-w-3xl text-slate-600 dark:text-slate-400 px-6 leading-5'>
               This is my personal dashboard, built with Next.js API routes deployed as 
               serverless functions. I use this dashboard to track various metrics across 
-              platforms like YouTube, GitHub, and more.
+              platforms like YouTube and more.
               </p>
       <Items />
     </>
