@@ -9,8 +9,16 @@ datasource db {
   relationMode = "prisma"
 }
 
-model User {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
+model Post {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  slug      String   @unique
+  likes     Int      @default(0)
+  views     Int      @default(0)
+}
+
+model Session {
+  id        String   @id
+  createdAt DateTime @default(now())
+  likes     Int      @default(0)
 }
