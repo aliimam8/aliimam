@@ -20,7 +20,7 @@ const Content = (props: ContentProps) => {
       <article className='w-full lg:w-[670px]'>
         <Mdx code={post.body.code} />
       </article>
-      <aside className='lg:min-w-[270px] lg:max-w-[270px]'>
+      <aside className='lg:min-w-[220px] lg:max-w-[220px]'>
         <div className='sticky top-24 mt-10'>
           {headings && headings.length > 0 && (
             <TableOfContents headings={headings} />

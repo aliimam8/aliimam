@@ -16,8 +16,6 @@ const navigation = [
   { name: 'Portfolio', href: '/portfolio', current: true },
   { name: 'Store', href: '/store', current: true },
   { name: 'Blog', href: '/blog', current: true },
-  { name: 'Posts', href: '/posts', current: true },
-  { name: 'Uses', href: '/uses', current: true },
   { name: 'Account', href: 'https://shopify.com/63673860265/account', current: true }
 ];
 
@@ -25,7 +23,8 @@ const helps = [
   { name: 'Cart', href: '/cart', current: true },
   { name: 'Contact', href: '/contact', current: true },
   { name: 'Privacy', href: '/privacy', current: true },
-  { name: 'Terms', href: '/terms', current: true }
+  { name: 'Terms', href: '/terms', current: true },
+  { name: 'Uses', href: '/uses', current: true },
 ];
 
 export default function Navbar() {
@@ -48,13 +47,13 @@ export default function Navbar() {
             </div>
 
             <Disclosure.Panel className="md:hidden">
-              <div className="flex flex-col px-6 py-6">
+              <div className="flex flex-col px-6 py-4">
                 {navigation.map((item) => (
                   <Disclosure.Button
                     key={item.name}
                     as="a"
                     href={item.href}
-                    className="py-3 text-xl font-semibold"
+                    className="py-2 text-xl font-semibold"
                     aria-current={item.current ? 'page' : undefined}
                   >
                     {item.name}
@@ -62,14 +61,14 @@ export default function Navbar() {
                 ))}
                 <Accordion type="single" collapsible className="w-full">
                   <AccordionItem value="item-1">
-                    <AccordionTrigger>Helps</AccordionTrigger>
+                    <AccordionTrigger>Others</AccordionTrigger>
                     <AccordionContent>
                       {helps.map((item) => (
                         <Disclosure.Button
                           key={item.name}
                           as="a"
                           href={item.href}
-                          className="flex px-4 py-3 text-xl font-semibold"
+                          className="flex px-4 py-2 text-xl font-semibold"
                           aria-current={item.current ? 'page' : undefined}
                         >
                           {item.name}

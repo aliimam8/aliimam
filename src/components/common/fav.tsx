@@ -17,7 +17,20 @@ import photo10 from 'public/images/fav/img10.jpg';
 import photo11 from 'public/images/fav/img11.jpg';
 import photo12 from 'public/images/fav/img12.jpg';
 
-export const photoImages = [photo12.src, photo11.src, photo10.src, photo9.src, photo8.src, photo7.src, photo1.src, photo2.src, photo3.src, photo4.src, photo5.src, photo6.src];
+export const photoImages = [
+  photo12.src,
+  photo11.src,
+  photo10.src,
+  photo9.src,
+  photo8.src,
+  photo7.src,
+  photo1.src,
+  photo2.src,
+  photo3.src,
+  photo4.src,
+  photo5.src,
+  photo6.src
+];
 
 export default function Favo() {
   function toggleFullScreen() {
@@ -66,7 +79,7 @@ export default function Favo() {
                   <Image
                     src={item}
                     alt={''}
-                    loading = 'lazy'
+                    loading="lazy"
                     className="block h-full w-full cursor-zoom-in rounded-lg object-cover object-center saturate-100 transition-all duration-100 hover:saturate-0"
                     width={300}
                     height={300}

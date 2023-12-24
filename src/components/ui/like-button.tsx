@@ -80,24 +80,27 @@ const LikeButton = (props: LikeButtonProps) => {
   }, 1000);
 
   const handleLike = () => {
-    if (isLoading || !data || data.currentUserLikes + cacheCount >= 2) return;
+    if (isLoading || !data || data.currentUserLikes + cacheCount >= 3) return
 
-    const value = cacheCount === 2 ? cacheCount : cacheCount + 1;
-    setCacheCount(value);
+    const value = cacheCount === 3 ? cacheCount : cacheCount + 1
+    setCacheCount(value)
 
     if (data.currentUserLikes + cacheCount === 2) {
       // eslint-disable-next-line @typescript-eslint/no-floating-promises
-      handleConfetti();
+      handleConfetti()
     }
 
-    return onLikeSaving(value);
-  };
+    return onLikeSaving(value)
+  }
 
   return (
     <div className="">
       <button
         ref={buttonRef}
-        className={cn(['group relative h-14 w-36 rounded-full'])}
+        className={cn(['group relative h-14 w-36 rounded-full'],
+        data && data.currentUserLikes + cacheCount === 3 && 'text-aired fill-aired bg-aired'
+        )}
+        
         type="button"
         onClick={handleLike}
         aria-label="Like this post"
@@ -106,12 +109,13 @@ const LikeButton = (props: LikeButtonProps) => {
           className={cn([
             'absolute inset-0 z-10 flex h-full w-full items-center justify-center gap-2 rounded-full bg-slate-100 text-lg font-bold text-black dark:bg-slate-900 dark:text-white',
             'hover:text-white group-hover:bg-aired'
-          ])}
+          ],
+          data && data.currentUserLikes + cacheCount === 3 && 'text-aired fill-aired bg-aired')}
         >
           <Icons.heart
             className={cn(
               ' h-7 w-7 animate-pulse',
-              data && data.currentUserLikes + cacheCount === 2 && 'text-aired fill-aired'
+              data && data.currentUserLikes + cacheCount === 3 && 'text-aired fill-aired'
             )}
           />
           {isLoading || !data ? <div> -- </div> : <div>{data.likes + cacheCount}</div>}

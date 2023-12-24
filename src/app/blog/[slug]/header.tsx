@@ -24,7 +24,6 @@ const Header = (props: HeaderProps) => {
     `/api/views?slug=${slug}`,
     fetcher
   );
-  const [commentCounter, setCommentCounter] = React.useState(-1);
 
   React.useEffect(() => {
     setFormattedDate(dayjs(date).format('MMMM DD, YYYY'));
