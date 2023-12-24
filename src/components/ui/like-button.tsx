@@ -98,7 +98,7 @@ const LikeButton = (props: LikeButtonProps) => {
       <button
         ref={buttonRef}
         className={cn(['group relative h-14 w-36 rounded-full'],
-        data && data.currentUserLikes + cacheCount === 3 && 'text-aired fill-aired bg-aired'
+        data && data.currentUserLikes + cacheCount === 3 && 'text-white fill-aired bg-aired'
         )}
         
         type="button"
@@ -110,12 +110,12 @@ const LikeButton = (props: LikeButtonProps) => {
             'absolute inset-0 z-10 flex h-full w-full items-center justify-center gap-2 rounded-full bg-slate-100 text-lg font-bold text-black dark:bg-slate-900 dark:text-white',
             'hover:text-white group-hover:bg-aired'
           ],
-          data && data.currentUserLikes + cacheCount === 3 && 'text-aired fill-aired bg-aired')}
+          data && data.currentUserLikes + cacheCount === 3 && 'text-white fill-aired bg-aired')}
         >
           <Icons.heart
             className={cn(
               ' h-7 w-7 animate-pulse',
-              data && data.currentUserLikes + cacheCount === 3 && 'text-aired fill-aired'
+              data && data.currentUserLikes + cacheCount === 3 && 'text-white fill-aired'
             )}
           />
           {isLoading || !data ? <div> -- </div> : <div>{data.likes + cacheCount}</div>}
