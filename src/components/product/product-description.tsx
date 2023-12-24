@@ -4,10 +4,8 @@ import { Product } from 'src/lib/shopify/types';
 import { VariantSelector } from './variant-selector';
 import clsx from 'clsx';
 import { Icons } from 'src/components/icons';
-import LikeButton from '../ui/like-button';
 
 export function ProductDescription({ product }: { product: Product }) {
-  const { slug } = product;
   const buttonClasses =
     'relative flex w-full bg-slate-100 text-aired hover:text-white hover:dark:text-black dark:bg-slate-900 items-center justify-center rounded-full hover:bg-aired hover:dark:bg-aired p-4 tracking-wide';
 
