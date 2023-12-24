@@ -6,6 +6,7 @@ import Favo from '@/components/common/fav';
 import About from 'src/components/common/about';
 import Intro from 'src/components/common/intro';
 import Projects from '@/components/projects';
+import Dashboard from 'src/components/common/dashboard';
 
 export const runtime = 'edge';
 
@@ -22,9 +23,9 @@ export default function HomePage() {
       <Suspense>
         <Hero />
         <Logos />
-
         <Favo />
         <Intro />
+        <Dashboard />
         <div className="mx-auto mt-10 max-w-3xl px-4 sm:px-6 md:max-w-5xl ">
           <About />
         </div>

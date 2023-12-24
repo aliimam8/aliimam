@@ -9,7 +9,7 @@ import Image from '@/components/mdx/image';
 import { Skeleton } from '@/components/ui/skeleton';
 import fetcher from '@/lib/fetcher';
 import { type Views } from '@/types';
-import LikeButton from './like-button';
+import LikeButton from 'src/components/ui/like-button';
 
 type HeaderProps = {
   date: string;

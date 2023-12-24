@@ -29,6 +29,15 @@ export default function AboutAI() {
           </div>
         </div>
         <div className="mx-auto mt-10 max-w-3xl px-4 sm:px-6 md:max-w-5xl ">
+          <h1 className=" left-0 right-0 items-center text-center text-2xl font-bold sm:text-4xl">
+            Dashboard
+            <hr className="mx-auto my-4 h-1 w-6 rounded-full border-0 bg-aired"></hr>
+          </h1>
+          <p className="mx-auto max-w-3xl px-6 text-center text-xs leading-5 text-slate-600 dark:text-slate-400">
+            This is my personal dashboard, built with Next.js API routes deployed as serverless
+            functions. I use this dashboard to track various metrics across platforms like YouTube
+            and more.
+          </p>
           <Dashboard />
           <About />
           <Experience />

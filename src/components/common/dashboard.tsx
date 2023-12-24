@@ -1,61 +1,140 @@
-import type { Metadata, ResolvingMetadata } from 'next'
+'use client'
 
-import site from '@/config/site'
+import React from 'react'
+import useSWR from 'swr'
+import { Icons } from 'src/components/icons';
 
-import Items from './dashitems'
+import fetcher from '@/lib/fetcher'
+import {
+  type Views,
+  type Likes,
+  type YouTube
+} from '@/types'
 
-export const runtime = 'edge'
-const title = 'Dashboard'
-const description =
-  'This is my personal dashboard, built with Next.js API routes deployed as serverless functions. I use this dashboard to track various metrics across platforms like YouTube, GitHub, and more.'
-
-type DashboardPageProps = {
-  params: Record<string, never>
-  searchParams: Record<string, never>
-}
-
-export const generateMetadata = async (
-  _: DashboardPageProps,
-  parent: ResolvingMetadata
-): Promise<Metadata> => {
-  const previousOpenGraph = (await parent)?.openGraph ?? {}
-  const previousTwitter = (await parent)?.twitter ?? {}
-
-  return {
-    title,
-    description,
-    alternates: {
-      canonical: `${site.url}/dashboard`
-    },
-    openGraph: {
-      ...previousOpenGraph,
-      url: `${site.url}/dashboard`,
-      title,
-      description
-    },
-    twitter: {
-      ...previousTwitter,
-      title,
-      description
-    }
+type Card = {
+  icon: React.ReactNode
+  title: string
+  link: string
+  target: string
+  value: number | string | undefined
+  linkText: string
+  gradient: {
+    startColor: string
+    endColor: string
   }
 }
 
-const DashboardPage = () => {
+const Items = () => {
+  const { data: youtubeData } = useSWR<YouTube>('/api/youtube', fetcher)
+  const { data: likesData } = useSWR<Likes>('/api/likes', fetcher)
+  const { data: viewsData } = useSWR<Views>('/api/views', fetcher)
+
+  const data: Card[] = [
+
+    {
+      title: 'Total Views',
+      link: '/store',
+      value: viewsData?.views,
+      target: "",
+      icon: <Icons.aiLogo color='#f50537' className="w-7" />,
+      linkText: 'Ali Imam',
+      gradient: {
+        startColor: '#f50537',
+        endColor: '#f50537'
+      }
+    },
+    {
+      title: 'Total Likes',
+      link: '/store',
+      target: "",
+      value: likesData?.likes,
+      icon: <Icons.heart color='#f50537' className="w-7" />,
+      linkText: 'Ali Imam',
+      gradient: {
+        startColor: '#f50537',
+        endColor: '#f50537'
+      }
+    },
+    {
+      title: 'YouTube Subscribers',
+      link: 'https://youtube.com/@aiimamoriginal',
+      value: youtubeData?.subscribers,
+      icon: <Icons.youTube color='#f50537' className="w-7" />,
+      linkText: 'YouTube',
+      target: "_blank",
+      gradient: {
+        startColor: '#f50537',
+        endColor: '#f50537'
+      }
+    },
+    {
+      title: 'YouTube Views',
+      link: 'https://youtube.com/@aiimamoriginal',
+      value: youtubeData?.views,
+      icon: <Icons.youTube color='#f50537' className="w-7" />,
+      linkText: 'YouTube',
+      target: "_blank",
+      gradient: {
+        startColor: '#f50537',
+        endColor: '#f50537'
+      }
+    }
+    
+  ]
+
   return (
-    <>
-      <h1 className=" left-0 right-0 items-center text-center text-2xl font-bold sm:text-4xl">
-              Dashboard
-              <hr className="mx-auto my-4 h-1 w-6 rounded-full border-0 bg-aired"></hr>
-            </h1>
-            <p className='text-center text-xs mx-auto max-w-3xl text-slate-600 dark:text-slate-400 px-6 leading-5'>
-              This is my personal dashboard, built with Next.js API routes deployed as 
-              serverless functions. I use this dashboard to track various metrics across 
-              platforms like YouTube and more.
-              </p>
-      <Items />
-    </>
+    <div className='mx-auto md:max-w-2xl px-10'>
+      <div className='mb-20 mt-16 grid gap-4 sm:grid-cols-2 md:grid-cols-2'>
+        {data.map((item) => {
+          const {
+            icon,
+            link,
+            target,
+            title,
+            value,
+            linkText,
+            gradient: { startColor, endColor }
+          } = item
+
+          return (
+            <a
+              key={title}
+              target={target}
+              rel='noopener noreferrer'
+              href={link}
+              className='group relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800  p-4 transition-colors duration-150 hover:bg-accent'
+            >
+              <div className='flex flex-col items-center justify-center gap-2 transition-transform duration-300 group-hover:-translate-y-24 group-focus:-translate-y-24'>
+                <div className='flex items-center gap-2 text-3xl font-bold text-foreground'>
+                  {value ? (
+                    <>
+                      <span>{icon}</span>
+                      <span
+                        style={{
+                          background: `linear-gradient(122.25deg, ${startColor} 12.16%, ${endColor} 70.98%)`,
+                          WebkitBackgroundClip: 'text',
+                          WebkitTextFillColor: 'transparent'
+                        }}
+                      >
+                        {value}
+                      </span>
+                    </>
+                  ) : (
+                    '--'
+                  )}
+                </div>
+                <div className='text-sm text-slate-600 dark:text-slate-400'>{title}</div>
+              </div>
+              <span className='absolute left-1/2 top-1/2 flex -translate-x-1/2 translate-y-24 items-center gap-1 text-lg font-semibold uppercase tracking-[.3em] opacity-0 transition duration-300 group-hover:-translate-y-1/2 group-hover:opacity-100 group-focus:-translate-y-1/2 group-focus:opacity-100'>
+                {linkText}
+                
+              </span>
+            </a>
+          )
+        })}
+      </div>
+    </div>
   )
 }
 
-export default DashboardPage
+export default Items
