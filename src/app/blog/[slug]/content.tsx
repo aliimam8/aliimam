@@ -25,7 +25,7 @@ const Content = (props: ContentProps) => {
           {headings && headings.length > 0 && (
             <TableOfContents headings={headings} />
           )}
-          <div className='mt-10 flex px-4 justify-center md:justify-start'>
+          <div className='mt-10 px-4'>
           <LikeButton slug={slug} />
           </div>
         </div>

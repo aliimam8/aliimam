@@ -71,7 +71,7 @@ export function Gallery({ images }: { images: { src: string; altText: string }[]
           }}
         >
           {images[imageIndex] && (
-            <PhotoView src={images[imageIndex]?.src}>
+            <PhotoView src={images[imageIndex]?.src  as string}>
               <Image
                 className="h-full w-full cursor-zoom-in object-cover"
                 fill

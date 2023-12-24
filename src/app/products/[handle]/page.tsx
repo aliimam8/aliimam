@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import * as React from 'react';
 import { AddToCart } from 'src/components/cart/add-to-cart';
+import Views from '../views'
 
 import Link from 'next/link';
 import { GridTileImage } from 'src/components/grid/tile';
@@ -101,6 +102,7 @@ export default async function ProductPage({ params }: { params: { handle: string
 
           <div className="basis-full lg:basis-4/6">
             <ProductDescription product={product} />
+          <Views date={""} title={"title"} slug={slug} />
             <div className="grid h-auto w-auto grid-cols-1 gap-2 md:grid-cols-2">
               <LikeButton slug={slug} />
               <AddToCart variants={product.variants} availableForSale={product.availableForSale} />

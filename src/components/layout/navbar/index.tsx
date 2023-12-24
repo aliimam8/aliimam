@@ -9,6 +9,7 @@ import { DSearch } from './search';
 import { ThemeToggle } from './themetoggle';
 import { Separator } from 'src/components/ui/seperator';
 
+
 export default function Navbar() {
   return (
     <nav className="firefox:bg-opacity-100 dark:firefox:bg-opacity-100 fixed top-0 z-50 w-full border-b border-aired/25 bg-white bg-opacity-50 backdrop-blur-lg backdrop-saturate-150 backdrop-filter dark:bg-black dark:bg-opacity-50">
@@ -23,6 +24,7 @@ export default function Navbar() {
 
           <div className="mx-auto flex h-12 flex-1 items-center justify-end gap-3 px-12 md:px-0">
             <div className="-mr-2 text-slate-600 hover:text-black dark:text-slate-400 hover:dark:text-white">
+           
               <DSearch />
             </div>
             <ThemeToggle />
