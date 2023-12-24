@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import * as React from "react"
+import * as React from 'react';
+import { AddToCart } from 'src/components/cart/add-to-cart';
 
 import Link from 'next/link';
 import { GridTileImage } from 'src/components/grid/tile';
@@ -12,8 +13,9 @@ import { Image } from 'src/lib/shopify/types';
 import { Carousel } from 'src/components/carousel';
 import Info from '../tabs';
 import { FAQ } from '../faq';
-import AIProductPage from '../products'
-
+import AIProductPage from '../products';
+import LikeButton from '@/components/ui/like-button';
+import { handleClientScriptLoad } from 'next/script';
 
 export const runtime = 'edge';
 
@@ -57,6 +59,7 @@ export async function generateMetadata({
 
 export default async function ProductPage({ params }: { params: { handle: string } }) {
   const product = await getProduct(params.handle);
+  const slug = params.handle;
 
   if (!product) return notFound();
 
@@ -87,7 +90,7 @@ export default async function ProductPage({ params }: { params: { handle: string
       />
       <div className="mx-auto mt-20 max-w-3xl px-4 sm:px-6 md:max-w-5xl">
         <div className="flex flex-col rounded-3xl border border-slate-200 p-8 dark:border-slate-800  md:p-12 lg:flex-row lg:gap-8">
-          <div className="h-full w-auto md:w-[450px] basis-full lg:basis-4/6">
+          <div className="h-full w-auto basis-full md:w-[450px] lg:basis-4/6">
             <Gallery
               images={product.images.map((image: Image) => ({
                 src: image.url,
@@ -98,16 +101,20 @@ export default async function ProductPage({ params }: { params: { handle: string
 
           <div className="basis-full lg:basis-4/6">
             <ProductDescription product={product} />
+            <div className="grid h-auto w-auto grid-cols-1 gap-2 md:grid-cols-2">
+              <LikeButton slug={slug} />
+              <AddToCart variants={product.variants} availableForSale={product.availableForSale} />
+            </div>
           </div>
         </div>
       </div>
-      <AIProductPage params={{  handle: product.handle }} />
+      <AIProductPage params={{ handle: product.handle }} />
       <Info />
       <Carousel />
       <FAQ />
-      <div className='mx-auto mt-20 max-w-3xl px-4 sm:px-6 md:max-w-5xl'>
-          <RelatedProducts id={product.id} />
-        </div>
+      <div className="mx-auto mt-20 max-w-3xl px-4 sm:px-6 md:max-w-5xl">
+        <RelatedProducts id={product.id} />
+      </div>
     </>
   );
 }
@@ -119,16 +126,16 @@ async function RelatedProducts({ id }: { id: string }) {
 
   return (
     <div className="py-8">
-      <h2 className="mb-12 text-2xl text-center font-bold">
+      <h2 className="mb-12 text-center text-2xl font-bold">
         Related Products
-        <hr className="bg-aired rounded-full mx-auto my-4 h-1 w-6 border-0"></hr>
+        <hr className="mx-auto my-4 h-1 w-6 rounded-full border-0 bg-aired"></hr>
       </h2>
-      
+
       <ul className="flex w-full justify-center gap-4 overflow-x-auto ">
         {relatedProducts.map((product) => (
           <li
             key={product.handle}
-            className="aspect-square grid w-[150px] md:w-[300px] sm:w-[250px]"
+            className="grid aspect-square w-[150px] sm:w-[250px] md:w-[300px]"
           >
             <Link className="relative h-full w-full" href={`/products/${product.handle}`}>
               <GridTileImage
@@ -149,4 +156,3 @@ async function RelatedProducts({ id }: { id: string }) {
     </div>
   );
 }
-

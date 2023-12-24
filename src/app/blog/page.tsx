@@ -39,7 +39,7 @@ export const generateMetadata = async (
       title,
       description
     }
-  }
+  } 
 }
 
 const BlogPage = () => {

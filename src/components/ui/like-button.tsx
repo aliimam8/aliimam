@@ -22,6 +22,9 @@ const LikeButton = (props: LikeButtonProps) => {
   const [cacheCount, setCacheCount] = React.useState(0);
   const buttonRef = React.useRef<HTMLButtonElement>(null);
 
+  const buttonClasses =
+    'relative flex w-full items-center justify-center rounded-full bg-aired p-4 tracking-wide text-white';
+
   const { data, isLoading, mutate } = useSWR<Likes>(`/api/likes?slug=${slug}`, fetcher);
 
   React.useEffect(() => {
@@ -80,37 +83,43 @@ const LikeButton = (props: LikeButtonProps) => {
   }, 1000);
 
   const handleLike = () => {
-    if (isLoading || !data || data.currentUserLikes + cacheCount >= 3) return
+    if (isLoading || !data || data.currentUserLikes + cacheCount >= 3) return;
 
-    const value = cacheCount === 3 ? cacheCount : cacheCount + 1
-    setCacheCount(value)
+    const value = cacheCount === 3 ? cacheCount : cacheCount + 1;
+    setCacheCount(value);
 
     if (data.currentUserLikes + cacheCount === 2) {
       // eslint-disable-next-line @typescript-eslint/no-floating-promises
-      handleConfetti()
+      handleConfetti();
     }
 
-    return onLikeSaving(value)
-  }
+    return onLikeSaving(value);
+  };
 
   return (
     <div className="">
       <button
         ref={buttonRef}
-        className={cn(['group relative h-14 w-36 rounded-full'],
-        data && data.currentUserLikes + cacheCount === 3 && 'text-white fill-aired bg-aired dark:text-white dark:fill-aired dark:bg-aired'
+        className={cn(buttonClasses,
+          ['group relative h-14 rounded-full'],
+          data &&
+            data.currentUserLikes + cacheCount === 3 &&
+            'bg-aired fill-aired text-white dark:bg-aired dark:fill-aired dark:text-white'
         )}
-        
         type="button"
         onClick={handleLike}
         aria-label="Like this post"
       >
         <span
-          className={cn([
-            'absolute inset-0 z-10 flex h-full w-full items-center justify-center gap-2 rounded-full bg-slate-100 text-lg font-bold text-black dark:bg-slate-900 dark:text-white',
-            'hover:text-white group-hover:bg-aired'
-          ],
-          data && data.currentUserLikes + cacheCount === 3 && 'text-white fill-aired bg-aired dark:text-white dark:fill-aired dark:bg-aired')}
+          className={cn(
+            [
+              'absolute inset-0 z-10 flex h-full w-full items-center justify-center gap-2 rounded-full bg-slate-100 text-lg font-bold text-black dark:bg-slate-900 dark:text-white',
+              'hover:text-white group-hover:bg-aired'
+            ],
+            data &&
+              data.currentUserLikes + cacheCount === 3 &&
+              'bg-aired fill-aired text-white dark:bg-aired dark:fill-aired dark:text-white'
+          )}
         >
           <Icons.heart
             className={cn(
