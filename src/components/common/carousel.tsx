@@ -97,7 +97,7 @@ export function CarouselSpacing() {
     }
   }
   return (
-    <div className="mx-auto my-20 max-w-3xl px-4 sm:px-6 md:max-w-5xl"> 
+    <div className="mx-auto my-20 max-w-3xl px-4 sm:px-6 md:max-w-full"> 
       <Carousel
         className="flex w-full flex-col items-center justify-center gap-4 text-center"
         plugins={[plugin.current]}

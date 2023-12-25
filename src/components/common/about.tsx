@@ -191,7 +191,7 @@ const About = () => {
                   </dt>
                   <dd className="order-first flex text-6xl font-extrabold tracking-tight text-aired">
                     <p className="">+</p>
-                    <CountUpNumber duration={3000} endValue={1000} />
+                    <CountUpNumber duration={5000} endValue={1000} />
                   </dd>
                 </div>
                 <div className="mx-auto flex max-w-xs flex-col gap-y-2">
@@ -209,7 +209,7 @@ const About = () => {
                   </dt>
                   <dd className="order-first flex text-6xl font-extrabold tracking-tight text-aired">
                     <p className="">+</p>
-                    <CountUpNumber duration={2000} endValue={100} />
+                    <CountUpNumber duration={5000} endValue={100} />
                   </dd>
                 </div>
               </dl>
