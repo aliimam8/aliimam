@@ -97,14 +97,14 @@ export function CarouselSpacing() {
     }
   }
   return (
-    <div className="mx-auto mt-10 max-w-3xl px-4 sm:px-6 md:max-w-2xl lg:max-w-4xl">
+    <div className="mx-auto my-20 max-w-3xl px-4 sm:px-6 md:max-w-5xl"> 
       <Carousel
-        className="flex items-center h-auto justify-center text-center"
+        className="flex w-full flex-col items-center justify-center gap-4 text-center"
         plugins={[plugin.current]}
         onMouseEnter={plugin.current.stop}
         onMouseLeave={plugin.current.reset}
       >
-        <CarouselContent>
+        <CarouselContent className="w-[350px] md:w-full h-[190px] md:h-full">
           <PhotoProvider
             maskOpacity={0.9}
             toolbarRender={({ onScale, scale }) => {
@@ -132,25 +132,22 @@ export function CarouselSpacing() {
             }}
           >
             {photoImages.map((item, index) => (
-              <PhotoView key={index} src={item}>
-                <CarouselItem>
-                  <div className="w-full p-1">
+              <CarouselItem>
+                <PhotoView key={index} src={item}>
                     <Image
                       src={item}
                       alt={''}
-                      loading="lazy"
-                      className="block h-full w-full cursor-zoom-in rounded-lg object-cover object-center saturate-100 transition-all duration-100 hover:saturate-0"
+                      className="h-auto w-[300px] md:w-full cursor-zoom-in rounded-lg object-cover object-center saturate-100 transition-all duration-100 hover:saturate-0"
                       width={500}
                       height={500}
                     />
-                  </div>
-                </CarouselItem>
-              </PhotoView>
+                </PhotoView>
+              </CarouselItem>
             ))}
           </PhotoProvider>
         </CarouselContent>
-        <CarouselPrevious />
-        <div className="hidden md:block">
+        <div className="flex gap-4">
+          <CarouselPrevious />
           <CarouselNext />
         </div>
       </Carousel>
