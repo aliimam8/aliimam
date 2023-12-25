@@ -1,13 +1,13 @@
 import { Work } from './Work';
 import Projects from '@/components/projects';
+import { CarouselSpacing } from 'src/components/common/carousel';
 
-import { type Metadata } from "next"
+import { type Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Portfolio",
-  description: "Explore the latest news and updates from the community",
-}
-
+  title: 'Portfolio',
+  description: 'Explore the latest news and updates from the community'
+};
 
 export default function Gallery() {
   return (
@@ -15,16 +15,16 @@ export default function Gallery() {
       <div className="mx-auto mt-20 max-w-3xl px-4 sm:px-6 md:max-w-7xl ">
         <h1 className="my-10 mt-40 text-center text-2xl font-bold sm:text-4xl">
           Portfolio
-          <hr className="bg-aired rounded-full mx-auto my-4 h-1 w-6 border-0"></hr>
+          <hr className="mx-auto my-4 h-1 w-6 rounded-full border-0 bg-aired"></hr>
         </h1>
         <div className="mb-20">
-        <Projects />
+          <Projects />
         </div>
-        <Work />
-
       </div>
-
-      
+      <CarouselSpacing />
+      <div className="mx-auto mt-20 max-w-3xl px-4 sm:px-6 md:max-w-7xl ">
+      <Work />
+      </div>
     </main>
   );
 }
