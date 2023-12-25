@@ -25,21 +25,63 @@ import photo8 from 'public/images/blog/portfolio/portfolio-08.jpg';
 import photo9 from 'public/images/blog/portfolio/portfolio-09.jpg';
 import photo10 from 'public/images/blog/portfolio/portfolio-10.jpg';
 import photo11 from 'public/images/blog/portfolio/portfolio-11.jpg';
-import photo12 from 'public/images/blog/portfolio/portfolio-33.jpg';
+import photo12 from 'public/images/blog/portfolio/portfolio-12.jpg';
+import photo13 from 'public/images/blog/portfolio/portfolio-13.jpg';
+import photo14 from 'public/images/blog/portfolio/portfolio-14.jpg';
+import photo15 from 'public/images/blog/portfolio/portfolio-15.jpg';
+import photo16 from 'public/images/blog/portfolio/portfolio-16.jpg';
+import photo17 from 'public/images/blog/portfolio/portfolio-17.jpg';
+import photo18 from 'public/images/blog/portfolio/portfolio-18.jpg';
+import photo19 from 'public/images/blog/portfolio/portfolio-19.jpg';
+import photo20 from 'public/images/blog/portfolio/portfolio-20.jpg';
+import photo21 from 'public/images/blog/portfolio/portfolio-21.jpg';
+import photo22 from 'public/images/blog/portfolio/portfolio-22.jpg';
+import photo23 from 'public/images/blog/portfolio/portfolio-23.jpg';
+import photo24 from 'public/images/blog/portfolio/portfolio-24.jpg';
+import photo25 from 'public/images/blog/portfolio/portfolio-25.jpg';
+import photo26 from 'public/images/blog/portfolio/portfolio-26.jpg';
+import photo27 from 'public/images/blog/portfolio/portfolio-27.jpg';
+import photo28 from 'public/images/blog/portfolio/portfolio-28.jpg';
+import photo29 from 'public/images/blog/portfolio/portfolio-29.jpg';
+import photo30 from 'public/images/blog/portfolio/portfolio-30.jpg';
+import photo31 from 'public/images/blog/portfolio/portfolio-31.jpg';
+import photo32 from 'public/images/blog/portfolio/portfolio-32.jpg';
+import photo33 from 'public/images/blog/portfolio/portfolio-33.jpg';
 
 export const photoImages = [
-  photo12.src,
-  photo11.src,
-  photo10.src,
-  photo9.src,
-  photo8.src,
-  photo7.src,
   photo1.src,
   photo2.src,
   photo3.src,
   photo4.src,
   photo5.src,
-  photo6.src
+  photo6.src,
+  photo7.src,
+  photo8.src,
+  photo9.src,
+  photo10.src,
+  photo11.src,
+  photo12.src,
+  photo13.src,
+  photo14.src,
+  photo15.src,
+  photo16.src,
+  photo17.src,
+  photo18.src,
+  photo19.src,
+  photo20.src,
+  photo21.src,
+  photo22.src,
+  photo23.src,
+  photo24.src,
+  photo25.src,
+  photo26.src,
+  photo27.src,
+  photo28.src,
+  photo29.src,
+  photo30.src,
+  photo31.src,
+  photo32.src,
+  photo33.src
 ];
 
 export function CarouselSpacing() {
@@ -55,9 +97,9 @@ export function CarouselSpacing() {
     }
   }
   return (
-    <div className="mx-auto my-20 max-w-3xl px-4 sm:px-6 md:max-w-4xl">
+    <div className="mx-auto mt-10 max-w-3xl px-4 sm:px-6 md:max-w-2xl lg:max-w-4xl">
       <Carousel
-        className="w-auto items-center"
+        className="flex items-center h-auto justify-center text-center"
         plugins={[plugin.current]}
         onMouseEnter={plugin.current.stop}
         onMouseLeave={plugin.current.reset}
@@ -108,8 +150,8 @@ export function CarouselSpacing() {
           </PhotoProvider>
         </CarouselContent>
         <CarouselPrevious />
-        <div className='hidden md:block'>
-        <CarouselNext />
+        <div className="hidden md:block">
+          <CarouselNext />
         </div>
       </Carousel>
     </div>
