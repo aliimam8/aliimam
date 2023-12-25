@@ -3,6 +3,14 @@ import MyExp from 'src/components/common/exp';
 
 import { ScrollArea, ScrollBar } from 'src/components/ui/scroll-area';
 
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
+
 export interface Experience {
   post: string;
   comlogo: string;
@@ -78,6 +86,7 @@ export const works: Experience[] = [
     time: 'Mar 2015 - Aug 2015 · 6 mos'
   }
 ];
+
 
 export function Experience() {
   return (
