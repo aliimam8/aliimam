@@ -8,7 +8,7 @@ const nextConfig = {
     ignoreDuringBuilds: true
   },
   images: {
-    domains: ['res.cloudinary.com', 'images.remotePatterns'],
+    domains: ['res.cloudinary.com', 'khhamnquzieyqedqyvfw.supabase.co', 'images.remotePatterns'],
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [
       {

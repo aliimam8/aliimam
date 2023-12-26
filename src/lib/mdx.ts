@@ -1,12 +1,17 @@
 import { pick } from 'contentlayer/client'
-import { allBlogPosts } from 'contentlayer/generated'
+import { allBlogPosts, allAssetsPosts } from 'contentlayer/generated'
 
 type GetAllPostsProps = {
   limit?: number
   sorted?: boolean
 }
 
-const getAllPosts = (config: GetAllPostsProps = {}) => {
+type GetAllAssetsProps = {
+  limit?: number
+  sorted?: boolean
+}
+
+export const getAllBlogPosts = (config: GetAllPostsProps = {}) => {
   const { limit = allBlogPosts.length, sorted = true } = config
 
   const posts = allBlogPosts
@@ -22,4 +27,19 @@ const getAllPosts = (config: GetAllPostsProps = {}) => {
   return posts
 }
 
-export default getAllPosts
+export const getAllAssetsPosts = (config: GetAllAssetsProps = {}) => {
+  const { limit = allAssetsPosts.length, sorted = true } = config
+
+  const posts = allAssetsPosts
+    .slice(0, limit)
+    .map((post) => pick(post, ['_id', 'slug', 'title', 'summary', 'date']))
+
+  if (sorted) {
+    return posts.sort(
+      (a, b) => Number(new Date(b.date)) - Number(new Date(a.date))
+    )
+  }
+
+  return posts
+}
+

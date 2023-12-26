@@ -6,14 +6,14 @@ import useSWR from 'swr'
 
 import { Skeleton } from '@/components/ui/skeleton'
 import fetcher from '@/lib/fetcher'
-import { type BlogPostCore, type Likes, type Views } from '@/types'
+import { type AssetsPostCore, type Likes, type Views } from '@/types'
 
 
 import Image from '../mdx/image'
 import { cn } from '@/lib/utils'
 
 type PostCardsProps = {
-  posts: BlogPostCore[]
+  posts: AssetsPostCore[]
 }
 
 const PostCards = (props: PostCardsProps) => {
@@ -22,7 +22,7 @@ const PostCards = (props: PostCardsProps) => {
   return (
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div
-      className='group grid gap-4 sm:grid-cols-2'
+      className='group grid gap-4 sm:grid-cols-3'
       data-testid='post-cards'
     >
       {posts.map((post) => (
@@ -32,7 +32,7 @@ const PostCards = (props: PostCardsProps) => {
   )
 }
 
-type PostCardProps = BlogPostCore
+type PostCardProps = AssetsPostCore
 
 const PostCard = (props: PostCardProps) => {
   const { _id, slug, title, summary, date } = props
@@ -53,20 +53,21 @@ const PostCard = (props: PostCardProps) => {
   return (
     <Link
       key={_id}
-      href={`/blog/${slug}`}
+      href={`/assets/${slug}`}
       className={cn(
-        'relative flex flex-col rounded-2xl border border-slate-200 dark:border-slate-800 p-6',
-        'hover:before:opacity-100', )}
+        'relative flex flex-col rounded-3xl border border-slate-200 dark:border-slate-800 p-2',
+        'hover:before:opacity-100')}
       data-id='post-card'
     >
       <div className='absolute inset-px -z-20 rounded-[inherit] bg-background' />
       <Image
-        src={`/images/blog/${slug}/cover.png`}
-        className='rounded-lg hover:saturate-0'
+        src={`/images/assets/${slug}/cover.png`}
+        className='rounded-2xl hover:saturate-0'
         width={1200}
         height={630}
         alt={title}
       />
+      <div className='p-4'>
       <div className='grow'>
         <h2 className='text-xl mb-3 font-semibold mt-3'>{title}</h2>
         <div className='text-sm text-slate-600 dark:text-slate-400'>{summary}</div>
@@ -85,6 +86,7 @@ const PostCard = (props: PostCardProps) => {
         ) : (
           <div>{viewsData?.views} views</div>
         )}
+      </div>
       </div>
     </Link>
   )
