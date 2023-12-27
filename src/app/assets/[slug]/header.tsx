@@ -55,12 +55,12 @@ const Header = (props: HeaderProps) => {
 
       <ImageZoom
         zoomImg={{
-          src: `/images/blog/${slug}/cover.png`,
+          src: `/images/assets/${slug}/cover.jpg`,
           alt: title
         }}
       >
         <Image
-          src={`/images/blog/${slug}/cover.png`}
+          src={`/images/assets/${slug}/cover.jpg`}
           className="rounded-3xl"
           width={1280}
           height={720}

@@ -61,10 +61,10 @@ const PostCard = (props: PostCardProps) => {
     >
       <div className='absolute inset-px -z-20 rounded-[inherit] bg-background' />
       <Image
-        src={`/images/blog/${slug}/cover.png`}
+        src={`/images/blog/${slug}/cover.jpg`}
         className='rounded-lg hover:saturate-0'
-        width={1200}
-        height={630}
+        width={480}
+        height={360}
         alt={title}
       />
       <div className='grow'>
