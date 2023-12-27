@@ -19,19 +19,17 @@ type HeaderProps = {
   date: string;
   title: string;
   slug: string;
+  download: string;
+  dimention: string;
+  size: string;
 };
 
 const Header = (props: HeaderProps) => {
-  const { date, title, slug } = props;
-  const [formattedDate, setFormattedDate] = React.useState('');
+  const { title, slug, download, dimention, size } = props;
   const { data: viewsData, isLoading: viewsIsLoading } = useSWR<Views>(
     `/api/views?slug=${slug}`,
     fetcher
   );
-
-  React.useEffect(() => {
-    setFormattedDate(dayjs(date).format('MMMM DD, YYYY'));
-  }, [date]);
 
   React.useEffect(() => {
     const increment = async () => {
@@ -52,50 +50,8 @@ const Header = (props: HeaderProps) => {
   }, []);
 
   return (
-    <div className="space-y-10">
+    <div className="space-y-8">
       <h1 className="text-center text-3xl font-bold md:text-5xl">{title}</h1>
-      <div className="grid grid-cols-2 text-sm max-md:gap-8 md:grid-cols-4">
-        <div className="space-y-3 md:mx-auto">
-          <div className="text-xs text-slate-600 dark:border-slate-800 dark:text-slate-400">
-            Written by
-          </div>
-          <a
-            href="https://www.aliimam.in/"
-            rel="noopener noreferrer"
-            target=""
-            className="flex items-center gap-2"
-          >
-            <Image
-              src="/ali.jpeg"
-              className="rounded-full object-cover"
-              width={24}
-              height={24}
-              alt="Ali"
-            />
-            <p className="text-lg font-bold">Ali Imam</p>
-          </a>
-        </div>
-
-        <div className="space-y-3 md:mx-auto">
-          <div className="text-xs text-slate-600 dark:border-slate-800 dark:text-slate-400">
-            Published on
-          </div>
-          <div className="text-lg font-bold">
-            {formattedDate || <Skeleton className="h-6 w-32 rounded-md" />}
-          </div>
-        </div>
-
-        <div className="space-y-3 md:mx-auto">
-          <div className="text-xs text-slate-600 dark:border-slate-800 dark:text-slate-400">
-            Views
-          </div>
-          {viewsIsLoading ? (
-            <Skeleton className="h-6 w-32 rounded-md" />
-          ) : (
-            <div className="text-lg font-bold">{viewsData?.views}</div>
-          )}
-        </div>
-      </div>
 
       <ImageZoom
         zoomImg={{
@@ -105,19 +61,45 @@ const Header = (props: HeaderProps) => {
       >
         <Image
           src={`/images/blog/${slug}/cover.png`}
-          className="rounded-lg"
-          width={1200}
-          height={630}
+          className="rounded-3xl"
+          width={1280}
+          height={720}
           lazy={false}
           alt={title}
         />
       </ImageZoom>
 
-      <div className="grid grid-rows-2 md:grid-cols-2 gap-3">
+      <div className="grid grid-cols-2 text-sm max-md:gap-8 md:grid-cols-3">
+        <div className="space-y-2 md:mx-auto">
+          <div className="text-xs text-slate-600 dark:border-slate-800 dark:text-slate-400">
+            Views
+          </div>
+          {viewsIsLoading ? (
+            <Skeleton className="h-6 w-32 rounded-md" />
+          ) : (
+            <div className="text-lg font-bold">{viewsData?.views}</div>
+          )}
+        </div>
+
+        <div className="space-y-2 md:mx-auto">
+          <div className="text-xs text-slate-600 dark:border-slate-800 dark:text-slate-400">
+            Dimention
+          </div>
+          <p className="text-lg font-semibold">{dimention}</p>
+        </div>
+
+        <div className="space-y-2 md:mx-auto">
+          <div className="text-xs text-slate-600 dark:border-slate-800 dark:text-slate-400">
+            Size
+          </div>
+          <p className="text-lg font-semibold">{size}</p>
+        </div>
+      </div>
+      <div className="grid grid-rows-2 gap-3 md:grid-cols-2">
         <LikeButton slug={slug} />
 
         <Link
-          href=""
+          href={download}
           download={true}
           className={cn(
             buttonVariants({
@@ -128,7 +110,7 @@ const Header = (props: HeaderProps) => {
         >
           <span className="flex gap-2 px-2">
             <Icons.download size={24} />
-            <p className='text-lg'>Free Download</p>
+            <p className="text-lg">Free Download</p>
           </span>
         </Link>
       </div>

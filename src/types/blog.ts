@@ -7,5 +7,5 @@ export type BlogPostCore = Pick<
 
 export type AssetsPostCore = Pick<
 AssetsPost,
-  '_id' | 'slug' | 'title' | 'summary' | 'date'
+  '_id' | 'slug' | 'title' | 'summary' | 'date' | 'download'  | 'dimention'  | 'size'
 >

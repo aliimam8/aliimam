@@ -11,6 +11,8 @@ import { type AssetsPostCore, type Likes, type Views } from '@/types'
 
 import Image from '../mdx/image'
 import { cn } from '@/lib/utils'
+import { buttonVariants } from '../ui/button'
+import { Icons } from '../icons'
 
 type PostCardsProps = {
   posts: AssetsPostCore[]
@@ -22,7 +24,7 @@ const PostCards = (props: PostCardsProps) => {
   return (
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div
-      className='group grid gap-4 sm:grid-cols-3'
+      className='group grid gap-4 md:grid-cols-3'
       data-testid='post-cards'
     >
       {posts.map((post) => (
@@ -63,18 +65,16 @@ const PostCard = (props: PostCardProps) => {
       <Image
         src={`/images/assets/${slug}/cover.png`}
         className='rounded-2xl hover:saturate-0'
-        width={1200}
-        height={630}
+        width={1280}
+        height={720}
         alt={title}
       />
       <div className='p-4'>
       <div className='grow'>
         <h2 className='text-xl mb-3 font-semibold mt-3'>{title}</h2>
-        <div className='text-sm text-slate-600 dark:text-slate-400'>{summary}</div>
+        
       </div>
-      <div className='flex items-center gap-2 text-sm mt-3'>
-        {formattedDate || <Skeleton className='h-5 w-10' />}
-        <div>&middot;</div>
+      <div className='flex items-center gap-2 text-sm mt-3 text-slate-600 dark:text-slate-400'>
         {likesIsLoading ? (
           <Skeleton className='h-5 w-10 rounded-md' />
         ) : (

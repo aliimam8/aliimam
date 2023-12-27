@@ -21,8 +21,8 @@ const Image = (props: ImageProps) => {
     >
       <NextImage
         className={cn(
-          'transition-[scale,filter] duration-700',
-          isLoading && 'scale-[1.02] blur-xl grayscale',
+          'transition-[scale,filter] duration-700 ',
+          isLoading && 'scale-[1.02] blur-xl grayscale ',
           imageClassName
         )}
         src={src}

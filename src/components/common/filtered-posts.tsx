@@ -39,7 +39,7 @@ export const BlogFilteredPosts = (props: FilteredBlogPostsProps) => {
           id="search"
         />
         <Label htmlFor="search">
-          <Icons.search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2" />
+          <Icons.search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2"/>
         </Label>
       </div>
       {filteredPosts.length === 0 && (
@@ -59,7 +59,7 @@ export const AssetsFilteredPosts = (props: FilteredAssetsPostsProps) => {
   );
 
   return (
-    <div className="px-3">
+    <>
       <div className="relative mb-8 mx-auto max-w-4xl">
         <Input
           type="text"
@@ -71,14 +71,15 @@ export const AssetsFilteredPosts = (props: FilteredAssetsPostsProps) => {
           id="search"
         />
         <Label htmlFor="search">
-          <Icons.search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2" />
+          <Icons.search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2"/>
         </Label>
       </div>
+      <div className=''>
       {filteredPosts.length === 0 && (
         <div className="my-24 text-center text-xl">No posts found</div>
       )}
-
+      </div>
       <AssetsCards posts={filteredPosts} />
-    </div>
+    </>
   );
 };

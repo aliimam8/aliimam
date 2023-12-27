@@ -1,31 +1,31 @@
-import { defineDocumentType, makeSource } from "contentlayer/source-files"
-import rehypePrettyCode from "rehype-pretty-code"
-import rehypeSlug from "rehype-slug"
-import remarkGfm from "remark-gfm"
-import { visit } from "unist-util-visit"
+import { defineDocumentType, makeSource } from 'contentlayer/source-files';
+import rehypePrettyCode from 'rehype-pretty-code';
+import rehypeSlug from 'rehype-slug';
+import remarkGfm from 'remark-gfm';
+import { visit } from 'unist-util-visit';
 
 /** @type {import('contentlayer/source-files').ComputedFields} */
 const computedFields = {
   slug: {
-    type: "string",
-    resolve: (doc) => `/${doc._raw.flattenedPath}`,
+    type: 'string',
+    resolve: (doc) => `/${doc._raw.flattenedPath}`
   },
   slugAsParams: {
-    type: "string",
-    resolve: (doc) => doc._raw.flattenedPath.split("/").slice(1).join("/"),
+    type: 'string',
+    resolve: (doc) => doc._raw.flattenedPath.split('/').slice(1).join('/')
   },
   readingTime: {
-    type: "number",
+    type: 'number',
     resolve: (doc) => {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      const content = String(doc.body.raw)
-      const wordsPerMinute = 200
-      const numberOfWords = content.split(/\s/g).length
-      const minutes = numberOfWords / wordsPerMinute
-      return Math.ceil(minutes)
-    },
-  },
-}
+      const content = String(doc.body.raw);
+      const wordsPerMinute = 200;
+      const numberOfWords = content.split(/\s/g).length;
+      const minutes = numberOfWords / wordsPerMinute;
+      return Math.ceil(minutes);
+    }
+  }
+};
 
 const AssetsPost = defineDocumentType(() => ({
   name: 'AssetsPost',
@@ -47,11 +47,26 @@ const AssetsPost = defineDocumentType(() => ({
       description: 'The modified time of the assets',
       required: true
     },
-    summary: {
+    download: {
       type: 'string',
       description: 'The summary of the assets',
       required: true
     },
+    dimention: {
+      type: 'string',
+      description: 'The summary of the assets',
+      required: true
+    },
+    size: {
+      type: 'string',
+      description: 'The summary of the assets',
+      required: true
+    },
+    summary: {
+      type: 'string',
+      description: 'The summary of the assets',
+      required: true
+    }
   },
   computedFields: {
     slug: {
@@ -59,7 +74,7 @@ const AssetsPost = defineDocumentType(() => ({
       resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx$/, '')
     }
   }
-}))
+}));
 
 const BlogPost = defineDocumentType(() => ({
   name: 'BlogPost',
@@ -93,8 +108,7 @@ const BlogPost = defineDocumentType(() => ({
       resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx$/, '')
     }
   }
-}))
-
+}));
 
 export const Project = defineDocumentType(() => ({
   name: 'Project',
@@ -148,99 +162,99 @@ export const Project = defineDocumentType(() => ({
       resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx$/, '')
     }
   }
-}))
+}));
 
 export const Post = defineDocumentType(() => ({
-  name: "Post",
+  name: 'Post',
   filePathPattern: `posts/**/*.mdx`,
-  contentType: "mdx",
+  contentType: 'mdx',
   fields: {
     title: {
-      type: "string",
-      required: true,
+      type: 'string',
+      required: true
     },
     description: {
-      type: "string",
+      type: 'string'
     },
     date: {
-      type: "date",
-      required: true,
+      type: 'date',
+      required: true
     },
     published: {
-      type: "boolean",
-      default: true,
+      type: 'boolean',
+      default: true
     },
     image: {
-      type: "string",
-      required: true,
+      type: 'string',
+      required: true
     },
     authors: {
       // Reference types are not embedded.
       // Until this is fixed, we can use a simple list.
       // type: "reference",
       // of: Author,
-      type: "list",
-      of: { type: "string" },
-      required: true,
-    },
+      type: 'list',
+      of: { type: 'string' },
+      required: true
+    }
   },
-  computedFields,
-}))
+  computedFields
+}));
 
 export const Author = defineDocumentType(() => ({
-  name: "Author",
+  name: 'Author',
   filePathPattern: `authors/**/*.mdx`,
-  contentType: "mdx",
+  contentType: 'mdx',
   fields: {
     title: {
-      type: "string",
-      required: true,
+      type: 'string',
+      required: true
     },
     description: {
-      type: "string",
+      type: 'string'
     },
     avatar: {
-      type: "string",
-      required: true,
+      type: 'string',
+      required: true
     },
     twitter: {
-      type: "string",
-      required: true,
-    },
+      type: 'string',
+      required: true
+    }
   },
-  computedFields,
-}))
+  computedFields
+}));
 
 export const Page = defineDocumentType(() => ({
-  name: "Page",
+  name: 'Page',
   filePathPattern: `pages/**/*.mdx`,
-  contentType: "mdx",
+  contentType: 'mdx',
   fields: {
     title: {
-      type: "string",
-      required: true,
+      type: 'string',
+      required: true
     },
     description: {
-      type: "string",
-    },
+      type: 'string'
+    }
   },
-  computedFields,
-}))
+  computedFields
+}));
 
 export const Uses = defineDocumentType(() => ({
-  name: "Uses",
+  name: 'Uses',
   filePathPattern: `uses/**/*.mdx`,
-  contentType: "mdx",
+  contentType: 'mdx',
   computedFields: {
     slug: {
       type: 'string',
       resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx$/, '')
     }
   }
-}))
+}));
 
 export default makeSource({
-  contentDirPath: "./src/content",
+  contentDirPath: './src/content',
   documentTypes: [Post, Author, Page, Uses, BlogPost, AssetsPost],
   mdx: {
     // remarkPlugins: [remarkGfm],
@@ -249,23 +263,23 @@ export default makeSource({
       () => (tree) => {
         visit(tree, (node) => {
           // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-          if (node?.type === "element" && node?.tagName === "pre") {
+          if (node?.type === 'element' && node?.tagName === 'pre') {
             // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
-            const [codeEl] = node.children
+            const [codeEl] = node.children;
             // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-            if (codeEl.tagName !== "code") return
+            if (codeEl.tagName !== 'code') return;
 
             // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
-            node.raw = codeEl.children?.[0].value
+            node.raw = codeEl.children?.[0].value;
           }
-        })
+        });
       },
       [
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore weird types in rehype-pretty-code
         rehypePrettyCode,
         {
-          theme: { dark: "one-dark-pro", light: "github-light" },
+          theme: { dark: 'one-dark-pro', light: 'github-light' },
 
           /**
            * @param {{ children: string | any[]; }} node
@@ -274,41 +288,41 @@ export default makeSource({
             // Prevent lines from collapsing in `display: grid` mode, and allow empty
             // lines to be copy/pasted
             if (node.children.length === 0) {
-              node.children = [{ type: "text", value: " " }]
+              node.children = [{ type: 'text', value: ' ' }];
             }
           },
           /**
            * @param {{ properties: { className: string[]; }; }} node
            */
           onVisitHighlightedLine(node) {
-            node.properties.className.push("line--highlighted")
+            node.properties.className.push('line--highlighted');
           },
           /**
            * @param {{ properties: { className: string[]; }; }} node
            */
           onVisitHighlightedWord(node) {
-            node.properties.className = ["word--highlighted"]
-          },
-        },
+            node.properties.className = ['word--highlighted'];
+          }
+        }
       ],
       () => (tree) => {
         visit(tree, (node) => {
           // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-          if (node?.type === "element" && node?.tagName === "div") {
+          if (node?.type === 'element' && node?.tagName === 'div') {
             // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-            if (!("data-rehype-pretty-code-fragment" in node.properties)) return
+            if (!('data-rehype-pretty-code-fragment' in node.properties)) return;
 
             // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
             for (const child of node.children) {
               // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-              if (child.tagName === "pre") {
+              if (child.tagName === 'pre') {
                 // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
-                child.properties["raw"] = node.raw
+                child.properties['raw'] = node.raw;
               }
             }
           }
-        })
-      },
-    ],
-  },
-})
+        });
+      }
+    ]
+  }
+});

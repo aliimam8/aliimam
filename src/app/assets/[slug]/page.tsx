@@ -82,7 +82,7 @@ const AssetPostPage = (props: AssetPostPageProps) => {
     notFound();
   }
 
-  const { title, summary, date, modifiedTime } = post;
+  const { title, summary, date, modifiedTime, download, dimention, size } = post;
 
   const jsonLd: WithContext<Article> = {
     '@context': 'https://schema.org',
@@ -111,7 +111,7 @@ const AssetPostPage = (props: AssetPostPageProps) => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Header date={date} title={title} slug={slug} />
+      <Header date={date} title={title} slug={slug} download={download} dimention={dimention} size={size} />
       <Content slug={slug} post={post} />
       <Separator className="my-8" />
       <MdxPager currentItem={post} allItems={allAssetsPosts} />

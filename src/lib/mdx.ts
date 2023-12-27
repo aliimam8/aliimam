@@ -32,7 +32,7 @@ export const getAllAssetsPosts = (config: GetAllAssetsProps = {}) => {
 
   const posts = allAssetsPosts
     .slice(0, limit)
-    .map((post) => pick(post, ['_id', 'slug', 'title', 'summary', 'date']))
+    .map((post) => pick(post, ['_id', 'slug', 'title', 'summary', 'date', 'download', 'dimention', 'size']))
 
   if (sorted) {
     return posts.sort(
