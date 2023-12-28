@@ -110,120 +110,6 @@ const BlogPost = defineDocumentType(() => ({
   }
 }));
 
-export const Project = defineDocumentType(() => ({
-  name: 'Project',
-  filePathPattern: 'projects/**/*.mdx',
-  contentType: 'mdx',
-  fields: {
-    name: {
-      type: 'string',
-      description: 'The name of the project',
-      required: true
-    },
-    description: {
-      type: 'string',
-      description: 'The description of the project',
-      required: true
-    },
-    homepage: {
-      type: 'string',
-      description: "The link to the project's homepage",
-      required: false
-    },
-    github: {
-      type: 'string',
-      description: "The url to the project's github page",
-      required: true
-    },
-    icon: {
-      type: 'string',
-      description: 'The name of the icon to use',
-      required: true
-    },
-    image: {
-      type: 'string',
-      description: 'Image for the project',
-      required: true
-    },
-    repo: {
-      type: 'string',
-      description: 'The name of the repo of the project',
-      required: true
-    },
-    techstack: {
-      type: 'list',
-      of: Techstack,
-      required: true
-    }
-  },
-  computedFields: {
-    slug: {
-      type: 'string',
-      resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx$/, '')
-    }
-  }
-}));
-
-export const Post = defineDocumentType(() => ({
-  name: 'Post',
-  filePathPattern: `posts/**/*.mdx`,
-  contentType: 'mdx',
-  fields: {
-    title: {
-      type: 'string',
-      required: true
-    },
-    description: {
-      type: 'string'
-    },
-    date: {
-      type: 'date',
-      required: true
-    },
-    published: {
-      type: 'boolean',
-      default: true
-    },
-    image: {
-      type: 'string',
-      required: true
-    },
-    authors: {
-      // Reference types are not embedded.
-      // Until this is fixed, we can use a simple list.
-      // type: "reference",
-      // of: Author,
-      type: 'list',
-      of: { type: 'string' },
-      required: true
-    }
-  },
-  computedFields
-}));
-
-export const Author = defineDocumentType(() => ({
-  name: 'Author',
-  filePathPattern: `authors/**/*.mdx`,
-  contentType: 'mdx',
-  fields: {
-    title: {
-      type: 'string',
-      required: true
-    },
-    description: {
-      type: 'string'
-    },
-    avatar: {
-      type: 'string',
-      required: true
-    },
-    twitter: {
-      type: 'string',
-      required: true
-    }
-  },
-  computedFields
-}));
 
 export const Page = defineDocumentType(() => ({
   name: 'Page',
@@ -255,7 +141,7 @@ export const Uses = defineDocumentType(() => ({
 
 export default makeSource({
   contentDirPath: './src/content',
-  documentTypes: [Post, Author, Page, Uses, BlogPost, AssetsPost],
+  documentTypes: [Page, Uses, BlogPost, AssetsPost],
   mdx: {
     // remarkPlugins: [remarkGfm],
     rehypePlugins: [
