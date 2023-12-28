@@ -69,12 +69,12 @@ const PostCard = (props: PostCardProps) => {
         height={360}
         alt={title}
       />
-      <div className='p-4'>
+      <div className='p-3'>
       <div className='grow'>
-        <h2 className='text-xl mb-3 font-semibold mt-3'>{title}</h2>
+        <h2 className='text-xl font-semibold '>{title}</h2>
         
       </div>
-      <div className='flex items-center gap-2 text-sm mt-3 text-slate-600 dark:text-slate-400'>
+      <div className='flex items-center gap-2 text-sm mt-1 text-slate-600 dark:text-slate-400'>
         {likesIsLoading ? (
           <Skeleton className='h-5 w-10 rounded-md' />
         ) : (

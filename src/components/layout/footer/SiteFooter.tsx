@@ -44,11 +44,6 @@ export const items: Menus[] = [
     target: ''
   },
   {
-    text: 'Posts',
-    href: '/posts',
-    target: ''
-  },
-  {
     text: 'Contact',
     href: '/contact',
     target: ''
