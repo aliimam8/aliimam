@@ -91,7 +91,7 @@ const Hero = () => {
               className={cn(
                 buttonVariants({
                   variant: 'aibutton',
-                  size: 'lg'
+                  size: 'md'
                 })
               )}
             >
