@@ -35,17 +35,17 @@ const PostCards = (props: PostCardsProps) => {
           align: 'start'
         }}
       >
+        <div className="hidden justify-end gap-3 md:flex">
+          <CarouselPrevious />
+          <CarouselNext />
+        </div>
         <CarouselContent className="">
           {posts.map((post) => (
-            <CarouselItem className="md:basis-1/3" >
+            <CarouselItem className="md:basis-1/3">
               <PostCard key={post._id} {...post} />
             </CarouselItem>
           ))}
         </CarouselContent>
-        <div className="flex items-center justify-center gap-4">
-          <CarouselPrevious />
-          <CarouselNext />
-        </div>
       </Carousel>
     </div>
   );

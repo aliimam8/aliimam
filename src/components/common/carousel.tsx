@@ -85,7 +85,7 @@ export const photoImages = [
 ];
 
 export function CarouselSpacing() {
-  const plugin = React.useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
+  const plugin = React.useRef(Autoplay({ delay: 2500, stopOnInteraction: true }));
   function toggleFullScreen() {
     if (document.fullscreenElement) {
       document.exitFullscreen();
@@ -106,7 +106,10 @@ export function CarouselSpacing() {
         opts={{
           align: 'start'
         }}
-      >
+      ><div className="hidden justify-end gap-3 md:flex">
+      <CarouselPrevious />
+      <CarouselNext />
+    </div>
         <CarouselContent className="">
           <PhotoProvider
             maskOpacity={0.9}
@@ -149,10 +152,6 @@ export function CarouselSpacing() {
             ))}
           </PhotoProvider>
         </CarouselContent>
-        <div className="flex mt-6 items-center justify-center gap-4">
-          <CarouselPrevious />
-          <CarouselNext />
-        </div>
       </Carousel>
     </div>
   );

@@ -44,7 +44,7 @@ const AssetsPage = () => {
       <h1 className="my-4 mt-20 text-center text-2xl font-bold sm:text-4xl">
       Burn Your Design
       </h1>
-      <h1 className="mb-8 text-center text-sm font-semibold uppercase tracking-[.3em] text-slate-400 ">
+      <h1 className="mb-8 md:mb-0 text-center text-sm font-semibold uppercase tracking-[.3em] text-slate-400 ">
         Download Free Assets
       </h1>
       <AssetsCards posts={posts} />
