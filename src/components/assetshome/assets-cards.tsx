@@ -5,6 +5,7 @@ import React from 'react';
 import useSWR from 'swr';
 
 import { Skeleton } from '@/components/ui/skeleton';
+import Autoplay from 'embla-carousel-autoplay';
 import fetcher from '@/lib/fetcher';
 import { type AssetsPostCore, type Likes, type Views } from '@/types';
 
@@ -25,12 +26,16 @@ type PostCardsProps = {
 
 const PostCards = (props: PostCardsProps) => {
   const { posts } = props;
+  const plugin = React.useRef(Autoplay({ delay: 2500, stopOnInteraction: true }));
 
   return (
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div className="" data-testid="post-cards">
       <Carousel
         className="w-full max-w-sm md:max-w-full"
+        plugins={[plugin.current]}
+        onMouseEnter={plugin.current.stop}
+        onMouseLeave={plugin.current.reset}
         opts={{
           align: 'start'
         }}
