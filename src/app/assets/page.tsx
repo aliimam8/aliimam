@@ -43,9 +43,9 @@ const AssetsPage = () => {
     <div className="mx-auto mt-40 max-w-4xl px-6">
       <PageTitle
         title="Assets"
-        description={`I started writing articles in December 2023, mainly about graphic Design and
-        sharing knowledge. I have written a total of ${posts.length} articles on
-        my blog. You can search for articles by title in the search box below.`}
+        description={`I started uploading assets in December 2023, mainly about graphic Design and
+        sharing knowledge. I have uploaded a total of ${posts.length} assets on
+        my Assets. You can search for assets by title in the search box below.`}
       />
       <AssetsFilteredPosts posts={posts} />
     </div>

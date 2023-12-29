@@ -33,8 +33,8 @@ export const BlogFilteredPosts = (props: FilteredBlogPostsProps) => {
           type="text"
           value={searchValue}
           onChange={(e) => setSearchValue(e.target.value)}
-          placeholder="Search articles"
-          aria-label="Search articles"
+          placeholder="Search Blogs"
+          aria-label="Search Blogs"
           className="w-full pl-12"
           id="search"
         />
@@ -43,7 +43,7 @@ export const BlogFilteredPosts = (props: FilteredBlogPostsProps) => {
         </Label>
       </div>
       {filteredPosts.length === 0 && (
-        <div className="my-24 text-center text-xl">No posts found</div>
+        <div className="my-24 text-center text-xl">No blogs found</div>
       )}
       <PostCards posts={filteredPosts} />
     </>
@@ -65,8 +65,8 @@ export const AssetsFilteredPosts = (props: FilteredAssetsPostsProps) => {
           type="text"
           value={searchValue}
           onChange={(e) => setSearchValue(e.target.value)}
-          placeholder="Search articles"
-          aria-label="Search articles"
+          placeholder="Search Assets"
+          aria-label="Search Assets"
           className="w-full pl-12"
           id="search"
         />
@@ -76,7 +76,7 @@ export const AssetsFilteredPosts = (props: FilteredAssetsPostsProps) => {
       </div>
       <div className=''>
       {filteredPosts.length === 0 && (
-        <div className="my-24 text-center text-xl">No posts found</div>
+        <div className="my-24 text-center text-xl">No assets found</div>
       )}
       </div>
       <AssetsCards posts={filteredPosts} />
