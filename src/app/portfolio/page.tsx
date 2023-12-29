@@ -17,12 +17,12 @@ export default function Gallery() {
           Portfolio
           <hr className="mx-auto my-4 h-1 w-6 rounded-full border-0 bg-aired"></hr>
         </h1>
-        <div className="mb-20">
+        <div className="mb-10">
           <Projects />
         </div>
       </div>
       <CarouselSpacing />
-      <div className="mx-auto mt-20 max-w-3xl px-4 sm:px-6 md:max-w-7xl ">
+      <div className="mx-auto mt-10 max-w-3xl px-4 sm:px-6 md:max-w-7xl ">
       <Work />
       </div>
     </main>

@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import * as React from 'react';
 import { Icons } from 'src/components/icons';
+import { Badge } from "@/components/ui/badge"
 
 import {
   NavigationMenu,
@@ -112,18 +113,18 @@ export function NavMenu() {
             <Link href="/assets" legacyBehavior passHref>
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                 Assets
+                <div className='px-1 mb-1'>
+                <Badge>New</Badge>
+                </div>
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
 
           <NavigationMenuItem>
             <Link href="/blog" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Blog
-              </NavigationMenuLink>
+              <NavigationMenuLink className={navigationMenuTriggerStyle()}>Blog</NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
-
         </NavigationMenuList>
       </NavigationMenu>
     </div>

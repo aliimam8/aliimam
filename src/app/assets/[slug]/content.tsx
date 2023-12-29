@@ -13,7 +13,7 @@ const Content = (props: ContentProps) => {
   const headings = getHeadings(post.body.raw);
 
   return (
-    <div className="mt-8 flex flex-col justify-between lg:flex-row">
+    <div className="flex flex-col justify-between lg:flex-row">
       <article className="w-full">
         <Mdx code={post.body.code} />
       </article>

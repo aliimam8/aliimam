@@ -97,14 +97,17 @@ export function CarouselSpacing() {
     }
   }
   return (
-    <div className="mx-auto my-20 max-w-3xl px-4 sm:px-6 md:max-w-full"> 
+    <div className="mx-auto max-w-3xl px-4 sm:px-6 md:max-w-full"> 
       <Carousel
-        className="flex w-full flex-col items-center justify-center gap-4 text-center"
+        className="w-full max-w-sm md:max-w-full"
         plugins={[plugin.current]}
         onMouseEnter={plugin.current.stop}
         onMouseLeave={plugin.current.reset}
+        opts={{
+          align: 'start'
+        }}
       >
-        <CarouselContent className="w-[350px] md:w-full h-[190px] md:h-full">
+        <CarouselContent className="">
           <PhotoProvider
             maskOpacity={0.9}
             toolbarRender={({ onScale, scale }) => {
@@ -132,21 +135,21 @@ export function CarouselSpacing() {
             }}
           >
             {photoImages.map((item, index) => (
-              <CarouselItem>
+              <CarouselItem className="md:basis-1/2">
                 <PhotoView key={index} src={item}>
                     <Image
                       src={item}
                       alt={''}
-                      className="h-auto w-[300px] md:w-full cursor-zoom-in rounded-lg object-cover object-center saturate-100 transition-all duration-100 hover:saturate-0"
+                      className="h-auto w-full cursor-zoom-in rounded-lg object-cover object-center saturate-100 transition-all duration-100 hover:saturate-0"
                       width={500}
-                      height={500}
+                      height={300}
                     />
                 </PhotoView>
               </CarouselItem>
             ))}
           </PhotoProvider>
         </CarouselContent>
-        <div className="flex gap-4">
+        <div className="flex mt-6 items-center justify-center gap-4">
           <CarouselPrevious />
           <CarouselNext />
         </div>

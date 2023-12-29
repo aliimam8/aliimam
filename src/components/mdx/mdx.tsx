@@ -40,7 +40,7 @@ const components: MDXComponents = {
     return (
       <>
         <ImageZoom >
-          <Image className='rounded-3xl object-cover block h-full w-full cursor-zoom-in border-slate-200 dark:border-slate-800 border' alt={alt} {...rest} />
+          <Image className='rounded-3xl not-prose object-center object-cover bg-aired h-full w-full cursor-zoom-in border-slate-200 dark:border-slate-800 border' alt={alt} {...rest} />
         </ImageZoom>
         <figcaption className='mt-2 text-center'>{alt}</figcaption>
       </>
@@ -82,7 +82,7 @@ const Mdx = (props: MdxProps) => {
   const Component = useMDXComponent(code)
 
   return (
-    <div className='prose w-full max-w-none dark:prose-invert'>
+    <div className='w-full prose max-w-none dark:prose-invert'>
       <Component components={{ ...components }} />
     </div>
   )

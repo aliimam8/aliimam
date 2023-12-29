@@ -11,8 +11,6 @@ import { type AssetsPostCore, type Likes, type Views } from '@/types'
 
 import Image from '../mdx/image'
 import { cn } from '@/lib/utils'
-import { buttonVariants } from '../ui/button'
-import { Icons } from '../icons'
 
 type PostCardsProps = {
   posts: AssetsPostCore[]

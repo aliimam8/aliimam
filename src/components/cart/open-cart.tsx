@@ -1,8 +1,8 @@
-import Link from 'next/link';
+
 import { Icons } from 'src/components/icons';
 
 export default function OpenCart({
-  className,
+  
   quantity
 }: {
   className?: string;
