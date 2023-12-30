@@ -36,20 +36,20 @@ export const generateMetadata = async (
   };
 };
 
-const POSTS_PER_PAGE = 5;
+const POSTS_PER_PAGE = 5
 
-const AssetsPage = () => {
+const AssetsPage = ({ params }: { params: { page: string } }) => {
   const posts = getAllAssetsPosts();
-
-  const pageNumber = 1;
+  const pageNumber = parseInt(params.page as string)
   const initialDisplayPosts = posts.slice(
     POSTS_PER_PAGE * (pageNumber - 1),
     POSTS_PER_PAGE * pageNumber
-  );
+  )
   const pagination = {
     currentPage: pageNumber,
-    totalPages: Math.ceil(posts.length / POSTS_PER_PAGE)
-  };
+    totalPages: Math.ceil(posts.length / POSTS_PER_PAGE),
+  }
+
 
   return (
     <div className="mx-auto mt-40 max-w-4xl px-6">

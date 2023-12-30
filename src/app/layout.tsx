@@ -1,3 +1,4 @@
+
 import { ReactNode, Suspense } from 'react';
 import { SiteFooter } from 'src/components/layout/footer/SiteFooter';
 import 'src/styles/globals.css';
@@ -36,6 +37,7 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children }: { children: ReactNode }) {
+ 
   return (
     <html lang="en" className={inter.className}>
       <head>

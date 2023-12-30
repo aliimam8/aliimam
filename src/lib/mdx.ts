@@ -16,7 +16,7 @@ export const getAllBlogPosts = (config: GetAllPostsProps = {}) => {
 
   const posts = allBlogPosts
     .slice(0, limit)
-    .map((post) => pick(post, ['_id', 'slug', 'title', 'summary', 'date']))
+    .map((post) => pick(post, ['_id', 'slug', 'title', 'summary', 'date', 'tags']))
 
   if (sorted) {
     return posts.sort(
@@ -32,7 +32,7 @@ export const getAllAssetsPosts = (config: GetAllAssetsProps = {}) => {
 
   const posts = allAssetsPosts
     .slice(0, limit)
-    .map((post) => pick(post, ['_id', 'slug', 'title', 'summary', 'date', 'download', 'dimention', 'size']))
+    .map((post) => pick(post, ['_id', 'slug', 'title', 'summary', 'date', 'download', 'dimention', 'size', 'tags']))
 
   if (sorted) {
     return posts.sort(

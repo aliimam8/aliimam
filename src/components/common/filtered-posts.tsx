@@ -14,10 +14,6 @@ type FilteredBlogPostsProps = {
   posts: BlogPostCore[];
 };
 
-type FilteredAssetsPostsProps = {
-  posts: AssetsPostCore[];
-};
-
 export const BlogFilteredPosts = (props: FilteredBlogPostsProps) => {
   const { posts } = props;
   const [searchValue, setSearchValue] = React.useState('');
@@ -39,7 +35,7 @@ export const BlogFilteredPosts = (props: FilteredBlogPostsProps) => {
           id="search"
         />
         <Label htmlFor="search">
-          <Icons.search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2"/>
+          <Icons.search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2" />
         </Label>
       </div>
       {filteredPosts.length === 0 && (
@@ -50,6 +46,13 @@ export const BlogFilteredPosts = (props: FilteredBlogPostsProps) => {
   );
 };
 
+type FilteredAssetsPostsProps = {
+  posts: AssetsPostCore[];
+  pagination?: string;
+};
+
+const POSTS_PER_PAGE = 5;
+
 export const AssetsFilteredPosts = (props: FilteredAssetsPostsProps) => {
   const { posts } = props;
   const [searchValue, setSearchValue] = React.useState('');
@@ -58,9 +61,19 @@ export const AssetsFilteredPosts = (props: FilteredAssetsPostsProps) => {
     post.title.toLowerCase().includes(searchValue.toLowerCase())
   );
 
+  const pageNumber = 1;
+  const initialDisplayPosts = posts.slice(
+    POSTS_PER_PAGE * (pageNumber - 1),
+    POSTS_PER_PAGE * pageNumber
+  );
+  const pagination = {
+    currentPage: pageNumber,
+    totalPages: Math.ceil(posts.length / POSTS_PER_PAGE)
+  };
+
   return (
     <>
-      <div className="relative mb-8 mx-auto max-w-4xl">
+      <div className="relative mx-auto mb-8 max-w-4xl">
         <Input
           type="text"
           value={searchValue}
@@ -71,15 +84,15 @@ export const AssetsFilteredPosts = (props: FilteredAssetsPostsProps) => {
           id="search"
         />
         <Label htmlFor="search">
-          <Icons.search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2"/>
+          <Icons.search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2" />
         </Label>
       </div>
-      <div className=''>
-      {filteredPosts.length === 0 && (
-        <div className="my-24 text-center text-xl">No assets found</div>
-      )}
+      <div className="">
+        {filteredPosts.length === 0 && (
+          <div className="my-24 text-center text-xl">No assets found</div>
+        )}
       </div>
-      <AssetsCards posts={filteredPosts} />
+      <AssetsCards posts={filteredPosts} pagination={pagination} />
     </>
   );
 };

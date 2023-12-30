@@ -8,6 +8,7 @@ type Site = {
   titleTemplate: string
   description: string
   githubUsername: string
+  socialBanner: string
   favicons: IconDescriptor[]
 }
 
@@ -21,6 +22,7 @@ const site: Site = {
   keywords: ['Ali Imam', 'Next.js', 'React', 'TypeScript', 'Node.js'],
   titleTemplate: 'Ali Imam',
   description: 'Ali Imam • Art Director',
+  socialBanner: '/ali.jpeg',
   githubUsername: 'aiartstudio',
   favicons: [
     {

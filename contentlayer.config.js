@@ -1,10 +1,10 @@
 import { defineDocumentType, makeSource } from 'contentlayer/source-files';
 import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeSlug from 'rehype-slug';
-import remarkGfm from 'remark-gfm';
 import { visit } from 'unist-util-visit';
 
 /** @type {import('contentlayer/source-files').ComputedFields} */
+
 const computedFields = {
   slug: {
     type: 'string',
@@ -52,6 +52,8 @@ const AssetsPost = defineDocumentType(() => ({
       description: 'The summary of the assets',
       required: true
     },
+    tags: { type: 'list', of: { type: 'string' }, default: [] },
+    draft: { type: 'boolean' },
     dimention: {
       type: 'string',
       description: 'The summary of the assets',
@@ -91,6 +93,7 @@ const BlogPost = defineDocumentType(() => ({
       description: 'The date of the blog post',
       required: true
     },
+    tags: { type: 'list', of: { type: 'string' }, default: [] },
     modifiedTime: {
       type: 'string',
       description: 'The modified time of the blog post',
@@ -210,5 +213,10 @@ export default makeSource({
         });
       }
     ]
-  }
+  },
+  onSuccess: async (importData) => {
+    const { allAssets } = await importData()
+    createTagCount(allAssets)
+    createSearchIndex(allAssets)
+  },
 });

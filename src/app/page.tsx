@@ -1,3 +1,4 @@
+
 import { Suspense } from 'react';
 import { Carousel } from 'src/components/carousel';
 import Logos from 'src/components/common/logos';
@@ -9,6 +10,7 @@ import Projects from '@/components/projects';
 import Dashboard from 'src/components/common/dashboard';
 import AssetsPage from '@/components/assetshome/aiasset';
 
+
 export const runtime = 'edge';
 
 export const metadata = {
@@ -19,6 +21,7 @@ export const metadata = {
 };
 
 export default function HomePage() {
+  
   return (
     <>
       <Suspense>
