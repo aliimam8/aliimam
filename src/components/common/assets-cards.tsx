@@ -1,11 +1,9 @@
 'use client';
-import dayjs from 'dayjs';
+
 import Link from 'next/link';
 import React from 'react';
 import useSWR from 'swr';
 import { usePathname } from 'next/navigation';
-import tagData from 'src/app/tag-data.json';
-import { slug } from 'github-slugger';
 
 
 import { Skeleton } from '@/components/ui/skeleton';
@@ -69,45 +67,11 @@ type PostCardsProps = {
 
 const PostCards = (props: PostCardsProps) => {
   const { posts, pagination, initialDisplayPosts = [], } = props;
-  const tagCounts = tagData as Record<string, number>;
-  const tagKeys = Object.keys(tagCounts);
-  const sortedTags = tagKeys.sort();
-  const pathname = usePathname();
 
   const Posts = initialDisplayPosts.length > 0 ? initialDisplayPosts : posts
 
   return (
     <>
-        <div className="text-center">
-          {pathname.startsWith('/assets') ? (
-            <h3 className="font-bold">All Assets</h3>
-          ) : (
-            <Link href={`/assets`} className="font-bold text-slate-400">
-              All Assets
-            </Link>
-          )}
-          <ul className='flex flex-wrap items-center text-center justify-center py-4'>
-            {sortedTags.map((t) => {
-              return (
-                <li key={t} className="flex">
-                  {pathname.split('/tags/')[1] === slug(t) ? (
-                    <h3 className="px-3 text-sm font-bold uppercase text-aired">
-                      {`${t} (${tagCounts[t]})`}
-                    </h3>
-                  ) : (
-                    <Link
-                      href={`/tags/${slug(t)}`}
-                      className="px-3 text-sm uppercase text-slate-600"
-                      aria-label={`View posts tagged ${t}`}
-                    >
-                      {`${t} (${tagCounts[t]})`}
-                    </Link>
-                  )}
-                </li>
-              );
-            })}
-          </ul>
-        </div>
       <div className="group mt-2 grid gap-4 md:grid-cols-3" data-testid="post-cards">
         {Posts.map((post) => (
           <PostCard key={post._id} {...post} />

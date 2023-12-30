@@ -8,7 +8,6 @@ import { Skeleton } from '@/components/ui/skeleton';
 import Autoplay from 'embla-carousel-autoplay';
 import fetcher from '@/lib/fetcher';
 import { type AssetsPostCore, type Likes, type Views } from '@/types';
-import Tag from '@/components/mdx/Tag'
 
 import {
   Carousel,
@@ -61,7 +60,7 @@ const PostCards = (props: PostCardsProps) => {
 type PostCardProps = AssetsPostCore;
 
 const PostCard = (props: PostCardProps) => {
-  const { _id, slug, title, summary, date, tags } = props;
+  const { _id, slug, title, date, tags } = props;
   const [formattedDate, setFormattedDate] = React.useState('');
   const { data: viewsData, isLoading: viewsIsLoading } = useSWR<Views>(
     `/api/views?slug=${slug}`,
@@ -111,7 +110,11 @@ const PostCard = (props: PostCardProps) => {
             <div>{viewsData?.views} views</div>
           )}
         </div>
-        <div className="flex mt-2 flex-wrap">{tags?.map((tag) => <AiTag key={tag} text={tag} />)}</div>
+        <div className="flex flex-wrap gap-3">
+          {tags.map((tag) => (
+            <AiTag key={tag} text={tag} />
+          ))}
+        </div>
       </div>
     </Link>
   );

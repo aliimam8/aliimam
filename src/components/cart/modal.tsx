@@ -44,7 +44,7 @@ export function CartModal({ cart }: { cart: Cart | undefined }) {
       <button aria-label="Open cart" onClick={openCart}>
         <OpenCart quantity={cart?.totalQuantity} />
       </button>
-      <Transition show={isOpen}>
+      <Transition show={isOpen}> 
         <Dialog onClose={closeCart} className="relative z-50">
           <Transition.Child
             as={Fragment}

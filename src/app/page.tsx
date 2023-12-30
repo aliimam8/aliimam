@@ -8,6 +8,7 @@ import About from 'src/components/common/about';
 import Intro from 'src/components/common/intro';
 import Projects from '@/components/projects';
 import Dashboard from 'src/components/common/dashboard';
+import Color from 'src/components/common/color';
 import AssetsPage from '@/components/assetshome/aiasset';
 
 
@@ -31,9 +32,7 @@ export default function HomePage() {
         <AssetsPage />
         <Intro />
         <Dashboard />
-        <div className="mx-auto mt-10 max-w-3xl px-4 sm:px-6 md:max-w-5xl ">
-          <About />
-        </div>
+        <Color/>
         <Carousel />
         <h1 className="my-10 text-center text-sm font-semibold uppercase tracking-[.3em] text-slate-400 ">
           Projects
