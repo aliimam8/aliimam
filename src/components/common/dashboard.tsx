@@ -37,7 +37,7 @@ const Items = () => {
       value: viewsData?.views,
       target: "",
       icon: <Icons.aiLogo color='#f50537' className="w-7" />,
-      linkText: 'Ali Imam',
+      linkText: 'AI Store',
       gradient: {
         startColor: '#f50537',
         endColor: '#f50537'
@@ -45,11 +45,11 @@ const Items = () => {
     },
     {
       title: 'Total Likes',
-      link: '/store',
+      link: '/assets',
       target: "",
       value: likesData?.likes,
       icon: <Icons.heart color='#f50537' className="w-7" />,
-      linkText: 'Ali Imam',
+      linkText: 'Assets',
       gradient: {
         startColor: '#f50537',
         endColor: '#f50537'

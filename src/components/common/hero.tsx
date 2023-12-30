@@ -6,22 +6,20 @@ import { buttonVariants } from 'src/components/ui/button';
 import { cn } from 'src/lib/utils';
 import 'src/styles/text.css';
 import { renderCanvas } from './render';
-import { TypeWriter } from './type'
-
-
+import { TypeWriter } from './type';
 
 const Hero = () => {
   const talkAbout = [
-		'Photoshop',
-		'Illustrator',
-		'After Effects',
-		'Premiere Pro',
-		'Cinema 4D',
-		'Autodesk Maya',
-		'Visual Studio Code',
-		'Corel Draw',
-    'ZBrush',
-	];
+    'Photoshop',
+    'Illustrator',
+    'After Effects',
+    'Premiere Pro',
+    'Cinema 4D',
+    'Autodesk Maya',
+    'Visual Studio Code',
+    'Corel Draw',
+    'ZBrush'
+  ];
 
   useEffect(() => {
     renderCanvas();
@@ -37,10 +35,13 @@ const Hero = () => {
               href="https://www.youtube.com/channel/UCZYm9jYmDesAGzbyFacUSfA"
               rel="noreferrer"
               target="_blank"
-              className="ml-1 font-semibold hover:text-aired"
+              className="ml-1 flex items-center font-semibold hover:text-aired"
             >
-              <span className="absolute inset-0 " aria-hidden="true" />
-              Subscribe <span aria-hidden="true">&rarr;</span>
+              <div className="absolute inset-0 flex " aria-hidden="true" />
+              Subscribe{' '}
+              <span aria-hidden="true">
+                <Icons.arrowUp className="h-4 w-4 rotate-45" />
+              </span>
             </a>
           </div>
         </div>
@@ -75,15 +76,14 @@ const Hero = () => {
             </h1>
           </div>
 
-          <h1 className="text-2xl font-semibold md:text-4xl lg:text-4xl mt-4">
+          <h1 className="mt-4 text-2xl font-semibold md:text-4xl lg:text-4xl">
             Hello and welcome! I&#39;m <span className="font-bold text-aired">Ali </span>
           </h1>
 
-          <p className="md:text-md mx-auto mb-16 mt-2 max-w-2xl px-8 md:px-20 lg:text-lg text-sm text-slate-600 dark:text-slate-400 sm:px-6 md:max-w-4xl">
+          <p className="md:text-md mx-auto mb-16 mt-2 max-w-2xl px-8 text-sm text-slate-600 dark:text-slate-400 sm:px-6 md:max-w-4xl md:px-20 lg:text-lg">
             I&#39;m an <span className="font-regular">Art Director </span>
             looking for opportunities as a Level Artist. I have a passion for Graphic Design, UI UX,
-            3D, Animation and tools like{' '}
-            <TypeWriter strings={talkAbout} />.
+            3D, Animation and tools like <TypeWriter strings={talkAbout} />.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link
