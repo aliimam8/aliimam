@@ -213,10 +213,5 @@ export default makeSource({
         });
       }
     ]
-  },
-  onSuccess: async (importData) => {
-    const { allAssets } = await importData()
-    createTagCount(allAssets)
-    createSearchIndex(allAssets)
-  },
+  }
 });
