@@ -84,7 +84,7 @@ export function CartModal({ cart }: { cart: Cart | undefined }) {
                     className={cn(
                       buttonVariants({
                         variant: 'redbutton',
-                        size: 'lg'
+                        size: 'md'
                       })
                     )}
                   >
@@ -244,7 +244,7 @@ export function CartModalD({ cart }: { cart: Cart | undefined }) {
             className={cn(
               buttonVariants({
                 variant: 'redbutton',
-                size: 'lg'
+                size: 'md'
               })
             )}
           >

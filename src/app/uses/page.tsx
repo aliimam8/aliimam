@@ -8,7 +8,7 @@ import getPage from '@/utils/get-uses'
 // export const runtime = 'edge'
 const title = 'Uses'
 const description =
-  'This is the equipment I currently use for gaming, programming, making videos, and every day.'
+  'This is the equipment I currently use for graphic designing, programming, making videos, and every day.'
 
 type UsesPageProps = {
   params: Record<string, never>
