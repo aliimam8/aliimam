@@ -3,7 +3,7 @@
     z-index: 1;
     display: block;
     width: max-content;
-    min-width: 258px;
+    min-width: 300px;
     visibility: visible;
   }
   .rc-color-picker-hidden {
@@ -12,10 +12,10 @@
   .rc-color-picker-panel {
     display: flex;
     flex-direction: column;
-    width: 258px;
+    width: 300px;
     padding: 12px;
     background-color: #fff;
-    border-radius: 8px;
+    border-radius: 16px;
     box-shadow: 0px 3px 6px -4px rgba(0, 0, 0, 0.12), 0px 6px 16px 0px rgba(0, 0, 0, 0.08), 0px 9px 28px 8px rgba(0, 0, 0, 0.05);
   }
   .rc-color-picker-panel-disabled {
@@ -25,9 +25,9 @@
     margin-bottom: 12px;
   }
   .rc-color-picker-select .rc-color-picker-palette {
-    min-height: 160px;
+    min-height: 200px;
     overflow: hidden;
-    border-radius: 4px;
+    border-radius: 14px;
   }
   .rc-color-picker-select .rc-color-picker-palette > .rc-color-picker-gradient {
     border-top-left-radius: 5px;

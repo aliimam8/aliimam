@@ -110,7 +110,7 @@ const PostCard = (props: PostCardProps) => {
             <div>{viewsData?.views} views</div>
           )}
         </div>
-        <div className="flex flex-wrap gap-3">
+        <div className="flex mt-2 flex-wrap gap-3">
           {tags.map((tag) => (
             <AiTag key={tag} text={tag} />
           ))}
