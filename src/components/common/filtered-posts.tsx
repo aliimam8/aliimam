@@ -48,12 +48,11 @@ export const BlogFilteredPosts = (props: FilteredBlogPostsProps) => {
 
 type FilteredAssetsPostsProps = {
   posts: AssetsPostCore[];
-  pageNumber: number
 };
 
 
 export const AssetsFilteredPosts = (props: FilteredAssetsPostsProps) => {
-  const { posts, pageNumber } = props;
+  const { posts} = props;
   const [searchValue, setSearchValue] = React.useState('');
 
   const filteredPosts = posts.filter((post) =>
@@ -81,7 +80,7 @@ export const AssetsFilteredPosts = (props: FilteredAssetsPostsProps) => {
           <div className="my-24 text-center text-xl">No assets found</div>
         )}
       </div>
-      <AssetsCards posts={filteredPosts} pageCount={pageNumber} />
+      <AssetsCards posts={filteredPosts}  />
     </>
   );
 };

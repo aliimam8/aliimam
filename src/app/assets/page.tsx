@@ -48,7 +48,7 @@ const AssetsPage = () => {
         sharing knowledge. I have uploaded a total of ${posts.length} assets on
         my Assets. You can search for assets by title in the search box below.`}
       />
-      <AssetsFilteredPosts posts={posts} pageNumber={1} />
+      <AssetsFilteredPosts posts={posts} />
     </div>
   );
 };

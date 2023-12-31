@@ -17,11 +17,10 @@ import { cn } from '@/lib/utils';
 type PostCardsProps = {
   posts: AssetsPostCore[];
   initialDisplayPosts?: AssetsPostCore[];
-  pageCount: number;
 };
 
 const PostCards = (props: PostCardsProps) => {
-  const { posts, pageCount, initialDisplayPosts = [] } = props;
+  const { posts, initialDisplayPosts = [] } = props;
 
   const Posts = initialDisplayPosts.length > 0 ? initialDisplayPosts : posts;
 
@@ -55,17 +54,7 @@ const PostCards = (props: PostCardsProps) => {
           <PostCard key={post._id} {...post} />
         ))}
       </div>
-      <div className="mt-6">
-        {posts.length ? (
-          <PaginationButton
-            pageCount={pageCount}
-            page={page}
-            per_page={per_page}
-            sort={sort}
-            createQueryString={createQueryString}
-          />
-        ) : null}
-      </div>
+      
     </>
   );
 };
