@@ -32,7 +32,6 @@ export default function HomePage() {
         <AssetsPage />
         <Intro />
         <Dashboard />
-        <Color/>
         <Carousel />
         <h1 className="my-10 text-center text-sm font-semibold uppercase tracking-[.3em] text-slate-400 ">
           Projects
