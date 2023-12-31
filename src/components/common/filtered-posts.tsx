@@ -48,28 +48,17 @@ export const BlogFilteredPosts = (props: FilteredBlogPostsProps) => {
 
 type FilteredAssetsPostsProps = {
   posts: AssetsPostCore[];
-  pagination?: string;
+  pageNumber: number
 };
 
-const POSTS_PER_PAGE = 5;
 
 export const AssetsFilteredPosts = (props: FilteredAssetsPostsProps) => {
-  const { posts } = props;
+  const { posts, pageNumber } = props;
   const [searchValue, setSearchValue] = React.useState('');
 
   const filteredPosts = posts.filter((post) =>
     post.title.toLowerCase().includes(searchValue.toLowerCase())
   );
-
-  const pageNumber = 1;
-  const initialDisplayPosts = posts.slice(
-    POSTS_PER_PAGE * (pageNumber - 1),
-    POSTS_PER_PAGE * pageNumber
-  );
-  const pagination = {
-    currentPage: pageNumber,
-    totalPages: Math.ceil(posts.length / POSTS_PER_PAGE)
-  };
 
   return (
     <>
@@ -92,7 +81,7 @@ export const AssetsFilteredPosts = (props: FilteredAssetsPostsProps) => {
           <div className="my-24 text-center text-xl">No assets found</div>
         )}
       </div>
-      <AssetsCards posts={filteredPosts} pagination={pagination} />
+      <AssetsCards posts={filteredPosts} pageCount={pageNumber} />
     </>
   );
 };

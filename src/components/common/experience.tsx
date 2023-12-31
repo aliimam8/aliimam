@@ -3,14 +3,6 @@ import MyExp from 'src/components/common/exp';
 
 import { ScrollArea, ScrollBar } from 'src/components/ui/scroll-area';
 
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel"
-
 export interface Experience {
   post: string;
   comlogo: string;
@@ -87,7 +79,6 @@ export const works: Experience[] = [
   }
 ];
 
-
 export function Experience() {
   return (
     <div className="mt-20">
@@ -109,6 +100,7 @@ export function Experience() {
                   height={150}
                 />
               </div>
+              
               <div className="text-md text-muted-foreground flex flex-col justify-between">
                 <span className="text-foreground font-bold">{Experience.post}</span>
                 <span className="text-foreground text-sm text-slate-400 dark:text-slate-600">

@@ -10,13 +10,8 @@ const title = 'Assets';
 const description =
   'My personal website and blog where I share my thoughts on various topics including tutorials, notes, and personal experiences. As a full-stack developer from Hong Kong, I started learning web development as a hobby in December 2023. I use Next.js for building websites, GitHub for code hosting, and Vercel for deployment. Explore my site to learn more about my Journey and discover some of the web development resources that have inspired me.';
 
-type BlogPageProps = {
-  params: Record<string, never>;
-  searchParams: Record<string, never>;
-};
-
 export const generateMetadata = async (
-  _: BlogPageProps,
+  _: AssetsPageProps,
   parent: ResolvingMetadata
 ): Promise<Metadata> => {
   const previousOpenGraph = (await parent)?.openGraph ?? {};
@@ -36,20 +31,14 @@ export const generateMetadata = async (
   };
 };
 
-const POSTS_PER_PAGE = 5;
+type AssetsPageProps = {
+  params: Record<string, never>;
+  searchParams: Record<string, never>;
+};
+
 
 const AssetsPage = () => {
   const posts = getAllAssetsPosts();
-
-  const pageNumber = 1;
-  const initialDisplayPosts = posts.slice(
-    POSTS_PER_PAGE * (pageNumber - 1),
-    POSTS_PER_PAGE * pageNumber
-  );
-  const pagination = {
-    currentPage: pageNumber,
-    totalPages: Math.ceil(posts.length / POSTS_PER_PAGE)
-  };
 
   return (
     <div className="mx-auto mt-40 max-w-4xl px-6">
@@ -59,7 +48,7 @@ const AssetsPage = () => {
         sharing knowledge. I have uploaded a total of ${posts.length} assets on
         my Assets. You can search for assets by title in the search box below.`}
       />
-      <AssetsFilteredPosts posts={posts} />
+      <AssetsFilteredPosts posts={posts} pageNumber={1} />
     </div>
   );
 };

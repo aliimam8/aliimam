@@ -3,9 +3,9 @@
 import Link from 'next/link';
 import React from 'react';
 import useSWR from 'swr';
-import { usePathname } from 'next/navigation';
+import { usePathname, useSearchParams } from 'next/navigation';
 
-
+import { PaginationButton } from '@/components/ui/pagination';
 import { Skeleton } from '@/components/ui/skeleton';
 import fetcher from '@/lib/fetcher';
 import { type AssetsPostCore, type Likes, type Views } from '@/types';
@@ -14,61 +14,39 @@ import AiTag from '@/components/mdx/Tag';
 import Image from '../mdx/image';
 import { cn } from '@/lib/utils';
 
-interface PaginationProps {
-  totalPages: number;
-  currentPage: number;
-}
-
-function Pagination({ totalPages, currentPage }: PaginationProps) {
-  const pathname = usePathname();
-  const basePath = pathname.split('/')[1];
-  const prevPage = currentPage - 1 > 0;
-  const nextPage = currentPage + 1 <= totalPages;
-
-  return (
-    <div className="hidden space-y-2 pb-8 pt-6 md:space-y-5">
-      <nav className="flex justify-between">
-        {!prevPage && (
-          <button className="cursor-auto disabled:opacity-50" disabled={!prevPage}>
-            Previous
-          </button>
-        )}
-        {prevPage && (
-          <Link
-            href={currentPage - 1 === 1 ? `/${basePath}/` : `/${basePath}/page/${currentPage - 1}`}
-            rel="prev"
-          >
-            Previous
-          </Link>
-        )}
-        <span>
-          {currentPage} of {totalPages}
-        </span>
-        {!nextPage && (
-          <button className="cursor-auto disabled:opacity-50" disabled={!nextPage}>
-            Next
-          </button>
-        )}
-        {nextPage && (
-          <Link href={`/${basePath}/page/${currentPage + 1}`} rel="next">
-            Next
-          </Link>
-        )}
-      </nav>
-    </div>
-  );
-}
-
 type PostCardsProps = {
   posts: AssetsPostCore[];
-  pagination?: PaginationProps;
   initialDisplayPosts?: AssetsPostCore[];
+  pageCount: number;
 };
 
 const PostCards = (props: PostCardsProps) => {
-  const { posts, pagination, initialDisplayPosts = [], } = props;
+  const { posts, pageCount, initialDisplayPosts = [] } = props;
 
-  const Posts = initialDisplayPosts.length > 0 ? initialDisplayPosts : posts
+  const Posts = initialDisplayPosts.length > 0 ? initialDisplayPosts : posts;
+
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const page = searchParams?.get('page') ?? '1';
+  const per_page = searchParams?.get('per_page') ?? '3';
+  const sort = searchParams?.get('sort') ?? 'productCount.desc';
+
+  const createQueryString = React.useCallback(
+    (params: Record<string, string | number | null>) => {
+      const newSearchParams = new URLSearchParams(searchParams?.toString());
+
+      for (const [key, value] of Object.entries(params)) {
+        if (value === null) {
+          newSearchParams.delete(key);
+        } else {
+          newSearchParams.set(key, String(value));
+        }
+      }
+
+      return newSearchParams.toString();
+    },
+    [searchParams]
+  );
 
   return (
     <>
@@ -77,9 +55,17 @@ const PostCards = (props: PostCardsProps) => {
           <PostCard key={post._id} {...post} />
         ))}
       </div>
-      {pagination && pagination.totalPages > 1 && (
-        <Pagination currentPage={pagination.currentPage} totalPages={pagination.totalPages} />
-      )}
+      <div className="mt-6">
+        {posts.length ? (
+          <PaginationButton
+            pageCount={pageCount}
+            page={page}
+            per_page={per_page}
+            sort={sort}
+            createQueryString={createQueryString}
+          />
+        ) : null}
+      </div>
     </>
   );
 };
@@ -133,7 +119,9 @@ const PostCard = (props: PostCardProps) => {
               <div>{viewsData?.views} views</div>
             )}
           </div>
-          <div className="flex mt-2 flex-wrap">{tags?.map((tag) => <AiTag key={tag} text={tag} />)}</div>
+          <div className="mt-2 flex flex-wrap">
+            {tags?.map((tag) => <AiTag key={tag} text={tag} />)}
+          </div>
         </div>
       </Link>
     </>
