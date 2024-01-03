@@ -34,7 +34,7 @@ const Writing: FC = () => {
       link: '/store',
       value: viewsData?.views,
       target: '',
-      icon: <Icons.aiLogo color="#f50537" className="w-5" />,
+      icon: <Icons.aiLogo color="#f50537" className="w-4" />,
       linkText: 'Ali Imam',
       gradient: {
         startColor: '#f50537',
@@ -46,7 +46,7 @@ const Writing: FC = () => {
       link: '/store',
       target: '',
       value: likesData?.likes,
-      icon: <Icons.heart color="#f50537" className="w-5" />,
+      icon: <Icons.heart color="#f50537" className="w-4" />,
       linkText: 'Ali Imam',
       gradient: {
         startColor: '#f50537',
@@ -62,7 +62,7 @@ const Writing: FC = () => {
         <p className="text-slate-600 dark:text-slate-400">
           Learning things, and then teaching others.
         </p>
-        <div className="flex justify-center gap-4">
+        <div className="flex justify-center gap-2">
           {data.map((item) => {
             const {
               icon,
@@ -79,7 +79,7 @@ const Writing: FC = () => {
                 className="hover:bg-accent group relative overflow-hidden p-4"
               >
                 <div className="flex items-center justify-center gap-2 ">
-                  <div className="text-foreground flex items-center gap-2 text-xl font-bold">
+                  <div className="text-foreground flex items-center gap-2 text-md font-semibold">
                     {value ? (
                       <>
                         <span>{icon}</span>
@@ -89,7 +89,7 @@ const Writing: FC = () => {
                       '--'
                     )}
                   </div>
-                  <div className="text-sm text-slate-600 dark:text-slate-400">{title}</div>
+                  <div className="text-xs text-slate-600 dark:text-slate-400">{title}</div>
                 </div>
               </a>
             );

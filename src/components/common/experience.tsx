@@ -1,7 +1,16 @@
+'use client';
+
 import Image from 'next/image';
 import MyExp from 'src/components/common/exp';
 
-import { ScrollArea, ScrollBar } from 'src/components/ui/scroll-area';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious
+} from '@/components/ui/carousel';
+import React from 'react';
 
 export interface Experience {
   post: string;
@@ -15,7 +24,7 @@ export const works: Experience[] = [
     post: 'Graphic Designer',
     comlogo: '/exp/11.png',
     company: 'Steadfast Nutrition · Full-time',
-    time: 'Aug 2023 - Present · 3 mos'
+    time: 'Aug 2023 - Present · 5 mos'
   },
   {
     post: 'Art Director',
@@ -84,37 +93,49 @@ export function Experience() {
     <div className="mt-20">
       <h1 className="mt-6 text-center text-lg font-bold">My Journey</h1>
       <MyExp />
-      <ScrollArea className="mx-auto mt-4 max-w-3xl whitespace-nowrap px-2 lg:max-w-6xl">
-        <div className="flex w-max space-x-4">
-          {works.map((Experience) => (
-            <figure
-              key={Experience.post}
-              className="flex w-[340px] shrink-0 space-x-4 rounded-lg border border-slate-200 p-4 dark:border-slate-800"
-            >
-              <div className="overflow-hidden">
-                <Image
-                  src={Experience.comlogo}
-                  alt={`Photo by ${Experience.post}`}
-                  className="h-[70px] w-[70px] object-cover"
-                  width={150}
-                  height={150}
-                />
-              </div>
-              
-              <div className="text-md text-muted-foreground flex flex-col justify-between">
-                <span className="text-foreground font-bold">{Experience.post}</span>
-                <span className="text-foreground text-sm text-slate-400 dark:text-slate-600">
-                  {Experience.company}
-                </span>
-                <span className="text-foreground text-xs text-slate-400 dark:text-slate-600">
-                  {Experience.time}
-                </span>
-              </div>
-            </figure>
-          ))}
-        </div>
-        <ScrollBar orientation="horizontal" />
-      </ScrollArea>
+      <div className="px-2">
+        <Carousel
+          className="w-full max-w-sm md:max-w-full"
+          opts={{
+            align: 'start'
+          }}
+        >
+          <CarouselContent className="">
+            {works.map((Experience) => (
+              <CarouselItem className="md:basis-1/2">
+                <figure
+                  key={Experience.post}
+                  className="flex w-auto shrink-0 space-x-4 rounded-lg border border-slate-200 p-4 dark:border-slate-800"
+                >
+                  <div className="overflow-hidden">
+                    <Image
+                      src={Experience.comlogo}
+                      alt={`Photo by ${Experience.post}`}
+                      className="h-[80px] w-[80px] object-cover"
+                      width={100}
+                      height={100}
+                    />
+                  </div>
+
+                  <div className="text-md text-muted-foreground flex flex-col justify-between">
+                    <span className="text-foreground font-bold">{Experience.post}</span>
+                    <span className="text-foreground text-sm text-slate-400 dark:text-slate-600">
+                      {Experience.company}
+                    </span>
+                    <span className="text-foreground text-xs text-slate-400 dark:text-slate-600">
+                      {Experience.time}
+                    </span>
+                  </div>
+                </figure>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <div className="flex justify-center mt-10 gap-3">
+            <CarouselPrevious />
+            <CarouselNext />
+          </div>
+        </Carousel>
+      </div>
     </div>
   );
 }
