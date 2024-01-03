@@ -6,14 +6,15 @@
 ::-webkit-scrollbar {
   width: 4px;
   height: 4px;
+  overflow: hidden;
 }
 
 ::-webkit-scrollbar-thumb {
   min-height: 44px;
   min-width: 44px;
-  background-color: var(#f50537);
+  background-color: var();
   border-radius: 44px;
-  border: 5px solid var(#f50537);
+  border: 5px solid var();
   background-clip: padding-box;
 }
 
@@ -30,9 +31,9 @@
 
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background: #f50537;
+  background: "";
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #f50537;
+  background: "";
 }
