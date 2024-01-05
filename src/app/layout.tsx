@@ -1,4 +1,3 @@
-
 import { ReactNode, Suspense } from 'react';
 import { SiteFooter } from 'src/components/layout/footer/SiteFooter';
 import 'src/styles/globals.css';
@@ -7,7 +6,7 @@ import { ThemeProvider } from '../components/providers';
 import { ensureStartsWith } from '../lib/utils';
 import LenisProvider from '@/components/LenisProvider';
 import { inter } from './fonts';
-import { SpeedInsights } from '@vercel/speed-insights/next';
+import Analytics from '@/components/analytics';
 
 const { TWITTER_CREATOR, TWITTER_SITE, SITE_NAME } = process.env;
 const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL
@@ -37,7 +36,6 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children }: { children: ReactNode }) {
- 
   return (
     <html lang="en" className={inter.className}>
       <head>
@@ -55,8 +53,8 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
             <main>{children}</main>
           </LenisProvider>
           <SiteFooter />
+          <Analytics />
         </ThemeProvider>
-        <SpeedInsights />
       </body>
     </html>
   );
