@@ -3,7 +3,7 @@ import Image from 'next/image';
 import About from 'src/components/common/about';
 import Logos from 'src/components/common/logos';
 import { Experience } from 'src/components/common/experience';
-import Writing from 'src/components/common/writing';
+import GetTouch from 'src/components/common/home/get-touch';
 import Dashboard from 'src/components/common/dashboard';
 import 'src/styles/text.css';
 
@@ -29,26 +29,31 @@ export default function AboutAI() {
   return (
     <>
       <Suspense>
-        <div className="mx-auto mt-60 max-w-3xl px-4 sm:px-6 md:max-w-5xl ">
-          <div className='px-4'>
-          <div className="relative mx-auto mt-10 flex h-[28rem] max-w-sm flex-col items-start border border-black/[0.2] p-4 dark:border-white/[0.2]">
-            <Icon className="absolute -left-3 -top-3 h-6 w-6 text-black dark:text-white" />
-            <Icon className="absolute -bottom-3 -left-3 h-6 w-6 text-black dark:text-white" />
-            <Icon className="absolute -right-3 -top-3 h-6 w-6 text-black dark:text-white" />
-            <Icon className="absolute -bottom-3 -right-3 h-6 w-6 text-black dark:text-white" />
-            <ImageZoom>
-              <Image
-                src="/ali.jpg"
-                alt="Your Image"
-                height={1000}
-                width={1000}
-                className="h-[410px] rounded-xl object-cover "
-              />
-            </ImageZoom>
+        <div className="mx-auto mt-40 max-w-3xl px-4 sm:px-6 md:max-w-5xl ">
+          <div className="px-4">
+            <div className="relative mx-auto mt-10 flex h-[28rem] max-w-sm flex-col items-start border border-black/[0.2] p-4 dark:border-white/[0.2]">
+              <Icon className="absolute -left-3 -top-3 h-6 w-6 text-black dark:text-white" />
+              <Icon className="absolute -bottom-3 -left-3 h-6 w-6 text-black dark:text-white" />
+              <Icon className="absolute -right-3 -top-3 h-6 w-6 text-black dark:text-white" />
+              <Icon className="absolute -bottom-3 -right-3 h-6 w-6 text-black dark:text-white" />
+              <ImageZoom>
+                <Image
+                  src="/ali.jpg"
+                  alt="Your Image"
+                  height={1000}
+                  width={1000}
+                  className="h-[410px] rounded-xl object-cover "
+                />
+                <div className="relative bg-gradient-to-b from-black/0 to-black text-white">
+                  <h1 className="z-20 -mt-24 items-center text-center text-[70px] font-black tracking-tighter ">
+                    Ali Imam
+                  </h1>{' '}
+                </div>
+              </ImageZoom>
+            </div>
           </div>
         </div>
-        </div>
-        <div className="mx-auto mt-40 max-w-3xl px-4 sm:px-6 md:max-w-5xl ">
+        <div className="mx-auto mt-20 max-w-3xl px-4 sm:px-6 md:max-w-5xl ">
           <h1 className="items-center text-center text-2xl font-bold sm:text-4xl">
             Dashboard
             <hr className="mx-auto my-4 h-1 w-6 rounded-full border-0 bg-aired"></hr>
@@ -63,7 +68,6 @@ export default function AboutAI() {
           <Experience />
         </div>
         <Logos />
-        <Writing />
       </Suspense>
     </>
   );

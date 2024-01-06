@@ -2,6 +2,7 @@ const plugin = require('tailwindcss/plugin');
 
 /** @type {import('tailwindcss').Config} */
 
+
 module.exports = {
   content: ['./src/app/**/*.{js,ts,jsx,tsx}', './src/components/**/*.{js,ts,jsx,tsx}'],
   darkMode: ['class'],
@@ -38,9 +39,6 @@ module.exports = {
       }
     },
     extend: {
-      fontFamily: {
-        sans: ['var(--font-geist-sans)']
-      },
       keyframes: {
         fadeIn: {
           from: { opacity: 0 },
@@ -82,6 +80,9 @@ module.exports = {
           values: theme('transitionDelay')
         }
       );
-    })
+      
+    }),
+    
   ]
 };
+

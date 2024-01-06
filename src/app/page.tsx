@@ -1,16 +1,12 @@
-
 import { Suspense } from 'react';
 import { Carousel } from 'src/components/carousel';
 import Logos from 'src/components/common/logos';
 import Hero from 'src/components/common/hero';
 import Favo from '@/components/common/fav';
-import About from 'src/components/common/about';
 import Intro from 'src/components/common/intro';
 import Projects from '@/components/projects';
-import Dashboard from 'src/components/common/dashboard';
-import GetTouch from 'src/components/common/home/get-touch';
 import AssetsPage from '@/components/assetshome/aiasset';
-
+import AboutMe from '@/components/common/home/about-me';
 
 export const runtime = 'edge';
 
@@ -22,7 +18,6 @@ export const metadata = {
 };
 
 export default function HomePage() {
-  
   return (
     <>
       <Suspense>
@@ -31,13 +26,11 @@ export default function HomePage() {
         <Favo />
         <AssetsPage />
         <Intro />
-        <Dashboard />
         <Carousel />
         <h1 className="my-10 text-center text-sm font-semibold uppercase tracking-[.3em] text-slate-400 ">
           Projects
         </h1>
         <Projects />
-        <GetTouch/>
 
         <div className="absolute inset-0 -z-10 overflow-hidden">
           <svg

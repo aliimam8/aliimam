@@ -47,7 +47,7 @@ const GetInTouch = () => {
   return (
     <div className="mx-auto mt-20 max-w-3xl px-4 sm:px-6 md:max-w-5xl">
       <motion.div
-        className="relative border border-slate-100 dark:border-slate-900 rounded-3xl p-1 "
+        className="relative md:h-[240px] h-[440px] border border-slate-100 dark:border-slate-900 rounded-3xl p-1 "
         initial="initial"
         animate={isInView ? 'animate' : 'initial'}
         variants={variants}
@@ -58,30 +58,30 @@ const GetInTouch = () => {
       >
         <div className="grid grid-cols-1 gap-6 p-4 lg:p-6">
           {/* Main */}
-          <div className="flex gap-12 max-md:flex-col">
-            <div className="relative flex w-[300px]" ref={scope}>
+          <div className="grid gap-12 md:grid-cols-2">
+            <div className="relative mt-24 flex w-[300px]" ref={scope}>
               <Icons.aiLogo className="w-12 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 " />
               <div
                 id="Graphic Design"
-                className="absolute bottom-12 left-14 rounded-full  border border-slate-100 bg-slate-200 px-2 py-1 text-xs opacity-40 dark:border-slate-900 dark:bg-slate-800"
+                className="absolute bottom-12 left-10 rounded-full  border border-slate-100 bg-slate-200 px-2 py-1 text-xs opacity-40 dark:border-slate-900 dark:bg-slate-800"
               >
                 Graphic Design
               </div>
               <div
                 id="UI UX"
-                className="absolute left-2 top-20 rounded-full border border-slate-100 bg-slate-200 px-2 py-1 text-xs opacity-40 dark:border-slate-900 dark:bg-slate-800"
+                className="absolute left-2 top-14 rounded-full border border-slate-100 bg-slate-200 px-2 py-1 text-xs opacity-40 dark:border-slate-900 dark:bg-slate-800"
               >
                 UI UX
               </div>
               <div
                 id="3D"
-                className="text-x absolute bottom-20 right-1 rounded-full border border-slate-100 bg-slate-200 px-2 py-1 opacity-40 dark:border-slate-900 dark:bg-slate-800"
+                className="text-x absolute bottom-14 right-1 rounded-full border border-slate-100 bg-slate-200 px-2 py-1 opacity-40 dark:border-slate-900 dark:bg-slate-800"
               >
                 3D
               </div>
               <div
                 id="Coding"
-                className="absolute right-8 top-10 rounded-full  border border-slate-100 bg-slate-200 px-2 py-1 text-xs opacity-40 dark:border-slate-900 dark:bg-slate-800"
+                className="absolute right-10 top-4 rounded-full  border border-slate-100 bg-slate-200 px-2 py-1 text-xs opacity-40 dark:border-slate-900 dark:bg-slate-800"
               >
                 Coding
               </div>
@@ -109,7 +109,7 @@ const GetInTouch = () => {
             </div>
 
             {/* Right part with an email button */}
-            <div className="flex flex-col justify-center px-4">
+            <div className="flex mt-20 flex-col justify-center px-4">
               <p className="mb-2 text-3xl font-bold">Any questions about Graphic Design?</p>
               <p className="text-zinc-300">Feel free to reach out to me!</p>
               <div className="my-8">
