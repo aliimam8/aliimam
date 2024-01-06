@@ -5,7 +5,6 @@ import React from 'react';
 import useSWR from 'swr';
 import { usePathname, useSearchParams } from 'next/navigation';
 
-import { PaginationButton } from '@/components/ui/pagination';
 import { Skeleton } from '@/components/ui/skeleton';
 import fetcher from '@/lib/fetcher';
 import { type AssetsPostCore, type Likes, type Views } from '@/types';

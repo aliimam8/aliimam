@@ -1,8 +1,12 @@
-/* eslint-disable unicorn/filename-case */
+'use client';
+
 import Link from 'next/link';
 import { Icons } from 'src/components/icons';
 import { Coffee } from './coffee';
 import ThemeToogle from './theme';
+
+import { motion } from 'framer-motion';
+import SparklesCore from '@/components/ui/sparkles';
 
 const Underline = `hover:-translate-y-1 border border-slate-100 dark:border-slate-900 rounded-xl p-2.5 transition-transform text-slate-600 hover:border-slate-200 dark:hover:border-slate-800 hover:text-black hover:dark:text-white dark:text-slate-400 `;
 
@@ -78,22 +82,41 @@ export const items: Menus[] = [
 export function SiteFooter() {
   return (
     <footer className="mx-auto mt-20 border-t border-aired/25 px-2 sm:px-4">
-      <div className="mt-10 flex flex-wrap justify-center gap-8 ">
+      <div className="-mt-10 flex flex-wrap justify-center gap-8 ">
         <Link href="/">
-          <Icons.aiLogo className="w-10" />
+          <p className="flex h-20 w-20 items-center justify-center rounded-full bg-white dark:bg-black">
+            <Icons.aiLogo className="mb-2 w-10" />
+          </p>
         </Link>
       </div>
+      <div className="-mt-10 flex flex-wrap justify-center">
+        <div className="relative h-40 w-[40rem] justify-center">
+          <SparklesCore
+            background="transparent"
+            minSize={0.4}
+            maxSize={1}
+            particleDensity={1200}
+            className="h-full w-full"
+            particleColor="#f50537"
+          />
 
-      <div className="mt-10 flex flex-wrap justify-center gap-8 ">
+          {/* Radial Gradient to prevent sharp edges */}
+          <div className="absolute inset-0 h-full w-full bg-white [mask-image:radial-gradient(350px_100px_at_top,transparent_20%,white)] dark:bg-black"></div>
+        </div>
+      </div>
+
+      <div className="-mt-20 flex flex-wrap justify-center gap-8">
         <Coffee />
       </div>
 
-      <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 p-8">
+      <div className="mt-4 flex flex-wrap justify-center gap-x-8 gap-y-4 p-8">
         {items.map((Menus) => (
           <figure key={Menus.text}>
             <div className="hover:scale-103 text-sm text-slate-600 hover:text-black dark:text-slate-400 hover:dark:text-white">
               <span className="">
-                <Link href={Menus.href} target={Menus.target}>{Menus.text}</Link>
+                <Link href={Menus.href} target={Menus.target}>
+                  {Menus.text}
+                </Link>
               </span>
             </div>
           </figure>

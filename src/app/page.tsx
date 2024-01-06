@@ -8,7 +8,7 @@ import About from 'src/components/common/about';
 import Intro from 'src/components/common/intro';
 import Projects from '@/components/projects';
 import Dashboard from 'src/components/common/dashboard';
-import Color from 'src/components/common/color';
+import GetTouch from 'src/components/common/home/get-touch';
 import AssetsPage from '@/components/assetshome/aiasset';
 
 
@@ -37,6 +37,7 @@ export default function HomePage() {
           Projects
         </h1>
         <Projects />
+        <GetTouch/>
 
         <div className="absolute inset-0 -z-10 overflow-hidden">
           <svg

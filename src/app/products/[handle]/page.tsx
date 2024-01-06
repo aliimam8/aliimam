@@ -16,7 +16,6 @@ import Info from '../tabs';
 import { FAQ } from '../faq';
 import AIProductPage from '../products';
 import LikeButton from '@/components/ui/like-button';
-import { handleClientScriptLoad } from 'next/script';
 
 export const runtime = 'edge';
 
@@ -114,9 +113,6 @@ export default async function ProductPage({ params }: { params: { handle: string
       <Info />
       <Carousel />
       <FAQ />
-      <div className="mx-auto mt-20 max-w-3xl px-4 sm:px-6 md:max-w-5xl">
-        <RelatedProducts id={product.id} />
-      </div>
     </>
   );
 }

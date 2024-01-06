@@ -1,5 +1,6 @@
+
+
 import { Travell } from './travell';
-import Favo from '@/components/common/fav';
 
 import { type Metadata } from 'next';
 
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
 export default function Gallery() {
   return (
     <main>
+      
       <div className="mx-auto mt-20 max-w-3xl px-4 sm:px-6 md:max-w-7xl">
         <h1 className="my-10 mt-40 text-center text-2xl font-bold sm:text-4xl">
           Gallery
@@ -19,7 +21,6 @@ export default function Gallery() {
         <Travell />
       </div>
 
-      <div className="mx-auto max-w-3xl px-4 sm:px-6 md:max-w-5xl "></div>
     </main>
   );
 }

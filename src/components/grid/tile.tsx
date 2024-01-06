@@ -20,7 +20,7 @@ export function GridTileImage({
   return (
     <div
       className={clsx(
-        'group flex h-full w-full items-center justify-center overflow-hidden rounded-3xl ',
+        'group flex h-full w-full items-center justify-center overflow-hidden rounded-t-3xl ',
         {
           relative: label,
           'border border-aired': active,
@@ -178,7 +178,7 @@ export function GridTilePrice({
       })}
     >
       {label ? (
-        <div className="">
+        <div className="mt-2">
           <Label
             title={label.title}
             amount={label.amount}
