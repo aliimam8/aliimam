@@ -52,7 +52,6 @@ const UsesPage = () => {
         description='This is the equipment I currently use for gaming, programming, making
         videos, and every day.'
       />
-      <Mdx code={page.body.code} />
     </div>
   )
 }
