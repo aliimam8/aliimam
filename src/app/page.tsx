@@ -2,10 +2,10 @@ import { Suspense } from 'react';
 import { Carousel } from 'src/components/carousel';
 import Logos from 'src/components/common/logos';
 import Hero from 'src/components/common/hero';
-import Favo from '@/components/common/fav';
 import Intro from 'src/components/common/intro';
 import Projects from '@/components/projects';
 import AssetsPage from '@/components/assetshome/aiasset';
+import AboutMe from '@/components/common/home/about-me';
 
 export const runtime = 'edge';
 
@@ -22,7 +22,7 @@ export default function HomePage() {
       <Suspense>
         <Hero />
         <Logos />
-        <Favo />
+        <AboutMe/>
         <AssetsPage />
         <Intro />
         <Carousel />
