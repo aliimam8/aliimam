@@ -42,7 +42,7 @@ export default function AboutAI() {
                   alt="Your Image"
                   height={1000}
                   width={1000}
-                  className="h-[410px] rounded-xl object-cover "
+                  className="h-[404px] object-cover "
                 />
                 <div className="relative bg-gradient-to-b from-black/0 to-black text-white">
                   <h1 className="z-20 -mt-24 items-center text-center text-[70px] font-black tracking-tighter ">
