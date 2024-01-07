@@ -8,22 +8,8 @@ import Dashboard from 'src/components/common/dashboard';
 import 'src/styles/text.css';
 
 import ImageZoom from '@/components/common/image-zoom';
+import { Icons } from '@/components/icons';
 
-const Icon = ({ className, ...rest }: any) => {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth="1.5"
-      stroke="currentColor"
-      className={className}
-      {...rest}
-    >
-      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m6-6H6" />
-    </svg>
-  );
-};
 
 export default function AboutAI() {
   return (
@@ -31,11 +17,11 @@ export default function AboutAI() {
       <Suspense>
         <div className="mx-auto mt-40 max-w-3xl px-4 sm:px-6 md:max-w-5xl ">
           <div className="px-4">
-            <div className="relative mx-auto mt-10 flex h-[28rem] max-w-sm flex-col items-start border border-black/[0.2] p-4 dark:border-white/[0.2]">
-              <Icon className="absolute -left-3 -top-3 h-6 w-6 text-black dark:text-white" />
-              <Icon className="absolute -bottom-3 -left-3 h-6 w-6 text-black dark:text-white" />
-              <Icon className="absolute -right-3 -top-3 h-6 w-6 text-black dark:text-white" />
-              <Icon className="absolute -bottom-3 -right-3 h-6 w-6 text-black dark:text-white" />
+            <div className="relative mx-auto mt-10 flex h-[28rem] max-w-sm flex-col items-start border border-slate-100 p-4 dark:border-slate-900">
+              <Icons.add strokeWidth={1} className="absolute -left-3 -top-3 h-6 w-6 text-aired" />
+              <Icons.add strokeWidth={1} className="absolute -bottom-3 -left-3 h-6 w-6 text-aired" />
+              <Icons.add strokeWidth={1} className="absolute -right-3 -top-3 h-6 w-6 text-aired" />
+              <Icons.add strokeWidth={1} className="absolute -bottom-3 -right-3 h-6 w-6 text-aired" />
               <ImageZoom>
                 <Image
                   src="/ali.jpg"
