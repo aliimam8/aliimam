@@ -6,6 +6,7 @@ import Favo from '@/components/common/fav';
 import Intro from 'src/components/common/intro';
 import Projects from '@/components/projects';
 import AssetsPage from '@/components/assetshome/aiasset';
+import AboutMe from '@/components/common/home/about-me';
 
 export const runtime = 'edge';
 
@@ -22,6 +23,7 @@ export default function HomePage() {
       <Suspense>
         <Hero />
         <Logos />
+        <AboutMe/>
         <Favo />
         <AssetsPage />
         <Intro />

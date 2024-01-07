@@ -63,11 +63,6 @@ export const items: Menus[] = [
     target: ''
   },
   {
-    text: 'Uses',
-    href: '/uses',
-    target: ''
-  },
-  {
     text: 'Accounts',
     href: 'https://shopify.com/68087251194/account',
     target: '_blank'
