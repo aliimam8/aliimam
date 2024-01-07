@@ -8,7 +8,7 @@ import SparklesCore from '@/components/ui/sparkles';
 const AboutMe = () => {
   return (
     <>
-      <div className="mx-auto mt-20 max-w-3xl px-6">
+      <div className="mx-auto mt-10 max-w-3xl px-6">
         <Dashboard />
       </div>
     </>

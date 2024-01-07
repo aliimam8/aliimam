@@ -5,11 +5,12 @@ import Logos from 'src/components/common/logos';
 import { Experience } from 'src/components/common/experience';
 import GetTouch from 'src/components/common/home/get-touch';
 import Dashboard from 'src/components/common/dashboard';
+import { LampContainer } from 'src/components/ui/lamp';
 import 'src/styles/text.css';
 
 import ImageZoom from '@/components/common/image-zoom';
 import { Icons } from '@/components/icons';
-
+import { motion } from 'framer-motion';
 
 export default function AboutAI() {
   return (
@@ -19,9 +20,15 @@ export default function AboutAI() {
           <div className="px-4">
             <div className="relative mx-auto mt-10 flex h-[28rem] max-w-sm flex-col items-start border border-slate-100 p-4 dark:border-slate-900">
               <Icons.add strokeWidth={1} className="absolute -left-3 -top-3 h-6 w-6 text-aired" />
-              <Icons.add strokeWidth={1} className="absolute -bottom-3 -left-3 h-6 w-6 text-aired" />
+              <Icons.add
+                strokeWidth={1}
+                className="absolute -bottom-3 -left-3 h-6 w-6 text-aired"
+              />
               <Icons.add strokeWidth={1} className="absolute -right-3 -top-3 h-6 w-6 text-aired" />
-              <Icons.add strokeWidth={1} className="absolute -bottom-3 -right-3 h-6 w-6 text-aired" />
+              <Icons.add
+                strokeWidth={1}
+                className="absolute -bottom-3 -right-3 h-6 w-6 text-aired"
+              />
               <ImageZoom>
                 <Image
                   src="/ali.jpg"

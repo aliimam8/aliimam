@@ -27,7 +27,7 @@ const Hero = () => {
 
   return (
     <section id="home">
-      <div className="animation-delay-8 mt-20 flex animate-fadeIn flex-col items-center justify-center px-6 text-center md:mt-40">
+      <div className="animation-delay-8 mt-20 flex animate-fadeIn flex-col items-center justify-center px-8 text-center md:mt-40">
         <div className="z-10 mt-10 sm:mb-8 sm:mt-10 sm:justify-center">
           <div className="relative flex items-center whitespace-nowrap rounded-full bg-white px-3 py-1 text-xs leading-6 text-slate-600 ring-1 ring-slate-200 dark:bg-black dark:text-slate-400 dark:ring-slate-800">
             Coming Soon <Icons.youTube className="h-5 p-1 text-aired" /> Youtube Videos.
@@ -48,19 +48,22 @@ const Hero = () => {
 
         <div className="md:w-50% mb-10 mt-4 md:mt-6">
           <div className="px-6">
-            <div className="relative mx-auto border border-slate-200 dark:border-slate-800">
-              <Icons.add strokeWidth={1} className="absolute -left-3 -top-3 h-6 w-6 text-aired" />
-              <Icons.add
-                strokeWidth={1}
-                className="absolute -bottom-3 -left-3 h-6 w-6 text-aired"
-              />
-              <Icons.add strokeWidth={1} className="absolute -right-3 -top-3 h-6 w-6 text-aired" />
-              <Icons.add
-                strokeWidth={1}
-                className="absolute -bottom-3 -right-3 h-6 w-6 text-aired"
-              />
+            <div className="relative w-full h-full border border-slate-200 dark:border-slate-800">
+              <h1 className="tracking-tightest flex select-none py-2 flex-col text-center text-7xl font-extrabold leading-none sm:text-8xl md:flex-col lg:flex-row">
+                <Icons.add strokeWidth={1} className="absolute -left-3 -top-3 h-6 w-6 text-aired" />
+                <Icons.add
+                  strokeWidth={1}
+                  className="absolute -bottom-3 -left-3 h-6 w-6 text-aired"
+                />
+                <Icons.add
+                  strokeWidth={1}
+                  className="absolute -right-3 -top-3 h-6 w-6 text-aired"
+                />
+                <Icons.add
+                  strokeWidth={1}
+                  className="absolute -bottom-3 -right-3 h-6 w-6 text-aired"
+                />
 
-              <h1 className="tracking-tightest flex select-none flex-col py-2 text-center text-7xl font-extrabold leading-none sm:text-8xl md:flex-col lg:flex-row">
                 <span
                   data-content="Coffee."
                   className="before:animate-gradient-background-1 relative before:absolute before:bottom-4 before:left-0 before:top-0 before:z-0  before:w-full before:px-2 before:content-[attr(data-content)]  sm:before:top-0"
@@ -87,30 +90,30 @@ const Hero = () => {
                 </span>
               </h1>
             </div>
+          </div>
 
-            <h1 className="mt-4 text-2xl font-semibold md:text-4xl lg:text-4xl">
-              Hello and welcome! I&#39;m <span className="font-bold text-aired">Ali </span>
-            </h1>
+          <h1 className="mt-4 text-2xl font-semibold md:text-4xl lg:text-4xl">
+            Hello and welcome! I&#39;m <span className="font-bold text-aired">Ali </span>
+          </h1>
 
-            <p className="md:text-md mx-auto mb-16 mt-2 max-w-2xl px-8 text-sm text-slate-600 dark:text-slate-400 sm:px-6 md:max-w-4xl md:px-20 lg:text-lg">
-              I&#39;m an <span className="font-regular">Art Director </span>
-              looking for opportunities as a Level Artist. I have a passion for Graphic Design, UI
-              UX, 3D, Animation and tools like <TypeWriter strings={talkAbout} />.
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              <Link
-                href="/about"
-                className={cn(
-                  buttonVariants({
-                    variant: 'aibutton',
-                    size: 'md'
-                  })
-                )}
-              >
-                Know More
-                <span className="sr-only">Buy now</span>
-              </Link>
-            </div>
+          <p className="md:text-md mx-auto mb-16 mt-2 max-w-2xl px-8 text-sm text-slate-600 dark:text-slate-400 sm:px-6 md:max-w-4xl md:px-20 lg:text-lg">
+            I&#39;m an <span className="font-regular">Art Director </span>
+            looking for opportunities as a Level Artist. I have a passion for Graphic Design, UI UX,
+            3D, Animation and tools like <TypeWriter strings={talkAbout} />.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <Link
+              href="/about"
+              className={cn(
+                buttonVariants({
+                  variant: 'aibutton',
+                  size: 'md'
+                })
+              )}
+            >
+              Know More
+              <span className="sr-only">Buy now</span>
+            </Link>
           </div>
         </div>
       </div>
