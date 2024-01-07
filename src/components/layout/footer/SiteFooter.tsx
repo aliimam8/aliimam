@@ -5,8 +5,7 @@ import { Icons } from 'src/components/icons';
 import { Coffee } from './coffee';
 import ThemeToogle from './theme';
 
-import { motion } from 'framer-motion';
-import SparklesCore from '@/components/ui/sparkles';
+import NowPlaying from './now-playing';
 
 const Underline = `hover:-translate-y-1 border border-slate-100 dark:border-slate-900 rounded-xl p-2.5 transition-transform text-slate-600 hover:border-slate-200 dark:hover:border-slate-800 hover:text-black hover:dark:text-white dark:text-slate-400 `;
 
@@ -89,10 +88,12 @@ export function SiteFooter() {
           </p>
         </Link>
       </div>
-      
 
       <div className="mt-8 flex flex-wrap justify-center gap-8">
         <Coffee />
+      </div>
+      <div className="mt-8 flex flex-wrap justify-center gap-8">
+        <NowPlaying />
       </div>
 
       <div className="mt-4 flex flex-wrap justify-center gap-x-8 gap-y-4 p-8">
