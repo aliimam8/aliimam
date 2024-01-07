@@ -63,9 +63,19 @@ export const items: Menus[] = [
     target: ''
   },
   {
+    text: 'Uses',
+    href: '/uses',
+    target: ''
+  },
+  {
     text: 'Accounts',
     href: 'https://shopify.com/68087251194/account',
     target: '_blank'
+  },
+  {
+    text: 'Cart',
+    href: '/cart',
+    target: ''
   }
 ];
 
@@ -79,23 +89,9 @@ export function SiteFooter() {
           </p>
         </Link>
       </div>
-      <div className="-mt-10 flex flex-wrap justify-center">
-        <div className="relative h-40 w-[40rem] justify-center">
-          <SparklesCore
-            background="transparent"
-            minSize={0.4}
-            maxSize={1}
-            particleDensity={1200}
-            className="h-full w-full"
-            particleColor="#f50537"
-          />
+      
 
-          {/* Radial Gradient to prevent sharp edges */}
-          <div className="absolute inset-0 h-full w-full bg-white [mask-image:radial-gradient(350px_100px_at_top,transparent_20%,white)] dark:bg-black"></div>
-        </div>
-      </div>
-
-      <div className="-mt-20 flex flex-wrap justify-center gap-8">
+      <div className="mt-8 flex flex-wrap justify-center gap-8">
         <Coffee />
       </div>
 
