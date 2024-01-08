@@ -2,7 +2,7 @@ import useSWR from "swr";
 
 import fetcher from "@/lib/fetcher";
 import MusicEqualizer from "./animatedbars";
-import { NowPlayingSong } from "src/app/api/spotify/route";
+import { NowPlayingSong } from "src/config/spotify";
 import CustomLink from "./custom-link";
 
 export default function NowPlaying() {
@@ -17,20 +17,20 @@ export default function NowPlaying() {
         />
       </svg>
       {data?.isPlaying && data?.songUrl && <MusicEqualizer />}
-      <div className="flex max-w-full truncate">
+      <div className="flex max-w-full ">
         {data?.songUrl ? (
           <CustomLink
-            className="text-sm truncate max-w-max hover:text-spotify-green"
+            className="text-sm max-w-max hover:text-spotify-green"
             href={data.songUrl}
             title={data.title}
           >
             {data.title}
           </CustomLink>
         ) : (
-          <p className="text-sm text-gray-500 dark:text-gray-400">Not playing</p>
+          <p className="text-sm text-slate-600 dark:text-slate-400">Not Playing</p>
         )}
-        <span className="mx-2 text-sm text-gray-500 dark:text-gray-400 sm:block">{" – "}</span>
-        <p className="text-sm text-gray-500 truncate dark:text-gray-400 max-w-max">
+        <span className="mx-2 text-sm text-slate-600 dark:text-slate-400 sm:block">{" – "}</span>
+        <p className="text-sm font-semibold text-slate-600 dark:text-slate-400 max-w-max">
           {data?.artist ?? "Spotify"}
         </p>
       </div>
