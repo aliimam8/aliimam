@@ -1,33 +1,62 @@
-const client_id = process.env.SPOTIFY_CLIENT_ID;
-const client_secret = process.env.SPOTIFY_CLIENT_SECRET;
-const refresh_token = process.env.SPOTIFY_REFRESH_TOKEN;
+import { env } from '@/env'
 
-const basic = Buffer.from(`${client_id}:${client_secret}`).toString("base64");
-const NOW_PLAYING_ENDPOINT = `https://api.spotify.com/v1/me/player/currently-playing`;
-const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
+const CLIENT_ID = env.SPOTIFY_CLIENT_ID
+const CLIENT_SECRET = env.SPOTIFY_CLIENT_SECRET
+const REFRESH_TOKEN = env.SPOTIFY_REFRESH_TOKEN
+
+const BASIC = Buffer.from(`${CLIENT_ID}:${CLIENT_SECRET}`).toString('base64')
+const NOW_PLAYING_ENDPOINT =
+  'https://api.spotify.com/v1/me/player/currently-playing'
+const TOKEN_ENDPOINT = 'https://accounts.spotify.com/api/token'
 
 const getAccessToken = async () => {
-  const body = new URLSearchParams();
-  body.append("grant_type", "refresh_token");
-  body.append("refresh_token", refresh_token!);
   const response = await fetch(TOKEN_ENDPOINT, {
-    method: "POST",
+    method: 'POST',
     headers: {
-      Authorization: `Basic ${basic}`,
-      "Content-Type": "application/x-www-form-urlencoded",
+      Authorization: `Basic ${BASIC}`,
+      'Content-Type': 'application/x-www-form-urlencoded'
     },
-    body: body.toString(),
-  });
+    body: new URLSearchParams({
+      grant_type: 'refresh_token',
+      refresh_token: REFRESH_TOKEN
+    })
+  })
 
-  return response.json();
-};
+  const data = await response.json()
 
-export const getNowPlaying = async () => {
-  const { access_token } = await getAccessToken();
+  return data.access_token as string
+}
 
-  return fetch(NOW_PLAYING_ENDPOINT, {
+const getNowPlaying = async () => {
+  const accessToken = await getAccessToken()
+
+  const response = await fetch(NOW_PLAYING_ENDPOINT, {
     headers: {
-      Authorization: `Bearer ${access_token}`,
+      Authorization: `Bearer ${accessToken}`
     },
-  });
-};
+    next: {
+      revalidate: 60
+    }
+  })
+
+  if (response.status === 204) {
+    return {
+      status: response.status
+    }
+  }
+
+  try {
+    const song = await response.json()
+
+    return {
+      status: response.status,
+      data: song
+    }
+  } catch {
+    return {
+      status: response.status
+    }
+  }
+}
+
+export default getNowPlaying
