@@ -6,6 +6,7 @@ import { Coffee } from './coffee';
 import ThemeToogle from './theme';
 
 import NowPlaying from './now-playing';
+import CurrentVisitors from './current-visitors'
 
 const Underline = `hover:-translate-y-1 border border-slate-100 dark:border-slate-900 rounded-xl p-2.5 transition-transform text-slate-600 hover:border-slate-200 dark:hover:border-slate-800 hover:text-black hover:dark:text-white dark:text-slate-400 `;
 
@@ -92,8 +93,11 @@ export function SiteFooter() {
       <div className="mt-8 flex flex-wrap justify-center gap-8">
         <Coffee />
       </div>
-      <div className="mt-8 flex flex-wrap justify-center gap-8">
+      <div className="mt-8 flex flex-wrap items-center justify-center gap-8">
         <NowPlaying />
+        <div className='flex items-center justify-center text-sm'>
+        {process.env.NODE_ENV === 'production' && <CurrentVisitors />}
+      </div>
       </div>
 
       <div className="mt-4 flex flex-wrap justify-center gap-x-8 gap-y-4 p-8">
