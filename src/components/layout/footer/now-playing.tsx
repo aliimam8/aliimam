@@ -9,7 +9,7 @@ const NowPlaying = () => {
   const { data, isLoading } = useSWR<Song>('/api/spotify', fetcher)
 
   return (
-    <div className='flex items-center gap-4'>
+    <div className='flex items-center gap-2'>
       <svg
         stroke='currentColor'
         fill='#1ed760'

@@ -20,17 +20,19 @@ const CurrentVisitors = () => {
       target='_blank'
       aria-label={
         data
-          ? `${data.visitors} current visitor${data.visitors > 1 ? 's' : ''}`
+          ? `${data.visitors} Current Visitor${data.visitors > 1 ? 's' : ''}`
           : 'Loading'
       }
     >
+      
       {data ? (
         <>
-          <span className='relative flex size-3'>
+          <span className='relative flex size-3 text-slate-600 dark:text-slate-400'>
             <span className='absolute inline-flex h-full w-full animate-ping rounded-full bg-aired opacity-75' />
             <span className='relative inline-flex size-3 rounded-full bg-aired' />
           </span>
-          {data.visitors} current visitor{data.visitors > 1 ? 's' : ''}
+          {data.visitors} Current Visitor{data.visitors > 1 ? 's' : ''}
+          
         </>
       ) : (
         <Skeleton
