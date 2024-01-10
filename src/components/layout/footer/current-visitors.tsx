@@ -14,13 +14,13 @@ const CurrentVisitors = () => {
 
   return (
     <a
-      href={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_SHARE_URL}
+      href={env.NEXT_PUBLIC_UMAMI_WEBSITE_SHARE_URL}
       className='flex items-center justify-center gap-2'
       rel='noopener noreferrer'
       target='_blank'
       aria-label={
         data
-          ? `${data.visitors} Current Visitor${data.visitors > 1 ? 's' : ''}`
+          ? `${data.visitors} current visitor${data.visitors > 1 ? 's' : ''}`
           : 'Loading'
       }
     >

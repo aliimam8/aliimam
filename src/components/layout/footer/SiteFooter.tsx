@@ -96,7 +96,7 @@ export function SiteFooter() {
       <div className="mt-8 flex flex-wrap items-center justify-center gap-8">
         <NowPlaying />
         <div className='flex items-center justify-center text-sm'>
-        {process.env.NODE_ENV === 'production' && <CurrentVisitors />}
+        {<CurrentVisitors />}
       </div>
       </div>
 
