@@ -7,6 +7,7 @@ import ThemeToogle from './theme';
 
 import NowPlaying from './now-playing';
 import CurrentVisitors from './current-visitors'
+import { Separator } from '@/components/ui/seperator';
 
 const Underline = `hover:-translate-y-1 border border-slate-100 dark:border-slate-900 rounded-xl p-2.5 transition-transform text-slate-600 hover:border-slate-200 dark:hover:border-slate-800 hover:text-black hover:dark:text-white dark:text-slate-400 `;
 
@@ -95,9 +96,8 @@ export function SiteFooter() {
       </div>
       <div className="mt-8 flex flex-wrap items-center justify-center gap-8">
         <NowPlaying />
-        <div className='flex items-center justify-center text-sm'>
-        {<CurrentVisitors />}
-      </div>
+        <Separator orientation="vertical" className="mr-2 h-6 bg-slate-400 dark:bg-slate-600" />
+        {process.env.NODE_ENV === 'production' && <CurrentVisitors />}
       </div>
 
       <div className="mt-4 flex flex-wrap justify-center gap-x-8 gap-y-4 p-8">
