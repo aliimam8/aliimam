@@ -10,6 +10,8 @@ export const env = createEnv({
     SPOTIFY_CLIENT_SECRET: z.string().min(1),
     SPOTIFY_REFRESH_TOKEN: z.string().min(1),
 
+    DATABASE_URL: z.string().url(),
+
     UMAMI_DATABASE_URL: z.string().url()
   },
   client: {
@@ -22,6 +24,8 @@ export const env = createEnv({
     SPOTIFY_CLIENT_ID: process.env.SPOTIFY_CLIENT_ID,
     SPOTIFY_CLIENT_SECRET: process.env.SPOTIFY_CLIENT_SECRET,
     SPOTIFY_REFRESH_TOKEN: process.env.SPOTIFY_REFRESH_TOKEN,
+
+    DATABASE_URL: process.env.DATABASE_URL,
 
     UMAMI_DATABASE_URL: process.env.UMAMI_DATABASE_URL,
     NEXT_PUBLIC_UMAMI_URL: process.env.NEXT_PUBLIC_UMAMI_URL,

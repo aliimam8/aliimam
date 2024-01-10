@@ -91,12 +91,12 @@ export function SiteFooter() {
         </Link>
       </div>
 
-      <div className="mt-8 flex flex-wrap justify-center gap-8">
+      <div className="mt-8 flex flex-wrap justify-center gap-8 px-8">
         <Coffee />
       </div>
       <div className="mt-8 flex flex-wrap items-center justify-center gap-8">
         <NowPlaying />
-        <Separator orientation="vertical" className="mr-2 h-6 bg-slate-400 dark:bg-slate-600" />
+        <Separator orientation="vertical" className="hidden md:block mr-2 h-6 bg-slate-400 dark:bg-slate-600" />
         {process.env.NODE_ENV === 'production' && <CurrentVisitors />}
       </div>
 
