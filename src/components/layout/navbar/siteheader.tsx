@@ -12,12 +12,12 @@ import {
 } from 'src/components/ui/accordion';
 
 const navigation = [
-  { name: 'About AI', href: '/about', current: true },
-  { name: 'Gallery', href: '/gallery', current: true },
-  { name: 'Portfolio', href: '/portfolio', current: true },
-  { name: 'Store', href: '/store', current: true },
-  { name: 'Assets', href: '/assets', current: true },
-  { name: 'Blog', href: '/blog', current: true },
+  { name: 'About AI', href: '/about', current: true, discription: '' },
+  { name: 'Gallery', href: '/gallery', current: true, discription: '' },
+  { name: 'Portfolio', href: '/portfolio', current: true, discription: '' },
+  { name: 'Store', href: '/store', current: true, discription: '' },
+  { name: 'Assets', href: '/assets', current: true, discription: 'Free' },
+  { name: 'Blog', href: '/blog', current: true, discription: '' },
   { name: 'Account', href: 'https://shopify.com/68087251194/account', current: true }
 ];
 
@@ -57,7 +57,14 @@ export default function Navbar() {
                       className="py-2 text-xl font-semibold"
                       aria-current={item.current ? 'page' : undefined}
                     >
+                      <p className='gap-3 flex items-center'>
+                        <span>
                       {item.name}
+                      </span>
+                      <span className='text-xs font-light text-aired'>
+                      {item.discription}
+                      </span>
+                      </p>
                     </Disclosure.Button>
                   ))}
                   <Accordion type="single" collapsible className="w-full">
