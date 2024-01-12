@@ -6,7 +6,7 @@ import * as React from 'react';
 import { Icons } from 'src/components/icons';
 import { Badge } from "@/components/ui/badge"
 
-import {
+import { 
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
@@ -19,72 +19,15 @@ import { cn } from 'src/lib/utils';
 
 export function NavMenu() {
   return (
-    <div className="hidden p-4 md:block">
+    <div className="hidden p-4 lg:block">
       <NavigationMenu>
-        <NavigationMenuList>
-          <NavigationMenuItem>
-            <NavigationMenuTrigger>About AI</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <ul className="grid w-[400px] grid-cols-2 justify-center p-5">
-                <NavigationMenuLink asChild>
-                  <a className="flex flex-col justify-end rounded-lg" href="/about">
-                    <Image
-                      src="/ali.jpg"
-                      alt="Your Image"
-                      height={1000}
-                      width={1000}
-                      className="h-[150px] w-[150px] rounded-lg object-cover"
-                    />
-                    <div className="absolute bg-gradient-to-b from-black/0 to-black px-1 text-white ">
-                      <p className=" px-2 text-xl font-bold ">Ali Imam</p>
-                      <p className="mb-2 px-2 text-sm tracking-[.3em]">Art Director</p>
-                    </div>
-                  </a>
-                </NavigationMenuLink>
-
-                <div className="flex w-full flex-col justify-center space-y-4">
-                  <Link
-                    href="/about"
-                    className="flex text-slate-600 hover:text-black dark:text-slate-400 hover:dark:text-white"
-                  >
-                    <p className="font-bold">About Ali Imam</p>
-                  </Link>
-
-                  <Link
-                    href="/Ali-CV.pdf"
-                    target="_blank"
-                    download={true}
-                    className="flex text-slate-600 hover:text-black dark:text-slate-400 hover:dark:text-white"
-                  >
-                    <Icons.download className="mr-2 mt-1 h-4 w-4 " aria-hidden="true" />
-                    Download CV
-                  </Link>
-                  <Link
-                    href="/contact"
-                    className="flex text-slate-600 hover:text-black dark:text-slate-400 hover:dark:text-white"
-                  >
-                    <Icons.contact className="mr-2 mt-1 h-4 w-4 " aria-hidden="true" />
-                    Contact
-                  </Link>
-                  <div className="flex gap-6  text-sm">
-                    <Link
-                      href="/privacy"
-                      className="text-slate-600 hover:text-black dark:text-slate-400 hover:dark:text-white"
-                    >
-                      Privacy
-                    </Link>
-                    <Link
-                      href="/privacy"
-                      className="text-slate-600 hover:text-black dark:text-slate-400 hover:dark:text-white"
-                    >
-                      Terms
-                    </Link>
-                  </div>
-                </div>
-              </ul>
-            </NavigationMenuContent>
+        <NavigationMenuList><NavigationMenuItem>
+            <Link href="/about" legacyBehavior passHref>
+              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                About AI
+              </NavigationMenuLink>
+            </Link>
           </NavigationMenuItem>
-
           <NavigationMenuItem>
             <Link href="/gallery" legacyBehavior passHref>
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
@@ -122,7 +65,7 @@ export function NavMenu() {
 
           <NavigationMenuItem>
             <Link href="/blog" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>Blog</NavigationMenuLink>
+              <NavigationMenuLink className={navigationMenuTriggerStyle()}>Blogs</NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
         </NavigationMenuList>

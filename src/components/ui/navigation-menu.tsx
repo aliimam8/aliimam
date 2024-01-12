@@ -25,7 +25,7 @@ const NavigationMenuList = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.List>
 >(({ className, ...props }, ref) => (
   <NavigationMenuPrimitive.List
-    ref={ref}
+    ref={ref} 
     className={cn('group flex flex-1 list-none items-center  justify-center ', className)}
     {...props}
   />

@@ -43,10 +43,11 @@ const AssetsPage = () => {
   return (
     <div className="mx-auto mt-40 max-w-4xl px-6">
       <PageTitle
-        title="Assets"
+        title="Free Assets"
         description={`I started uploading assets in December 2023, mainly about graphic Design and
         sharing knowledge. I have uploaded a total of ${posts.length} assets on
-        my Assets. You can search for assets by title in the search box below.`}
+        my Assets. All freely available for both your commercial and personal projects. 
+        You can search for assets by title in the search box below.`}
       />
       <AssetsFilteredPosts posts={posts} />
     </div>
