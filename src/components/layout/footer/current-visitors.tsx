@@ -15,7 +15,7 @@ const CurrentVisitors = () => {
   return (
     <a
       href={env.NEXT_PUBLIC_UMAMI_WEBSITE_SHARE_URL}
-      className='flex items-center justify-center gap-2 text-slate-600 dark:text-slate-400'
+      className='flex items-center text-sm justify-center gap-2 text-slate-600 dark:text-slate-400'
       rel='noopener noreferrer'
       target='_blank'
       aria-label={
@@ -27,9 +27,9 @@ const CurrentVisitors = () => {
       
       {data ? (
         <>
-          <span className='relative flex size-3 '>
+          <span className='relative flex h-4 w-4 '>
             <span className='absolute inline-flex h-full w-full animate-ping rounded-full bg-aired opacity-75' />
-            <span className='relative inline-flex size-3 rounded-full bg-aired' />
+            <span className='relative inline-flex h-4 w-4 rounded-full bg-aired' />
           </span>
           {data.visitors} Current Visitor{data.visitors > 1 ? 's' : ''}
           

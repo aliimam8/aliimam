@@ -94,6 +94,13 @@ export function SiteFooter() {
       <div className="mt-8 flex flex-wrap justify-center gap-8 px-8">
         <Coffee />
       </div>
+      <div className='flex flex-wrap justify-center gap-8 mt-8 px-12'>
+        <NowPlaying/>
+        <Separator orientation="vertical" className="mr-2 h-6 bg-slate-400 dark:bg-slate-600 hidden md:block" />
+        <div className='flex items-center justify-between'>
+        <CurrentVisitors />
+      </div>
+      </div>
 
       <div className="mt-4 flex flex-wrap justify-center gap-x-8 gap-y-4 p-8">
         {items.map((Menus) => (
