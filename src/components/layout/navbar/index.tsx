@@ -3,7 +3,6 @@ import OpenCart from 'src/components/cart/open-cart';
 import { Suspense } from 'react';
 import SiteHeader from './siteheader';
 import { NavMenu } from './navmenu';
-import Menu from './menu';
 import Link from 'next/link';
 import { Icons } from 'src/components/icons';
 import { DSearch } from './search';
@@ -45,11 +44,6 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-
-      <div className="relative hidden lg:block">
-        <Menu />
-      </div>
-
       <div className="relative mx-auto flex flex-1 items-center">
         <SiteHeader />
       </div>
