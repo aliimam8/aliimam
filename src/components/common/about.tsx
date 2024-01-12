@@ -65,6 +65,7 @@ const About = () => {
             <Link
               href="/Ali-CV.pdf"
               download={true}
+              target="_blank"
               className={cn(
                 buttonVariants({
                   variant: 'aibutton',

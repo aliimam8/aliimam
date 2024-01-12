@@ -95,7 +95,7 @@ export default function Navbar() {
                     <div className="mt-6">
                       <PSearch />
                       <Link
-                        href="/Ali-CV.pdf"
+                        href="/Ali-CV.pdf" 
                         target="_blank"
                         className="mt-4 flex gap-3 text-aired"
                         download={true}
