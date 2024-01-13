@@ -3,7 +3,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from 'src/components/ui/tabs
 
 import Dark from './types/dark';
 
-export function Travell() {
+export function Grads() {
   return (
     <Tabs defaultValue="1" className=" items-center justify-center text-center">
       <TabsList className="w-auto items-center justify-center text-center lg:w-auto">

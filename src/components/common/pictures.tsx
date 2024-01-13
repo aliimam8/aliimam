@@ -4,6 +4,8 @@ import CldImage from 'src/components/CldImage';
 import { Icons } from 'src/components/icons';
 import Link from 'next/link';
 
+import 'react-photo-view/dist/react-photo-view.css';
+
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 export function AliImage({ images }: { images: { src: string; altText: string }[] }) {

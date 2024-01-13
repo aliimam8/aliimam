@@ -3,13 +3,27 @@ import { cn } from "@/lib/utils";
 import { CardStack } from "src/components/ui/image-card";
 import Link from 'next/link';
 
+const GRADS = [
+    {
+        id: 0,
+        name: "Graaadients",
+        src: "/bbg.png",
+        designation: "Introducing",
+        content: (
+            <p>
+                +1000 abstract gradient elements and backgrounds
+                for your amazing design projects
+            </p>
+        ),
+    },
+];
+
 export function Graaadients() {
     return (
-        <div className="flex justify-center">
+        <div className="flex gap-2 justify-center">
             <Link
-                href="/products/graaadients"
-            >
-                <CardStack items={CARDS} />
+                href="/products/graaadients">
+                <CardStack items={GRADS} />
             </Link>
         </div>
     );
@@ -35,17 +49,4 @@ export const Highlight = ({
     );
 };
 
-const CARDS = [
-    {
-        id: 0,
-        name: "Graaadients",
-        src: "/bbg.png",
-        designation: "Introducing",
-        content: (
-            <p>
-                +1000 abstract gradient elements and backgrounds
-                for your amazing design projects
-            </p>
-        ),
-    },
-];
+

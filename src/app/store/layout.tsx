@@ -11,11 +11,14 @@ export default function SearchLayout({ children }: { children: React.ReactNode }
   return (
     <Suspense>
       <Link href="/store" rel="noreferrer">
-      <h1 className={cn(
-          Avegra.className, "my-10 mt-40 text-center text-6xl sm:text-8xl")}>
+      <p className='text-center mt-40 my-3 text-xs text-slate-600 dark:text-slate-400 lg:text-md tracking-widest uppercase font-light'>
           AI Store
-          <hr className="bg-aired rounded-full mx-auto my-4 h-1 w-6 border-0"></hr>
+        </p>
+        <h1 className={cn(
+          Avegra.className, " text-center text-4xl sm:text-6xl")}>
+          Elevate Your Creativity
         </h1>
+          <hr className="bg-aired rounded-full mb-16 mx-auto my-4 h-1 w-6 border-0"></hr>
       </Link>
       <ScrollArea className="mx-auto mt-10 whitespace-nowrap">
         <div className="flex items-center justify-center gap-3 px-10">
