@@ -118,69 +118,71 @@ export function SiteFooter() {
         </Link>
       </div>
 
-      <div className="flex flex-wrap items-center justify-center gap-6 gap-y-4 px-8">
-        <Link href="tel:+919650133705" rel="noreferrer" target="_blank" className={Underline}>
-          <Icons.phone strokeWidth={1.5} className="h-5 w-5" />
-        </Link>
-        <Link
-          href="mailto:aliimam.original@gmail.com"
-          rel="noreferrer"
-          target="_blank"
-          className={Underline}
-        >
-          <Icons.mail strokeWidth={1.5} className="h-5 w-5" />
-        </Link>
-        <Link
-          href="https://wa.me/message/6XOEA2NCD5OFB1"
-          rel="noreferrer"
-          target="_blank"
-          className={Underline}
-        >
-          <Icons.whatsapp className="h-5 w-5" />
-        </Link>
-        <Link
-          href="https://www.instagram.com/aliimam.in/"
-          rel="noreferrer"
-          target="_blank"
-          className={Underline}
-        >
-          <Icons.insta strokeWidth={1.5} className="h-5 w-5" />
-        </Link>
-        <Link
-          href="https://twitter.com/aiimamoriginal"
-          rel="noreferrer"
-          target="_blank"
-          className={Underline}
-        >
-          <Icons.TweetX className="h-5 w-5" />
-        </Link>
-        <Link
-          href="https://www.facebook.com/ali.imam.1804"
-          rel="noreferrer"
-          target="_blank"
-          className={Underline}
-        >
-          <Icons.fb className="h-5 w-5" />
-        </Link>
-        <Link
-          href="https://www.linkedin.com/in/ali-imam-579396180/"
-          rel="noreferrer"
-          target="_blank"
-          className={Underline}
-        >
-          <Icons.Linked className="h-5 w-5" />
-        </Link>
-        <Link
-          href="https://www.youtube.com/channel/UCZYm9jYmDesAGzbyFacUSfA"
-          rel="noreferrer"
-          target="_blank"
-          className={Underline}
-        >
-          <Icons.youTube className="h-5 w-5" />
-        </Link>
-      </div>
+      <div className='flex flex-wrap justify-center'>
+        <div className="flex flex-wrap items-center justify-center gap-6 gap-y-4 px-8">
+          <Link href="tel:+919650133705" rel="noreferrer" target="_blank" className={Underline}>
+            <Icons.phone strokeWidth={1.5} className="h-5 w-5" />
+          </Link>
+          <Link
+            href="mailto:aliimam.original@gmail.com"
+            rel="noreferrer"
+            target="_blank"
+            className={Underline}
+          >
+            <Icons.mail strokeWidth={1.5} className="h-5 w-5" />
+          </Link>
+          <Link
+            href="https://wa.me/message/6XOEA2NCD5OFB1"
+            rel="noreferrer"
+            target="_blank"
+            className={Underline}
+          >
+            <Icons.whatsapp className="h-5 w-5" />
+          </Link>
+          <Link
+            href="https://www.instagram.com/aliimam.in/"
+            rel="noreferrer"
+            target="_blank"
+            className={Underline}
+          >
+            <Icons.insta strokeWidth={1.5} className="h-5 w-5" />
+          </Link>
+          <Link
+            href="https://twitter.com/aiimamoriginal"
+            rel="noreferrer"
+            target="_blank"
+            className={Underline}
+          >
+            <Icons.TweetX className="h-5 w-5" />
+          </Link>
+          <Link
+            href="https://www.facebook.com/ali.imam.1804"
+            rel="noreferrer"
+            target="_blank"
+            className={Underline}
+          >
+            <Icons.fb className="h-5 w-5" />
+          </Link>
+          <Link
+            href="https://www.linkedin.com/in/ali-imam-579396180/"
+            rel="noreferrer"
+            target="_blank"
+            className={Underline}
+          >
+            <Icons.Linked className="h-5 w-5" />
+          </Link>
+          <Link
+            href="https://www.youtube.com/channel/UCZYm9jYmDesAGzbyFacUSfA"
+            rel="noreferrer"
+            target="_blank"
+            className={Underline}
+          >
+            <Icons.youTube className="h-5 w-5" />
+          </Link>
+        </div>
 
-      <ThemeToogle />
+        <ThemeToogle />
+      </div>
 
       <div className="dark:bg-zinc-950 text-amber-900 mx-auto mb-10 mt-10 flex  flex-col justify-between text-center md:max-w-5xl">
         <div className="flex flex-row items-center justify-center gap-1 text-slate-600 dark:text-slate-400">

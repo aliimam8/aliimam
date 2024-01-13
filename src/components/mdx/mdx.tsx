@@ -23,9 +23,6 @@ import Logo from './logo';
 import Pre from './pre';
 import Tree from './tree';
 import Video from './video';
-import { buttonVariants } from '../ui/button';
-import { cn } from '@/lib/utils';
-import { Icons } from '../icons';
 
 type MdxProps = {
   code: string;

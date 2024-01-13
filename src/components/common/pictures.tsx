@@ -130,3 +130,28 @@ export function ImamImage({ images }: { images: { src: string; altText: string }
   );
 }
 
+
+export function OnlyImage({ images }: { images: { src: string; altText: string }[] }) {
+  function toggleFullScreen() {
+    if (document.fullscreenElement) {
+      document.exitFullscreen();
+    } else {
+      const element = document.querySelector('.PhotoView-Portal');
+      if (element) {
+        element.requestFullscreen();
+      }
+    }
+  }
+  return (
+    <div className="w-full">
+      <CldImage
+        className="block h-full w-full rounded-lg object-cover object-center saturate-100 transition-all duration-100 hover:saturate-0"
+        width={400}
+        height={400}
+        src={images}
+        alt={images}
+      />
+    </div>
+  );
+}
+

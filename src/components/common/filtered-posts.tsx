@@ -61,7 +61,7 @@ export const AssetsFilteredPosts = (props: FilteredAssetsPostsProps) => {
 
   return (
     <>
-      <div className="relative mx-auto mb-8 max-w-4xl">
+      <div className="relative mx-auto mb-8 max-w-5xl">
         <Input
           type="text"
           value={searchValue}
