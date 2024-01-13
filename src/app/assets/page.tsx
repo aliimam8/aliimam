@@ -41,7 +41,7 @@ const AssetsPage = () => {
   const posts = getAllAssetsPosts();
 
   return (
-    <div className="mx-auto mt-40 max-w-4xl px-6">
+    <div className="mx-auto mt-40 max-w-5xl px-6">
       <PageTitle
         title="Free Assets"
         description={`I started uploading assets in December 2023, mainly about graphic Design and

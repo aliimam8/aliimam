@@ -46,7 +46,7 @@ const UsesPage = () => {
   const page = getPage('uses')
 
   return (
-    <div className='mx-auto mt-40 max-w-4xl px-6'>
+    <div className='mx-auto mt-40 max-w-5xl px-6'>
       <PageTitle
         title='Uses'
         description='This is the equipment I currently use for gaming, programming, making
