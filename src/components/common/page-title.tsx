@@ -3,8 +3,6 @@
 import { motion } from 'framer-motion'
 
 import { Separator } from '../ui/seperator'
-import { Avegra } from '@/app/fonts'
-import { cn } from '@/lib/utils'
 
 type PageTitleProps = {
   title: string
@@ -29,15 +27,14 @@ const PageTitle = (props: PageTitleProps) => {
   return (
     <div className='mb-16 mt-6 sm:mb-24 sm:mt-12'>
       <motion.h2
-        className={cn(
-          Avegra.className, 'my-2 text-5xl sm:text-7xl',
+        className='my-2 text-xl font-bold sm:text-4xl'
           {
             ...(animate && {
               initial: animation.hide,
               animate: animation.show
             })
           }
-        )}>
+        >
         {title}
       </motion.h2>
       <motion.p

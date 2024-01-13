@@ -24,8 +24,8 @@ export const CardStack = ({
   const [cards, setCards] = useState<Card[]>(items);
 
   return (
-    <div className="border rounded-3xl p-2 border-slate-200 dark:border-slate-800 ">
-      <div className="relative flex h-[400px]">
+    <div className="border rounded-3xl p-2 border-slate-200 dark:border-slate-800">
+      <div className="relative flex h-[450px]">
         {cards.map((card) => {
           return (
             <div
@@ -41,10 +41,10 @@ export const CardStack = ({
               />
              <div className="grid">
               <div className="p-6">
-                <p className="text-white text-4xl font-bold dark:text-white">
+                <p className="text-white text-4xl font-bold ">
                   {card.name}
                 </p>
-                <p className="text-neutral-400 px-1 font-normal dark:text-neutral-200">
+                <p className="text-white px-1 font-normal ">
                   {card.designation}
                 </p>
               </div>

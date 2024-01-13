@@ -48,7 +48,7 @@ const Hero = () => {
 
         <div className="md:w-50% mb-10 mt-4 md:mt-6">
           <div className="px-6">
-            <div className="relative w-full h-full border border-slate-200 dark:border-slate-800">
+            <div className="relative w-full h-full border py-2 border-slate-200 dark:border-slate-800">
               <h1 className="tracking-tightest flex select-none py-2 flex-col text-center text-7xl font-extrabold leading-none sm:text-8xl md:flex-col lg:flex-row">
                 <Icons.add strokeWidth={1} className="absolute -left-3 -top-3 h-6 w-6 text-aired" />
                 <Icons.add

@@ -43,7 +43,7 @@ const AssetsPage = () => {
   return (
     <div className="mx-auto mt-40 max-w-5xl px-6">
       <PageTitle
-        title="Free Assets"
+        title="Download Free Assets"
         description={`I started uploading assets in December 2023, mainly about graphic Design and
         sharing knowledge. I have uploaded a total of ${posts.length} assets on
         my Assets. All freely available for both your commercial and personal projects. 

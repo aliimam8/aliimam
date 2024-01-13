@@ -1,9 +1,7 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import * as React from 'react';
-import { Icons } from 'src/components/icons';
 import { Badge } from "@/components/ui/badge"
 
 import { 

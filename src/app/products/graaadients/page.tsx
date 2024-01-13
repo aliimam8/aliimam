@@ -46,17 +46,17 @@ export default function AboutAI() {
 
   return (
     <>
-        <Suspense>
-          <div className='mx-auto mt-20 max-w-5xl'>
+          <div className='mx-auto mt-20 max-w-5xl px-4 sm:px-6'>
             <Grads />
           </div>
 
-          <div className='flex mt-10 justify-center mx-auto max-w-5xl shadow-md'>
+          <div className='flex mt-10 justify-center mx-auto max-w-5xl px-4 sm:px-6'>
             <video autoPlay muted loop>
               <source width={720} height={480} src="/videos/graaadients.mp4" />
             </video>
           </div>
-        </Suspense>
+
+
     </>
   );
 }

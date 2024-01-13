@@ -7,12 +7,12 @@ const GRADS = [
     {
         id: 0,
         name: "Graaadients",
-        src: "/bbg.png",
-        designation: "Introducing",
+        src: "/images/products/grad.jpg",
+        designation: "Download. Edit. Upload.",
         content: (
             <p>
                 +1000 abstract gradient elements and backgrounds
-                for your amazing design projects
+                for your amazing design projects.
             </p>
         ),
     },

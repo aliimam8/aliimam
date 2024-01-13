@@ -30,14 +30,14 @@ export default function HomePage() {
 
         <div className="absolute inset-0 -z-10 overflow-hidden">
           <svg
-            className="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-aired/20 [mask-image:radial-gradient(70rem_40rem_at_top,white,transparent)] dark:stroke-aired/50"
+            className="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-aired/20 [mask-image:radial-gradient(70rem_20rem_at_top,white,transparent)] dark:stroke-aired/80"
             aria-hidden="true"
           >
             <defs>
               <pattern
                 id="e813992c-7d03-4cc4-a2bd-151760b470a0"
                 width={100}
-                height={3}
+                height={4}
                 x="50%"
                 y={-1}
                 patternUnits="userSpaceOnUse"

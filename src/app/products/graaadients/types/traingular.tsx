@@ -16,7 +16,8 @@ export default async function Home({}: { images: ImageProps[] }) {
   const { resources } = await cloudinary.search.expression(expression).execute();
 
   return (
-    <main className="mt-4">
+    <main className="">
+      <p className='py-4 text-white'>Transitions occur in triangular shapes.</p>
       <div className="mx-auto max-w-3xl lg:max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-3">
           {resources.map((resource: any) => {

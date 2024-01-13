@@ -18,6 +18,10 @@ export function Coffee() {
     <Drawer>
       <DrawerTrigger asChild>
         <Button variant="aibutton" size="sm" className="flex gap-2">
+        <span className='relative flex h-3 w-3'>
+            <span className='absolute inline-flex h-full w-full animate-ping rounded-full bg-aired opacity-75' />
+            <span className='relative inline-flex h-3 w-3 rounded-full bg-aired' />
+          </span>
           <Icons.coffee className="h-4 w-4" />
           Buy Me a Coffee
         </Button>

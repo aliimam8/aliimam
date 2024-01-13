@@ -104,7 +104,7 @@ export function SiteFooter() {
       <div className="mt-4 flex flex-wrap justify-center gap-x-8 gap-y-4 p-8">
         {items.map((Menus) => (
           <figure key={Menus.text}>
-            <div className="hover:scale-103 text-sm text-slate-600 hover:text-black dark:text-slate-400 hover:dark:text-white">
+            <div className="md:text-xs text-sm text-slate-600 hover:text-black dark:text-slate-400 hover:dark:text-white">
               <span className="">
                 <Link href={Menus.href} target={Menus.target}>
                   {Menus.text}
@@ -119,7 +119,7 @@ export function SiteFooter() {
           className="text-slate-600 hover:text-black dark:text-slate-400 hover:dark:text-white"
           download={true}
         >
-          <p className="text-sm">Download CV</p>
+          <p className="md:text-xs text-sm">Download CV</p>
         </Link>
       </div>
 
@@ -194,7 +194,7 @@ export function SiteFooter() {
           <span> © </span>
           <span>{new Date().getFullYear()}</span>
           <span>Made with</span>
-          <Icons.heart className="mx-1 h-4 w-4 animate-pulse text-aired" />
+          <Icons.heart className="mx-1 h-4 w-4  animate-pulse text-aired"/>
           <span> by </span>
           <span className="cursor-pointer font-bold text-black hover:text-aired dark:text-white dark:hover:text-aired">
             <a href="/">Ali Imam</a>

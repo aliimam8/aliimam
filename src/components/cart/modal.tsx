@@ -15,7 +15,6 @@ import { EditItemQuantityButton } from './edit-item-quantity-button';
 import { buttonVariants } from 'src/components/ui/button';
 import { cn } from 'src/lib/utils';
 import OpenCart from './open-cart';
-import { Avegra } from '@/app/fonts';
 
 type MerchandiseSearchParams = {
   [key: string]: string;
@@ -235,8 +234,7 @@ export function CartModalD({ cart }: { cart: Cart | undefined }) {
 
   return (
     <div className="mx-auto mt-40 max-w-3xl px-4 sm:px-6 md:max-w-5xl ">
-      <h1 className={cn(
-          Avegra.className, "my-10 text-center text-6xl sm:text-8xl")}>
+      <h1 className="my-10 text-center text-xl font-bold sm:text-4xl">
           My Cart
           <hr className="bg-aired rounded-full mx-auto my-4 h-1 w-6 border-0"></hr>
         </h1>
