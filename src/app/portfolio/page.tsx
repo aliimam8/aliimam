@@ -3,6 +3,8 @@ import Projects from '@/components/projects';
 import { CarouselSpacing } from 'src/components/common/carousel';
 
 import { type Metadata } from 'next';
+import { cn } from '@/lib/utils';
+import { Avegra } from '../fonts';
 
 export const metadata: Metadata = {
   title: 'Portfolio',
@@ -12,10 +14,11 @@ export const metadata: Metadata = {
 export default function Gallery() {
   return (
     <main>
-      <div className="mx-auto mt-20 max-w-3xl px-4 sm:px-6 md:max-w-7xl ">
-        <h1 className="my-10 mt-40 text-center text-2xl font-bold sm:text-4xl">
+      <div className="mx-auto mt-40 max-w-3xl px-4 sm:px-6 md:max-w-7xl ">
+      <h1 className={cn(
+          Avegra.className, "my-10 text-center text-6xl sm:text-8xl")}>
           Portfolio
-          <hr className="mx-auto my-4 h-1 w-6 rounded-full border-0 bg-aired"></hr>
+          <hr className="bg-aired rounded-full mx-auto my-4 h-1 w-6 border-0"></hr>
         </h1>
         <div className="mb-10">
           <Projects />

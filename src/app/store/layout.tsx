@@ -4,12 +4,18 @@ import { Suspense } from 'react';
 import Link from 'next/link';
 import { Icons } from 'src/components/icons';
 import { ScrollArea, ScrollBar } from 'src/components/ui/scroll-area';
+import { Avegra } from '../fonts';
+import { cn } from '@/lib/utils';
 
 export default function SearchLayout({ children }: { children: React.ReactNode }) {
   return (
     <Suspense>
       <Link href="/store" rel="noreferrer">
-        <h1 className="mt-40 text-center text-2xl font-bold sm:text-4xl">AI Store</h1>
+      <h1 className={cn(
+          Avegra.className, "my-10 mt-40 text-center text-6xl sm:text-8xl")}>
+          AI Store
+          <hr className="bg-aired rounded-full mx-auto my-4 h-1 w-6 border-0"></hr>
+        </h1>
       </Link>
       <ScrollArea className="mx-auto mt-10 whitespace-nowrap">
         <div className="flex items-center justify-center gap-3 px-10">

@@ -49,44 +49,45 @@ const PostCard = (props: PostCardProps) => {
 
   return (
     <>
-    <Link
-      key={_id}
-      href={`/blog/${slug}`}
-      className={cn(
-        'relative flex flex-col rounded-2xl border border-slate-200 p-6 dark:border-slate-800',
-        'hover:before:opacity-100'
-      )}
-      data-id="post-card"
-    >
-      <div className="bg-background absolute inset-px -z-20 rounded-[inherit]" />
-      <Image
-        src={`/images/blog/${slug}/cover.jpg`}
-        className="rounded-lg hover:saturate-0"
-        width={480}
-        height={360}
-        alt={title}
-      />
-      <div className="grow">
-        <h2 className="mb-3 mt-3 text-xl font-semibold">{title}</h2>
-        <div className="text-sm text-slate-600 dark:text-slate-400">{summary}</div>
-      </div>
-      <div className="mt-3 flex items-center gap-2 text-sm">
-        {formattedDate || <Skeleton className="h-5 w-10" />}
-        <div>&middot;</div>
-        {likesIsLoading ? (
-          <Skeleton className="h-5 w-10 rounded-md" />
-        ) : (
-          <div>{likesData?.likes} likes</div>
+      <Link
+        key={_id}
+        href={`/blog/${slug}`}
+        className={cn(
+          'relative flex flex-col rounded-2xl border border-slate-200 p-6 dark:border-slate-800',
+          'hover:before:opacity-100'
         )}
-        <div>&middot;</div>
-        {viewsIsLoading ? (
-          <Skeleton className="h-5 w-10 rounded-md" />
-        ) : (
-          <div>{viewsData?.views} views</div>
-        )}
-      </div>
-      <div className="flex mt-4 flex-wrap">{tags?.map((tag) => <AiTag key={tag} text={tag} />)}</div>
-    </Link>
+        data-id="post-card"
+      >
+        <div className="bg-background absolute inset-px -z-20 rounded-[inherit]" />
+        <Image
+          src={`/images/blog/${slug}/cover.jpg`}
+          className="rounded-lg hover:saturate-0"
+          width={480}
+          height={360}
+          alt={title}
+        />
+        <div className="grow">
+          <h2 className="mb-3 mt-3 text-xl font-semibold">{title}</h2>
+
+          <div className="text-sm text-slate-600 dark:text-slate-400">{summary}</div>
+        </div>
+        <div className="mt-3 flex items-center gap-2 text-sm">
+          {formattedDate || <Skeleton className="h-5 w-10" />}
+          <div>&middot;</div>
+          {likesIsLoading ? (
+            <Skeleton className="h-5 w-10 rounded-md" />
+          ) : (
+            <div>{likesData?.likes} likes</div>
+          )}
+          <div>&middot;</div>
+          {viewsIsLoading ? (
+            <Skeleton className="h-5 w-10 rounded-md" />
+          ) : (
+            <div>{viewsData?.views} views</div>
+          )}
+        </div>
+
+      </Link>
     </>
   );
 };

@@ -94,26 +94,28 @@ const PostCard = (props: PostCardProps) => {
         alt={title}
       />
       <div className="p-3">
-        <div className="grow">
-          <h2 className="text-start text-xl font-semibold ">{title}</h2>
-        </div>
-        <div className="mt-1 flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
-          {likesIsLoading ? (
-            <Skeleton className="h-5 w-10 rounded-md" />
-          ) : (
-            <div>{likesData?.likes} likes</div>
-          )}
-          <div>&middot;</div>
-          {viewsIsLoading ? (
-            <Skeleton className="h-5 w-10 rounded-md" />
-          ) : (
-            <div>{viewsData?.views} views</div>
-          )}
-        </div>
-        <div className="flex mt-2 flex-wrap gap-3">
-          {tags.map((tag) => (
-            <AiTag key={tag} text={tag} />
-          ))}
+          <div className='flex justify-between items-start'>
+            <div>
+          <div className="grow ">
+            <h2 className="text-xl font-semibold ">{title}</h2>
+          </div>
+          <div className="mt-1 flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+            {likesIsLoading ? (
+              <Skeleton className="h-5 w-10 rounded-md" />
+            ) : (
+              <div>{likesData?.likes} likes</div>
+            )}
+            <div>&middot;</div>
+            {viewsIsLoading ? (
+              <Skeleton className="h-5 w-10 rounded-md" />
+            ) : (
+              <div>{viewsData?.views} views</div>
+            )}
+          </div>
+          </div>
+          <div className="grid gap-1 mt-1">
+            {tags?.map((tag) => <AiTag key={tag} text={tag} />)}
+          </div>
         </div>
       </div>
     </Link>

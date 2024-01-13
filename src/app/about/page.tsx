@@ -11,6 +11,8 @@ import 'src/styles/text.css';
 import ImageZoom from '@/components/common/image-zoom';
 import { Icons } from '@/components/icons';
 import { motion } from 'framer-motion';
+import { Avegra } from '../fonts';
+import { cn } from '@/lib/utils';
 
 export default function AboutAI() {
   return (
@@ -37,8 +39,9 @@ export default function AboutAI() {
                   width={1000}
                   className="h-[404px] object-cover "
                 />
-                <div className="relative bg-gradient-to-b from-black/0 to-black text-white">
-                  <h1 className="z-20 -mt-24 items-center text-center text-[70px] font-black tracking-tighter ">
+                <div className="relative bg-gradient-to-b -mt-24 from-black/0 to-black text-white">
+                  <h1 className={cn(
+                    Avegra.className,"z-20 items-center text-center text-[70px] ")}>
                     Ali Imam
                   </h1>{' '}
                 </div>

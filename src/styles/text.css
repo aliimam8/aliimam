@@ -97,6 +97,33 @@
   --tw-gradient-to: #fbbf24;
 }
 
+.from-gradient-1-ai {
+  --tw-gradient-from: #fffb00;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(255, 255, 0, 0));
+}
+
+.from-gradient-2-ai {
+  --tw-gradient-from: #8000ff;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(129, 53, 206, 0));
+}
+
+.from-gradient-3-ai {
+  --tw-gradient-from: #00ff26;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(121, 40, 202, 0));
+}
+
+.to-gradient-1-ai {
+  --tw-gradient-to: #78006a;
+}
+
+.to-gradient-2-ai {
+  --tw-gradient-to: #853500;
+}
+
+.to-gradient-3-ai {
+  --tw-gradient-to: #850000;
+}
+
 .bg-clip-text {
   -webkit-background-clip: text;
   background-clip: text;

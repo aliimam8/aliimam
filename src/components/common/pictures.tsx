@@ -5,7 +5,6 @@ import { Icons } from 'src/components/icons';
 import Link from 'next/link';
 
 import { PhotoProvider, PhotoView } from 'react-photo-view';
-import 'react-photo-view/dist/react-photo-view.css';
 
 export function AliImage({ images }: { images: { src: string; altText: string }[] }) {
   function toggleFullScreen() {
@@ -145,9 +144,9 @@ export function OnlyImage({ images }: { images: { src: string; altText: string }
   return (
     <div className="w-full">
       <CldImage
-        className="block h-full w-full rounded-lg object-cover object-center saturate-100 transition-all duration-100 hover:saturate-0"
-        width={400}
-        height={400}
+        className="block h-full w-full shadow-sm rounded-lg object-cover object-center saturate-100 transition-all duration-100 hover:saturate-0"
+        width={520}
+        height={480}
         src={images}
         alt={images}
       />

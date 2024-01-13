@@ -11,7 +11,7 @@ import { Separator } from 'src/components/ui/seperator';
 
 export default function Navbar() {
   return (
-    <nav className="fixed top-0 z-50 w-full border-b border-aired/25 bg-white bg-opacity-60 backdrop-blur-lg backdrop-saturate-150 backdrop-filter dark:bg-black dark:bg-opacity-60">
+    <nav className="fixed top-0 z-50 w-full border-b border-aired/25 bg-white/80 backdrop-blur-md backdrop-filter dark:bg-black/80">
      
       <div className="mx-auto flex items-center md:px-20">
         <div className="mx-auto flex h-14 max-w-5xl flex-1 items-center px-2">
