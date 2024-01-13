@@ -33,7 +33,7 @@ const NowPlaying = () => {
                 {data.name} - {data.artist}
               </a>
             ) : (
-              'Not Listening - Spotify'
+              'Not Listening ・ Spotify ・ Ali Imam'
             ))}
         </p>
       </div>

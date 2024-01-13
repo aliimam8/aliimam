@@ -80,7 +80,7 @@ export default function SearchLayout({ children }: { children: React.ReactNode }
           </Link>
           <p className='text-center font-semibold ml-2'>₹99.00*</p>
         </div>
-        <p className='text-center md:text-lg mt-12 text-aired text-sm mx-auto font-semibold'>
+        <p className='text-center md:text-md mt-12 text-aired text-xs mx-auto'>
           If you will need help, don’t hesitate to contact me!
         </p>
       </div>
