@@ -46,7 +46,7 @@ export default function AboutAI() {
 
   return (
     <>
-          <div className='mx-auto mt-20 max-w-5xl px-4 sm:px-6'>
+          <div className='mx-auto mt-14 max-w-5xl px-4 sm:px-6'>
             <Grads />
           </div>
 

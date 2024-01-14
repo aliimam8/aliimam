@@ -7,7 +7,7 @@ const GRADS = [
     {
         id: 0,
         name: "Graaadients",
-        src: "/images/products/grad.jpg",
+        src: "/images/products/p-grad.jpg",
         designation: "Download. Edit. Upload.",
         content: (
             <p>

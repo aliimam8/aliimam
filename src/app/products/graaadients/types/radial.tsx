@@ -17,9 +17,9 @@ export default async function Home({}: { images: ImageProps[] }) {
 
   return (
     <main className="">
-      <p className='py-4 text-white'>Radiates outward from a central point, creating a circular or elliptical transition.</p>
+      <p className='py-4'>Radiates outward from a central point, creating a circular or elliptical transition.</p>
       <div className="mx-auto max-w-3xl lg:max-w-6xl">
-        <div className="grid grid-cols-1 lg:grid-cols-3">
+        <div className="grid grid-cols-2 lg:grid-cols-3">
           {resources.map((resource: any) => {
             return (
               <div key={resource.public_id} className="grid">

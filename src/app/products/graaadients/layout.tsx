@@ -11,7 +11,7 @@ export default function SearchLayout({ children }: { children: React.ReactNode }
   return (
     <Suspense>
       <Image
-        src="/bbg.png"
+        src="/images/products/grad.png"
         alt="Your Image"
         height={1000}
         width={1000}
@@ -45,7 +45,7 @@ export default function SearchLayout({ children }: { children: React.ReactNode }
           Download Now
           <span className="sr-only">Buy now</span>
         </Link>
-        <p className='text-center text-white font-semibold ml-2'>₹99.00*</p>
+        <p className='text-center text-white font-semibold ml-2'>₹499.00*</p>
       </div>
       </div>
 
@@ -78,7 +78,7 @@ export default function SearchLayout({ children }: { children: React.ReactNode }
             Download Now
             <span className="sr-only">Buy now</span>
           </Link>
-          <p className='text-center font-semibold ml-2'>₹99.00*</p>
+          <p className='text-center font-semibold ml-2'>₹499.00*</p>
         </div>
         <p className='text-center md:text-md mt-12 text-aired text-xs mx-auto'>
           If you will need help, don’t hesitate to contact me!
