@@ -62,7 +62,7 @@ export function AliImage({ images }: { images: { src: string; altText: string }[
           );
         }}
       >
-        <PhotoView src={images as unknown as string}>
+        <PhotoView src={images as unknown as string} >
           <CldImage
             className="block h-full w-full cursor-zoom-in rounded-lg object-cover object-center saturate-100 transition-all duration-100 hover:saturate-0"
             width={300}

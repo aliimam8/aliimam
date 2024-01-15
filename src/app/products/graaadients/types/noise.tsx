@@ -1,6 +1,6 @@
 import { v2 as cloudinary } from 'cloudinary';
 
-import { OnlyImage } from 'src/components/common/pictures';
+import { AliImage } from 'src/components/common/pictures';
 import type { ImageProps } from 'src/utils/types';
 
 
@@ -24,7 +24,7 @@ export default async function Home({}: { images: ImageProps[] }) {
             return (
               <div key={resource.public_id} className="grid">
                 <div className="w-full p-1">
-                <OnlyImage images={resource.secure_url}/>
+                <AliImage images={resource.secure_url}/>
                 </div>
               </div>
             );

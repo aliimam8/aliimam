@@ -17,6 +17,7 @@ const navigation = [
   { name: 'Gallery', href: '/gallery', current: true },
   { name: 'Portfolio', href: '/portfolio', current: true },
   { name: 'Store', href: '/store', current: true },
+  { name: 'Products', href: '/products', current: true },
   { name: 'Assets', href: '/assets', current: true, discription: 'Free' },
   { name: 'Blog', href: '/blog', current: true },
   { name: 'Account', href: 'https://shopify.com/68087251194/account', current: true }
@@ -70,7 +71,6 @@ export default function Navbar() {
                       >
                         <p className="flex items-center gap-3">
                           <span>{item.name}</span>
-                          <span className="text-[10px] font-light rounded-full py-[0.2] px-3 bg-aired text-white">{item.discription}</span>
                         </p>
                       </Disclosure.Button>
                     ))}

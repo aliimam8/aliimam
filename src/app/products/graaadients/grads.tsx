@@ -18,31 +18,10 @@ export function Grads() {
         <ScrollArea className="whitespace-nowrap">
           <div className="space-x-2">
             <TabsTrigger value="1" className="px-6">
-              Noise
+              Mesh Noise
             </TabsTrigger>
             <TabsTrigger value="2" className="px-6">
-              Linear
-            </TabsTrigger>
-            <TabsTrigger value="3" className="px-6">
-              Radial
-            </TabsTrigger>
-            <TabsTrigger value="4" className="px-6">
-              Angular
-            </TabsTrigger>
-            <TabsTrigger value="5" className="px-6">
-              Diamond
-            </TabsTrigger>
-            <TabsTrigger value="6" className="px-6">
-              Conical
-            </TabsTrigger>
-            <TabsTrigger value="7" className="px-6">
-              Reflected
-            </TabsTrigger>
-            <TabsTrigger value="8" className="px-6">
-              Triangular
-            </TabsTrigger>
-            <TabsTrigger value="9" className="px-6">
-              Spherical
+              Video
             </TabsTrigger>
           </div>
           <ScrollBar orientation="horizontal" />

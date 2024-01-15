@@ -5,6 +5,7 @@ import { Grads } from './grads';
 import site from '@/config/site'
 
 
+
 // export const runtime = 'edge'
 const title = 'Graaadients'
 const description =
@@ -47,7 +48,7 @@ export default function AboutAI() {
   return (
     <>
           <div className='mx-auto mt-14 max-w-5xl px-4 sm:px-6'>
-            <Grads />
+            <Grads /> 
           </div>
 
           <div className='flex mt-10 justify-center mx-auto max-w-5xl px-4 sm:px-6'>

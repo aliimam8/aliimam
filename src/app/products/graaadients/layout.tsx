@@ -42,11 +42,12 @@ export default function SearchLayout({ children }: { children: React.ReactNode }
             })
           )}
         >
-          Download Now
+         Download Full Pack
           <span className="sr-only">Buy now</span>
         </Link>
-        <p className='text-center text-white font-semibold ml-2'>₹499.00*</p>
       </div>
+        <p className='text-center text-white font-semibold ml-2 mt-6'>All gradients are 100% free.</p>
+
       </div>
 
       <div className="order-last min-h-screen w-full md:order-none">{children}</div>
@@ -75,11 +76,12 @@ export default function SearchLayout({ children }: { children: React.ReactNode }
               })
             )}
           >
-            Download Now
+            Download Full Pack
             <span className="sr-only">Buy now</span>
           </Link>
-          <p className='text-center font-semibold ml-2'>₹499.00*</p>
+          
         </div>
+        <p className='text-center text-white font-semibold ml-2 mt-6'>All gradients are 100% free.</p>
         <p className='text-center md:text-md mt-12 text-aired text-xs mx-auto'>
           If you will need help, don’t hesitate to contact me!
         </p>
