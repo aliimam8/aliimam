@@ -95,7 +95,7 @@ export default function AboutAI() {
       </div>
 
       <div className='flex mt-10 justify-center mx-auto max-w-5xl px-4 sm:px-6'>
-        <video autoPlay muted loop>
+        <video autoPlay muted controls loop>
           <source width={720} height={480} src="/videos/graaadients.mp4" />
         </video>
       </div>

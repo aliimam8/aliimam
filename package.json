@@ -21,6 +21,7 @@
     "@angular/cdk": "^17.0.2",
     "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^2.0.18",
+    "@img-comparison-slider/react": "^8.0.1",
     "@nextui-org/react": "^2.2.9",
     "@octokit/rest": "^20.0.2",
     "@prisma/client": "^5.7.0",

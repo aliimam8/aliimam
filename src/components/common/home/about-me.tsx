@@ -9,7 +9,10 @@ const AboutMe = () => {
   return (
     <>
       <div className="mx-auto mt-10 max-w-3xl px-6">
-        <Dashboard />
+        <div className='grid gap-4'>
+          <Dashboard />
+
+        </div>
       </div>
     </>
   );

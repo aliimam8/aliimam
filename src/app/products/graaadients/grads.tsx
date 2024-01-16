@@ -21,7 +21,7 @@ export function Grads() {
               Mesh Noise
             </TabsTrigger>
             <TabsTrigger value="2" className="px-6">
-              Video
+              Open Video
             </TabsTrigger>
           </div>
           <ScrollBar orientation="horizontal" />
