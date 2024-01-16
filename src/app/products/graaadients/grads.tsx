@@ -14,7 +14,7 @@ import Spherical from './types/spherical';
 export function Grads() {
   return (
     <Tabs defaultValue="1" className=" items-center justify-center text-center">
-      <TabsList className="w-full items-center justify-center text-center lg:w-auto">
+      <TabsList className="w-auto items-center justify-center text-center lg:w-auto">
         <ScrollArea className="whitespace-nowrap">
           <div className="space-x-2">
             <TabsTrigger value="1" className="px-6">
