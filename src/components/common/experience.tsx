@@ -24,7 +24,7 @@ export const works: Experience[] = [
     post: 'Graphic Designer',
     comlogo: '/exp/11.png',
     company: 'Steadfast Nutrition · Full-time',
-    time: 'Aug 2023 - Present · 5 mos'
+    time: 'Aug 2023 - Present · 6 mos'
   },
   {
     post: 'Art Director',
