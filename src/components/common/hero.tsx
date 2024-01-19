@@ -28,6 +28,7 @@ const Hero = () => {
   return (
     <section id="home">
       <div className="animation-delay-8 mt-20 flex animate-fadeIn flex-col items-center justify-center px-8 text-center md:mt-40">
+
         <div className="z-10 mt-10 sm:mb-8 sm:mt-10 sm:justify-center">
           <div className="relative flex items-center whitespace-nowrap rounded-full bg-white px-3 py-1 text-xs leading-6 text-slate-600 ring-1 ring-slate-200 dark:bg-black dark:text-slate-400 dark:ring-slate-800">
             Coming Soon <Icons.youTube className="h-5 p-1 text-aired" /> Youtube Videos.

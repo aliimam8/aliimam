@@ -40,7 +40,7 @@ export default function Intro() {
 
   return (
     <div ref={refContainer} className="relative z-10 " id="intro">
-      <div className="mx-auto my-10 flex max-w-7xl flex-col items-center justify-center px-8 text-center text-4xl font-extrabold tracking-tighter md:my-20 md:text-6xl">
+      <div className="mx-auto my-10 flex max-w-6xl flex-col items-center justify-center px-8 text-center text-4xl font-extrabold tracking-tighter md:my-20 md:text-6xl">
         <div className="flex flex-col gap-10 leading-[1.2] md:gap-20">
           <div
             className="introText flex items-center justify-center"
