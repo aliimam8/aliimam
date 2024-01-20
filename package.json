@@ -63,6 +63,7 @@
     "http-browserify": "^1.7.0",
     "https-browserify": "^1.0.0",
     "install": "^0.13.0",
+    "lightgallery": "^2.7.2",
     "lucide-react": "^0.292.0",
     "marked": "^11.1.0",
     "next": "^14.0.4",

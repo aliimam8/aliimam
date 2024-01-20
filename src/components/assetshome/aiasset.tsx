@@ -42,10 +42,10 @@ const AssetsPage = () => {
   const posts = getAllAssetsPosts();
 
   return (
-    <div className="mx-auto mt-10 max-w-6xl px-6">
+    <div className="mx-auto mt-10 max-w-5xl px-6">
       
-      <h1 className="my-4 mt-20 text-center text-2xl font-bold sm:text-4xl">
-      Burn Your Design
+      <h1 className="my-4 mt-20  text-center text-2xl font-bold sm:text-4xl">
+      Burn The Design
       </h1>
       <Link
       href="/assets"

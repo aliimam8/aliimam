@@ -40,7 +40,7 @@ const Items = () => {
       linkText: 'AI Store',
       gradient: {
         startColor: '#f50537',
-        endColor: '#f50537'
+        endColor: '#0055FF'
       }
     },
     {
@@ -52,7 +52,7 @@ const Items = () => {
       linkText: 'Assets',
       gradient: {
         startColor: '#f50537',
-        endColor: '#f50537'
+        endColor: '#FFB900'
       }
     },
     {
@@ -64,7 +64,7 @@ const Items = () => {
       target: "_blank",
       gradient: {
         startColor: '#f50537',
-        endColor: '#f50537'
+        endColor: '#12BD5B'
       }
     },
     {
@@ -76,7 +76,7 @@ const Items = () => {
       target: "_blank",
       gradient: {
         startColor: '#f50537',
-        endColor: '#f50537'
+        endColor: '#12BD5B'
       }
     }
     

@@ -1,12 +1,10 @@
 'use client';
 
 import Dashboard from './dashboard';
-import { CardStackDemo } from '@/components/common/home/grid-cards-images';
-import { ResizableDemo } from './resizebox';
-import SparklesCore from '@/components/ui/sparkles';
 import Logos from './logos';
 import React from 'react';
 import { motion, useInView } from 'framer-motion'
+import Graaadients from './graaadients';
 
 const variants = {
   initial: {
@@ -34,16 +32,18 @@ const AboutMe = () => {
       }}
       className='relative will-change-[transform,opacity]'
     >
-      <div className="mx-auto mt-10 max-w-3xl px-6">
-        <div className='grid gap-4'>
-          <Dashboard />
-        </div>
+      <div className="mx-auto mt-14 max-w-5xl px-6">
         <h1 className="my-6 text-center text-xs font-semibold uppercase tracking-[.3em] text-slate-400 ">
-        Worked with Brands Like
-      </h1>
+          Worked with Brands Like
+        </h1>
         <Logos />
+        <div className='grid md:grid-cols-2 mt-4 gap-2'>
+          <Dashboard />
+          <Graaadients />
+        </div>
       </div>
     </motion.div>
+    
     </>
   );
 };

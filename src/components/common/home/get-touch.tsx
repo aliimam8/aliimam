@@ -45,9 +45,9 @@ const GetInTouch = () => {
   }, [animate]);
 
   return (
-    <div className="mx-auto mt-20 max-w-3xl px-4 sm:px-6 md:max-w-5xl">
+    <div className="mx-auto mt-10 max-w-3xl px-4 sm:px-6 md:max-w-5xl">
       <motion.div
-        className="relative md:h-[240px] h-[440px] border border-slate-100 dark:border-slate-900 rounded-3xl p-1 "
+        className="relative p-8 border border-slate-100 dark:border-slate-900 rounded-3xl"
         initial="initial"
         animate={isInView ? 'animate' : 'initial'}
         variants={variants}
@@ -56,10 +56,10 @@ const GetInTouch = () => {
           duration: 0.5
         }}
       >
-        <div className="grid grid-cols-1 gap-6 p-4 lg:p-6">
+        <div className="grid grid-cols-1">
           {/* Main */}
-          <div className="grid gap-12 md:grid-cols-2">
-            <div className="relative mt-24 flex w-[300px]" ref={scope}>
+          <div className="grid md:grid-cols-2 justify-center gap-10">
+            <div className="relative " ref={scope}>
               <Icons.aiLogo className="w-12 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 " />
               <div
                 id="Graphic Design"
@@ -109,7 +109,7 @@ const GetInTouch = () => {
             </div>
 
             {/* Right part with an email button */}
-            <div className="flex mt-20 flex-col justify-center px-4">
+            <div className="flex flex-col justify-center">
               <p className="mb-2 text-3xl font-bold">Any questions about Graphic Design?</p>
               <p className="text-zinc-300">Feel free to reach out to me!</p>
               <div className="my-8">

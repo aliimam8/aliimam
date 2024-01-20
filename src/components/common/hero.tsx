@@ -27,9 +27,9 @@ const Hero = () => {
 
   return (
     <section id="home">
-      <div className="animation-delay-8 mt-20 flex animate-fadeIn flex-col items-center justify-center px-8 text-center md:mt-40">
+      <div className="animation-delay-8 mt-20 flex animate-fadeIn flex-col items-center justify-center px-4 text-center md:mt-20">
 
-        <div className="z-10 mt-10 sm:mb-8 sm:mt-10 sm:justify-center">
+        <div className="z-10 mb-6 mt-10 md:mb-4 md:mt-20 sm:justify-center">
           <div className="relative flex items-center whitespace-nowrap rounded-full bg-white px-3 py-1 text-xs leading-6 text-slate-600 ring-1 ring-slate-200 dark:bg-black dark:text-slate-400 dark:ring-slate-800">
             Coming Soon <Icons.youTube className="h-5 p-1 text-aired" /> Youtube Videos.
             <a
@@ -49,20 +49,21 @@ const Hero = () => {
 
         <div className="md:w-50% mb-10 mt-4 md:mt-6">
           <div className="px-6">
-            <div className="relative w-full h-full border py-2 border-slate-200 dark:border-slate-800">
+            <div className="relative w-full h-full border border-slate-200 dark:border-slate-800 [mask-image:radial-gradient(200rem_24rem_at_center,white,transparent)]">
+
               <h1 className="tracking-tightest flex select-none py-2 flex-col text-center text-7xl font-extrabold leading-none sm:text-8xl md:flex-col lg:flex-row">
-                <Icons.add strokeWidth={1} className="absolute -left-3 -top-3 h-6 w-6 text-aired" />
+                <Icons.add strokeWidth={2} className="absolute -left-4 -top-4 h-8 w-8 text-aired" />
                 <Icons.add
-                  strokeWidth={1}
-                  className="absolute -bottom-3 -left-3 h-6 w-6 text-aired"
+                  strokeWidth={2}
+                  className="absolute -bottom-4 -left-4 h-8 w-8 text-aired"
                 />
                 <Icons.add
-                  strokeWidth={1}
-                  className="absolute -right-3 -top-3 h-6 w-6 text-aired"
+                  strokeWidth={2}
+                  className="absolute -right-4 -top-4 h-8 w-8 text-aired"
                 />
                 <Icons.add
-                  strokeWidth={1}
-                  className="absolute -bottom-3 -right-3 h-6 w-6 text-aired"
+                  strokeWidth={2}
+                  className="absolute -bottom-4 -right-4 h-8 w-8 text-aired"
                 />
 
                 <span

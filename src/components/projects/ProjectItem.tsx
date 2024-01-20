@@ -10,6 +10,7 @@ interface ProjectProps {
 
 export default function ProjectItem({ index, title, url, role, setModal }: ProjectProps) {
   return (
+
     <a
       href={url}
       target="_blank"
@@ -19,7 +20,7 @@ export default function ProjectItem({ index, title, url, role, setModal }: Proje
       onMouseLeave={() => {
         setModal({ active: false, index });
       }}
-      className="group flex w-full hover:text-slate-600 hover:dark:text-slate-400 items-center justify-between border-b border-slate-200 dark:border-slate-800 px-4 py-4 sm:px-6 sm:py-10"
+      className="group relative flex w-full hover:text-slate-600 hover:dark:text-slate-400 items-center justify-between border-b border-slate-200 dark:border-slate-800 px-4 py-4 sm:px-14 sm:py-10"
       rel="noreferrer"
     >
       <h1 className="text-lg font-medium transition-all group-hover:-translate-x-3 group-hover:scale-110 sm:text-3xl">

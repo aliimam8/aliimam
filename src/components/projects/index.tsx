@@ -17,25 +17,24 @@ export default function Projects() {
   return (
 
     <div className='mx-auto mt-10 max-w-3xl px-4 sm:px-6 md:max-w-5xl'>
-    
-      {projects.map((project, index) => (
-        <motion.div
-          key={project.title}
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.6, delay: index / 10 }}
-        >
-          <ProjectItem
-            index={index}
-            title={project.title}
-            url={project.url}
-            role={project.role}
-            setModal={setModal}
-          />
-        </motion.div>
-      ))}
-      {breakpoint === 'desktop' && <ProjectPreview modal={modal} projects={projects} />}
-    </div>
-    
+        {projects.map((project, index) => (
+          <motion.div
+            key={project.title}
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.6, delay: index / 10 }}
+          >
+            <ProjectItem
+              index={index}
+              title={project.title}
+              url={project.url}
+              role={project.role}
+              setModal={setModal}
+            />
+          </motion.div>
+        ))}
+        {breakpoint === 'desktop' && <ProjectPreview modal={modal} projects={projects} />}
+      </div>
+
   );
 }
