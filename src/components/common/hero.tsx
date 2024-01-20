@@ -98,10 +98,10 @@ const Hero = () => {
             Hello and welcome! I&#39;m <span className="font-bold text-aired">Ali </span>
           </h1>
 
-          <p className="md:text-md mx-auto mb-16 mt-2 max-w-2xl px-8 text-sm text-slate-600 dark:text-slate-400 sm:px-6 md:max-w-4xl md:px-20 lg:text-lg">
+          <p className="md:text-md mx-auto mb-16 mt-2 max-w-2xl px-6 text-sm text-slate-600 dark:text-slate-400 sm:px-6 md:max-w-4xl md:px-20 lg:text-lg">
             I&#39;m an <span className="font-regular">Art Director </span>
             looking for opportunities as a Level Artist. I have a passion for Graphic Design, UI UX,
-            3D, Animation and tools like <TypeWriter strings={talkAbout} />.
+            3D, Animation and tools like <br /> <TypeWriter strings={talkAbout} />.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link

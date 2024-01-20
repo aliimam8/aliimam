@@ -41,8 +41,8 @@ export default function Intro() {
   }
 
   return (
-    <div ref={refContainer} className="relative z-10 " id="intro">
-      <div className="mx-auto flex max-w-5xl flex-col items-center justify-center px-8 text-center text-3xl font-extrabold tracking-tighter md:my-10 md:text-6xl">
+    <div ref={refContainer} className="relative z-10 mt-20" id="intro">
+      <div className="mx-auto flex max-w-5xl flex-col items-center justify-center px-8 text-center text-3xl font-extrabold tracking-tighter  md:my-10 md:text-6xl">
         <div className="relative py-8 w-full h-full border border-slate-200 dark:border-slate-800 [mask-image:radial-gradient(200rem_200rem_at_center,white,transparent)]">
           <Icons.add strokeWidth={2} className="absolute -left-4 -top-4 h-8 w-8 text-aired" />
           <Icons.add strokeWidth={2} className="absolute -bottom-4 -left-4 h-8 w-8 text-aired" />
