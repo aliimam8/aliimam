@@ -3,7 +3,7 @@ import dayjs from 'dayjs';
 import Link from 'next/link';
 import React from 'react';
 import useSWR from 'swr';
-
+import { motion, useInView } from 'framer-motion'
 import { Skeleton } from '@/components/ui/skeleton';
 import Autoplay from 'embla-carousel-autoplay';
 import fetcher from '@/lib/fetcher';
@@ -25,12 +25,36 @@ type PostCardsProps = {
   posts: AssetsPostCore[];
 };
 
+const variants = {
+  initial: {
+    y: 40,
+    opacity: 0
+  },
+  animate: {
+    y: 0,
+    opacity: 1
+  }
+}
+
+
 const PostCards = (props: PostCardsProps) => {
+  const cardsRef = React.useRef<HTMLDivElement>(null)
+  const isInView = useInView(cardsRef, { once: true, margin: '-100px' })
   const { posts } = props;
   const plugin = React.useRef(Autoplay({ delay: 2500, stopOnInteraction: true }));
 
   return (
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions
+    <motion.div
+      initial='initial'
+      animate={isInView ? 'animate' : 'initial'}
+      variants={variants}
+      ref={cardsRef}
+      transition={{
+        duration: 0.5
+      }}
+      className='relative will-change-[transform,opacity]'
+    >
     <div className="" data-testid="post-cards">
       <Carousel
         className="w-full max-w-sm md:max-w-full"
@@ -54,6 +78,7 @@ const PostCards = (props: PostCardsProps) => {
         </CarouselContent>
       </Carousel>
     </div>
+    </motion.div>
   );
 };
 

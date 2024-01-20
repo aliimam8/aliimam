@@ -1,6 +1,5 @@
 import { Suspense } from 'react';
 import { Carousel } from 'src/components/carousel';
-import Logos from 'src/components/common/logos';
 import Hero from 'src/components/common/hero';
 import Intro from 'src/components/common/intro';
 import Projects from '@/components/projects';
@@ -22,7 +21,6 @@ export default function HomePage() {
     <>
       <Suspense>
         <Hero />
-        <Logos />
         <AboutMe />
         <AssetsPage />
         <Intro />
