@@ -41,7 +41,7 @@ export default function AboutAI() {
                 />
                 <div className="relative bg-gradient-to-b -mt-24 from-black/0 to-black text-white">
                   <h1 className={cn(
-                    Avegra.className,"z-20 items-center text-center text-[70px] ")}>
+                    Avegra.className, "z-20 items-center text-center text-[70px] ")}>
                     Ali Imam
                   </h1>{' '}
                 </div>
@@ -49,8 +49,11 @@ export default function AboutAI() {
             </div>
           </div>
         </div>
-        <div className="mx-auto mt-20 max-w-3xl px-4 sm:px-6 md:max-w-5xl ">
-          <h1 className="items-center text-center text-2xl font-bold sm:text-4xl">
+        <div className="mx-auto mt-20 max-w-3xl  md:max-w-5xl ">
+
+          <About />
+          <Experience />
+          <h1 className="items-center mt-10 text-center text-2xl font-bold sm:text-4xl">
             Dashboard
             <hr className="mx-auto my-4 h-1 w-6 rounded-full border-0 bg-aired"></hr>
           </h1>
@@ -60,8 +63,6 @@ export default function AboutAI() {
             and more.
           </p>
           <Dashboard />
-          <About />
-          <Experience />
         </div>
         <Logos />
       </Suspense>

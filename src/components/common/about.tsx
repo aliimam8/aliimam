@@ -69,12 +69,12 @@ const About = () => {
               className={cn(
                 buttonVariants({
                   variant: 'aibutton',
-                  size: 'md'
+                  size: 'sm'
                 })
               )}
             >
               <span className="flex gap-2 px-1">
-                <Icons.download size={17} />
+                <Icons.download size={14} />
                 Download CV
               </span>
             </Link>
@@ -83,12 +83,12 @@ const About = () => {
               className={cn(
                 buttonVariants({
                   variant: 'aibutton',
-                  size: 'md'
+                  size: 'sm'
                 })
               )}
             >
               <span className="flex gap-2 px-1">
-                <Icons.whatsapp className="w-4 " />
+                <Icons.whatsapp className="w-3 " />
                 Join Whatsapp
               </span>
             </Link>

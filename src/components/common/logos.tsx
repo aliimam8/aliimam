@@ -10,7 +10,7 @@ export default function Logos() {
         Worked with Brands Like
       </h1>
       <div>
-        <Marquee direction="left" speed={40} delay={0} pauseOnHover={true}>
+        <Marquee direction="left" speed={40} delay={0} pauseOnHover={true} className='[mask-image:radial-gradient(10rem_24rem_at_center,white,transparent)] md:[mask-image:radial-gradient(50rem_48rem_at_center,white,transparent)]'>
           <div className="image_wrapper mb-10 relative mx-auto flex w-full justify-start gap-6 overflow-hidden sm:gap-10 lg:mt-6 ">
             <Link href="/" passHref>
               <span className="block dark:hidden">

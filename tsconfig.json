@@ -32,6 +32,6 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".contentlayer/generated"
-, "src/components/common/samplepdf.js"  ],
+, "src/components/common/samplepdf.js", "src/components/common/home/insta.js"  ],
   "exclude": ["node_modules"]
 }

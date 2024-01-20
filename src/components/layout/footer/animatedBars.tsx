@@ -20,7 +20,7 @@ export default function AnimatedBars() {
         animate={{
           transform: [
             'scaleY(1.0)  translateY(0rem)',
-            'scaleY(0.5) translateY(0.37rem)',
+            'scaleY(0.4) translateY(0.37rem)',
             'scaleY(1.0)  translateY(0rem)',
           ],
         }}
