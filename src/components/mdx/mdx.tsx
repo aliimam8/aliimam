@@ -17,6 +17,7 @@ import {
 import ImageZoom from '../common/image-zoom';
 import Image from './image';
 import ItemGrid from './item-grid';
+import FlexGrid from './flex-grid';
 import Link from './link';
 import LinkCard from './link-card';
 import Logo from './logo';
@@ -66,6 +67,7 @@ const components: MDXComponents = {
     <AlertDescription {...props} />
   ),
   ItemGrid,
+  FlexGrid,
   Tree,
   Video,
   LinkCard,
