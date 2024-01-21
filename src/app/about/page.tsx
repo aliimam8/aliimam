@@ -21,19 +21,10 @@ export default function AboutAI() {
         <div className="mx-auto mt-40 max-w-3xl px-4 sm:px-6 md:max-w-5xl ">
           <div className="px-4">
             <div className="relative mx-auto mt-10 flex h-[28rem] max-w-sm flex-col items-start border border-slate-100 p-4 dark:border-slate-900">
-            <Icons.add strokeWidth={1} className="absolute -left-4 -top-4 h-8 w-8 text-aired" />
-                <Icons.add
-                  strokeWidth={1}
-                  className="absolute -bottom-4 -left-4 h-8 w-8 text-aired"
-                />
-                <Icons.add
-                  strokeWidth={1}
-                  className="absolute -right-4 -top-4 h-8 w-8 text-aired"
-                />
-                <Icons.add
-                  strokeWidth={1}
-                  className="absolute -bottom-4 -right-4 h-8 w-8 text-aired"
-                />
+              <Icons.add strokeWidth={1} className="absolute -left-4 -top-4 h-8 w-8 text-aired" />
+              <Icons.add strokeWidth={1} className="absolute -bottom-4 -left-4 h-8 w-8 text-aired" />
+              <Icons.add strokeWidth={1} className="absolute -right-4 -top-4 h-8 w-8 text-aired" />
+              <Icons.add strokeWidth={1} className="absolute -bottom-4 -right-4 h-8 w-8 text-aired" />
               <ImageZoom>
                 <Image
                   src="/ali.jpg"
@@ -71,7 +62,7 @@ export default function AboutAI() {
           Join The Waitlist For My Newsletter
           <hr className="mx-auto my-4 h-1 w-6 rounded-full border-0 bg-aired"></hr>
         </h1>
-      <NewsletterForm />
+        <NewsletterForm />
       </Suspense>
     </>
   );

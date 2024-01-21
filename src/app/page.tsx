@@ -1,11 +1,11 @@
 import { Suspense } from 'react';
-import { Carousel } from 'src/components/carousel';
 import Hero from 'src/components/common/hero';
 import Intro from 'src/components/common/intro';
 import Projects from '@/components/projects';
 import AssetsPage from '@/components/assetshome/aiasset';
 import AboutMe from '@/components/common/home/about-me';
 import AISlide from '@/components/common/home/slide-img';
+import { Carousel } from 'src/components/carousel';
 
 export const runtime = 'edge';
 
