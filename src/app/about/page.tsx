@@ -5,6 +5,7 @@ import Logos from 'src/components/common/logos';
 import { Experience } from 'src/components/common/experience';
 import GetTouch from 'src/components/common/home/get-touch';
 import Dashboard from 'src/components/common/dashboard';
+import NewsletterForm from "@/components/email/Newsletter";
 import 'src/styles/text.css';
 
 import ImageZoom from '@/components/common/image-zoom';
@@ -52,14 +53,13 @@ export default function AboutAI() {
           </div>
         </div>
         <div className="mx-auto mt-20 max-w-3xl  md:max-w-5xl ">
-
           <About />
           <Experience />
           <h1 className="items-center mt-10 text-center text-2xl font-bold sm:text-4xl">
             Dashboard
             <hr className="mx-auto my-4 h-1 w-6 rounded-full border-0 bg-aired"></hr>
           </h1>
-          <p className="mx-auto max-w-3xl px-6 text-center text-xs leading-5 text-slate-600 dark:text-slate-400">
+          <p className="mx-auto max-w-3xl px-6 text-center text-sm leading-5 text-slate-600 dark:text-slate-400">
             This is my personal dashboard, built with Next.js API routes deployed as serverless
             functions. I use this dashboard to track various metrics across platforms like YouTube
             and more.
@@ -67,6 +67,11 @@ export default function AboutAI() {
           <Dashboard />
         </div>
         <Logos />
+        <h1 className="items-center mt-10 text-center px-6 text-2xl font-bold sm:text-4xl">
+          Join The Waitlist For My Newsletter
+          <hr className="mx-auto my-4 h-1 w-6 rounded-full border-0 bg-aired"></hr>
+        </h1>
+      <NewsletterForm />
       </Suspense>
     </>
   );
