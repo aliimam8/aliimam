@@ -5,6 +5,7 @@ import { type Metadata } from 'next';
 import { Avegra } from '../fonts';
 import { cn } from '@/lib/utils';
 import { Carousel } from 'src/components/carousel';
+import Colors from '@/components/color';
 
 export const metadata: Metadata = {
   title: 'Products',
@@ -25,6 +26,11 @@ export default function AboutAI() {
         <hr className="bg-aired rounded-full mb-8 mx-auto my-4 h-1 w-6 border-0"></hr>
         <Graaadients />
         <Carousel />
+        <p className='mt-40 text-center my-3 text-md text-slate-600 dark:text-slate-400 md:text-2xl tracking-widest uppercase font-light'>
+          Work in Progress
+          <hr className="bg-aired rounded-full mb-8 mx-auto my-4 h-1 w-6 border-0"></hr>
+        </p>
+        <Colors/>
       </Suspense>
     </>
   );

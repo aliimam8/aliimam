@@ -41,7 +41,7 @@
     "@tsparticles/engine": "^3.0.3",
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.0.3",
-    "@uiw/react-color": "^2.0.5",
+    "@uiw/react-color": "^2.0.6",
     "@uiw/react-color-sketch": "^2.0.5",
     "@vercel/analytics": "^1.1.1",
     "@vercel/speed-insights": "^1.0.0",
