@@ -62,10 +62,10 @@ function NewsletterForm() {
 
 
   return (
-    <div className="flex flex-col mx-auto justify-center max-w-xs space-y-4">
+    <div className="flex flex-col pb-20 mx-auto justify-center max-w-xs space-y-4">
       <form
         onSubmit={handleSubmit}
-        className="newsletter-form mt-6 mb-16 animate-fade-in-3"
+        className="newsletter-form mt-6 animate-fade-in-3"
       >
         <div className="group relative flex items-center py-1">
           <Input

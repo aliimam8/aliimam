@@ -1,10 +1,10 @@
 import { Suspense } from 'react';
 
-import { Graaadients } from "./cards"
 import { type Metadata } from 'next';
 import { Avegra } from '../fonts';
 import { cn } from '@/lib/utils';
 import { Carousel } from 'src/components/carousel';
+import Colors from '@/components/color';
 
 export const metadata: Metadata = {
   title: 'Products',
@@ -20,11 +20,11 @@ export default function AboutAI() {
         </p>
         <h1 className={cn(
           Avegra.className, "text-center text-6xl sm:text-8xl")}>
-          The latest.
+          The Colors
         </h1>
-        <hr className="bg-aired rounded-full mb-8 mx-auto my-4 h-1 w-6 border-0"></hr>
-        <Graaadients />
-        <Carousel />
+        <hr className="bg-aired rounded-full mx-auto my-4 h-1 w-6 border-0"></hr>
+        
+        <Colors/>
       </Suspense>
     </>
   );
