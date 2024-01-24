@@ -91,7 +91,7 @@ export const items: Menus[] = [
 
 export function SiteFooter() {
   return (
-    <footer className="mx-auto mt-20 border-t border-aired/25 px-2 sm:px-4">
+    <footer className="mx-auto max-w-6xl mt-20 border-t border-aired/25 px-2 sm:px-4">
       <div className="-mt-10 flex flex-wrap justify-center gap-8 ">
         <Link href="/">
           <p className="flex h-20 w-20 items-center justify-center rounded-full bg-white dark:bg-black">
@@ -107,7 +107,7 @@ export function SiteFooter() {
         <NowPlaying />
       </div>
 
-      <div className="mt-4 flex flex-wrap justify-center gap-x-8 gap-y-4 p-8">
+      <div className="mt-4 flex flex-wrap justify-center gap-x-10 gap-y-4 p-8">
         {items.map((Menus) => (
           <figure key={Menus.text}>
             <div className="md:text-xs text-sm text-slate-600 hover:text-black dark:text-slate-400 hover:dark:text-white">

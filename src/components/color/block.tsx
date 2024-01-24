@@ -33,9 +33,9 @@ const Block = React.forwardRef<HTMLDivElement, BlockProps>((props, ref) => {
   };
   const stylePointer = {
     '--block-background-color': 'rgb(255, 255, 255)',
-    width: 300,
+    width: 250,
     borderRadius: 6,
-    background: 'var(--block-background-color)',
+    background: '',
     boxShadow: '',
     position: 'relative',
     ...style,
@@ -43,26 +43,13 @@ const Block = React.forwardRef<HTMLDivElement, BlockProps>((props, ref) => {
   return (
     <div ref={ref} className={[prefixCls, className].filter(Boolean).join(' ')} style={stylePointer} {...other}>
       <div
-        style={{
-          width: 0,
-          height: 0,
-          borderStyle: 'solid',
-          borderWidth: '0 10px 10px',
-          borderColor: `transparent transparent ${hex}`,
-          position: 'absolute',
-          top: -10,
-          left: '50%',
-          marginLeft: -10,
-        }}
-      />
-      <div
         title={hex}
         style={{
           backgroundColor: `${hex}`,
           color: getContrastingColor(hex),
           height: 150,
           fontSize: 18,
-          borderRadius: '6px 6px 0 0',
+          borderRadius: '20px 20px 20px 20px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -72,7 +59,7 @@ const Block = React.forwardRef<HTMLDivElement, BlockProps>((props, ref) => {
       </div>
       
       <EditableInput
-      className='mt-2'
+      className='mt-4'
         value={hex.toLocaleUpperCase()}
         onChange={(evn, val) => handleHex(val, evn)}
         onBlur={(evn) => {
@@ -81,14 +68,17 @@ const Block = React.forwardRef<HTMLDivElement, BlockProps>((props, ref) => {
           handleHex(value.slice(0, 6), evn);
         }}
         inputStyle={{
-          height: 30,
+          height: 40,
           outline: 0,
-          borderRadius: 3,
+          borderRadius: 30,
           padding: '0 10px',
         }}
         style={{
-          padding: 10,
+          padding: 20,
           paddingTop: 0,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
         }}
       />
     </div>
