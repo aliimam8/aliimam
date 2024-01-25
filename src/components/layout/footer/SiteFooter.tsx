@@ -107,26 +107,28 @@ export function SiteFooter() {
         <NowPlaying />
       </div>
 
-      <div className="mt-4 flex flex-wrap justify-center gap-x-10 gap-y-4 p-8">
-        {items.map((Menus) => (
-          <figure key={Menus.text}>
-            <div className="md:text-xs text-sm text-slate-600 hover:text-black dark:text-slate-400 hover:dark:text-white">
-              <span className="">
-                <Link href={Menus.href} target={Menus.target}>
-                  {Menus.text}
-                </Link>
-              </span>
-            </div>
-          </figure>
-        ))}
-        <Link
-          href="/Ali-CV.pdf"
-          target="_blank"
-          className="text-slate-600 hover:text-black dark:text-slate-400 hover:dark:text-white"
-          download={true}
-        >
-          <p className="md:text-xs text-sm">Download CV</p>
-        </Link>
+      <div className='mx-auto max-w-4xl '>
+        <div className="mt-4 flex flex-wrap justify-center gap-x-10 gap-y-6 p-8">
+          {items.map((Menus) => (
+            <figure key={Menus.text}>
+              <div className="md:text-xs text-sm text-slate-600 hover:text-black dark:text-slate-400 hover:dark:text-white">
+                <span className="">
+                  <Link href={Menus.href} target={Menus.target}>
+                    {Menus.text}
+                  </Link>
+                </span>
+              </div>
+            </figure>
+          ))}
+          <Link
+            href="/Ali-CV.pdf"
+            target="_blank"
+            className="text-slate-600 hover:text-black dark:text-slate-400 hover:dark:text-white"
+            download={true}
+          >
+            <p className="md:text-xs text-sm">Download CV</p>
+          </Link>
+        </div>
       </div>
 
       <div className='flex flex-wrap justify-center'>
@@ -200,7 +202,7 @@ export function SiteFooter() {
           <span> © </span>
           <span>{new Date().getFullYear()}</span>
           <span>Made with</span>
-          <Icons.heart className="mx-1 h-4 w-4  animate-pulse text-aired"/>
+          <Icons.heart className="mx-1 h-4 w-4  animate-pulse text-aired" />
           <span> by </span>
           <span className="cursor-pointer font-bold text-black hover:text-aired dark:text-white dark:hover:text-aired">
             <a href="/">Ali Imam</a>

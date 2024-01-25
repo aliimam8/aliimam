@@ -66,7 +66,8 @@ const PostCard = (props: PostCardProps) => {
       >
         <div className=''>
         <CardBlock color={size} />
-        <h2 className="absolute top-1/3 left-1/3 md:px-2 hover:scale-105 flex text-xl text-center items-center justify-center font-semibold ">
+
+        <h2 className="flex text-xs p-2 text-center items-center justify-center ">
           {title}
         </h2>
         </div>

@@ -30,7 +30,7 @@ export const CardStack = ({
           return (
             <div
               key={card.id}
-              className="h-full w-[320px] md:w-[600px] lg:w-[1000px] flex  flex-col">
+              className="h-full w-[300px] md:w-[600px] lg:w-[960px] flex  flex-col">
               <Image
                 src={card.src}
                 alt={''}
@@ -44,7 +44,7 @@ export const CardStack = ({
                 <p className="text-white text-4xl font-bold ">
                   {card.name}
                 </p>
-                <p className="text-white px-1 font-normal ">
+                <p className="text-white font-normal ">
                   {card.designation}
                 </p>
               </div>

@@ -64,11 +64,20 @@ export function NavMenu() {
             </Link>
           </NavigationMenuItem>
 
+
+          <NavigationMenuItem>
+            <Link href="/colors" legacyBehavior passHref>
+              <NavigationMenuLink className={navigationMenuTriggerStyle()}>Colors</NavigationMenuLink>
+            </Link>
+          </NavigationMenuItem>
+
           <NavigationMenuItem>
             <Link href="/blog" legacyBehavior passHref>
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>Blogs</NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
+
+
         </NavigationMenuList>
       </NavigationMenu>
     </div>

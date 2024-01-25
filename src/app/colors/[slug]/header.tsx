@@ -58,8 +58,9 @@ const Header = (props: HeaderProps) => {
     <div className="space-y-6">
       <h1 className="text-center text-3xl font-bold md:text-5xl">{title}</h1>
       <p className='text-sm text-center text-slate-600 dark:text-slate-400'>{discription}</p>
-
+      <div className='border border-slate-200 p-1 dark:border-slate-800 rounded-3xl'>
       <Block color={size} />
+      </div>
       <Circle
         className='justify-center mt-10'
         color={size}

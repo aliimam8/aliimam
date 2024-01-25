@@ -110,7 +110,7 @@ export const CardBlock = React.forwardRef<HTMLDivElement, BlockProps>((props, re
           backgroundColor: `${hex}`,
           color: getContrastingColor(hex),
           height: 80,
-          borderRadius: '20px 20px 20px 20px',
+          borderRadius: '20px 20px 0px 0px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
