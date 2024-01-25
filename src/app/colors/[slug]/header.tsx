@@ -51,7 +51,6 @@ const Header = (props: HeaderProps) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const [hsva, setHsva] = useState({ h: 347, s: 97, v: 96, a: 1 });
   const [copy, isCopied] = useCopyToClipboard()
   const [text, setText] = React.useState<string>(size)
 

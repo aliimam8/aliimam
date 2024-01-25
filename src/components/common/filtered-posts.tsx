@@ -100,13 +100,13 @@ export const ColorsFilteredPosts = (props: FilteredColorsPostsProps) => {
 
   return (
     <>
-      <div className="relative mx-auto mb-8 max-w-5xl">
+      <div className="relative mx-auto mt-10 mb-8 max-w-5xl">
         <Input
           type="text"
           value={searchValue}
           onChange={(e) => setSearchValue(e.target.value)}
-          placeholder="Search Assets"
-          aria-label="Search Assets"
+          placeholder="Search Colors"
+          aria-label="Search Colors"
           className="w-full pl-12"
           id="search"
         />

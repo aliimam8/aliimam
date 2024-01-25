@@ -19,7 +19,7 @@ export interface BlockProps extends Omit<React.HTMLAttributes<HTMLDivElement>, '
   onChange?: (color: ColorResult) => void;
 }
 
-const Block = React.forwardRef<HTMLDivElement, BlockProps>((props, ref) => {
+export const MiniBlock = React.forwardRef<HTMLDivElement, BlockProps>((props, ref) => {
   const { prefixCls = 'w-color-block', className, style, color, colors = CORLER_HEX, onChange, ...other } = props;
   const hsva = (typeof color === 'string' && validHex(color) ? hexToHsva(color) : color) as HsvaColor;
   const hex = color ? hsvaToHex(hsva) : '';
@@ -33,7 +33,109 @@ const Block = React.forwardRef<HTMLDivElement, BlockProps>((props, ref) => {
   };
   const stylePointer = {
     '--block-background-color': 'rgb(255, 255, 255)',
-    width: 250,
+    width: 300,
+    borderRadius: 6,
+    background: '',
+    boxShadow: '',
+    position: 'relative',
+    ...style,
+  } as CSSProperties;
+  return (
+    <div ref={ref} className={[prefixCls, className].filter(Boolean).join(' ')} style={stylePointer} {...other}>
+      <div
+        title={hex}
+        style={{
+          backgroundColor: `${hex}`,
+          color: getContrastingColor(hex),
+          height: 150,
+          fontSize: 18,
+          borderRadius: '20px 20px 20px 20px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        {hex.toLocaleUpperCase()}
+      </div>
+      <p className='text-center text-xs text-slate-600 dark:text-slate-400 mt-4'>Pick a Color</p>
+      <EditableInput
+      className='mt-4'
+        value={hex.toLocaleUpperCase()}
+        onChange={(evn, val) => handleHex(val, evn)}
+        onBlur={(evn) => {
+          const value = evn.target.value;
+          evn.target.value = value.slice(0, 6);
+          handleHex(value.slice(0, 6), evn);
+        }}
+        inputStyle={{
+          height: 40,
+          borderRadius: 30,
+          padding: '0 14px',
+        }}
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      />
+    </div>
+  );
+});
+
+export const CardBlock = React.forwardRef<HTMLDivElement, BlockProps>((props, ref) => {
+  const { prefixCls = 'w-color-block', className, style, color, colors = CORLER_HEX, onChange, ...other } = props;
+  const hsva = (typeof color === 'string' && validHex(color) ? hexToHsva(color) : color) as HsvaColor;
+  const hex = color ? hsvaToHex(hsva) : '';
+  const handleChange = (hsv: HsvaColor) => {
+    onChange && onChange(handleColor(hsv));
+  };
+  const handleHex = (value: string | number, evn: React.ChangeEvent<HTMLInputElement>) => {
+    if (typeof value === 'string' && validHex(value) && /(3|6)/.test(String(value.replace(/^#/, '').length))) {
+      onChange && onChange(handleColor(hexToHsva(value)));
+    }
+  };
+  const stylePointer = {
+    '--block-background-color': 'rgb(255, 255, 255)',
+    borderRadius: 6,
+    background: '',
+    boxShadow: '',
+    position: 'relative',
+    ...style,
+  } as CSSProperties;
+  return (
+    <div ref={ref} className={[prefixCls, className].filter(Boolean).join(' ')} style={stylePointer} {...other}>
+      <div
+        title={hex}
+        style={{
+          backgroundColor: `${hex}`,
+          color: getContrastingColor(hex),
+          height: 80,
+          borderRadius: '20px 20px 20px 20px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+      </div>
+    </div>
+  );
+});
+
+
+export const MaxBlock = React.forwardRef<HTMLDivElement, BlockProps>((props, ref) => {
+  const { prefixCls = 'w-color-block', className, style, color, colors = CORLER_HEX, onChange, ...other } = props;
+  const hsva = (typeof color === 'string' && validHex(color) ? hexToHsva(color) : color) as HsvaColor;
+  const hex = color ? hsvaToHex(hsva) : '';
+  const handleChange = (hsv: HsvaColor) => {
+    onChange && onChange(handleColor(hsv));
+  };
+  const handleHex = (value: string | number, evn: React.ChangeEvent<HTMLInputElement>) => {
+    if (typeof value === 'string' && validHex(value) && /(3|6)/.test(String(value.replace(/^#/, '').length))) {
+      onChange && onChange(handleColor(hexToHsva(value)));
+    }
+  };
+  const stylePointer = {
+    '--block-background-color': 'rgb(255, 255, 255)',
     borderRadius: 6,
     background: '',
     boxShadow: '',
@@ -58,33 +160,8 @@ const Block = React.forwardRef<HTMLDivElement, BlockProps>((props, ref) => {
         {hex.toLocaleUpperCase()}
       </div>
       
-      <EditableInput
-      className='mt-4'
-        value={hex.toLocaleUpperCase()}
-        onChange={(evn, val) => handleHex(val, evn)}
-        onBlur={(evn) => {
-          const value = evn.target.value;
-          evn.target.value = value.slice(0, 6);
-          handleHex(value.slice(0, 6), evn);
-        }}
-        inputStyle={{
-          height: 40,
-          outline: 0,
-          borderRadius: 30,
-          padding: '0 10px',
-        }}
-        style={{
-          padding: 20,
-          paddingTop: 0,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
-      />
+      
     </div>
   );
 });
-
-Block.displayName = 'Block';
-
-export default Block;
+ 

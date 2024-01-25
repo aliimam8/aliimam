@@ -120,7 +120,7 @@ const ColorsPostPage = (props: ColorsPostPageProps) => {
         className={cn(buttonVariants({ variant: 'outline', className: 'mx-auto mt-4 w-fit' }))}
       >
         <ChevronLeftIcon className="h-4 w-4" aria-hidden="true" />
-        See all Assets
+        See all Colors
         <span className="sr-only">See all Assets</span>
       </Link>
     </div>

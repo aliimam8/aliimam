@@ -45,22 +45,17 @@ const AssetsPage = () => {
 
   return (
     <div className="mx-auto mt-40 max-w-5xl px-6">
-      
-      <PageTitle
-        title="Download Free Assets"
-        description={`I started uploading assets in December 2023, mainly about graphic Design and
-        sharing knowledge. I have uploaded a total of ${posts.length} assets on
-        my Assets. All freely available for both your commercial and personal projects. 
-        You can search for assets by title in the search box below.`}
-      />
-      <ColorsFilteredPosts posts={posts} />
-      <p className='mt-40 text-center my-3 text-xs text-slate-600 dark:text-slate-400 lg:text-md tracking-widest uppercase font-light'> Take a look at what’s new right now.
-       </p> 
-       <h1 className={cn(Avegra.className, "text-center text-6xl sm:text-8xl")}> 
-       The Colors 
-       </h1> 
-       <hr className="bg-aired rounded-full mx-auto my-4 h-1 w-6 border-0"></hr>
+
+      <h1 className={cn(Avegra.className, "text-center text-6xl sm:text-8xl")}>
+        The Colors
+      </h1>
+      <p className=' text-center text-sm font-light'>
+        Find the perfect color tools and resources for any project.
+      </p>
+      <hr className="bg-aired rounded-full mb-10 mx-auto my-6 h-1 w-6 border-0"></hr>
       <Colors />
+      <ColorsFilteredPosts posts={posts} />
+
     </div>
   );
 };

@@ -2,10 +2,11 @@
 
 import Link from 'next/link';
 import React from 'react';
-import { usePathname, useSearchParams } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 
 import { type ColorsPostCore } from '@/types';
 import { cn } from '@/lib/utils';
+import { CardBlock } from "src/components/color/block"
 
 type PostCardsProps = {
   posts: ColorsPostCore[];
@@ -37,12 +38,12 @@ const PostCards = (props: PostCardsProps) => {
 
   return (
     <>
-      <div className="group mt-2 grid gap-4 md:grid-cols-3" data-testid="post-cards">
+      <div className="group mt-2 grid grid-cols-2 gap-4 md:grid-cols-4" data-testid="post-cards">
         {Posts.map((post) => (
           <PostCard key={post._id} {...post} />
         ))}
       </div>
-      
+
     </>
   );
 };
@@ -50,7 +51,7 @@ const PostCards = (props: PostCardsProps) => {
 type PostCardProps = ColorsPostCore;
 
 const PostCard = (props: PostCardProps) => {
-  const { _id, slug, title, tags } = props;
+  const { _id, slug, title, size } = props;
 
   return (
     <>
@@ -58,18 +59,16 @@ const PostCard = (props: PostCardProps) => {
         key={_id}
         href={`/colors/${slug}`}
         className={cn(
-          'relative flex flex-col rounded-3xl border border-slate-200 p-2 dark:border-slate-800',
-          'hover:before:opacity-100'
+          'relative flex flex-col rounded-3xl border border-slate-200 p-1 dark:border-slate-800',
+          
         )}
         data-id="post-card"
       >
-        <div className="absolute inset-px -z-20 rounded-[inherit]" />
-        
-        <div className="p-3">
-          <div className='flex justify-center items-start'>
-          <h2 className="text-xl font-semibold ">{title}</h2>
-        </div>
-
+        <div className=''>
+        <CardBlock color={size} />
+        <h2 className="absolute top-1/3 left-1/3 md:px-2 hover:scale-105 flex text-xl text-center items-center justify-center font-semibold ">
+          {title}
+        </h2>
         </div>
       </Link>
     </>
