@@ -5,6 +5,17 @@ import { visit } from 'unist-util-visit';
 
 /** @type {import('contentlayer/source-files').ComputedFields} */
 
+const Palatte = defineNestedType(() => ({
+  name: 'Palatte',
+  fields: {
+    label: {
+      type: 'string',
+      description: 'The label of the Palatte',
+      required: true
+    }
+  }
+}))
+
 const computedFields = {
   slug: {
     type: 'string',
@@ -26,6 +37,62 @@ const computedFields = {
     }
   }
 };
+
+const ColorsPost = defineDocumentType(() => ({
+  name: 'ColorsPost',
+  filePathPattern: 'colors/**/*.mdx',
+  contentType: 'mdx',
+  fields: {
+    title: {
+      type: 'string',
+      description: 'The title of the blog post',
+      required: true
+    },
+    date: {
+      type: 'string',
+      description: 'The date of the assetst',
+      required: true
+    },
+    modifiedTime: {
+      type: 'string',
+      description: 'The modified time of the assets',
+      required: true
+    },
+    palatte: {
+      type: 'list',
+      of: Techstack,
+      required: true
+    },
+    download: {
+      type: 'string',
+      description: 'The summary of the assets',
+      required: true
+    },
+    tags: { type: 'list', of: { type: 'string' }, default: [] },
+    draft: { type: 'boolean' },
+    dimention: {
+      type: 'string',
+      description: 'The summary of the assets',
+      required: true
+    },
+    size: {
+      type: 'string',
+      description: 'The summary of the assets',
+      required: true
+    },
+    summary: {
+      type: 'string',
+      description: 'The summary of the assets',
+      required: true
+    }
+  },
+  computedFields: {
+    slug: {
+      type: 'string',
+      resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx$/, '')
+    }
+  }
+}));
 
 const AssetsPost = defineDocumentType(() => ({
   name: 'AssetsPost',
@@ -144,7 +211,7 @@ export const Uses = defineDocumentType(() => ({
 
 export default makeSource({
   contentDirPath: './src/content',
-  documentTypes: [Page, Uses, BlogPost, AssetsPost],
+  documentTypes: [Page, Uses, BlogPost, AssetsPost, ColorsPost],
   mdx: {
     // remarkPlugins: [remarkGfm],
     rehypePlugins: [

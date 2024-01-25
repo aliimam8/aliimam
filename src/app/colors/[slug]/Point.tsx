@@ -42,7 +42,7 @@ export default function Point({ style, title, checked, color, onClick, rectProps
         width: 100,
         height: 100,
         padding: 45,
-        borderRadius: '50%',
+        borderRadius: '0%',
         marginRight: 5,
         marginBottom: 5,
         boxSizing: 'border-box',

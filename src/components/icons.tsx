@@ -53,6 +53,7 @@ import {
   User,
   Maximize,
   ZoomIn,
+  Copy,
   ZoomOut,
   X,
   Youtube
@@ -71,6 +72,7 @@ export const Icons = {
   post: FileText,
   search: Search,
   eye: Eye,
+  copy: Copy,
   layers3: Layers3,
   camera: Camera,
   page: File,

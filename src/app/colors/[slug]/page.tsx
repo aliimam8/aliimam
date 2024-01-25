@@ -1,4 +1,4 @@
-import { allBlogPosts } from 'contentlayer/generated';
+import { allColorsPosts } from 'contentlayer/generated';
 import type { Metadata, ResolvingMetadata } from 'next';
 import { notFound } from 'next/navigation';
 import { type Article, type WithContext } from 'schema-dts';
@@ -16,41 +16,40 @@ import { buttonVariants } from '@/components/ui/button';
 
 // export const runtime = 'edge'
 
-type BlogPostPageProps = {
+type ColorsPostPageProps = {
   params: {
     slug: string;
   };
   searchParams: Record<string, never>;
 };
 
-export const generateStaticParams = (): Array<BlogPostPageProps['params']> => {
-  return allBlogPosts.map((post) => ({
+export const generateStaticParams = (): Array<ColorsPostPageProps['params']> => {
+  return allColorsPosts.map((post) => ({
     slug: post.slug
   }));
 };
 
 export const generateMetadata = async (
-  props: BlogPostPageProps,
+  props: ColorsPostPageProps,
   parent: ResolvingMetadata
 ): Promise<Metadata> => {
   const { params } = props;
 
-  const post = allBlogPosts.find((p) => p.slug === params.slug);
+  const post = allColorsPosts.find((p) => p.slug === params.slug);
 
   if (!post) return {};
 
   const ISOPublishedTime = new Date(post.date).toISOString();
   const ISOModifiedTime = new Date(post.modifiedTime).toISOString();
-  const previousTwitter = (await parent)?.twitter ?? {};
 
   return {
     title: post.title,
     description: post.summary,
     alternates: {
-      canonical: `${site.url}/blog/${params.slug}`
+      canonical: `${site.url}/assets/${params.slug}`
     },
     openGraph: {
-      url: `${site.url}/blog/${params.slug}`,
+      url: `${site.url}/assets/${params.slug}`,
       type: 'article',
       title: post.title,
       siteName: site.name,
@@ -63,35 +62,27 @@ export const generateMetadata = async (
         {
           url: `${site.url}/api/og?title=${post.title}&date=${
             post.date.split('T')[0]
-          }&url=aliimam.in/blog`,
+          }&url=aliimam.in/colors`,
           width: 1200,
           height: 630,
           alt: post.title,
           type: 'image/png'
         }
       ]
-    },
-    twitter: {
-      ...previousTwitter,
-      title: post.title,
-      description: post.summary,
-      images: [
-        `${site.url}/api/og?title=${post.title}&date=${post.date.split('T')[0]}&url=aliimam.in/blog`
-      ]
     }
   };
 };
 
-const BlogPostPage = (props: BlogPostPageProps) => {
+const ColorsPostPage = (props: ColorsPostPageProps) => {
   const { slug } = props.params;
 
-  const post = allBlogPosts.find((p) => p.slug === slug);
+  const post = allColorsPosts.find((p) => p.slug === slug);
 
   if (!post) {
     notFound();
   }
 
-  const { title, summary, date, modifiedTime } = post;
+  const { title, summary, date, modifiedTime, download, dimention, size, tags } = post;
 
   const jsonLd: WithContext<Article> = {
     '@context': 'https://schema.org',
@@ -120,20 +111,20 @@ const BlogPostPage = (props: BlogPostPageProps) => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Header date={date} title={title} slug={slug} />
+      <Header date={date} title={title} slug={slug} download={download} dimention={dimention} size={size} discription={summary} />
       <Content slug={slug} post={post} />
       <Separator className="my-8" />
-      <MdxPager currentItem={post} allItems={allBlogPosts} />
+      <MdxPager currentItem={post} allItems={allColorsPosts} />
       <Link
-        href="/blog"
+        href="/colors"
         className={cn(buttonVariants({ variant: 'outline', className: 'mx-auto mt-4 w-fit' }))}
       >
         <ChevronLeftIcon className="h-4 w-4" aria-hidden="true" />
-        See all blog
-        <span className="sr-only">See all blog</span>
+        See all Assets
+        <span className="sr-only">See all Assets</span>
       </Link>
     </div>
   );
 };
 
-export default BlogPostPage;
+export default ColorsPostPage;

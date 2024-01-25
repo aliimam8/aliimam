@@ -1,4 +1,4 @@
-import { type BlogPost, type AssetsPost } from 'contentlayer/generated'
+import { type BlogPost, type AssetsPost, type ColorsPost } from 'contentlayer/generated'
 
 export type BlogPostCore = Pick<
   BlogPost,
@@ -7,5 +7,10 @@ export type BlogPostCore = Pick<
 
 export type AssetsPostCore = Pick<
 AssetsPost,
+  '_id' | 'slug' | 'title' | 'summary' | 'date' | 'download'  | 'dimention'  | 'size' | 'tags'
+>
+
+export type ColorsPostCore = Pick<
+ColorsPost,
   '_id' | 'slug' | 'title' | 'summary' | 'date' | 'download'  | 'dimention'  | 'size' | 'tags'
 >

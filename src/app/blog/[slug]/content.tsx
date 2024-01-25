@@ -9,7 +9,7 @@ import TableOfContents from './table-of-contents'
 type ContentProps = {
   post: BlogPost
   slug: string
-}
+} 
 
 const Content = (props: ContentProps) => {
   const { post, slug } = props
