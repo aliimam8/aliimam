@@ -5,16 +5,6 @@ import { visit } from 'unist-util-visit';
 
 /** @type {import('contentlayer/source-files').ComputedFields} */
 
-const Palatte = defineNestedType(() => ({
-  name: 'Palatte',
-  fields: {
-    label: {
-      type: 'string',
-      description: 'The label of the Palatte',
-      required: true
-    }
-  }
-}))
 
 const computedFields = {
   slug: {
@@ -56,11 +46,6 @@ const ColorsPost = defineDocumentType(() => ({
     modifiedTime: {
       type: 'string',
       description: 'The modified time of the assets',
-      required: true
-    },
-    palatte: {
-      type: 'list',
-      of: Techstack,
       required: true
     },
     download: {
