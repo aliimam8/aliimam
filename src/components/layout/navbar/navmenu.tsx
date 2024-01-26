@@ -58,7 +58,6 @@ export function NavMenu() {
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                 Assets
                 <div className='px-1 mb-1'>
-                <Badge>Free</Badge>
                 </div>
               </NavigationMenuLink>
             </Link>
