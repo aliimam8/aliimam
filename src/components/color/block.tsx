@@ -149,7 +149,7 @@ export const MaxBlock = React.forwardRef<HTMLDivElement, BlockProps>((props, ref
         style={{
           backgroundColor: `${hex}`,
           color: getContrastingColor(hex),
-          height: 150,
+          height: 250,
           fontSize: 18,
           borderRadius: '20px 20px 20px 20px',
           display: 'flex',

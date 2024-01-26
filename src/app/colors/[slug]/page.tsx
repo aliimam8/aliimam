@@ -82,7 +82,7 @@ const ColorsPostPage = (props: ColorsPostPageProps) => {
     notFound();
   }
 
-  const { title, summary, date, modifiedTime, download, dimention, size, tags } = post;
+  const { title, summary, date, modifiedTime, download, draft, dimention, size, tags, color1, color2, color3, color4, color5, color6 } = post;
 
   const jsonLd: WithContext<Article> = {
     '@context': 'https://schema.org',
@@ -111,7 +111,9 @@ const ColorsPostPage = (props: ColorsPostPageProps) => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Header date={date} title={title} slug={slug} download={download} dimention={dimention} size={size} discription={summary} />
+      <Header date={date} title={title} slug={slug} draft={""} dimention={dimention} size={size} discription={summary} download={download} 
+      color1={color1} color2={color2} color3={color3} color4={color4} color5={color5} color6={color6}  />
+      <MdxPager className=' -mt-10' currentItem={post} allItems={allColorsPosts} />
       <Content slug={slug} post={post} />
       <Separator className="my-8" />
       <MdxPager currentItem={post} allItems={allColorsPosts} />

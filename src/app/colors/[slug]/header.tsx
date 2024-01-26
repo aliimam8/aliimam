@@ -1,16 +1,16 @@
 'use client';
 
-import dayjs from 'dayjs';
-import React, { useState } from 'react';
+import React from 'react';
 import useSWR from 'swr';
-import Block from "./block"
+import { MaxBlock } from "src/components/color/block"
 import { AllColors } from './all-colors';
+
 
 import { Skeleton } from '@/components/ui/skeleton';
 import fetcher from '@/lib/fetcher';
 import { type Views } from '@/types';
 import LikeButton from 'src/components/ui/like-button';
-import Circle from './pallate';
+import Swatch from './pallate';
 import { cn } from '@/lib/utils';
 import { Button, buttonVariants } from '@/components/ui/button';
 import { useCopyToClipboard } from '@/hooks/use-copy-clipboard'
@@ -22,12 +22,19 @@ type HeaderProps = {
   slug: string;
   download: string;
   dimention: string;
+  draft: string;
   discription: string;
   size: string;
+  color1: string;
+  color2: string;
+  color3: string;
+  color4: string;
+  color5: string;
+  color6: string;
 };
 
 const Header = (props: HeaderProps) => {
-  const { title, slug, download, dimention, discription, size } = props;
+  const { title, slug, download, dimention, draft, discription, size, color1, color2, color3, color4, color5, color6 } = props;
   const { data: viewsData, isLoading: viewsIsLoading } = useSWR<Views>(
     `/api/views?slug=${slug}`,
     fetcher
@@ -54,18 +61,23 @@ const Header = (props: HeaderProps) => {
   const [copy, isCopied] = useCopyToClipboard()
   const [text, setText] = React.useState<string>(size)
 
+
   return (
     <div className="space-y-6">
       <h1 className="text-center text-3xl font-bold md:text-5xl">{title}</h1>
       <p className='text-sm text-center text-slate-600 dark:text-slate-400'>{discription}</p>
       <div className='border border-slate-200 p-1 dark:border-slate-800 rounded-3xl'>
-      <Block color={size} />
+        <MaxBlock color={size} />
       </div>
-      <Circle
-        className='justify-center mt-10'
-        color={size}
-      />
+      <div className='flex items-center justify-center cursor'>
 
+        <Swatch
+          colors={[color1, color2, color3, color4, color5, color6]}
+          onClick={() => copy({ text })}
+          aria-label='Copy code to clipboard'
+        />
+
+      </div>
       <div className="grid grid-cols-2 text-sm max-md:gap-8 md:grid-cols-2">
         <div className="space-y-2 md:mx-auto">
           <div className="text-xs text-slate-600 dark:border-slate-800 dark:text-slate-400">
@@ -80,7 +92,7 @@ const Header = (props: HeaderProps) => {
 
         <div className="space-y-2 md:mx-auto">
           <div className="text-xs text-slate-600 dark:border-slate-800 dark:text-slate-400">
-            Color Code
+            Color Codes
           </div>
           <p className="text-lg font-semibold">{size}</p>
         </div>

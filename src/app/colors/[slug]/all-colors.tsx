@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import { Icons } from 'src/components/icons';
 import { Button } from 'src/components/ui/button';
+import { getAllColorsPosts } from '@/lib/mdx';
+import { DColorsFilteredPosts } from '@/components/common/filtered-posts';
 import {
     Drawer,
     DrawerClose,
@@ -13,6 +15,7 @@ import {
 } from '@/components/ui/drawer';
 
 export function AllColors() {
+    const posts = getAllColorsPosts();
     return (
 
         <Drawer>
@@ -23,15 +26,10 @@ export function AllColors() {
                 </Button>
             </DrawerTrigger>
             <DrawerContent>
-                <div className="mx-auto w-full max-w-sm md:max-w-md py-8 px-12">
-                    <div className="flex items-center border rounded-xl border-aired/25 justify-center text-center">
-                       
-                    </div>
-                    <DrawerFooter>
-                        <DrawerClose asChild>
-                            <Button className='mb-6 my-2' variant="redbutton">Cancel</Button>
-                        </DrawerClose>
-                    </DrawerFooter>
+                <div className="mx-auto w-full py-8 px-6">
+                    
+                    <DColorsFilteredPosts posts={posts} />
+                  
                 </div>
             </DrawerContent>
         </Drawer>

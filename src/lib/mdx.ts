@@ -48,12 +48,12 @@ export const getAllAssetsPosts = (config: GetAllAssetsProps = {}) => {
   return posts
 }
 
-export const getAllColorsPosts = (config: GetAllAssetsProps = {}) => {
+export const getAllColorsPosts = (config: GetAllColorsProps = {}) => {
   const { limit = allColorsPosts.length, sorted = true } = config
 
   const posts = allColorsPosts
     .slice(0, limit)
-    .map((post) => pick(post, ['_id', 'slug', 'title', 'summary', 'date', 'download', 'dimention', 'size', 'tags']))
+    .map((post) => pick(post, ['_id', 'slug', 'title', 'summary', 'date', 'download', 'dimention', 'draft', 'size', 'tags', 'color1', 'color2', 'color3', 'color4', 'color5', 'color6']))
 
   if (sorted) {
     return posts.sort(
