@@ -91,7 +91,7 @@ export const items: Menus[] = [
 
 export function SiteFooter() {
   return (
-    <footer className="mx-auto max-w-6xl mt-20 border-t border-aired/25 px-2 sm:px-4">
+    <footer className="mx-auto w-full mt-20 border-t border-aired/25 px-2 sm:px-4">
       <div className="-mt-10 flex flex-wrap justify-center gap-8 ">
         <Link href="/">
           <p className="flex h-20 w-20 items-center justify-center rounded-full bg-white dark:bg-black">
