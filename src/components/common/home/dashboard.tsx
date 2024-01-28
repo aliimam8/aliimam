@@ -10,6 +10,7 @@ import {
   type Likes,
   type YouTube
 } from '@/types'
+import Counter from '../countnumber';
 
 type Card = {
   icon: React.ReactNode
@@ -92,7 +93,7 @@ const Items = () => {
                           WebkitTextFillColor: 'transparent'
                         }}
                       >
-                        {value}
+                        <Counter value={Number(value)} />
                       </span>
                     </>
                   ) : (

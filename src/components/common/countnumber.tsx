@@ -1,39 +1,42 @@
-import { FC, useEffect, useState } from 'react';
+import { useInView, useMotionValue, useSpring } from 'framer-motion'
+import React from 'react'
 
-type Props = {
-  endValue: number;
-  duration: number;
-};
+type CounterProps = {
+  value: number
+  direction?: 'up' | 'down'
+} & React.ComponentPropsWithoutRef<'span'>
 
-const CountUpNumber: FC<Props> = ({ endValue, duration }) => {
-  const [count, setCount] = useState(0);
+const Counter = (props: CounterProps) => {
+  const { value, direction = 'up', ...rest } = props
+  const ref = React.useRef<HTMLSpanElement>(null)
+  const motionValue = useMotionValue(direction === 'down' ? value : 0)
+  const springValue = useSpring(motionValue, {
+    damping: 100,
+    stiffness: 300
+  })
+  const isInView = useInView(ref, { once: true, margin: '-100px' })
 
-  useEffect(() => {
-    let startTime: number;
-    let animationFrameId: number;
+  React.useEffect(() => {
+    if (isInView) {
+      motionValue.set(direction === 'down' ? 0 : value)
+    }
+  }, [motionValue, isInView, direction, value])
 
-    const updateCount = (timestamp: number) => {
-      if (!startTime) startTime = timestamp;
-      const progress = timestamp - startTime;
+  React.useEffect(() => {
+    if (ref.current && value === 0) {
+      ref.current.textContent = '0'
 
-      if (progress < duration) {
-        setCount(Math.min(endValue, (progress / duration) * endValue));
-        animationFrameId = requestAnimationFrame(updateCount);
-      } else {
-        setCount(endValue);
+      return
+    }
+
+    springValue.on('change', (latest) => {
+      if (ref.current) {
+        ref.current.textContent = latest.toFixed(0)
       }
-    };
+    })
+  }, [springValue, value])
 
-    animationFrameId = requestAnimationFrame(updateCount);
+  return <span ref={ref} {...rest} />
+}
 
-    return () => cancelAnimationFrame(animationFrameId);
-  }, [endValue, duration]);
-
-  return (
-    <p className=''>
-      {Math.round(count)}
-    </p>
-  );
-};
-
-export default CountUpNumber;
+export default Counter

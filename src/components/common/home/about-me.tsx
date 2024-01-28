@@ -41,7 +41,8 @@ const AboutMe = () => {
           <Dashboard />
           <Graaadients />
         </div>
-      </div>
+        </div>
+      
     </motion.div>
     
     </>

@@ -40,6 +40,16 @@ module.exports = {
     },
     extend: {
       keyframes: {
+        spotlight: {
+          "0%": {
+            opacity: 0,
+            transform: "translate(-72%, -62%) scale(0.5)",
+          },
+          "100%": {
+            opacity: 1,
+            transform: "translate(-50%,-40%) scale(1)",
+          },
+        },
         fadeIn: {
           from: { opacity: 0 },
           to: { opacity: 1 }
@@ -58,6 +68,7 @@ module.exports = {
         fadeIn: 'fadeIn .3s ease-in-out',
         carousel: 'marquee 60s linear infinite',
         blink: 'blink 1.4s both infinite',
+        spotlight: "spotlight 2s ease .75s 1 forwards",
       }
     }
   },

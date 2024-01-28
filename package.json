@@ -76,6 +76,7 @@
     "path": "^0.12.7",
     "pliny": "^0.1.6",
     "react": "^18.2.0",
+    "react-best-gradient-color-picker": "^3.0.2",
     "react-bootstrap": "^2.9.1",
     "react-color-palette": "^7.1.0",
     "react-compare-slider": "^3.0.1",

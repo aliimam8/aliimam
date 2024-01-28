@@ -36,12 +36,12 @@ const Hero = () => {
               href="https://www.youtube.com/channel/UCZYm9jYmDesAGzbyFacUSfA"
               rel="noreferrer"
               target="_blank"
-              className="ml-1 flex items-center font-semibold hover:text-aired"
+              className="ml-1 flex items-center font-semibold hover:text-aired "
             >
               <div className="absolute inset-0 flex " aria-hidden="true" />
               Subscribe{' '}
               <span aria-hidden="true">
-                <Icons.arrowUp className="h-4 w-4 rotate-45" />
+                <Icons.arrowUp className="h-4 w-4  rotate-45" />
               </span>
             </a>
           </div>
