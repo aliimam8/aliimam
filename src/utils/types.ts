@@ -32,6 +32,9 @@ function forceDownload(blobUrl: string, filename: string) {
   a.remove()
 }
 
+export type Dimensions = { width: number; height: number };
+
+export type HSLColour = [number, number, number];
 
 
 
