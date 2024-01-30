@@ -7,7 +7,6 @@ import { getAllColorsPosts } from '@/lib/mdx';
 import { cn } from '@/lib/utils';
 import { Avegra } from '../fonts';
 import Colors from '@/components/color/colors';
-import ColorPalette from '@/components/color/Palette';
 
 export const runtime = 'edge';
 const title = 'Colors';
@@ -56,7 +55,6 @@ const AssetsPage = () => {
       <Colors />
       <ColorsFilteredPosts posts={posts} />
       <PeachFuzz />
-      <ColorPalette />
     </div>
   );
 };

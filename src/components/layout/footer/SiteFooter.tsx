@@ -161,7 +161,7 @@ export function SiteFooter() {
             <Icons.insta strokeWidth={1.5} className="h-5 w-5" />
           </Link>
           <Link
-            href="https://twitter.com/aiimamoriginal"
+            href="https://twitter.com/aliimam_in"
             rel="noreferrer"
             target="_blank"
             className={Underline}
@@ -169,7 +169,7 @@ export function SiteFooter() {
             <Icons.TweetX className="h-5 w-5" />
           </Link>
           <Link
-            href="https://www.facebook.com/ali.imam.1804"
+            href="https://www.facebook.com/aliimam.in"
             rel="noreferrer"
             target="_blank"
             className={Underline}
@@ -177,7 +177,7 @@ export function SiteFooter() {
             <Icons.fb className="h-5 w-5" />
           </Link>
           <Link
-            href="https://www.linkedin.com/in/ali-imam-579396180/"
+            href="https://www.linkedin.com/in/aliimam-in/"
             rel="noreferrer"
             target="_blank"
             className={Underline}
