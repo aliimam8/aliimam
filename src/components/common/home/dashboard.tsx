@@ -93,7 +93,7 @@ const Items = () => {
                           WebkitTextFillColor: 'transparent'
                         }}
                       >
-                        <Counter value={Number(value)} />
+                        <Counter value={Number(value)} /> 
                       </span>
                     </>
                   ) : (

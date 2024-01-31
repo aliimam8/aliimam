@@ -21,7 +21,6 @@ export default function Navbar() {
             <span className="sr-only">Home</span>
           </Link>
           <NavMenu/>
-
           <div className="mx-auto flex h-12 flex-1 items-center justify-end gap-3 px-12 md:px-0">
             <div className="-mr-2 text-slate-600 hover:text-black dark:text-slate-400 hover:dark:text-white">
               <DSearch />

@@ -39,13 +39,10 @@ const Items = () => {
         {mounted &&
           data.map((item) => {
             const { title, value } = item;
-
             return (
-              <a key={title}>
+              <a >
                 <h1 className="text-2xl font-bold text-aired">{value}</h1>
-                <div className="">
-                  <div className="font-regular text-center text-sm">{title}</div>
-                </div>
+                  <div className="text-slate-400 dark:slate-600 text-center text-xs">{title}</div>
               </a>
             );
           })}

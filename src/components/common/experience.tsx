@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import MyExp from 'src/components/common/exp';
+import { Exp } from 'src/components/common/exp';
 
 import {
   Carousel,
@@ -92,7 +92,7 @@ export function Experience() {
   return (
     <div className="mt-20">
       <h1 className="mt-6 text-center text-lg font-bold">My Journey</h1>
-      <MyExp />
+      <Exp />
       <div className="px-2">
         <Carousel
           className="w-full max-w-sm md:max-w-full"

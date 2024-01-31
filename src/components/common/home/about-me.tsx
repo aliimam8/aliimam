@@ -4,7 +4,8 @@ import Dashboard from './dashboard';
 import Logos from './logos';
 import React from 'react';
 import { motion, useInView } from 'framer-motion'
-import Graaadients from './graaadients';
+import { Graaadients, Exp, Tools } from './cards';
+import { Stars } from './stars';
 
 const variants = {
   initial: {
@@ -41,6 +42,11 @@ const AboutMe = () => {
           <Dashboard />
           <Graaadients />
         </div>
+        <div className='grid md:grid-cols-2 mt-2 gap-2'>
+          <Exp />
+          <Tools />
+        </div>
+        <Stars/>
         </div>
       
     </motion.div>
