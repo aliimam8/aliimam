@@ -3,7 +3,6 @@
 import Dashboard from './dashboard';
 import Logos from './logos';
 import React from 'react';
-import { motion, useInView } from 'framer-motion'
 import { Graaadients, Exp, Tools } from './cards';
 import { Stars } from './stars';
 
@@ -20,19 +19,8 @@ const variants = {
 
 
 const AboutMe = () => {
-  const cardsRef = React.useRef<HTMLDivElement>(null)
-  const isInView = useInView(cardsRef, { once: true, margin: '-100px' })
   return (
-    <><motion.div
-      initial='initial'
-      animate={isInView ? 'animate' : 'initial'}
-      variants={variants}
-      ref={cardsRef}
-      transition={{
-        duration: 0.5
-      }}
-      className='relative will-change-[transform,opacity]'
-    >
+    <div className='relative'>
       <div className="mx-auto mt-14 max-w-5xl px-6">
         <h1 className="my-6 text-center text-xs font-semibold uppercase tracking-[.3em] text-slate-400 ">
           Worked with Brands Like
@@ -46,12 +34,8 @@ const AboutMe = () => {
           <Exp />
           <Tools />
         </div>
-        <Stars/>
         </div>
-      
-    </motion.div>
-    
-    </>
+    </div>
   );
 };
 
