@@ -3,7 +3,7 @@
 import React from 'react';
 import useSWR from 'swr';
 import { MaxBlock } from "src/components/color/block"
-import { AllColors } from './all-colors';
+import { AllColors } from 'src/components/color/all-colors';
 
 
 import { Skeleton } from '@/components/ui/skeleton';

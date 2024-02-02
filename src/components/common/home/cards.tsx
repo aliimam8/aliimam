@@ -8,6 +8,8 @@ import { cn } from '@/lib/utils';
 import { Avegra } from '@/app/fonts';
 import Link from 'next/link';
 import { AIExp } from 'src/components/common/exp';
+import { getAllColorsPosts } from '@/lib/mdx';
+import { OnlyColorsFilteredPosts } from '@/components/common/filtered-posts';
 
 
 const Underline = `hover:-translate-y-1 border border-slate-100 dark:border-slate-900 rounded-xl p-2.5 transition-transform text-slate-600 hover:border-slate-200 dark:hover:border-slate-800 hover:text-black hover:dark:text-white dark:text-slate-400 `;
@@ -52,9 +54,9 @@ export const Exp = () => {
                     <div className='group w-full relative p-2 py-4 overflow-hidden bg-white dark:bg-black rounded-2xl border border-slate-100 dark:border-slate-900 transition-colors duration-150 hover:bg-accent'>
                         <div className='flex items-center justify-center transition-transform duration-300 group-hover:-translate-y-24 group-focus:-translate-y-24'>
                             <div className='flex gap-1 py-[0.8px] items-center justify-center'>
-                            <p className='text-slate-400 dark:slate-600 text-center text-xs'>Experience</p>
-                            <AIExp />
-                            <p className='text-slate-400 dark:slate-600 text-center text-xs'>Years</p>
+                                <p className='text-slate-400 dark:slate-600 text-center text-xs'>Experience</p>
+                                <AIExp />
+                                <p className='text-slate-400 dark:slate-600 text-center text-xs'>Years</p>
                             </div>
                         </div>
                         <span className='absolute left-1/2 top-1/2 flex -translate-x-1/2 translate-y-24 items-center gap-1 text-sm font-semibold uppercase tracking-[.3em] opacity-0 transition duration-300 group-hover:-translate-y-1/2 group-hover:opacity-100 group-focus:-translate-y-1/2 group-focus:opacity-100'>
@@ -67,6 +69,7 @@ export const Exp = () => {
     )
 }
 
+
 export const Tools = () => {
     return (
         <>
@@ -74,7 +77,7 @@ export const Tools = () => {
                 <div className='flex gap-2 w-full'>
                     <div className='group w-full relative py-3 overflow-hidden bg-white dark:bg-black rounded-2xl border border-slate-100 dark:border-slate-900 transition-colors duration-150 hover:bg-accent'>
                         <div className='flex flex-col items-center justify-center transition-transform duration-300 group-hover:-translate-y-24 group-focus:-translate-y-24'>
-                            
+
                             <Marquee direction="right" speed={40} delay={0} pauseOnHover={true}>
                                 <div className="flex flex-wrap items-center justify-center gap-3 px-2">
                                     <Link

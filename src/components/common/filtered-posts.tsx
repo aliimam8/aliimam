@@ -158,3 +158,17 @@ export const DColorsFilteredPosts = (props: FilteredColorsPostsProps) => {
   );
 };
 
+export const OnlyColorsFilteredPosts = (props: FilteredColorsPostsProps) => {
+  const { posts } = props;
+  const [searchValue, setSearchValue] = React.useState('');
+
+  const filteredPosts = posts.filter((post) =>
+    post.title.toLowerCase().includes(searchValue.toLowerCase())
+  );
+
+  return (
+    <>
+      <ColorsBox posts={filteredPosts}  />
+    </>
+  );
+};

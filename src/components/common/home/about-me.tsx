@@ -4,7 +4,6 @@ import Dashboard from './dashboard';
 import Logos from './logos';
 import React from 'react';
 import { Graaadients, Exp, Tools } from './cards';
-import { Stars } from './stars';
 
 const variants = {
   initial: {

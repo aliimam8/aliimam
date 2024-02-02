@@ -58,6 +58,9 @@ const PostCards = (props: PostCardsProps) => {
     <div className="" data-testid="post-cards">
       <Carousel
         className="w-full max-w-sm md:max-w-full"
+        plugins={[plugin.current]}
+        onMouseEnter={plugin.current.stop}
+        onMouseLeave={plugin.current.reset}
         opts={{
           align: 'start'
         }}
