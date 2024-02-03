@@ -41,34 +41,44 @@ export default function Intro() {
   }
 
   return (
-    <div ref={refContainer} className="relative z-10 " id="intro">
+    <div ref={refContainer} className="relative z-10" id="intro">
       <div className="mx-auto flex max-w-5xl flex-col items-center justify-center px-8 text-center text-3xl font-extrabold tracking-tighter my-10 md:text-6xl">
-        <div className="relative py-8 w-full h-full border border-slate-200 dark:border-slate-800 [mask-image:radial-gradient(200rem_200rem_at_center,white,transparent)]">
-          <Icons.add strokeWidth={2} className="absolute -left-4 -top-4 h-8 w-8 text-aired" />
-          <Icons.add strokeWidth={2} className="absolute -bottom-4 -left-4 h-8 w-8 text-aired" />
-          <Icons.add strokeWidth={2} className="absolute -right-4 -top-4 h-8 w-8 text-aired" />
-          <Icons.add strokeWidth={2} className="absolute -bottom-4 -right-4 h-8 w-8 text-aired" />
+        <div className="relative py-8 w-full h-full border border-slate-200 dark:border-slate-800 ">
+          <div className="absolute -left-1.5 -top-1.5 h-3 w-3 bg-aired text-white" />
+          <div className="absolute -bottom-1.5 -left-1.5 h-3 w-3 bg-aired text-white" />
+          <div className="absolute -right-1.5 -top-1.5 h-3 w-3 bg-aired text-white" />
+          <div className="absolute -bottom-1.5 -right-1.5 h-3 w-3 bg-aired text-white" />
+          <div className="absolute -bottom-1.5 left-1/2 border border-slate-200 dark:border-slate-800 h-2.5 w-2.5 bg-black dark:bg-white text-white" />
+          <div className="absolute -top-1.5 left-1/2 border border-slate-200 dark:border-slate-800 h-2.5 w-2.5 bg-black dark:bg-white text-white" />
+
           <div className="flex flex-col gap-10 leading-[1.2] md:gap-10">
             <div
               className="introText flex items-center justify-center px-8"
               style={{ opacity: opacityForBlock(progress, 0) }}
             >
-              I{' '}
+              Design is my {' '}
               <Icons.heart
                 fill="#f50537"
                 className="mx-2 mt-2 h-7 w-7 animate-pulse text-aired md:mx-3 md:h-12 md:w-12 "
               />{' '}
-              design.
+              language.
             </div>
+            <div className='relative'>
+            <Icons.add strokeWidth={1} className="absolute -top-3 -left-3 h-6 w-6 text-aired" />
+            <Icons.add strokeWidth={1} className="absolute -top-3 -right-3 h-6 w-6 text-aired" />
             <AISeparator />
+            </div>
             <span
               className="introText inline-block after:content-['_'] px-8"
               style={{ opacity: opacityForBlock(progress, 1) }}
             >
-              I use my passion and skills to build digital products and experiences.
+              I leverage my passion and skills to create digital products and experiences.
             </span>
-
+            <div className='relative'>
+            <Icons.add strokeWidth={1} className="absolute -top-3 -left-3 h-6 w-6 text-aired" />
+            <Icons.add strokeWidth={1} className="absolute -top-3 -right-3 h-6 w-6 text-aired" />
             <AISeparator />
+            </div>
             <span
               className="introText inline-block px-8"
               style={{ opacity: opacityForBlock(progress, 2) }}

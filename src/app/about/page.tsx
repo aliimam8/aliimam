@@ -18,8 +18,8 @@ export default function AboutAI() {
   return (
     <>
       <Suspense>
-        <div className="mx-auto mt-40 max-w-3xl px-4 sm:px-6 md:max-w-5xl ">
-          <div className="px-4">
+        <div className="mx-auto mt-40 max-w-3xl px-6 md:max-w-5xl ">
+          <div className="">
             <div className="relative mx-auto mt-10 flex h-[28rem] max-w-sm flex-col items-start border border-slate-100 p-4 dark:border-slate-900">
               <Icons.add strokeWidth={1} className="absolute -left-4 -top-4 h-8 w-8 text-aired" />
               <Icons.add strokeWidth={1} className="absolute -bottom-4 -left-4 h-8 w-8 text-aired" />
@@ -43,7 +43,7 @@ export default function AboutAI() {
             </div>
           </div>
         </div>
-        <div className="mx-auto mt-20 max-w-3xl  md:max-w-5xl ">
+        <div className="mx-auto mt-20 max-w-3xl  md:max-w-5xl px-6 ">
           <About />
           <Experience />
           <h1 className="items-center mt-10 text-center text-2xl font-bold sm:text-4xl">

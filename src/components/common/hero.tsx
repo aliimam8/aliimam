@@ -94,8 +94,8 @@ const Hero = () => {
             </div>
           </div>
 
-          <h1 className="mt-4 text-2xl font-semibold md:text-4xl lg:text-4xl">
-            Hello and welcome! I&#39;m <span className="font-bold text-aired">Ali </span>
+          <h1 className="mt-4 text-2xl font-semibold md:text-2xl">
+          Welcome to my creative playground! I&#39;m <span className="font-bold text-aired">Ali </span>
           </h1>
 
           <p className="md:text-md mx-auto mb-16 mt-2 max-w-2xl px-6 text-sm text-slate-600 dark:text-slate-400 sm:px-6 md:max-w-4xl md:px-20 lg:text-lg">

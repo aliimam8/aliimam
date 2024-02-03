@@ -53,7 +53,7 @@ const PostCards = (props: PostCardsProps) => {
       transition={{
         duration: 0.5
       }}
-      className='relative will-change-[transform,opacity]'
+      className='relative will-change-[opacity]'
     >
     <div className="" data-testid="post-cards">
       <Carousel
