@@ -42,8 +42,8 @@ export default function Intro() {
 
   return (
     <div ref={refContainer} className="relative z-10" id="intro">
-      <div className="mx-auto flex max-w-5xl flex-col items-center justify-center px-8 text-center text-3xl font-extrabold tracking-tighter my-10 md:text-6xl">
-        <div className="relative py-8 w-full h-full border border-slate-200 dark:border-slate-800 ">
+      <div className="mx-auto flex max-w-5xl flex-col items-center justify-center px-8 text-center text-xl font-extrabold tracking-tighter my-10 md:text-6xl">
+        <div className="relative py-10 w-full h-full border border-slate-200 dark:border-slate-800 ">
           <div className="absolute -left-1.5 -top-1.5 h-3 w-3 bg-aired text-white" />
           <div className="absolute -bottom-1.5 -left-1.5 h-3 w-3 bg-aired text-white" />
           <div className="absolute -right-1.5 -top-1.5 h-3 w-3 bg-aired text-white" />
@@ -59,7 +59,7 @@ export default function Intro() {
               Design is my {' '}
               <Icons.heart
                 fill="#f50537"
-                className="mx-2 mt-2 h-7 w-7 animate-pulse text-aired md:mx-3 md:h-12 md:w-12 "
+                className="mx-1 h-4 w-4 animate-pulse text-aired md:mx-3 md:h-12 md:w-12"
               />{' '}
               language.
             </div>

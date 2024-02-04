@@ -30,7 +30,7 @@ module.exports = {
       black: '#000000',
       white: '#ffffff',
       slate: {
-        100: '#f3f4f6',
+        100: '#f5f5f4',
         200: '#e7e5e4',
         400: '#a8a29e',
         600: '#57534e',

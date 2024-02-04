@@ -47,9 +47,7 @@ const About = () => {
 
           <div className=" items-center justify-center text-center align-top md:flex-row">
             <div className="mx-auto max-w-5xl px-8 mb-8">
-              <h1 className="mb-4 text-center text-sm font-semibold uppercase tracking-[.3em] text-slate-400 ">
-                Greetings!
-              </h1>
+              
               <p className="text-md">
                 Hi, my name is
                 <span className="font-bold text-aired">{' Ali Imam '}</span>

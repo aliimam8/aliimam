@@ -1,7 +1,6 @@
 "use client";
 
 import Colors from './colors';
-import Solid from './solid';
 
 export default function Cart() {
     return (
