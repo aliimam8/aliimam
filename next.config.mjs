@@ -23,7 +23,6 @@ const nextConfig = {
       }
     ]
   },
-
   webpack: (config) => {
     config.infrastructureLogging = {
       level: 'error'
@@ -32,6 +31,7 @@ const nextConfig = {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return config;
   },
+
   // eslint-disable-next-line @typescript-eslint/require-await
   async redirects() {
     return [
