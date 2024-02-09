@@ -9,10 +9,7 @@
     "prettier": "prettier --write --ignore-unknown .",
     "prettier:check": "prettier --check --ignore-unknown .",
     "postinstall": "prisma generate",
-    "test": "pnpm lint && pnpm prettier:check"
-  },
-  "git": {
-    "pre-commit": "lint-staged"
+    "test": "npm lint && npm prettier:check"
   },
   "lint-staged": {
     "*": "prettier --write --ignore-unknown"
@@ -47,13 +44,18 @@
     "@vercel/speed-insights": "^1.0.0",
     "@wcj/dark-mode": "^1.0.16",
     "@wojtekmaj/react-hooks": "^1.18.1",
+    "assert": "^2.1.0",
     "axios": "^1.6.5",
+    "browserify-fs": "^1.0.0",
+    "browserify-zlib": "^0.2.0",
+    "buffer": "^6.0.3",
     "canvas-confetti": "^1.9.2",
     "class-variance-authority": "^0.7.0",
     "cloudinary": "^1.41.0",
     "clsx": "^2.0.0",
     "cmdk": "^0.2.0",
     "contentlayer": "^0.3.4",
+    "crypto-browserify": "^3.12.0",
     "date-fns": "^2.30.0",
     "dayjs": "^1.11.10",
     "days": "^1.1.1",
@@ -68,13 +70,18 @@
     "lightgallery": "^2.7.2",
     "lucide-react": "^0.292.0",
     "marked": "^11.1.0",
-    "next": "^14.0.4",
+    "net-browserify": "^0.2.4",
+    "next": "^14.1.0",
     "next-cloudinary": "^5.7.0",
     "next-contentlayer": "^0.3.4",
     "next-themes": "^0.2.1",
     "next-video": "^0.11.2",
+    "os-browserify": "^0.3.0",
     "path": "^0.12.7",
+    "path-browserify": "^1.0.1",
     "pliny": "^0.1.6",
+    "query-string": "^8.2.0",
+    "querystring-es3": "^0.2.1",
     "react": "^18.2.0",
     "react-best-gradient-color-picker": "^3.0.2",
     "react-bootstrap": "^2.9.1",
@@ -85,7 +92,7 @@
     "react-hook-form": "^7.49.3",
     "react-hot-toast": "^2.4.1",
     "react-medium-image-zoom": "^5.1.9",
-    "react-native": "^0.73.1",
+    "react-native": "^0.73.4",
     "react-pdf": "^7.6.0",
     "react-photo-album": "^2.3.0",
     "react-photo-view": "^1.2.3",
@@ -104,11 +111,16 @@
     "shiki": "^0.14.5",
     "sonner": "^1.3.1",
     "stream": "^0.0.2",
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.2.0",
     "styled-components": "^6.1.8",
     "swr": "^2.2.4",
     "tailwind-merge": "^2.0.0",
+    "tls-browserify": "^0.2.2",
+    "url": "^0.11.3",
     "use-breakpoint": "^4.0.1",
     "use-debounce": "^10.0.0",
+    "util": "^0.12.5",
     "vaul": "^0.8.0"
   },
   "devDependencies": {
@@ -132,5 +144,9 @@
     "prisma": "^5.7.1",
     "tailwindcss": "^3.3.5",
     "typescript": "5.2.2"
+  },
+  "browser": {
+    "http": false,
+    "https": false
   }
 }

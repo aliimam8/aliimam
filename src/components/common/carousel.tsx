@@ -138,7 +138,7 @@ export function CarouselSpacing() {
             }}
           >
             {photoImages.map((item, index) => (
-              <CarouselItem className="md:basis-1/2">
+              <CarouselItem className="md:basis-1/3">
                 <PhotoView key={index} src={item}>
                     <Image
                       src={item}

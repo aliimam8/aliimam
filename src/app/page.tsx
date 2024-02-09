@@ -5,7 +5,11 @@ import Projects from '@/components/projects';
 import AssetsPage from '@/components/assetshome/aiasset';
 import AboutMe from '@/components/common/home/about-me';
 import AISlide from '@/components/common/home/slide-img';
-import { Carousel } from 'src/components/carousel';
+import { CarouselSpacing } from 'src/components/common/carousel';
+import Link from 'next/link';
+import { cn } from '@/lib/utils';
+import { buttonVariants } from '@/components/ui/button';
+
 
 export const runtime = 'edge';
 
@@ -24,7 +28,21 @@ export default function HomePage() {
         <AboutMe />
         <AssetsPage />
         <Intro />
-        <Carousel />
+        <CarouselSpacing />
+        <div className="flex flex-wrap items-center justify-center gap-4 py-8">
+          <Link
+            href="/portfolio"
+            className={cn(
+              buttonVariants({
+                variant: 'redbutton',
+                size: 'md'
+              })
+            )}
+          >
+            Portfolio
+            <span className="sr-only">Buy now</span>
+          </Link>
+        </div>
         <Projects />
 
         <div className="absolute inset-0 -z-10 overflow-hidden">
