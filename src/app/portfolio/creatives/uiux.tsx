@@ -18,7 +18,7 @@ export default async function Home({}: { images: ImageProps[] }) {
   return (
     <main className="mt-4">
       <div className="mx-auto max-w-3xl lg:max-w-6xl">
-        <div className="grid grid-cols-3 lg:grid-cols-8">
+        <div className="grid grid-cols-2 lg:grid-cols-3">
           {resources.map((resource: any) => {
             return (
               <div key={resource.public_id} className="grid">

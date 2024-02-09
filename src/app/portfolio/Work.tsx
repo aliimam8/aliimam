@@ -9,6 +9,7 @@ import Music from './creatives/music';
 import SocialMedia from './creatives/socialmedia';
 import UIUX from './creatives/uiux';
 import Videos from './creatives/videos';
+import Reels from './creatives/reels';
 
 export function Work() {
   return (
@@ -35,9 +36,12 @@ export function Work() {
               Music
             </TabsTrigger>
             <TabsTrigger value="7" className="px-6">
-              Videos & Reels
+              Videos
             </TabsTrigger>
             <TabsTrigger value="8" className="px-6">
+              Reels
+            </TabsTrigger>
+            <TabsTrigger value="9" className="px-6">
               Other
             </TabsTrigger>
           </div>
@@ -64,7 +68,10 @@ export function Work() {
         <Music images={[]} />
       </TabsContent>
       <TabsContent value="7">
-        <Videos images={[]} />
+        <Videos />
+      </TabsContent>
+      <TabsContent value="8">
+        <Reels />
       </TabsContent>
     </Tabs>
   );
