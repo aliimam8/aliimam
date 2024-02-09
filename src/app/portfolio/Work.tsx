@@ -68,10 +68,10 @@ export function Work() {
         <Music images={[]} />
       </TabsContent>
       <TabsContent value="7">
-        <Videos />
+        <Videos/>
       </TabsContent>
       <TabsContent value="8">
-        <Reels />
+        <Reels/>
       </TabsContent>
     </Tabs>
   );
