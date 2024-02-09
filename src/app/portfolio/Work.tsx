@@ -8,6 +8,7 @@ import Logos from './creatives/logos';
 import Music from './creatives/music';
 import SocialMedia from './creatives/socialmedia';
 import UIUX from './creatives/uiux';
+import Others from './creatives/others';
 import Videos from './creatives/videos';
 import Reels from './creatives/reels';
 
@@ -30,7 +31,7 @@ export function Work() {
               UI/UX
             </TabsTrigger>
             <TabsTrigger value="5" className="px-6">
-              Posters & Logos
+              Logos
             </TabsTrigger>
             <TabsTrigger value="6" className="px-6">
               Music
@@ -72,6 +73,9 @@ export function Work() {
       </TabsContent>
       <TabsContent value="8">
         <Reels/>
+      </TabsContent>
+      <TabsContent value="9">
+        <Others images={[]} />
       </TabsContent>
     </Tabs>
   );
