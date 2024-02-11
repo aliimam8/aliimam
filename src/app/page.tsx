@@ -9,6 +9,7 @@ import { CarouselSpacing } from 'src/components/common/carousel';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { buttonVariants } from '@/components/ui/button';
+import { Carousel } from 'src/components/carousel';
 
 
 export const runtime = 'edge';
@@ -28,7 +29,7 @@ export default function HomePage() {
         <AboutMe />
         <AssetsPage />
         <Intro />
-        <CarouselSpacing />
+        <Carousel />
         <div className="flex flex-wrap items-center justify-center gap-4 py-8">
           <Link
             href="/portfolio"
