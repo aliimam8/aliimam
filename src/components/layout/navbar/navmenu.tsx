@@ -46,9 +46,6 @@ export function NavMenu() {
             <Link href="/products" legacyBehavior passHref>
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                 Products
-                <div className='px-1 mb-1'>
-                <Badge>New</Badge>
-                </div>
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>

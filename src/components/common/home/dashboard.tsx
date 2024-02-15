@@ -100,7 +100,7 @@ const Items = () => {
                     '--'
                   )}
                 </div>
-                <div className='text-xs ml-2 text-slate-600 dark:text-slate-400'>{title}</div>
+                <div className='text-xs text-slate-600 dark:text-slate-400'>{title}</div>
               </div>
               <span className='absolute left-1/2 top-1/2 flex -translate-x-1/2 translate-y-24 items-center gap-1 text-sm font-semibold uppercase tracking-[.3em] opacity-0 transition duration-300 group-hover:-translate-y-1/2 group-hover:opacity-100 group-focus:-translate-y-1/2 group-focus:opacity-100'>
                 {linkText}

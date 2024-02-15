@@ -3,7 +3,7 @@
 import Dashboard from './dashboard';
 import Logos from './logos';
 import React from 'react';
-import { Graaadients, Exp, Tools } from './cards';
+import { Graaadients, PeachFuzz, AICV, Insta, Exp, Tools } from './cards';
 
 const variants = {
   initial: {
@@ -33,6 +33,13 @@ const AboutMe = () => {
           <Exp />
           <Tools />
         </div>
+        <div className='grid md:grid-cols-2 mt-2 gap-2'>
+        <PeachFuzz/>
+        <div className='grid grid-cols-2 gap-2'>
+        <AICV/>
+        <Insta/>
+        </div>
+        </div> 
         </div>
     </div>
   );
