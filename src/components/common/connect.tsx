@@ -9,6 +9,8 @@ import { motion, useAnimate, useInView } from 'framer-motion'
 import Image from 'next/image'
 import * as React from 'react'
 import { Icons } from "../icons";
+import { buttonVariants } from "../ui/button";
+import { cn } from "@/lib/utils";
 
 const variants = {
     initial: {
@@ -69,7 +71,7 @@ export const Connect: React.FC = () => {
             <HighlightGroup className="h-full group">
                 <div className="h-full md:col-span-6 lg:col-span-12  group/item" data-aos="fade-down">
                     <HighlighterItem>
-                        <div className="relative h-full bg-slate-100/50 border border-slate-200 dark:border-slate-800 dark:bg-slate-900 rounded-3xl z-20 overflow-hidden">
+                        <div className="relative h-full bg-slate-100/50 border border-slate-200 dark:border-slate-800 dark:bg-black rounded-3xl z-20 overflow-hidden">
                             <Particles
                                 className="absolute inset-0 -z-10 opacity-10 group-hover/item:opacity-100 transition-opacity duration-1000 ease-in-out"
                                 quantity={50}
@@ -120,13 +122,13 @@ export const Connect: React.FC = () => {
                                                     d='M12 5.50676L0 0L2.83818 13L6.30623 7.86537L12 5.50676V5.50676Z'
                                                 />
                                             </svg>
-                                            <span className='relative left-4 text-white rounded-3xl bg-aired px-2 py-1 text-xs'>
+                                            <span className='relative left-3 -top-1 text-white rounded-3xl bg-aired px-2 py-1 text-xs'>
                                                 Imam
                                             </span>
                                         </div>
                                     </div>
 
-                                    <div className='flex flex-col justify-center -mt-20 md:mt-0 p-4 h-full md:w-[400px] md:ml-10'>
+                                    <div className='flex flex-col justify-center -mt-20 md:-mt-4 p-4 h-full md:w-[400px] md:ml-10'>
                                         <div className="flex flex-col items-center">
                                             <h3 className="inline-flex items-baseline pb-1 mt-6 font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-600 via-slate-400 to-slate-600 dark:bg-clip-text dark:bg-gradient-to-r dark:from-slate-600 dark:via-slate-200 dark:to-slate-600">
                                                 <span className="text-2xl md:text-4xl">Any questions about Design?</span>
@@ -136,13 +138,37 @@ export const Connect: React.FC = () => {
                                             Feel free to reach out to me!
 
                                         </p>
-                                        <div className='my-4'>
-                                            <a
-                                                href='mailto:imam30114@gmail.com'
-                                                className='rounded-full bg-[linear-gradient(180deg,rgb(210,10,30,1)5%,rgb(239,90,90,1)100%)] px-4 py-2 text-sm'
+                                        <div className="flex gap-3">
+                                        <Link
+                                                href="mailto:imam30114@gmail.com"
+                                                target="_blank"
+                                                className={cn(
+                                                    buttonVariants({
+                                                        variant: 'redbutton',
+                                                        size: 'sm'
+                                                    })
+                                                )}
                                             >
-                                                Contact AI
-                                            </a>
+                                                <span className="flex gap-1 px-1 items-center">
+                                                    <Icons.mail className="w-3 h-3" />
+                                                    Contact AI
+                                                </span>
+                                            </Link>
+                                            <Link
+                                                href="https://chat.whatsapp.com/LWsNPcz5BlWDVOha41vzuh"
+                                                target="_blank"
+                                                className={cn(
+                                                    buttonVariants({
+                                                        variant: 'redbutton',
+                                                        size: 'sm'
+                                                    })
+                                                )}
+                                            >
+                                                <span className="flex gap-1 px-1">
+                                                    <Icons.whatsapp className="w-3 " />
+                                                    Join Whatsapp
+                                                </span>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>

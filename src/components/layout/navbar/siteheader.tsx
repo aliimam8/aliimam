@@ -25,7 +25,6 @@ const navigation = [
 ];
 
 const helps = [
-  { name: 'Cart', href: '/cart', current: true },
   { name: 'Contact', href: '/contact', current: true },
   { name: 'Privacy', href: '/privacy', current: true },
   { name: 'Terms', href: '/terms', current: true },

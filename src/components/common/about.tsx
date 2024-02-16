@@ -104,6 +104,7 @@ const About = () => {
               </Link>
               <Link
                 href="https://chat.whatsapp.com/LWsNPcz5BlWDVOha41vzuh"
+                target="_blank"
                 className={cn(
                   buttonVariants({
                     variant: 'aibutton',

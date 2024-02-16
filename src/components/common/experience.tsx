@@ -112,10 +112,10 @@ export function Experience() {
                     data-aos="fade-down"
                   >
                     <HighlighterItem>
-                      <div className="relative h-full border border-slate-200 dark:border-slate-800 dark:bg-slate-900 bg-slate-100/50 rounded-3xl z-20 overflow-hidden">
+                      <div className="relative h-full border border-slate-200 dark:border-slate-800 dark:bg-black bg-slate-100/50 rounded-3xl z-20 overflow-hidden">
                         <Particles
                           className="absolute inset-0 -z-10 opacity-10 group-hover/item:opacity-100 transition-opacity duration-1000 ease-in-out"
-                          quantity={1 ** 2 * 10}
+                          quantity={50}
                           color={"#ffffff"}
                           vy={-0.2}
                         />
@@ -123,7 +123,7 @@ export function Experience() {
                         <div className="flex flex-col">
                           
                           <div
-                            className="absolute bottom-0 w-1/2 pointer-events-none -translate-x-1/2 translate-y-1/2 left-1/2 -z-10 aspect-square"
+                            className="absolute bottom-0 w-1/2 pointer-events-none translate-x-1 -translate-y-1/2 right-1 -z-10 aspect-square"
                             aria-hidden="true"
                           >
                             <div className="absolute inset-0 translate-z-0 bg-slate-100 dark:bg-slate-800 rounded-full blur-[80px]" />
