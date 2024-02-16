@@ -3,7 +3,6 @@ import Image from 'next/image';
 import About from 'src/components/common/about';
 import Logos from 'src/components/common/logos';
 import { Experience } from 'src/components/common/experience';
-import GetTouch from 'src/components/common/home/get-touch';
 import Dashboard from 'src/components/common/dashboard';
 import NewsletterForm from "@/components/email/Newsletter";
 import 'src/styles/text.css';
