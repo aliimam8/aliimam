@@ -5,6 +5,7 @@ import Logos from 'src/components/common/logos';
 import { Experience } from 'src/components/common/experience';
 import Dashboard from 'src/components/common/dashboard';
 import NewsletterForm from "@/components/email/Newsletter";
+import { Connect } from '@/components/common/connect';
 import 'src/styles/text.css';
 
 import ImageZoom from '@/components/common/image-zoom';
@@ -57,7 +58,8 @@ export default function AboutAI() {
           <Dashboard />
         </div>
         <Logos />
-        <div className="flex flex-col items-center">
+        <Connect/>
+        <div className="flex mt-10 flex-col items-center">
             <h3 className="inline-flex items-baseline pb-1 mt-6 text-center font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-600 via-slate-400 to-slate-600 dark:bg-clip-text dark:bg-gradient-to-r dark:from-slate-600 dark:via-slate-200 dark:to-slate-600">
               <span className="text-2xl md:text-4xl">Join The Waitlist For My Newsletter</span>
             </h3>

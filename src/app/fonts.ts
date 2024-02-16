@@ -11,11 +11,6 @@ export const fraunces = Fraunces({
   display: 'swap'
 });
 
-export const NewYork = localFont({
-  src: '/fonts/NewYork.woff2',
-  display: 'swap',
-})
-
 export const Avegra = localFont({
   src: '/fonts/Avegra.woff2',
   display: 'swap',

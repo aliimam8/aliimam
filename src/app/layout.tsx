@@ -7,14 +7,13 @@ import { ensureStartsWith } from '../lib/utils';
 import LenisProvider from '@/components/LenisProvider';
 import { inter } from './fonts';
 import Analytics from '@/components/analytics';
-import { Toaster } from "@/components/ui/sonner"
 
 const { TWITTER_CREATOR, TWITTER_SITE, SITE_NAME } = process.env;
 const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL
   ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
   : 'http://localhost:3000';
 const twitterCreator = TWITTER_CREATOR ? ensureStartsWith(TWITTER_CREATOR, '@') : undefined;
-const twitterSite = TWITTER_SITE ? ensureStartsWith(TWITTER_SITE, 'https://') : undefined;
+const twitterSite = TWITTER_SITE ? ensureStartsWith(TWITTER_SITE, 'https://twitter.com/aliimam_in') : undefined;
 
 export const metadata = {
   metadataBase: new URL(baseUrl),
