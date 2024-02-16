@@ -30,6 +30,7 @@ const Underline = `hover:-translate-y-1 border border-slate-100 dark:border-slat
 
 const About = () => {
   return (
+
     <section id="about">
       <div className="relative py-8 w-full h-full border border-slate-200 dark:border-slate-800">
         <div className="absolute -left-1.5 -top-1.5 h-3 w-3 bg-aired text-white" />
@@ -39,15 +40,18 @@ const About = () => {
         <div className="absolute -bottom-1.5 left-1/2 border border-slate-200 dark:border-slate-800 h-2.5 w-2.5 bg-black dark:bg-white text-white" />
         <div className="absolute -top-1.5 left-1/2 border border-slate-200 dark:border-slate-800 h-2.5 w-2.5 bg-black dark:bg-white text-white" />
 
-        <div className="animation-delay-8 my-1 animate-fadeIn">
-          <h1 className="text-center text-2xl font-bold sm:text-4xl">
-            Greetings!
+        <div className="animation-delay-8 my-1">
+
+          <div className="flex flex-col items-center">
+            <h3 className="inline-flex items-baseline pb-1 mt-6 text-center font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-600 via-slate-400 to-slate-600 dark:bg-clip-text dark:bg-gradient-to-r dark:from-slate-600 dark:via-slate-200 dark:to-slate-600">
+              <span className="text-2xl md:text-4xl">Greetings!</span>
+            </h3>
             <hr className="mx-auto my-4 h-1 w-6 rounded border-0 bg-aired"></hr>
-          </h1>
+          </div>
 
           <div className=" items-center justify-center text-center align-top md:flex-row">
             <div className="mx-auto max-w-5xl px-8 mb-8">
-              
+
               <p className="text-md">
                 Hi, my name is
                 <span className="font-bold text-aired">{' Ali Imam '}</span>
@@ -66,9 +70,9 @@ const About = () => {
 
                 </span>
                 <span>
-                As a design enthusiast, my journey is marked by a relentless pursuit of perfection, 
-                particularly in the intricate world of pixel-perfect UI and the dynamic realm of graphic design. 
-                My dedication to merging form with function is evident in every project I undertake.
+                  As a design enthusiast, my journey is marked by a relentless pursuit of perfection,
+                  particularly in the intricate world of pixel-perfect UI and the dynamic realm of graphic design.
+                  My dedication to merging form with function is evident in every project I undertake.
                 </span>
 
               </p>

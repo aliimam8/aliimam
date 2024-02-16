@@ -5,7 +5,6 @@ import { useRef, useState } from 'react';
 import { Icons } from 'src/components/icons';
 import { AISeparator } from "@/components/ui/seperator"
 
-
 function opacityForBlock(sectionProgress: number, blockNumber: number) {
   const progress = sectionProgress - blockNumber;
 

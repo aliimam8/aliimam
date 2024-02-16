@@ -9,7 +9,6 @@ import { Avegra } from '@/app/fonts';
 import Link from 'next/link';
 import { AIExp } from 'src/components/common/exp';
 
-
 const Underline = `hover:-translate-y-1 border border-slate-100 dark:border-slate-900 rounded-xl p-2.5 transition-transform text-slate-600 hover:border-slate-200 dark:hover:border-slate-800 hover:text-black hover:dark:text-white dark:text-slate-400 `;
 
 
@@ -35,7 +34,7 @@ export const Graaadients = () => {
                             </h1>
                         </div>
                         <span className='absolute left-1/2 top-1/2 flex -translate-x-1/2 translate-y-24 items-center gap-1 text-sm font-semibold uppercase tracking-[.3em] opacity-0 transition duration-300 group-hover:-translate-y-1/2 group-hover:opacity-100 group-focus:-translate-y-1/2 group-focus:opacity-100'>
-                        Free Download
+                            Free Download
                         </span>
                     </div>
                 </div>
@@ -66,8 +65,8 @@ export const PeachFuzz = () => {
                             </h1>
                         </div>
                         <span className='absolute left-1/2 top-1/2 flex -translate-x-1/2 translate-y-24 items-center gap-1 text-sm font-semibold uppercase tracking-[.3em] opacity-0 transition duration-300 group-hover:-translate-y-1/2 group-hover:opacity-100 group-focus:-translate-y-1/2 group-focus:opacity-100'>
-                            
-                           The Colors
+
+                            The Colors
                         </span>
                     </div>
                 </div>
@@ -110,7 +109,7 @@ export const Insta = () => {
                     <div className='group w-full relative p-2 py-4 overflow-hidden bg-white dark:bg-black rounded-2xl border border-slate-100 dark:border-slate-900 transition-colors duration-150 hover:bg-accent'>
                         <div className='flex items-center justify-center transition-transform duration-300 group-hover:-translate-y-24 group-focus:-translate-y-24'>
                             <div className='flex gap-2 py-[13px] items-center justify-center'>
-                            <Icons.insta className='h-4 w-4 text-slate-400 dark:slate-600' />
+                                <Icons.insta className='h-4 w-4 text-slate-400 dark:slate-600' />
                                 <p className='text-lg text-aired font-semibold'>aliimam.in</p>
                             </div>
                         </div>

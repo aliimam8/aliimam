@@ -18,11 +18,13 @@ export default function AboutAI() {
         <p className='mt-40 text-center my-3 text-xs text-slate-600 dark:text-slate-400 lg:text-md tracking-widest uppercase font-light'>
           Take a look at what’s new right now.
         </p>
-        <h1 className={cn(
-          Avegra.className, "text-center text-6xl sm:text-8xl")}>
-          The latest.
-        </h1>
-        <hr className="bg-aired rounded-full mb-8 mx-auto my-4 h-1 w-6 border-0"></hr>
+        <div className="flex flex-col items-center px-8">
+            <h3 className="inline-flex items-baseline pb-1 text-center text-transparent bg-clip-text bg-gradient-to-r from-slate-600 via-slate-400 to-slate-600 dark:bg-clip-text dark:bg-gradient-to-r dark:from-slate-600 dark:via-slate-200 dark:to-slate-600">
+              <span className={cn(
+          Avegra.className, "text-6xl  md:text-8xl" )}>  The latest.</span>
+            </h3>
+            <hr className="mx-auto my-4 mb-16 h-1 w-6 rounded border-0 bg-aired"></hr>
+          </div>
         <Graaadients />
         <Carousel />
       </Suspense>

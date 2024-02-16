@@ -2,6 +2,8 @@
 
 import Image from 'next/image';
 import { Exp } from 'src/components/common/exp';
+import { HighlighterItem, HighlightGroup } from "src/components/ui/highlighter";
+import { Particles } from "../ui/particles";
 
 import {
   Carousel,
@@ -19,7 +21,7 @@ export interface Experience {
   time: string;
 }
 
-export const works: Experience[] = [
+export const Experiences: Experience[] = [
   {
     post: 'Graphic Designer',
     comlogo: '/exp/11.png',
@@ -93,43 +95,72 @@ export function Experience() {
     <div className="mt-20">
       <h1 className="mt-6 text-center text-lg font-bold">My Journey</h1>
       <Exp />
-      <div className="px-2">
+      <div className="">
         <Carousel
           className="w-full max-w-sm md:max-w-full"
           opts={{
             align: 'start'
           }}
         >
-          <CarouselContent className="">
-            {works.map((Experience) => (
-              <CarouselItem className="md:basis-1/2">
-                <figure
-                  key={Experience.post}
-                  className="flex w-auto shrink-0 space-x-4 rounded-lg border border-slate-200 p-4 dark:border-slate-800"
-                >
-                  <div className="overflow-hidden">
-                    <Image
-                      src={Experience.comlogo}
-                      alt={`Photo by ${Experience.post}`}
-                      className="h-[80px] w-[80px] object-cover"
-                      width={100}
-                      height={100}
-                    />
+          <CarouselContent >
+            {Experiences.map((Experience) => (
+                <CarouselItem className="md:basis-1/2">
+                <HighlightGroup className="group">
+                  <div
+                    key={Experience.post}
+                    className="h-full md:col-span-6  lg:col-span-4 group/item"
+                    data-aos="fade-down"
+                  >
+                    <HighlighterItem>
+                      <div className="relative h-full border border-slate-200 dark:border-slate-800 dark:bg-slate-900 bg-slate-100/50 rounded-3xl z-20 overflow-hidden">
+                        <Particles
+                          className="absolute inset-0 -z-10 opacity-10 group-hover/item:opacity-100 transition-opacity duration-1000 ease-in-out"
+                          quantity={1 ** 2 * 10}
+                          color={"#ffffff"}
+                          vy={-0.2}
+                        />
+
+                        <div className="flex flex-col">
+                          
+                          <div
+                            className="absolute bottom-0 w-1/2 pointer-events-none -translate-x-1/2 translate-y-1/2 left-1/2 -z-10 aspect-square"
+                            aria-hidden="true"
+                          >
+                            <div className="absolute inset-0 translate-z-0 bg-slate-100 dark:bg-slate-800 rounded-full blur-[80px]" />
+                          </div>
+
+                          <div className="p-8">
+                            <Image
+                              src={Experience.comlogo}
+                              alt={``}
+                              className="h-[100px] w-[100px] object-cover"
+                              width={300}
+                              height={300}
+                            />
+
+                            <h3 className="inline-flex items-baseline pb-1 mt-6 text-center font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-600 via-slate-400 to-slate-600 dark:bg-clip-text dark:bg-gradient-to-r dark:from-slate-600 dark:via-slate-200 dark:to-slate-600">
+                              <span className="text-2xl md:text-4xl">{Experience.post}</span>
+                            </h3>
+                            <h3 className="text-sm md:text-md leading-8 text-slate-600 dark:text-slate-400">
+                              {Experience.company}
+                            </h3>
+                            <p className="text-xs md:text-sm leading-6 text-slate-600 dark:text-slate-400">{Experience.time}</p>
+
+                          </div>
+
+                        </div>
+                      </div>
+
+                    </HighlighterItem>
                   </div>
 
-                  <div className="text-md text-muted-foreground flex flex-col justify-between">
-                    <span className="text-foreground font-bold">{Experience.post}</span>
-                    <span className="text-foreground text-sm text-slate-400 dark:text-slate-600">
-                      {Experience.company}
-                    </span>
-                    <span className="text-foreground text-xs text-slate-400 dark:text-slate-600">
-                      {Experience.time}
-                    </span>
-                  </div>
-                </figure>
-              </CarouselItem>
+                  </HighlightGroup>
+                </CarouselItem>
+
             ))}
+
           </CarouselContent>
+
           <div className="flex justify-center mt-10 gap-3">
             <CarouselPrevious />
             <CarouselNext />

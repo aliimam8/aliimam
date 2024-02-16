@@ -1,6 +1,7 @@
 import { Suspense } from 'react';
 import Hero from 'src/components/common/hero';
 import Intro from 'src/components/common/intro';
+import { Connect } from '@/components/common/connect';
 import Projects from '@/components/projects';
 import AssetsPage from '@/components/assetshome/aiasset';
 import AboutMe from '@/components/common/home/about-me';
@@ -46,6 +47,7 @@ export default function HomePage() {
         </div>
         <Projects />
 
+        <Connect/>
         <div className="absolute inset-0 -z-10 overflow-hidden">
           <svg
             className="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-aired/20 [mask-image:radial-gradient(70rem_20rem_at_top,white,transparent)] dark:stroke-aired/80"
