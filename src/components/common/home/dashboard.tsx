@@ -11,6 +11,8 @@ import {
   type YouTube
 } from '@/types'
 import Counter from '../countnumber';
+import { Particles } from "src/components/ui/particles";
+import { HighlighterItem, HighlightGroup } from "src/components/ui/highlighter";
 
 type Card = {
   icon: React.ReactNode
@@ -56,7 +58,7 @@ const Items = () => {
         endColor: '#f50537'
       }
     },
-    
+
   ]
 
   return (
@@ -74,12 +76,13 @@ const Items = () => {
           } = item
 
           return (
+
             <a
               key={title}
               target={target}
               rel='noopener noreferrer'
               href={link}
-              className='group w-full relative overflow-hidden bg-white dark:bg-black rounded-2xl border border-slate-100 dark:border-slate-900 md:p-4 py-2 transition-colors duration-150 hover:bg-accent'
+              className='group w-full h-full relative overflow-hidden bg-white dark:bg-black rounded-2xl border border-slate-100 dark:border-slate-900 md:p-4 py-2 transition-colors duration-150 hover:bg-accent'
             >
               <div className='flex flex-col items-center justify-center gap-1 transition-transform duration-300 group-hover:-translate-y-24 group-focus:-translate-y-24'>
                 <div className='flex items-center gap-1 text-2xl font-bold text-foreground'>
@@ -93,7 +96,7 @@ const Items = () => {
                           WebkitTextFillColor: 'transparent'
                         }}
                       >
-                        <Counter value={Number(value)} /> 
+                        <Counter value={Number(value)} />
                       </span>
                     </>
                   ) : (
@@ -102,9 +105,14 @@ const Items = () => {
                 </div>
                 <div className='text-xs text-slate-600 dark:text-slate-400'>{title}</div>
               </div>
+
               <span className='absolute left-1/2 top-1/2 flex -translate-x-1/2 translate-y-24 items-center gap-1 text-sm font-semibold uppercase tracking-[.3em] opacity-0 transition duration-300 group-hover:-translate-y-1/2 group-hover:opacity-100 group-focus:-translate-y-1/2 group-focus:opacity-100'>
-                {linkText}
-                
+
+              {linkText}
+                <Particles
+                  className="absolute -inset-20 -z-10"
+                  quantity={100}
+                />
               </span>
             </a>
           )

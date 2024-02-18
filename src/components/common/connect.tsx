@@ -3,10 +3,8 @@
 import { HighlighterItem, HighlightGroup } from "../ui/highlighter";
 import Link from "next/link";
 import { Particles } from "../ui/particles";
-import { useMemo } from "react";
 
-import { motion, useAnimate, useInView } from 'framer-motion'
-import Image from 'next/image'
+import { useAnimate, useInView } from 'framer-motion'
 import * as React from 'react'
 import { Icons } from "../icons";
 import { buttonVariants } from "../ui/button";
