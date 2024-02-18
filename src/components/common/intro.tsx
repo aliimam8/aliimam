@@ -5,7 +5,6 @@ import { useRef, useState } from 'react';
 import { Icons } from 'src/components/icons';
 import { AISeparator } from "@/components/ui/seperator"
 import { HighlighterItem, HighlightGroup } from "src/components/ui/highlighter";
-import { Particles } from "../ui/particles";
 
 function opacityForBlock(sectionProgress: number, blockNumber: number) {
   const progress = sectionProgress - blockNumber;
@@ -14,7 +13,7 @@ function opacityForBlock(sectionProgress: number, blockNumber: number) {
     return 1;
   }
 
-  return 0.08;
+  return 0.04;
 }
 
 export default function Intro() {
@@ -57,11 +56,7 @@ export default function Intro() {
             <div className="h-full group/item" data-aos="fade-down">
               <HighlighterItem className=' rounded-[40px]'>
                 <div className="relative py-10 w-full h-full rounded-[40px] dark:bg-black z-20 ">
-                  <Particles
-                    className="absolute inset-0 -z-10 opacity-10 group-hover/item:opacity-100 transition-opacity duration-1000 ease-in-out"
-                    quantity={100}
-                  />
-                  <div className="flex flex-col gap-10 leading-[1.2] md:gap-10  justify-center text-center text-xl font-extrabold tracking-tighter md:text-6xl">
+                  <div className="flex flex-col gap-10 leading-[1.2] md:gap-10  justify-center text-center text-xl font-extrabold tracking-tighter md:text-6xl ">
                     <div
                       className="introText flex items-center justify-center px-8"
                       style={{ opacity: opacityForBlock(progress, 0) }}
