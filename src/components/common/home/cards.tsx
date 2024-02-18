@@ -8,7 +8,6 @@ import { cn } from '@/lib/utils';
 import { Avegra } from '@/app/fonts';
 import Link from 'next/link';
 import { AIExp } from 'src/components/common/exp';
-import { Particles } from "src/components/ui/particles";
 
 const Underline = `hover:-translate-y-1 border border-slate-100 dark:border-slate-900 rounded-xl p-2.5 transition-transform text-slate-600 hover:border-slate-200 dark:hover:border-slate-800 hover:text-black hover:dark:text-white dark:text-slate-400 `;
 
@@ -36,10 +35,6 @@ export const Graaadients = () => {
                         </div>
                         <span className='absolute left-1/2 top-1/2 flex -translate-x-1/2 translate-y-24 items-center gap-1 text-sm font-semibold uppercase tracking-[.3em] opacity-0 transition duration-300 group-hover:-translate-y-1/2 group-hover:opacity-100 group-focus:-translate-y-1/2 group-focus:opacity-100'>
                             Free Download
-                            <Particles
-                                className="absolute -inset-20 -z-10"
-                                quantity={50}
-                            />
                         </span>
                     </div>
                 </div>
@@ -70,10 +65,7 @@ export const PeachFuzz = () => {
                             </h1>
                         </div>
                         <span className='absolute left-1/2 top-1/2 flex -translate-x-1/2 translate-y-24 items-center gap-1 text-sm font-semibold uppercase tracking-[.3em] opacity-0 transition duration-300 group-hover:-translate-y-1/2 group-hover:opacity-100 group-focus:-translate-y-1/2 group-focus:opacity-100'>
-                            <Particles
-                                className="absolute -inset-20 -z-10"
-                                quantity={50}
-                            />
+                            
                             The Colors
                         </span>
                     </div>
@@ -98,10 +90,7 @@ export const AICV = () => {
                             </div>
                         </div>
                         <span className='absolute left-1/2 top-1/2 flex -translate-x-1/2 translate-y-24 items-center gap-1 text-sm font-semibold uppercase tracking-[.3em] opacity-0 transition duration-300 group-hover:-translate-y-1/2 group-hover:opacity-100 group-focus:-translate-y-1/2 group-focus:opacity-100'>
-                            <Particles
-                                className="absolute -inset-20 -z-10"
-                                quantity={100}
-                            />
+                            
                             Download
                         </span>
                     </div>
@@ -126,10 +115,7 @@ export const Insta = () => {
                             </div>
                         </div>
                         <span className='absolute left-1/2 top-1/2 flex -translate-x-1/2 translate-y-24 items-center gap-1 text-sm font-semibold uppercase tracking-[.3em] opacity-0 transition duration-300 group-hover:-translate-y-1/2 group-hover:opacity-100 group-focus:-translate-y-1/2 group-focus:opacity-100'>
-                            <Particles
-                                className="absolute -inset-20 -z-10"
-                                quantity={100}
-                            />
+                            
                             Instagram
                         </span>
                     </div>
@@ -153,10 +139,7 @@ export const Exp = () => {
                             </div>
                         </div>
                         <span className='absolute left-1/2 top-1/2 flex -translate-x-1/2 translate-y-24 items-center gap-1 text-sm font-semibold uppercase tracking-[.3em] opacity-0 transition duration-300 group-hover:-translate-y-1/2 group-hover:opacity-100 group-focus:-translate-y-1/2 group-focus:opacity-100'>
-                            <Particles
-                                className="absolute -inset-20 -z-10"
-                                quantity={50}
-                            />
+                            
                             About Me
                         </span>
                     </div>
@@ -249,10 +232,7 @@ export const Tools = () => {
                             </Marquee>
                         </div>
                         <span className='absolute left-1/2 top-1/2 flex -translate-x-1/2 translate-y-24 items-center gap-1 text-sm font-semibold uppercase tracking-[.3em] opacity-0 transition duration-300 group-hover:-translate-y-1/2 group-hover:opacity-100 group-focus:-translate-y-1/2 group-focus:opacity-100'>
-                            <Particles
-                                className="absolute -inset-20 -z-10"
-                                quantity={50}
-                            />
+                            
                             Tools
                         </span>
                     </div>

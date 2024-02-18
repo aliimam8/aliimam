@@ -11,8 +11,6 @@ import {
   type YouTube
 } from '@/types'
 import Counter from '../countnumber';
-import { Particles } from "src/components/ui/particles";
-import { HighlighterItem, HighlightGroup } from "src/components/ui/highlighter";
 
 type Card = {
   icon: React.ReactNode
@@ -109,10 +107,6 @@ const Items = () => {
               <span className='absolute left-1/2 top-1/2 flex -translate-x-1/2 translate-y-24 items-center gap-1 text-sm font-semibold uppercase tracking-[.3em] opacity-0 transition duration-300 group-hover:-translate-y-1/2 group-hover:opacity-100 group-focus:-translate-y-1/2 group-focus:opacity-100'>
 
               {linkText}
-                <Particles
-                  className="absolute -inset-20 -z-10"
-                  quantity={100}
-                />
               </span>
             </a>
           )
