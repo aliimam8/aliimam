@@ -70,7 +70,7 @@ export const Connect: React.FC = () => {
         <section className="relative mx-auto max-w-5xl mt-10 px-6">
             <HighlightGroup className="h-full group">
                 <div className="h-full md:col-span-6 lg:col-span-12  group/item" data-aos="fade-down">
-                    <HighlighterItem>
+                    <HighlighterItem className='rounded-3xl'>
                         <div className="relative h-full bg-slate-100/50 border border-slate-200 dark:border-slate-800 dark:bg-black rounded-3xl z-20 overflow-hidden">
                             <Particles
                                 className="absolute inset-0 -z-10 opacity-10 group-hover/item:opacity-100 transition-opacity duration-1000 ease-in-out"

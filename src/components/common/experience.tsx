@@ -111,7 +111,7 @@ export function Experience() {
                     className="h-full md:col-span-6  lg:col-span-4 group/item"
                     data-aos="fade-down"
                   >
-                    <HighlighterItem>
+                    <HighlighterItem className='rounded-3xl'>
                       <div className="relative h-full border border-slate-200 dark:border-slate-800 dark:bg-black bg-slate-100/50 rounded-3xl z-20 overflow-hidden">
                         <Particles
                           className="absolute inset-0 -z-10 opacity-10 group-hover/item:opacity-100 transition-opacity duration-1000 ease-in-out"

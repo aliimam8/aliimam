@@ -71,7 +71,7 @@ function NewsletterForm() {
           <Input
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder="aliimam@ai.in"
+            placeholder="contact@aliimam.in"
             required
             type="email"
             className="flex-1 text-sm sm:text-base outline-none bg-transparent "

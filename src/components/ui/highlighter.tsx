@@ -87,7 +87,7 @@ export const HighlighterItem: React.FC<PropsWithChildren<HighlighterItemProps>> 
 }) => {
   return (
     <div
-      className={`relative rounded-3xl p-px before:absolute before:w-96 before:h-96 before:-left-48 before:-top-48 before:bg-white/50 before:rounded-full before:opacity-0 before:pointer-events-none before:transition-opacity before:duration-500 before:translate-x-[var(--mouse-x)] before:translate-y-[var(--mouse-y)] before:hover:opacity-20 before:z-30 before:blur-[100px] after:absolute after:inset-0 after:rounded-3xl after:opacity-0 after:transition-opacity after:duration-500 after:[background:_radial-gradient(300px_circle_at_var(--mouse-x)_var(--mouse-y),theme(colors.white),transparent)] dark:after:[background:_radial-gradient(300px_circle_at_var(--mouse-x)_var(--mouse-y),theme(colors.white),transparent)] after:group-hover:opacity-100 after:z-10 overflow-hidden ${className}`}
+      className={`relative  p-px before:absolute before:w-96 before:h-96 before:-left-48 before:-top-48 before:bg-white/50 before:rounded-full before:opacity-0 before:pointer-events-none before:transition-opacity before:duration-500 before:translate-x-[var(--mouse-x)] before:translate-y-[var(--mouse-y)] before:hover:opacity-20 before:z-30 before:blur-[100px] after:absolute after:inset-0 after:rounded-3xl after:opacity-0 after:transition-opacity after:duration-500 after:[background:_radial-gradient(300px_circle_at_var(--mouse-x)_var(--mouse-y),theme(colors.white),transparent)] dark:after:[background:_radial-gradient(300px_circle_at_var(--mouse-x)_var(--mouse-y),theme(colors.white),transparent)] after:group-hover:opacity-100 after:z-10 overflow-hidden ${className}`}
     >
       {children}
     </div>
