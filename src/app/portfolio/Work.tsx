@@ -2,15 +2,17 @@
 import { ScrollArea, ScrollBar } from 'src/components/ui/scroll-area';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from 'src/components/ui/tabs';
 
-import Packaging from './creatives/3d';
+import Packaging from './creatives/packaging';
 import Campaigns from './creatives/campaigns';
 import Logos from './creatives/logos';
 import Music from './creatives/music';
-import SocialMedia from './creatives/socialmedia';
+import SMFestive from './creatives//festive';
+import SMCreative from './creatives/creative';
 import UIUX from './creatives/uiux';
 import Others from './creatives/others';
 import Videos from './creatives/videos';
 import Reels from './creatives/reels';
+import Modals from './creatives/3d';
 
 export function Work() {
   return (
@@ -19,13 +21,19 @@ export function Work() {
         <ScrollArea className="whitespace-nowrap">
           <div className="space-x-2">
             <TabsTrigger value="1" className="px-6">
-              Social Media
+              SM Creative
+            </TabsTrigger>
+            <TabsTrigger value="11" className="px-6">
+              SM Festive
             </TabsTrigger>
             <TabsTrigger value="2" className="px-6">
               Campaigns
             </TabsTrigger>
             <TabsTrigger value="3" className="px-6">
-              3D & Packaging
+              3D
+            </TabsTrigger>
+            <TabsTrigger value="12" className="px-6">
+              Packaging
             </TabsTrigger>
             <TabsTrigger value="4" className="px-6">
               UI/UX
@@ -50,14 +58,19 @@ export function Work() {
         </ScrollArea>
       </TabsList>
 
+
       <TabsContent value="1">
-        <SocialMedia images={[]} />
+        <SMCreative images={[]}/>
       </TabsContent>
+      <TabsContent value="11">
+        <SMFestive images={[]}/>
+      </TabsContent>
+
       <TabsContent value="2">
         <Campaigns images={[]} />
       </TabsContent>
       <TabsContent value="3">
-        <Packaging images={[]} />
+        <Modals images={[]} />
       </TabsContent>
       <TabsContent value="4">
         <UIUX images={[]} />
@@ -69,13 +82,22 @@ export function Work() {
         <Music images={[]} />
       </TabsContent>
       <TabsContent value="7">
-        <Videos/>
+        <Videos />
       </TabsContent>
       <TabsContent value="8">
-        <Reels/>
+        <Reels />
       </TabsContent>
       <TabsContent value="9">
         <Others images={[]} />
+      </TabsContent>
+      <TabsContent value="10">
+        <Others images={[]} />
+      </TabsContent>
+      <TabsContent value="11">
+        <Others images={[]} />
+      </TabsContent>
+      <TabsContent value="12">
+        <Packaging images={[]} />
       </TabsContent>
     </Tabs>
   );
