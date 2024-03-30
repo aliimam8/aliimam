@@ -1,5 +1,5 @@
 import { Work } from './Work';
-import Projects from '@/components/projects';
+import Projects from '@/components/common/projects';
 import { CarouselSpacing } from 'src/components/common/carousel';
 
 import { type Metadata } from 'next';

@@ -4,7 +4,6 @@ import { Graaadients } from "./cards"
 import { type Metadata } from 'next';
 import { Avegra } from '../fonts';
 import { cn } from '@/lib/utils';
-import { Carousel } from 'src/components/carousel';
 
 export const metadata: Metadata = {
   title: 'Products',
@@ -26,7 +25,6 @@ export default function AboutAI() {
             <hr className="mx-auto my-4 mb-16 h-1 w-6 rounded border-0 bg-aired"></hr>
           </div>
         <Graaadients />
-        <Carousel />
       </Suspense>
     </>
   );

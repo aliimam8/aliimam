@@ -1,95 +1,154 @@
-'use client';
+'use client'
 
-import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
-import { useRouter, useSearchParams } from 'next/navigation';
-import { createUrl } from 'src/lib/utils';
-import { Icons } from 'src/components/icons';
-import { Button } from 'src/components/ui/button';
-import { Dialog, DialogContent, DialogTrigger } from 'src/components/ui/dialog';
+import {
+  CommandDialog,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+  CommandSeparator
+} from '@/components/ui/command'
 
-export function PSearch() {
-  const router = useRouter();
-  const searchParams = useSearchParams();
+import {
+  CodeIcon,
+  CommandIcon,
+  LinkIcon,
+  LogInIcon,
+  LogOutIcon
+} from 'lucide-react'
 
-  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
+import * as React from 'react'
 
-    const val = e.target as HTMLFormElement;
-    const search = val.search as HTMLInputElement;
-    const newParams = new URLSearchParams(searchParams.toString());
+import { useCopyToClipboard } from '@/hooks/use-copy-clipboard'
+import { Icons } from '@/components/icons'
+import { Button } from '@/components/ui/button'
 
-    if (search.value) {
-      newParams.set('q', search.value);
-    } else {
-      newParams.delete('q');
+type Groups = Array<{
+  name: string
+  actions: Array<{
+    title: string
+    icon: React.ReactNode
+    onSelect: () => void | Promise<void>
+  }>
+}>
+
+const CommandMenu = () => {
+  const [open, setOpen] = React.useState(false)
+  const [copy] = useCopyToClipboard()
+
+  React.useEffect(() => {
+    const down = (e: KeyboardEvent) => {
+      if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
+        e.preventDefault()
+        setOpen((value) => !value)
+      }
     }
 
-    router.push(createUrl('/store', newParams));
-  }
+    document.addEventListener('keydown', down)
+    return () => document.removeEventListener('keydown', down)
+  }, [])
 
-  return (
-    <form onSubmit={onSubmit} className=" relative w-full">
-      <input
-        key={searchParams?.get('q')}
-        type="text"
-        name="search"
-        placeholder="Search for products..."
-        autoComplete="off"
-        defaultValue={searchParams?.get('q') || ''}
-        className="placeholder:text-neutral-500 dark:placeholder:text-neutral-400 w-full rounded-lg border border-slate-200 px-4 py-3 text-sm dark:border-slate-800"
-      />
-      <div className="absolute right-0 top-0 mr-3 flex h-full items-center">
-        <MagnifyingGlassIcon className="h-4" />
-      </div>
-    </form>
-  );
-}
+  const openLink = React.useCallback((url: string) => {
+    setOpen(false)
+    window.open(url, '_blank', 'noopener')
+  }, [])
 
-export function DSearch() {
-  const router = useRouter();
-  const searchParams = useSearchParams();
+  const groups: Groups = [
+    {
+      name: 'General',
+      actions: [
+        {
+          title: 'Copy Link',
+          icon: <LinkIcon className='mr-3 size-4' />,
+          onSelect: async () => {
+            setOpen(false)
 
-  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-
-    const val = e.target as HTMLFormElement;
-    const search = val.search as HTMLInputElement;
-    const newParams = new URLSearchParams(searchParams.toString());
-
-    if (search.value) {
-      newParams.set('q', search.value);
-    } else {
-      newParams.delete('q');
+            await copy({
+              text: window.location.href,
+              successMessage: (
+                <div className='flex flex-col'>
+                  <div>Copied</div>
+                  <div className='text-sm text-muted-foreground'>
+                    You can now share it with anyone.
+                  </div>
+                </div>
+              )
+            })
+          }
+        },
+        {
+          title: 'Source code',
+          icon: <CodeIcon className='mr-3 size-4' />,
+          onSelect: () => openLink('https://github.com/tszhong0411/honghong.me')
+        }
+      ]
+    },
+    {
+      name: 'Social',
+      actions: [
+        {
+          title: 'GitHub',
+          icon: <Icons.insta className='mr-3 size-4' />,
+          onSelect: () => openLink('https://github.com/tszhong0411')
+        },
+        {
+          title: 'Facebook',
+          icon: <Icons.insta className='mr-3 size-4' />,
+          onSelect: () => openLink('https://www.facebook.com/tszhong0411/')
+        },
+        {
+          title: 'Instagram',
+          icon: <Icons.insta className='mr-3 size-4' />,
+          onSelect: () => openLink('https://instagram.com/tszhong0411/')
+        },
+        {
+          title: 'X',
+          icon: <Icons.insta className='mr-3 size-4' />,
+          onSelect: () => openLink('https://x.com/tszhong0411')
+        },
+        {
+          title: 'YouTube',
+          icon: <Icons.insta className='mr-3 size-4' />,
+          onSelect: () => openLink('https://youtube.com/@tszhong0411')
+        }
+      ]
     }
-
-    router.push(createUrl('/store', newParams));
-  }
+  ]
 
   return (
-    <div className='hidden md:block'>
-      <Dialog>
-        <DialogTrigger asChild>
-          <Button variant="ghost" size="sm" className="flex ">
-          <Icons.search strokeWidth={1.5} className="w-5" />
-          </Button>
-        </DialogTrigger>
-        <DialogContent className="max-w-lg">
-          <form onSubmit={onSubmit} className="relative hidden w-auto md:block">
-            <input
-              key={searchParams?.get('q')}
-              type="text"
-              name="search"
-              placeholder="Search for products..."
-              autoComplete="off"
-              defaultValue={searchParams?.get('q') || ''}
-              className="w-full rounded-lg border border-slate-200 px-4 py-4 text-sm placeholder:text-slate-600 dark:border-slate-800 dark:placeholder:text-slate-400"
-            />
-            <div className="absolute right-0 top-0 mr-3 flex h-full items-center">
-            <Icons.search strokeWidth={1.5} className="w-5 mx-2" />
-            </div>
-          </form>
-        </DialogContent>
-      </Dialog>
-    </div>
-  );
+    <>
+      <Button
+        variant='ghost'
+        className='size-9 p-0'
+        onClick={() => setOpen(true)}
+        type='button'
+        aria-label='Open command menu'
+      >
+        <span className='sr-only'>Open command menu</span>
+        <Icons.command className='h-5 w-5' />
+      </Button>
+      <CommandDialog open={open} onOpenChange={setOpen}>
+        <CommandInput placeholder='Type a command or search...' />
+        <CommandList>
+          <CommandEmpty>No results found.</CommandEmpty>
+          {groups.map((group, i) => (
+            <React.Fragment key={group.name}>
+              <CommandGroup heading={group.name}>
+                {group.actions.map((action) => (
+                  <CommandItem key={action.title} onSelect={action.onSelect}>
+                    {action.icon}
+                    {action.title}
+                  </CommandItem>
+                ))}
+              </CommandGroup>
+              {i !== groups.length - 1 && <CommandSeparator />}
+            </React.Fragment>
+          ))}
+        </CommandList>
+      </CommandDialog>
+    </>
+  )
 }
+
+export default CommandMenu

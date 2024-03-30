@@ -63,6 +63,7 @@ export const Icons = {
   logo: Command,
   close: X,
   square: Square,
+  command: Command,
   spinner: Loader2,
   chevronLeft: ChevronLeft,
   chevronRight: ChevronRight,

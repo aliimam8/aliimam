@@ -1,15 +1,12 @@
 import { Suspense } from 'react';
-import Hero from 'src/components/common/hero';
-import Intro from 'src/components/common/intro';
-import Projects from '@/components/projects';
-import AssetsPage from '@/components/assetshome/aiasset';
-import AboutMe from '@/components/common/home/about-me';
-import AISlide from '@/components/common/home/slide-img';
-import { CarouselSpacing } from 'src/components/common/carousel';
+import Hero from '@/components/home/hero';
+import Intro from '@/components/home/intro';
+import Projects from '@/components/common/projects';
+import AssetsPage from '@/components/home/aiasset';
+import AboutMe from '@/components/home/about-me';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { buttonVariants } from '@/components/ui/button';
-import { Carousel } from 'src/components/carousel';
 
 
 export const runtime = 'edge';
@@ -29,7 +26,6 @@ export default function HomePage() {
         <AboutMe />
         <AssetsPage />
         <Intro />
-        <Carousel />
         <div className="flex flex-wrap items-center justify-center gap-4 py-8">
           <Link
             href="/portfolio"

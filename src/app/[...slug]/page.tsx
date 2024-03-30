@@ -2,13 +2,13 @@ import { notFound } from 'next/navigation';
 import { allPages } from 'contentlayer/generated';
 import { type Metadata } from 'next';
 import { Separator } from 'src/components/ui/seperator';
-import { Mdx } from 'src/components/common/mdx-components';
+import { Mdx } from '@/components/contentmdx/mdx-components';
 import {
   PageHeader,
   PageHeaderDescription,
   PageHeaderHeading
-} from 'src/components/common/page-header';
-import { MdxPager } from 'src/components/common/mdx-pager';
+} from '@/components/contentmdx/page-header';
+import { MdxPager } from '@/components/contentmdx/mdx-pager';
 
 interface PageProps {
   params: {

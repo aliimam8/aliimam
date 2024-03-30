@@ -28,90 +28,11 @@ const computedFields = {
   }
 };
 
-const ColorsPost = defineDocumentType(() => ({
-  name: 'ColorsPost',
-  filePathPattern: 'colors/**/*.mdx',
-  contentType: 'mdx',
-  fields: {
-    title: {
-      type: 'string',
-      description: 'The title of the blog post',
-      required: true
-    },
-    date: {
-      type: 'string',
-      description: 'The date of the assetst',
-      required: true
-    },
-    modifiedTime: {
-      type: 'string',
-      description: 'The modified time of the assets',
-      required: true
-    },
-    download: {
-      type: 'string',
-      description: 'The summary of the assets',
-      required: true
-    },
-    color1: {
-      type: 'string',
-      description: 'The summary of the assets',
-      required: true
-    },
-    color2: {
-      type: 'string',
-      description: 'The summary of the assets',
-      required: true
-    },
-    color3: {
-      type: 'string',
-      description: 'The summary of the assets',
-      required: true
-    },
-    color4: {
-      type: 'string',
-      description: 'The summary of the assets',
-      required: true
-    },
-    color5: {
-      type: 'string',
-      description: 'The summary of the assets',
-      required: true
-    },
-    color6: {
-      type: 'string',
-      description: 'The summary of the assets',
-      required: true
-    },
-    tags: { type: 'list', of: { type: 'string' }, default: [] },
-    draft: { type: 'list', of: { type: 'string' } },
-    dimention: {
-      type: 'string',
-      description: 'The summary of the assets',
-      required: true
-    },
-    size: {
-      type: 'string',
-      description: 'The summary of the assets',
-      required: true
-    },
-    summary: {
-      type: 'string',
-      description: 'The summary of the assets',
-      required: true
-    }
-  },
-  computedFields: {
-    slug: {
-      type: 'string',
-      resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx$/, '')
-    }
-  }
-}));
 
-const AssetsPost = defineDocumentType(() => ({
-  name: 'AssetsPost',
-  filePathPattern: 'assets/**/*.mdx',
+
+const GalleryPost = defineDocumentType(() => ({
+  name: 'GalleryPost',
+  filePathPattern: 'gallery/**/*.mdx',
   contentType: 'mdx',
   fields: {
     title: {
@@ -226,7 +147,7 @@ export const Uses = defineDocumentType(() => ({
 
 export default makeSource({
   contentDirPath: './src/content',
-  documentTypes: [Page, Uses, BlogPost, AssetsPost, ColorsPost],
+  documentTypes: [Page, Uses, BlogPost, GalleryPost ],
   mdx: {
     // remarkPlugins: [remarkGfm],
     rehypePlugins: [

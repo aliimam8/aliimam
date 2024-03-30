@@ -1,16 +1,14 @@
 import { Suspense } from 'react';
 import Image from 'next/image';
-import About from 'src/components/common/about';
+import About from '@/components/about/about';
 import Logos from 'src/components/common/logos';
-import { Experience } from 'src/components/common/experience';
-import Dashboard from 'src/components/common/dashboard';
-import NewsletterForm from "@/components/email/Newsletter";
-import { Connect } from '@/components/common/connect';
+import { Experience } from '@/components/about/experience';
+import { DashboardAbout } from 'src/components/common/dashboard';
+import { Connect } from '@/components/about/connect';
 import 'src/styles/text.css';
 
 import ImageZoom from '@/components/common/image-zoom';
 import { Icons } from '@/components/icons';
-import { motion } from 'framer-motion';
 import { Avegra } from '../fonts';
 import { cn } from '@/lib/utils';
 
@@ -55,17 +53,13 @@ export default function AboutAI() {
             functions. I use this dashboard to track various metrics across platforms like YouTube
             and more.
           </p>
-          <Dashboard />
-        </div>
+          <DashboardAbout />
+          <h1 className="my-6 text-center text-xs font-semibold uppercase tracking-[.3em] text-slate-400 ">
+          Worked with Brands Like
+        </h1>
         <Logos />
+        </div>
         <Connect/>
-        <div className="flex mt-10 flex-col items-center">
-            <h3 className="inline-flex items-baseline pb-1 mt-6 text-center font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-600 via-slate-400 to-slate-600 dark:bg-clip-text dark:bg-gradient-to-r dark:from-slate-600 dark:via-slate-200 dark:to-slate-600">
-              <span className="text-2xl md:text-4xl">Join The Waitlist For My Newsletter</span>
-            </h3>
-            <hr className="mx-auto my-4 h-1 w-6 rounded border-0 bg-aired"></hr>
-          </div>
-        <NewsletterForm />
       </Suspense>
     </>
   );

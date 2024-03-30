@@ -1,7 +1,7 @@
 import type { Metadata, ResolvingMetadata } from 'next'
 
-import { BlogFilteredPosts } from '@/components/common/filtered-posts'
-import PageTitle from '@/components/common/page-title'
+import { BlogFilteredPosts } from '@/components/contentmdx/filtered-posts'
+import PageTitle from '@/components/contentmdx/page-title'
 import site from '@/config/site'
 import { getAllBlogPosts } from '@/lib/mdx'
 
