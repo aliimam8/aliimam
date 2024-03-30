@@ -21,11 +21,12 @@ type HeaderProps = {
   slug: string;
   download: string;
   dimention: string;
+  summary: string;
   size: string;
 };
 
 const Header = (props: HeaderProps) => {
-  const { title, slug, download, dimention, size } = props;
+  const { title, slug, download, dimention, size, summary } = props;
   const { data: viewsData, isLoading: viewsIsLoading } = useSWR<Views>(
     `/api/views?slug=${slug}`,
     fetcher
@@ -50,9 +51,9 @@ const Header = (props: HeaderProps) => {
   }, []);
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6">
       <h1 className="text-center text-3xl font-bold md:text-5xl">{title}</h1>
-
+      <p className='text-center text-slate-600 dark:text-slate-400'>{summary}</p>
       <ImageZoom
         zoomImg={{
           src: `/images/gallery/${slug}/cover.jpg`,
@@ -101,6 +102,7 @@ const Header = (props: HeaderProps) => {
         <Link
           href={download}
           download={true}
+          target='_blank'
           className={cn(
             buttonVariants({
               variant: 'aibutton',

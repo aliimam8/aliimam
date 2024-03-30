@@ -3,7 +3,7 @@
   "name": "ali",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "contentlayer build && next build",
     "start": "next start",
     "lint": "next lint",
     "lint-staged": "lint-staged",
@@ -64,7 +64,7 @@
     "dayjs": "^1.11.10",
     "days": "^1.1.1",
     "embla-carousel-autoplay": "^8.0.0-rc17",
-    "embla-carousel-react": "^8.0.0-rc17",
+    "embla-carousel-react": "^8.0.0",
     "framer-motion": "^10.17.9",
     "geist": "^1.0.0",
     "gsap": "^3.12.2",

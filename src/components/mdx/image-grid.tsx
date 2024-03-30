@@ -18,7 +18,7 @@ const ItemGrid = (props: ItemGridProps) => {
   const { items } = props
 
   return (
-    <div className='mb-2 grid grid-cols-2 sm:grid-cols-3 gap-2'>
+    <div className='mb-2 grid grid-cols-3 gap-2'>
       {items.map((item) => (
         <ImageZoom>
           <Image
@@ -27,7 +27,7 @@ const ItemGrid = (props: ItemGridProps) => {
             height={500}
             alt={item.name}
             className='shrink-0'
-            imageClassName='m-0 rounded-2xl h-full w-full'
+            imageClassName='m-0 rounded-lg lg:rounded-2xl h-full w-full'
           />
           </ImageZoom>
       ))}

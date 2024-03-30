@@ -28,8 +28,6 @@ const computedFields = {
   }
 };
 
-
-
 const GalleryPost = defineDocumentType(() => ({
   name: 'GalleryPost',
   filePathPattern: 'gallery/**/*.mdx',
@@ -55,8 +53,6 @@ const GalleryPost = defineDocumentType(() => ({
       description: 'The summary of the assets',
       required: true
     },
-    tags: { type: 'list', of: { type: 'string' }, default: [] },
-    draft: { type: 'boolean' },
     dimention: {
       type: 'string',
       description: 'The summary of the assets',
@@ -96,7 +92,6 @@ const BlogPost = defineDocumentType(() => ({
       description: 'The date of the blog post',
       required: true
     },
-    tags: { type: 'list', of: { type: 'string' }, default: [] },
     modifiedTime: {
       type: 'string',
       description: 'The modified time of the blog post',
@@ -133,21 +128,10 @@ export const Page = defineDocumentType(() => ({
   computedFields
 }));
 
-export const Uses = defineDocumentType(() => ({
-  name: 'Uses',
-  filePathPattern: `uses/**/*.mdx`,
-  contentType: 'mdx',
-  computedFields: {
-    slug: {
-      type: 'string',
-      resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx$/, '')
-    }
-  }
-}));
 
 export default makeSource({
   contentDirPath: './src/content',
-  documentTypes: [Page, Uses, BlogPost, GalleryPost ],
+  documentTypes: [Page, BlogPost, GalleryPost ],
   mdx: {
     // remarkPlugins: [remarkGfm],
     rehypePlugins: [

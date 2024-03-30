@@ -32,7 +32,7 @@ export default function HomePage() {
             className={cn(
               buttonVariants({
                 variant: 'redbutton',
-                size: 'md'
+                size: 'sm'
               })
             )}
           >

@@ -28,7 +28,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           Graaadients
         </h1>
         <p className='text-center md:text-md md:-mt-4 text-white text-sm mx-auto max-w-md font-light'>
-          +1000 abstract gradient elements and backgrounds
+          +100 abstract gradient elements and backgrounds
           for your amazing design projects.</p>
 
         <div className="grid mt-10 justify-center gap-4">

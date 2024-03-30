@@ -111,7 +111,7 @@ const AssetPostPage = (props: AssetPostPageProps) => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Header date={date} title={title} slug={slug} download={download} dimention={dimention} size={size} />
+      <Header date={date} title={title} slug={slug} download={download} dimention={dimention} size={size} summary={summary} />
       <Content slug={slug} post={post} />
       <Separator className="my-8" />
       <MdxPager currentItem={post} allItems={allGalleryPosts} />

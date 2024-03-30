@@ -84,7 +84,7 @@ const PostCards = (props: PostCardsProps) => {
 type PostCardProps = GalleryPostCore;
 
 const PostCard = (props: PostCardProps) => {
-  const { _id, slug, title, date, tags } = props;
+  const { _id, slug, title, date } = props;
   const [formattedDate, setFormattedDate] = React.useState('');
   const { data: viewsData, isLoading: viewsIsLoading } = useSWR<Views>(
     `/api/views?slug=${slug}`,

@@ -60,7 +60,7 @@ const PostCards = (props: PostCardsProps) => {
 type PostCardProps = GalleryPostCore;
 
 const PostCard = (props: PostCardProps) => {
-  const { _id, slug, title, tags } = props;
+  const { _id, slug, title } = props;
   const { data: viewsData, isLoading: viewsIsLoading } = useSWR<Views>(
     `/api/views?slug=${slug}`,
     fetcher

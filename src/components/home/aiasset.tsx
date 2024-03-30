@@ -43,17 +43,12 @@ const GalleryPage = () => {
   return (
     <div className="mx-auto mt-10 max-w-5xl px-6">
       <div className="my-4 mt-20 flex flex-col items-center">
-      <h3 className="inline-flex items-baseline pb-1 mt-6 text-center font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-600 via-slate-400 to-slate-600 dark:bg-clip-text dark:bg-gradient-to-r dark:from-slate-600 dark:via-slate-200 dark:to-slate-600">
-        <span className="text-2xl md:text-4xl">Burn The Design</span>
-      </h3>
-      </div>
-      <Link
-        href="/gallery"
-      >
-        <h1 className="mb-8 md:mb-0 text-center hover:text-aired text-sm font-semibold uppercase tracking-[.3em] text-slate-400 ">
-          Download Free Gallery
+      <h1 className="mb-8 md:mb-0 text-center text-sm font-semibold uppercase tracking-[.3em] text-slate-400 ">
+      Where Every Image Unveils a Story!
         </h1>
-      </Link>
+        
+      </div>
+      
       <GalleryCards posts={posts} />
     </div>
   );

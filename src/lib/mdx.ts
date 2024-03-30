@@ -11,17 +11,13 @@ type GetAllGalleryProps = {
   sorted?: boolean
 }
 
-type GetAllColorsProps = {
-  limit?: number
-  sorted?: boolean
-}
 
 export const getAllBlogPosts = (config: GetAllPostsProps = {}) => {
   const { limit = allBlogPosts.length, sorted = true } = config
 
   const posts = allBlogPosts
     .slice(0, limit)
-    .map((post) => pick(post, ['_id', 'slug', 'title', 'summary', 'date', 'tags']))
+    .map((post) => pick(post, ['_id', 'slug', 'title', 'summary', 'date']))
 
   if (sorted) {
     return posts.sort(
@@ -37,7 +33,7 @@ export const getAllGalleryPosts = (config: GetAllGalleryProps = {}) => {
 
   const posts = allGalleryPosts
     .slice(0, limit)
-    .map((post) => pick(post, ['_id', 'slug', 'title', 'summary', 'date', 'download', 'dimention', 'size', 'tags']))
+    .map((post) => pick(post, ['_id', 'slug', 'title', 'summary', 'date', 'download', 'dimention', 'size']))
 
   if (sorted) {
     return posts.sort(
