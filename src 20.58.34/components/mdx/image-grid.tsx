@@ -1,0 +1,38 @@
+
+import Image from './image'
+import ImageZoom from '../common/image-zoom';
+
+export type Items = Array<{
+  image: string
+  name: string
+  description: string
+  url: string
+}>
+
+type ItemGridProps = {
+  items: Items
+}
+
+
+const ItemGrid = (props: ItemGridProps) => {
+  const { items } = props
+
+  return (
+    <div className='mb-2 grid grid-cols-2 sm:grid-cols-3 gap-2'>
+      {items.map((item) => (
+        <ImageZoom>
+          <Image
+            src={item.image}
+            width={500}
+            height={500}
+            alt={item.name}
+            className='shrink-0'
+            imageClassName='m-0 rounded-2xl h-full w-full'
+          />
+          </ImageZoom>
+      ))}
+    </div>
+  )
+}
+
+export default ItemGrid
