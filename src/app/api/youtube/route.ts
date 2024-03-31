@@ -21,3 +21,5 @@ export const GET = async () => {
     views: Number(statistics.viewCount)
   })
 }
+
+

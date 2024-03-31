@@ -78,9 +78,10 @@ const CommandMenu = () => {
           }
         },
         {
-          title: 'Source code',
+          title: 'Download CV',
           icon: <CodeIcon className='mr-3 size-4' />,
-          onSelect: () => openLink('https://github.com/tszhong0411/honghong.me')
+          onSelect: () => openLink('/Ali-CV.pdf')
+        
         }
       ]
     },
@@ -90,27 +91,12 @@ const CommandMenu = () => {
         {
           title: 'GitHub',
           icon: <Icons.insta className='mr-3 size-4' />,
-          onSelect: () => openLink('https://github.com/tszhong0411')
+          onSelect: () => openLink('https://www.instagram.com/aliimam.in/')
         },
         {
           title: 'Facebook',
           icon: <Icons.insta className='mr-3 size-4' />,
-          onSelect: () => openLink('https://www.facebook.com/tszhong0411/')
-        },
-        {
-          title: 'Instagram',
-          icon: <Icons.insta className='mr-3 size-4' />,
-          onSelect: () => openLink('https://instagram.com/tszhong0411/')
-        },
-        {
-          title: 'X',
-          icon: <Icons.insta className='mr-3 size-4' />,
-          onSelect: () => openLink('https://x.com/tszhong0411')
-        },
-        {
-          title: 'YouTube',
-          icon: <Icons.insta className='mr-3 size-4' />,
-          onSelect: () => openLink('https://youtube.com/@tszhong0411')
+          onSelect: () => openLink('https://www.instagram.com/aliimam.in/')
         }
       ]
     }

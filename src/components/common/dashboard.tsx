@@ -1,7 +1,6 @@
 'use client'
 
 import React from 'react'
-import useSWR from 'swr'
 import { Icons } from 'src/components/icons';
 
 import fetcher from '@/lib/fetcher'
@@ -10,6 +9,8 @@ import {
   type Likes,
   type YouTube
 } from '@/types'
+
+import useSWR, { type SWRConfiguration } from 'swr'
 
 import Counter from './countnumber';
 
@@ -27,9 +28,12 @@ type Card = {
 }
 
 export const DashboardAbout = () => {
-  const { data: youtubeData } = useSWR<YouTube>('/api/youtube', fetcher)
-  const { data: likesData } = useSWR<Likes>('/api/likes', fetcher)
-  const { data: viewsData } = useSWR<Views>('/api/views', fetcher)
+  const swrConfig: SWRConfiguration = {
+    revalidateOnFocus: false
+  }
+  const { data: youtubeData } = useSWR<YouTube>('/api/youtube',  fetcher, swrConfig)
+  const { data: likesData } = useSWR<Likes>('/api/likes', fetcher, swrConfig)
+  const { data: viewsData } = useSWR<Views>('/api/views', fetcher, swrConfig)
 
   const data: Card[] = [
 

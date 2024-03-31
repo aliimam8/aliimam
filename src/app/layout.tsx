@@ -6,6 +6,7 @@ import { ThemeProvider, LenisProvider } from '../components/providers';
 import { inter } from './fonts';
 import Analytics from '@/components/analytics';
 import { Metadata } from 'next';
+import { Toaster } from "@/components/ui/toaster"
 
 export const metadata: Metadata = {
   title: 'Ali Imam',
@@ -28,6 +29,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
           <Navbar />
           <LenisProvider>
             <main>{children}</main>
+            <Toaster />
           </LenisProvider>
           <SiteFooter />
           <Analytics />

@@ -1,11 +1,11 @@
-import React from 'react'
-import toast, { type Toast } from 'react-hot-toast'
+import { toast } from '@/components/ui/toaster'
+import * as React from 'react'
 
 type CopyOptions = {
   text: string
   timeout?: number
-  successMessage?: Toast['message']
-  errorMessage?: Toast['message']
+  successMessage?: React.ReactNode
+  errorMessage?: React.ReactNode
 }
 
 export const useCopyToClipboard = (): [

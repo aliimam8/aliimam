@@ -6,6 +6,7 @@
     "skipLibCheck": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
+    "allowImportingTsExtensions": true, 
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
@@ -22,7 +23,7 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"],
+      "@/*": ["./src/*", "./*"],
       "contentlayer/generated": ["./.contentlayer/generated"]
     }
   },

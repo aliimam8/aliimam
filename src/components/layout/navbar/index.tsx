@@ -25,7 +25,7 @@ export default function Navbar() {
             <ThemeToggle />
             <Separator orientation="vertical" className="mr-2 h-6 bg-slate-400 dark:bg-slate-600" />
             <div className="pr-2 text-slate-600 hover:text-black dark:text-slate-400 hover:dark:text-white">
-              <CommandMenu />
+            <CommandMenu />
             </div>
           </div>
         </div>
