@@ -55,6 +55,7 @@ import {
   ZoomIn,
   Copy,
   ZoomOut,
+  LogIn,
   X,
   Youtube
 } from 'lucide-react';
@@ -72,6 +73,7 @@ export const Icons = {
   trash: Trash,
   post: FileText,
   search: Search,
+  login: LogIn,
   eye: Eye,
   copy: Copy,
   layers3: Layers3,

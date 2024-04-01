@@ -1,13 +1,12 @@
 import { ReactNode, Suspense } from 'react';
 import { SiteFooter } from '@/components/layout/footer';
 import 'src/styles/globals.css';
-import Navbar from '../components/layout/navbar';
+import { Navbar } from '../components/layout/navbar';
 import { ThemeProvider, LenisProvider } from '../components/providers';
 import { inter } from './fonts';
 import Analytics from '@/components/analytics';
 import { Metadata } from 'next';
 import { Toaster } from "@/components/ui/toaster"
-import { DashNavbar } from "@/components/dashboard/Navbar";
 
 export const metadata: Metadata = {
   title: 'Ali Imam',
@@ -28,7 +27,6 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
       <body className="bg-white dark:bg-black">
         <ThemeProvider enableSystem={true} attribute="class">
           <Navbar />
-          <DashNavbar/>
           <LenisProvider>
             <main>{children}</main>
             <Toaster />
