@@ -32,8 +32,8 @@ export function UserNav({
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" className="relative h-12 w-12 rounded-full">
-          <Avatar className="h-6 w-6 rounded-full">
+        <Button variant="outline" className="mr-2 relative h-7 w-7 rounded-full">
+          <Avatar className="h-7 w-7 rounded-full">
             <AvatarImage className="object-cover w-full h-full" src={image} alt="" />
             <AvatarFallback>Ali</AvatarFallback>
           </Avatar>
