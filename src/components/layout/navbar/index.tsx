@@ -32,7 +32,7 @@ export async function Navbar() {
           <div className="mx-auto flex h-12 flex-1 items-center justify-end gap-3 px-12 md:px-0">
 
             <ThemeToggle />
-            <div className="flex items-center gap-x-5">
+            <div className="flex items-center">
 
                 {(await isAuthenticated()) ? (
                   <UserNav
@@ -41,7 +41,7 @@ export async function Navbar() {
                     name={user?.given_name as string}
                   />
                 ) : (
-                  <div className="flex items-center gap-x-5">
+                  <div className="flex items-center gap-x-3">
                     <LoginLink>
                     <Icons.login className="w-5" />
                     </LoginLink>

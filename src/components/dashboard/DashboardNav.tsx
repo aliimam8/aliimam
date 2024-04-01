@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { CreditCard, Home, Settings } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { navItems } from "./UserNav";
+import { navItems } from "@/components/layout/navbar/UserNav";
 
 export function DashboardNav() {
   const pathname = usePathname();
