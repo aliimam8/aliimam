@@ -17,7 +17,7 @@ import { cn } from 'src/lib/utils';
 
 export function NavMenu() {
   return (
-    <div className="hidden p-4 z-50 lg:block">
+    <div className="hidden p-4 lg:block">
       <NavigationMenu>
         <NavigationMenuList><NavigationMenuItem>
             <Link href="/about" legacyBehavior passHref>
@@ -61,7 +61,6 @@ export function NavMenu() {
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>Docs</NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
-
 
         </NavigationMenuList>
       </NavigationMenu>

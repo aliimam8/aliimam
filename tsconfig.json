@@ -6,7 +6,6 @@
     "skipLibCheck": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "allowImportingTsExtensions": true, 
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
@@ -15,8 +14,10 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "noImplicitAny": false,
     "baseUrl": ".",
     "noUncheckedIndexedAccess": true,
+    "strictNullChecks": false,
     "plugins": [
       {
         "name": "next"
@@ -33,8 +34,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".contentlayer/generated",
-    "src/components/common/samplepdf.js", 
-    "src/components/common/home/insta.js"
+    "src/components/common/samplepdf.js"
   ],
   "exclude": ["node_modules"]
 }

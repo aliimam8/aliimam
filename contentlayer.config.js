@@ -1,5 +1,6 @@
 import { defineDocumentType, makeSource } from 'contentlayer/source-files';
 import rehypePrettyCode from 'rehype-pretty-code';
+import rehypeAutolinkHeadings from "rehype-autolink-headings"
 import rehypeSlug from 'rehype-slug';
 import { visit } from 'unist-util-visit';
 
@@ -111,6 +112,54 @@ const BlogPost = defineDocumentType(() => ({
   }
 }));
 
+export const Doc = defineDocumentType(() => ({
+  name: "Doc",
+  filePathPattern: `docs/**/*.mdx`,
+  contentType: "mdx",
+  fields: {
+    title: {
+      type: "string",
+      required: true,
+    },
+    description: {
+      type: "string",
+    },
+    published: {
+      type: "boolean",
+      default: true,
+    },
+  },
+  computedFields,
+}))
+
+export const Guide = defineDocumentType(() => ({
+  name: "Guide",
+  filePathPattern: `guides/**/*.mdx`,
+  contentType: "mdx",
+  fields: {
+    title: {
+      type: "string",
+      required: true,
+    },
+    description: {
+      type: "string",
+    },
+    date: {
+      type: "date",
+      required: true,
+    },
+    published: {
+      type: "boolean",
+      default: true,
+    },
+    featured: {
+      type: "boolean",
+      default: false,
+    },
+  },
+  computedFields,
+}))
+
 
 export const Page = defineDocumentType(() => ({
   name: 'Page',
@@ -131,7 +180,7 @@ export const Page = defineDocumentType(() => ({
 
 export default makeSource({
   contentDirPath: './src/content',
-  documentTypes: [Page, BlogPost, GalleryPost ],
+  documentTypes: [Page, Doc, Guide, BlogPost, GalleryPost ],
   mdx: {
     // remarkPlugins: [remarkGfm],
     rehypePlugins: [
@@ -181,24 +230,15 @@ export default makeSource({
           }
         }
       ],
-      () => (tree) => {
-        visit(tree, (node) => {
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-          if (node?.type === 'element' && node?.tagName === 'div') {
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-            if (!('data-rehype-pretty-code-fragment' in node.properties)) return;
-
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-            for (const child of node.children) {
-              // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-              if (child.tagName === 'pre') {
-                // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
-                child.properties['raw'] = node.raw;
-              }
-            }
-          }
-        });
-      }
+      [
+        rehypeAutolinkHeadings,
+        {
+          properties: {
+            className: ["subheading-anchor"],
+            ariaLabel: "Link to section",
+          },
+        },
+      ],
     ]
   }
 });

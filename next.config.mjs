@@ -4,10 +4,6 @@ import './src/env/env.mjs'
 
 /** @type {import('next').NextConfig} */
 
-import createMDX from "fumadocs-mdx/config";
-
-const withMDX = createMDX();
-
 const nextConfig = {
   reactStrictMode: true,
   typescript: {
@@ -16,6 +12,10 @@ const nextConfig = {
 
   eslint: {
     ignoreDuringBuilds: !!process.env.CI
+  },
+  experimental: {
+    appDir: true,
+    serverComponentsExternalPackages: ["@prisma/client"],
   },
   images: {
     domains: ['res.cloudinary.com', 'khhamnquzieyqedqyvfw.supabase.co', 'images.remotePatterns'],
@@ -43,4 +43,4 @@ const nextConfig = {
 
 };
 
-export default withMDX(withContentlayer(nextConfig));
+export default withContentlayer(nextConfig);
