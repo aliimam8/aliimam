@@ -28,7 +28,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
       <body className="bg-white dark:bg-black">
         <ThemeProvider enableSystem={true} attribute="class">
           <Navbar />
-          
+          <DashNavbar/>
           <LenisProvider>
             <main>{children}</main>
             <Toaster />
