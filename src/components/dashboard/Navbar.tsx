@@ -8,7 +8,7 @@ import {
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { UserNav } from "./UserNav";
 
-export async function Navbar() {
+export async function DashNavbar() {
   const { isAuthenticated, getUser } = getKindeServerSession();
   const user = await getUser();
 
