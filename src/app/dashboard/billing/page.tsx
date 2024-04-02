@@ -18,8 +18,8 @@ import {
 import { unstable_noStore as noStore } from "next/cache";
 
 const featureItems = [
-  { name: "Lorem Ipsum something" },
-  { name: "Lorem Ipsum something" },
+  { name: "Unlimited downloads" },
+  { name: "Cancel any time" },
 ];
 
 async function getData(userId: string) {
@@ -129,10 +129,10 @@ export default async function BillingPage() {
           </div>
 
           <div className="mt-4 flex items-baseline text-6xl font-extrabold">
-            $30 <span className="ml-1 text-2xl text-muted-foreground">/mo</span>
+            ₹99 <span className="ml-1 text-2xl text-muted-foreground">/mo</span>
           </div>
           <p className="mt-5 text-lg text-muted-foreground">
-            Write as many notes as you want for $30 a Month
+          The unlimited creative subscription
           </p>
         </CardContent>
         <div className="flex-1 flex flex-col justify-between px-6 pt-6 pb-8 bg-secondary rounded-lg m-1 space-y-6 sm:p-10 sm:pt-6">
@@ -140,7 +140,7 @@ export default async function BillingPage() {
             {featureItems.map((item, index) => (
               <li key={index} className="flex items-center">
                 <div className="flex-shrink-0">
-                  <CheckCircle2 className="h-6 w-6 text-green-500" />
+                  <CheckCircle2 className="h-6 w-6 text-aired" />
                 </div>
                 <p className="ml-3 text-base">{item.name}</p>
               </li>

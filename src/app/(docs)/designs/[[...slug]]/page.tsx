@@ -5,7 +5,6 @@ import { getTableOfContents } from "@/lib/toc"
 import { Mdx } from "@/components/doc/mdx-components"
 import { DocsPageHeader } from "@/components/doc/page-header"
 import { DocsPager } from "@/components/doc/pager"
-import { DashboardTableOfContents } from "@/components/doc/toc"
 
 import "@/styles/mdx.css"
 
@@ -54,11 +53,7 @@ export default async function DocPage({ params }: DocPageProps) {
         <Separator className="my-6" orientation="horizontal"/>
         <DocsPager doc={doc} />
       </div>
-      <div className="hidden text-sm xl:block">
-        <div className="sticky top-24 -mt-10 max-h-[calc(var(--vh)-4rem)] overflow-y-auto pt-10">
-          <DashboardTableOfContents toc={toc} />
-        </div>
-      </div>
+      
     </main>
   )
 }

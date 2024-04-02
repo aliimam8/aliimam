@@ -6,7 +6,6 @@ import { getTableOfContents } from "@/lib/toc"
 import { Icons } from "@/components/icons"
 import { Mdx } from "@/components/doc/mdx-components"
 import { DocsPageHeader } from "@/components/doc/page-header"
-import { DashboardTableOfContents } from "@/components/doc/toc"
 
 import "@/styles/mdx.css"
 
@@ -63,11 +62,6 @@ export default async function GuidePage({ params }: GuidePageProps) {
             <Icons.chevronLeft className="mr-2 h-4 w-4" />
             See all guides
           </Link>
-        </div>
-      </div>
-      <div className="hidden text-sm lg:block">
-        <div className="sticky top-16 -mt-10 max-h-[calc(var(--vh)-4rem)] overflow-y-auto pt-10">
-          <DashboardTableOfContents toc={toc} />
         </div>
       </div>
     </main>
