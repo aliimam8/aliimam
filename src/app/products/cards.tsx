@@ -35,10 +35,6 @@ export function Graaadients() {
     return (
         <div className="grid gap-6 justify-center">
             <Link
-                href="/products/blooocks">
-                <CardStack items={BLOCKS} />
-            </Link>
-            <Link
                 href="/products/graaadients">
                 <CardStack items={GRADS} />
             </Link>

@@ -24,6 +24,7 @@ export default function HomePage() {
       <Suspense>
         <Hero />
         <AboutMe />
+        <AssetsPage />
         <Intro />
         <div className="flex flex-wrap items-center justify-center gap-4 py-8">
           <Link

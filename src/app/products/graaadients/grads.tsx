@@ -3,13 +3,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from 'src/components/ui/tabs
 
 import Noise from './types/noise';
 import Linear from './types/linear';
-import Radial from './types/radial';
-import Angular from './types/angular';
-import Diamond from './types/diamond';
-import Conical from './types/conical';
-import Reflected from './types/reflected';
-import Triangular from './types/traingular';
-import Spherical from './types/spherical';
 
 export function Grads() {
   return (
@@ -33,27 +26,6 @@ export function Grads() {
       </TabsContent>
       <TabsContent value="2">
         <Linear images={[]} />
-      </TabsContent>
-      <TabsContent value="3">
-        <Radial images={[]} />
-      </TabsContent>
-      <TabsContent value="4">
-        <Angular images={[]} />
-      </TabsContent>
-      <TabsContent value="5">
-        <Diamond images={[]} />
-      </TabsContent>
-      <TabsContent value="6">
-        <Conical images={[]} />
-      </TabsContent>
-      <TabsContent value="7">
-        <Reflected images={[]} />
-      </TabsContent>
-      <TabsContent value="8">
-        <Triangular images={[]} />
-      </TabsContent>
-      <TabsContent value="9">
-        <Spherical images={[]} />
       </TabsContent>
     </Tabs>
   );
