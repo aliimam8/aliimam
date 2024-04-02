@@ -4,9 +4,11 @@ import { compareDesc } from "date-fns"
 
 import { formatDate } from "@/lib/utils"
 import { DocsPageHeader } from "@/components/doc/page-header"
+import { DashboardTableOfContents } from "@/components/doc/toc"
+import { getTableOfContents } from "@/lib/toc"
 
 export const metadata = {
-  title: "Guides",
+  title: "Components",
   description:
     "This section includes end-to-end guides for developing Next.js 13 apps.",
 }
@@ -19,13 +21,13 @@ export default function GuidesPage() {
     })
 
   return (
-    <div className="py-6 lg:py-10">
+    <div className="py-6 lg:py-10 ">
       <DocsPageHeader
-        heading="Guides"
+        heading="Components"
         text="This section includes end-to-end guides for developing Next.js 13 apps."
       />
       {guides?.length ? (
-        <div className="grid gap-4 md:grid-cols-2 md:gap-6">
+        <div className="grid gap-4 md:grid-cols-2 md:gap-6 ">
           {guides.map((guide) => (
             <article
               key={guide._id}

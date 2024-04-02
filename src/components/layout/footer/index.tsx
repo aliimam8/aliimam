@@ -46,6 +46,16 @@ export const items: Menus[] = [
     href: '/contact',
     target: ''
   },
+  {
+    text: 'Terms',
+    href: '/terms',
+    target: ''
+  },
+  {
+    text: 'Privacy',
+    href: '/privacy',
+    target: ''
+  }
 ];
 
 export function SiteFooter() {
@@ -60,7 +70,7 @@ export function SiteFooter() {
       </div>
 
       <div className="mt-8 flex flex-wrap justify-center gap-8 px-8">
-       
+        <Coffee />
       </div>
       <div className="mt-8 flex flex-wrap justify-center gap-8 px-12">
         <NowPlaying />

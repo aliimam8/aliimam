@@ -50,7 +50,7 @@ const PostCard = (props: PostCardProps) => {
     <>
       <Link
         key={_id}
-        href={`/blog/${slug}`}
+        href={`/blogs/${slug}`}
         className={cn(
           'relative flex flex-col rounded-2xl border border-slate-200 p-6 dark:border-slate-800',
           'hover:before:opacity-100'
@@ -59,7 +59,7 @@ const PostCard = (props: PostCardProps) => {
       >
         <div className="bg-background absolute inset-px -z-20 rounded-[inherit]" />
         <Image
-          src={`/images/blog/${slug}/cover.jpg`}
+          src={`/images/blogs/${slug}/cover.jpg`}
           className="rounded-lg hover:saturate-0"
           width={480}
           height={360}

@@ -16,15 +16,18 @@ const navigation = [
   { name: 'About AI', href: '/about', current: true  },
   { name: 'Gallery', href: '/gallery', current: true },
   { name: 'Portfolio', href: '/portfolio', current: true },
+  { name: 'Store', href: '/store', current: true },
   { name: 'Products', href: '/products', current: true },
-  { name: 'Blogs', href: '/blogs', current: true },
-  { name: 'Designs', href: '/designs', current: true },
+  { name: 'Colors', href: '/colors', current: true },
+  { name: 'Blog', href: '/blog', current: true },
+  { name: 'Account', href: 'https://shopify.com/68087251194/account', current: true }
 ];
 
 const helps = [
   { name: 'Contact', href: '/contact', current: true },
   { name: 'Privacy', href: '/privacy', current: true },
   { name: 'Terms', href: '/terms', current: true },
+  { name: 'Uses', href: '/uses', current: true }
 ];
 
 export default function Navbar() {

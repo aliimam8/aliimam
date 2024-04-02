@@ -41,8 +41,8 @@ export async function Navbar() {
                 <LoginNav />
               )}
             </div>
-            <div className=" text-slate-600 hover:text-black dark:text-slate-400 hover:dark:text-white">
-              
+            <div className="pr-2 text-slate-600 hover:text-black dark:text-slate-400 hover:dark:text-white">
+              <CommandMenu />
             </div>
           </div>
         </div>
