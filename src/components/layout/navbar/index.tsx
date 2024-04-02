@@ -7,13 +7,8 @@ import { Icons } from 'src/components/icons';
 import CommandMenu from './search';
 import { ThemeToggle } from './themetoggle';
 import { Separator } from 'src/components/ui/seperator';
-import {
-  RegisterLink,
-  LoginLink,
-} from "@kinde-oss/kinde-auth-nextjs/components";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
-import { UserNav } from "./UserNav";
-import { Button } from '@/components/ui/button';
+import { UserNav, LoginNav } from "./UserNav";
 
 export async function Navbar() {
   const { isAuthenticated, getUser } = getKindeServerSession();
@@ -32,30 +27,22 @@ export async function Navbar() {
           <div className="mx-auto flex h-12 flex-1 items-center justify-end gap-3 px-12 md:px-0">
 
             <ThemeToggle />
-            <div className="flex z-50 items-center">
-
-                {(await isAuthenticated()) ? (
-                  <UserNav
-                    email={user?.email as string}
-                    image={user?.picture as string}
-                    name={user?.given_name as string}
-                  />
-                ) : (
-                  <div className="flex items-center gap-x-3">
-                    <LoginLink>
-                    <Icons.login className="w-5" />
-                    </LoginLink>
-
-                    <RegisterLink>
-                    <Icons.logout className="w-5" />
-                    </RegisterLink>
-                  </div>
-                )}
-              </div>
             <Separator orientation="vertical" className="mr-2 h-6 bg-slate-400 dark:bg-slate-600" />
+
+            <div className="flex items-center">
+
+              {(await isAuthenticated()) ? (
+                <UserNav
+                  email={user?.email as string}
+                  image={user?.picture as string}
+                  name={user?.given_name as string}
+                />
+              ) : (
+                <LoginNav />
+              )}
+            </div>
             <div className="pr-2 text-slate-600 hover:text-black dark:text-slate-400 hover:dark:text-white">
               <CommandMenu />
-              
             </div>
           </div>
         </div>

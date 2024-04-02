@@ -51,14 +51,14 @@ export function NavMenu() {
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <Link href="/blog" legacyBehavior passHref>
+            <Link href="/blogs" legacyBehavior passHref>
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>Blogs</NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <Link href="/docs" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>Docs</NavigationMenuLink>
+            <Link href="/designs" legacyBehavior passHref>
+              <NavigationMenuLink className={navigationMenuTriggerStyle()}>Designs</NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
 

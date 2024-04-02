@@ -10,9 +10,10 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { CreditCard, DoorClosed, Home, Settings } from "lucide-react";
-import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
+import { LoginLink, LogoutLink, RegisterLink } from "@kinde-oss/kinde-auth-nextjs/components";
 
 import Link from "next/link";
+import { Icons } from "@/components/icons";
 
 export const navItems = [
   { name: "Home", href: "/dashboard", icon: Home },
@@ -34,7 +35,7 @@ export function UserNav({
       <DropdownMenuTrigger asChild>
         <Button variant="outline" className="mr-2 relative h-7 w-7 rounded-full">
           <Avatar className="h-7 w-7 rounded-full">
-            <AvatarImage className="object-cover w-full h-full" src={image} alt="" />
+            <AvatarImage className="object-cover bg-aired w-full h-full" src={image} alt="" />
             <AvatarFallback>Ali</AvatarFallback>
           </Avatar>
         </Button>
@@ -76,6 +77,41 @@ export function UserNav({
               <DoorClosed className="w-4 h-4" />
             </span>
           </LogoutLink>
+        </DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
+}
+
+
+export function LoginNav() {
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button variant="default" className="mr-2 relative h-6 w-6 bg-aired rounded-full">
+         
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent className="w-48" align="end" forceMount>
+      <DropdownMenuItem
+          className="w-full flex justify-between items-center"
+          asChild
+        >
+          <LoginLink>
+            Login
+            <Icons.login className="w-5" />
+          </LoginLink>
+          </DropdownMenuItem>
+        <DropdownMenuSeparator />
+
+        <DropdownMenuItem
+          className="w-full flex justify-between items-center"
+          asChild
+        >
+          <RegisterLink>
+            Registration
+            <Icons.logout className="w-5" />
+          </RegisterLink>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

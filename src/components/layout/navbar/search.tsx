@@ -106,7 +106,7 @@ const CommandMenu = () => {
     <>
       <Button
         variant='ghost'
-        className='size-9 p-0'
+        className='size-9 p-0 hidden md:block lg:block'
         onClick={() => setOpen(true)}
         type='button'
         aria-label='Open command menu'

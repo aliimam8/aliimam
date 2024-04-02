@@ -57,9 +57,9 @@ export default function AboutAI() {
           <h1 className="my-6 text-center text-xs font-semibold uppercase tracking-[.3em] text-slate-400 ">
           Worked with Brands Like
         </h1>
-        
+        <Logos/>
         </div>
-        
+        <Connect/>
       </Suspense>
     </>
   );
