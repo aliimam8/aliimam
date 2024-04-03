@@ -19,9 +19,10 @@ export default function GuidesPage() {
     .sort((a, b) => {
       return compareDesc(new Date(a.date), new Date(b.date))
     })
+    
 
   return (
-    <div className="py-6 lg:py-10 ">
+    <div className="py-6 lg:py-10  xl:pr-72">
       <DocsPageHeader
         heading="Components"
         text="This section includes end-to-end guides for developing Next.js 13 apps."

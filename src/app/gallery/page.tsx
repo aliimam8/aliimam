@@ -41,7 +41,7 @@ const GalleryPage = () => {
   const posts = getAllGalleryPosts();
 
   return (
-    <div className="mx-auto mt-40 max-w-5xl px-6">
+    <div className="mx-auto mt-40 max-w-5xl mb-40 px-6">
       <PageTitle
         title="Where Every Image Unveils a Story!"
         description={`I started uploading Gallery in December 2023, mainly about graphic Design and

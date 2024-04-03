@@ -8,15 +8,7 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+
 import prisma from "@/lib/db";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 
@@ -65,10 +57,10 @@ export default async function SettingPage() {
 
   return (
     <div className="grid items-start gap-8">
-      <div className="flex items-center justify-between px-2">
+      <div className="flex items-center justify-between">
         <div className="grid gap-1">
-          <h1 className="text-3xl md:text-4xl">Settings</h1>
-          <p className="text-lg text-muted-foreground">Your Profile settings</p>
+          <h1 className="text-3xl font-bold md:text-4xl">Settings</h1>
+          <p className="text-lg text-slate-600 dark:text-slate-400">Your Profile settings</p>
         </div>
       </div>
 

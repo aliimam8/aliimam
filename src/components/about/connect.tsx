@@ -65,7 +65,7 @@ export const Connect: React.FC = () => {
         )
     }, [animate])
     return (
-        <section className="relative mx-auto max-w-5xl mt-10 px-6">
+        <section className="relative mb-40 mx-auto max-w-5xl mt-10 px-6">
             <HighlightGroup className="h-full group">
                 <div className="h-full md:col-span-6 lg:col-span-12  group/item" data-aos="fade-down">
                     <HighlighterItem className='rounded-3xl'>

@@ -5,7 +5,7 @@ import * as SeparatorPrimitive from '@radix-ui/react-separator';
 
 import { cn } from 'src/lib/utils';
 
-const Separator = React.forwardRef<
+const AISeparator = React.forwardRef<
   React.ElementRef<typeof SeparatorPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof SeparatorPrimitive.Root>
 >(({ className, orientation = 'horizontal', decorative = true, ...props }, ref) => (
@@ -21,9 +21,9 @@ const Separator = React.forwardRef<
     {...props}
   />
 ));
-Separator.displayName = SeparatorPrimitive.Root.displayName;
+AISeparator.displayName = SeparatorPrimitive.Root.displayName;
 
-const AISeparator = React.forwardRef<
+const Separator = React.forwardRef<
   React.ElementRef<typeof SeparatorPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof SeparatorPrimitive.Root>
 >(({ className, orientation = 'horizontal', decorative = true, ...props }, ref) => (

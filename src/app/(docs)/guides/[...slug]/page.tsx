@@ -50,7 +50,7 @@ export default async function GuidePage({ params }: GuidePageProps) {
   const toc = await getTableOfContents(guide.body.raw)
 
   return (
-    <main className="relative py-6 lg:grid lg:gap-10 lg:py-10 xl:gap-20">
+    <main className="relative py-6 lg:grid lg:gap-10 lg:py-10 xl:gap-20 xl:grid xl:grid-cols-[1fr_260px]">
       <div>
         <DocsPageHeader heading={guide.title} text={guide.description} />
         <Mdx code={guide.body.code} />
@@ -65,12 +65,13 @@ export default async function GuidePage({ params }: GuidePageProps) {
           </Link>
         </div>
 
-        <div className="hidden text-sm xl:block">
-          <div className="sticky top-24 border-l border-slate-400 dark:border-slate-600 h-[calc(100vh-3.5rem)] p-12 -mt-10  overflow-y-auto pt-10">
+      </div>
+
+      <div className="hidden text-sm xl:block">
+          <div className="sticky top-24 border-l border-slate-400 dark:border-slate-600 h-[calc(100vh-3.5rem)] -my-10 px-12 py-12 overflow-y-auto">
             <DashboardTableOfContents toc={toc} />
           </div>
         </div>
-      </div>
     </main>
   )
 }

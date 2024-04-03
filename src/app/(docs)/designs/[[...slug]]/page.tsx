@@ -47,17 +47,17 @@ export default async function DocPage({ params }: DocPageProps) {
   const toc = await getTableOfContents(doc.body.raw)
 
   return (
-    <main className="relative py-6 lg:gap-10 lg:py-10 grid xl:grid-cols-[1fr_260px]">
-      <div className="mx-auto w-full min-w-0">
+    <main className="relative lg:gap-10 grid xl:grid-cols-[1fr_260px]">
+      <div className="mx-auto w-full py-10 min-w-0">
         <DocsPageHeader heading={doc.title} text={doc.description} />
         <Mdx code={doc.body.code} />
-        <Separator className="my-6" orientation="horizontal"/>
-        <DocsPager doc={doc} />
+        <Separator className="my-8"/>
+        <DocsPager doc={doc}/>
       </div>
       <div className="hidden text-sm xl:block">
-        <div className="sticky top-24 border-l border-slate-400 dark:border-slate-600 h-[calc(100vh-3.5rem)] p-12 -mt-10  overflow-y-auto pt-10">
-          <DashboardTableOfContents toc={toc} />
-        </div>
+      <div className="sticky top-24 border-l border-slate-400 dark:border-slate-600 h-[calc(100vh-3.5rem)] px-12 py-12 overflow-y-auto">
+            <DashboardTableOfContents toc={toc} />
+          </div>
       </div>
     </main>
   )

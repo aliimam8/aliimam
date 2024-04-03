@@ -13,8 +13,8 @@ export const metadata: Metadata = {
 export default function AboutAI() {
   return (
     <>
-      <Suspense>
-        <p className='mt-40 text-center my-3 text-xs text-slate-600 dark:text-slate-400 lg:text-md tracking-widest uppercase font-light'>
+      <div className='my-40'>
+        <p className='text-center my-3 text-xs text-slate-600 dark:text-slate-400 lg:text-md tracking-widest uppercase font-light'>
           Take a look at what’s new right now.
         </p>
         <div className="flex flex-col items-center px-8">
@@ -25,7 +25,7 @@ export default function AboutAI() {
           <hr className="mx-auto my-4 mb-16 h-1 w-6 rounded border-0 bg-aired"></hr>
         </div>
         <Graaadients />
-      </Suspense>
+      </div>
     </>
   );
 }

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'Explore the latest news and updates from the community'
 };
 
-export default function Gallery() {
+export default function Portfolio() {
   return (
     <main>
       <div className="mx-auto mt-40 max-w-3xl px-4 sm:px-6 md:max-w-7xl ">

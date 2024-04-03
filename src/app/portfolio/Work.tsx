@@ -16,7 +16,7 @@ import Modals from './creatives/3d';
 
 export function Work() {
   return (
-    <Tabs defaultValue="1" className="items-center justify-center text-center">
+    <Tabs defaultValue="1" className="items-center justify-center text-center mb-40">
       <TabsList className="sticky top-24 z-20 w-full items-center justify-center text-center lg:w-auto">
         <ScrollArea className="whitespace-nowrap">
           <div className="space-x-2">
@@ -65,7 +65,6 @@ export function Work() {
       <TabsContent value="11">
         <SMFestive images={[]}/>
       </TabsContent>
-
       <TabsContent value="2">
         <Campaigns images={[]} />
       </TabsContent>

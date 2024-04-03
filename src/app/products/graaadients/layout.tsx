@@ -8,7 +8,7 @@ import { Avegra } from '@/app/fonts';
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <div >
-      <Suspense >
+      <div className='my-40'>
         <Image
           src="/images/products/grad.png"
           alt="Your Image"
@@ -50,7 +50,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
       </div>
         <main>{children}</main>
-      </Suspense>
+      </div>
     </div>
   );
 }

@@ -16,10 +16,14 @@ import {
   StripeSubscriptionCreationButton,
 } from "@/components/dashboard/Submitbuttons";
 import { unstable_noStore as noStore } from "next/cache";
+import { Badge } from "@/components/ui/badge";
 
 const featureItems = [
-  { name: "Lorem Ipsum something" },
-  { name: "Lorem Ipsum something" },
+  { name: "Unlimited downloads" },
+  { name: "Cancel any time" },
+  { name: "Millions of creative assets" },
+  { name: "Simple commercial licensing" },
+  { name: "Beautiful library" },
 ];
 
 async function getData(userId: string) {
@@ -90,16 +94,16 @@ export default async function BillingPage() {
   if (data?.status === "active") {
     return (
       <div className="grid items-start gap-8">
-        <div className="flex items-center justify-between px-2">
+        <div className="flex items-center justify-between">
           <div className="grid gap-1">
             <h1 className="text-3xl md:text-4xl ">Subscription</h1>
             <p className="text-lg text-muted-foreground">
-              Settings reagding your subscription
+            The only creative subscription you need
             </p>
           </div>
         </div>
 
-        <Card className="w-full lg:w-2/3">
+        <Card className="w-full">
           <CardHeader>
             <CardTitle>Edit Subscription</CardTitle>
             <CardDescription>
@@ -119,37 +123,39 @@ export default async function BillingPage() {
   }
 
   return (
-    <div className="max-w-md mx-auto space-y-4">
-      <Card className="flex flex-col">
+    <div className="space-y-4 ">
+      <Card className="flex flex-wrap justify-between">
         <CardContent className="py-8">
           <div>
-            <h3 className="inline-flex px-4 py-1 rounded-full text-sm font-semibold tracking-wide uppercase bg-primary/10 text-primary">
+            <Badge variant="secondary" className="h-10 w-md px-6 text-md">
               Monthly
-            </h3>
+            </Badge>
           </div>
 
           <div className="mt-4 flex items-baseline text-6xl font-extrabold">
-            $30 <span className="ml-1 text-2xl text-muted-foreground">/mo</span>
+            ₹ 99 <span className="ml-1 text-2xl text-slate-600 dark:text-slate-400">/mo</span>
           </div>
-          <p className="mt-5 text-lg text-muted-foreground">
-            Write as many notes as you want for $30 a Month
+          <p className="mt-5 text-md text-slate-600 dark:text-slate-400">
+            Download unlimited files for ₹ 99 a Month
           </p>
+
+        <form className="mx-auto max-w-md justify-start mt-6" action={createSubscription}>
+            <StripeSubscriptionCreationButton />
+          </form>
         </CardContent>
-        <div className="flex-1 flex flex-col justify-between px-6 pt-6 pb-8 bg-secondary rounded-lg m-1 space-y-6 sm:p-10 sm:pt-6">
+
+        <div className="flex bg-slate-100 dark:bg-slate-900 p-8 pr-20 m-6 rounded-3xl">
           <ul className="space-y-4">
             {featureItems.map((item, index) => (
               <li key={index} className="flex items-center">
                 <div className="flex-shrink-0">
-                  <CheckCircle2 className="h-6 w-6 text-green-500" />
+                  <CheckCircle2 className="h-6 w-6 text-aired" />
                 </div>
                 <p className="ml-3 text-base">{item.name}</p>
               </li>
             ))}
           </ul>
 
-          <form className="w-full" action={createSubscription}>
-            <StripeSubscriptionCreationButton />
-          </form>
         </div>
       </Card>
     </div>

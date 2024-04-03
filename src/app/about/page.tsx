@@ -15,7 +15,6 @@ import { cn } from '@/lib/utils';
 export default function AboutAI() {
   return (
     <>
-      <Suspense>
         <div className="mx-auto mt-40 max-w-3xl px-6 md:max-w-5xl ">
             <div className="relative mx-auto mt-10 flex h-[28rem] max-w-sm flex-col items-start border border-slate-100 p-4 dark:border-slate-900">
               <Icons.add strokeWidth={1} className="absolute -left-4 -top-4 h-8 w-8 text-aired" />
@@ -58,9 +57,9 @@ export default function AboutAI() {
           Worked with Brands Like
         </h1>
         <Logos/>
-        </div>
+
         <Connect/>
-      </Suspense>
+        </div>
     </>
   );
 }

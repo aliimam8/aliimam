@@ -40,7 +40,7 @@ const BlogPage = () => {
   const posts = getAllBlogPosts()
 
   return (
-    <div className="mx-auto mt-40 max-w-5xl px-6">
+    <div className="mx-auto my-40 max-w-5xl px-6">
       <PageTitle
         title='Blogs'
         description={`I started writing articles in December 2023, mainly about graphic Design and

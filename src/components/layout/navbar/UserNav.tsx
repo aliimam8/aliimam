@@ -33,8 +33,8 @@ export function UserNav({
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button >
-          <Avatar className="">
+        <Button variant="outline">
+          <Avatar className="-mx-2">
             <AvatarImage className="object-cover rounded-full bg-aired h-7 w-7" src={image} alt="" />
             <AvatarFallback>AI</AvatarFallback>
           </Avatar>

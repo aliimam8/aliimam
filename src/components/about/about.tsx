@@ -7,7 +7,7 @@ import { cn } from 'src/lib/utils';
 import CountUpNumber from '../common/countnumber';
 
 import { Icons } from 'src/components/icons';
-import { AISeparator } from '../ui/seperator';
+import { Separator } from '../ui/seperator';
 
 const skills = [
   { skill: 'Graphic Design' },
@@ -80,7 +80,7 @@ const About = () => {
             <div className='relative my-8'>
               <Icons.add strokeWidth={1} className="absolute -top-3 -left-3 h-6 w-6 text-aired" />
               <Icons.add strokeWidth={1} className="absolute -top-3 -right-3 h-6 w-6 text-aired" />
-              <AISeparator />
+              <Separator />
             </div>
             <h1 className="mt-6 text-center text-lg font-bold">My Age</h1>
             <MyAge />
@@ -211,7 +211,7 @@ const About = () => {
             <div className='relative my-8'>
               <Icons.add strokeWidth={1} className="absolute -top-3 -left-3 h-6 w-6 text-aired" />
               <Icons.add strokeWidth={1} className="absolute -top-3 -right-3 h-6 w-6 text-aired" />
-              <AISeparator />
+              <Separator />
             </div>
 
             <div className="mt-10">

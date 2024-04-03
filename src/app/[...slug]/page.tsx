@@ -68,7 +68,7 @@ export default async function PagePage({ params }: PageProps) {
   }));
 
   return (
-    <div className="mx-auto mt-20 max-w-5xl px-6">
+    <div className="mx-auto my-20 max-w-5xl px-6">
       <PageHeader>
         <div className="mt-10">
           <PageHeaderHeading>{page.title}</PageHeaderHeading>

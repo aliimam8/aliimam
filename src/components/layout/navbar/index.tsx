@@ -14,7 +14,7 @@ export async function Navbar() {
   const { isAuthenticated, getUser } = getKindeServerSession();
   const user = await getUser();
   return (
-    <nav className="fixed top-0 z-50 w-full border-b border-aired/25 bg-white/80 backdrop-blur-md backdrop-filter dark:bg-black/80">
+    <nav className="fixed top-0 z-50 w-full border-b border-aired/25 bg-white/60 backdrop-blur-md backdrop-filter dark:bg-black/60">
 
       <div className="mx-auto flex items-center md:px-20">
         <div className="mx-auto flex h-14 max-w-5xl flex-1 items-center px-2">
