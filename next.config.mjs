@@ -21,14 +21,7 @@ const nextConfig = {
   },
   images: {
     domains: ['res.cloudinary.com', 'khhamnquzieyqedqyvfw.supabase.co', 'images.remotePatterns'],
-    formats: ['image/avif', 'image/webp'],
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'cdn.shopify.com',
-        pathname: '/s/files/**'
-      }
-    ]
+    formats: ['image/avif', 'image/webp']
   },
   webpack: (config) => {
     config.infrastructureLogging = {
