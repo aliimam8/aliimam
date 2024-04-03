@@ -34,7 +34,7 @@ export default function Navbar() {
         <>
           <header className="">
             <div className="fixed right-2 top-2 flex flex-1 items-center justify-end">
-              <div className="mr-2 flex transition ease-in-out lg:hidden">
+              <div className="mr-2 md:px-8 flex transition ease-in-out lg:hidden">
                 <Disclosure.Button className="items-center justify-center p-2 text-center text-slate-600 dark:text-slate-400">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
@@ -55,8 +55,8 @@ export default function Navbar() {
                 leaveFrom="opacity-100"
                 leaveTo="opacity-0"
               >
-                <Disclosure.Panel className="lg:hidden">
-                  <div className="flex flex-col px-6 py-4 ">
+                <Disclosure.Panel className="lg:hidden mx-auto md:max-w-3xl px-6">
+                  <div className="flex flex-col py-4 ">
                     {navigation.map((item) => (
                       <Disclosure.Button
                         key={item.name}

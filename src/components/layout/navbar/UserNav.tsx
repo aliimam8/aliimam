@@ -33,18 +33,18 @@ export function UserNav({
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" className="mr-2 relative h-7 w-7 rounded-full">
-          <Avatar className="h-7 w-7 rounded-full">
-            <AvatarImage className="object-cover bg-aired w-full h-full" src={image} alt="" />
-            <AvatarFallback>Ali</AvatarFallback>
+        <Button >
+          <Avatar className="">
+            <AvatarImage className="object-cover rounded-full bg-aired h-7 w-7" src={image} alt="" />
+            <AvatarFallback>AI</AvatarFallback>
           </Avatar>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56" align="end" forceMount>
         <DropdownMenuLabel>
           <div className="flex flex-col space-y-4">
-            <p className="text-sm font-medium leading-none">{name}</p>
-            <p className="text-xs leading-none text-muted-foreground">
+            <p className="text-lg font-bold leading-none">{name}</p>
+            <p className="text-xs leading-none text-slate-600 dark:text-slate-400">
               {email}
             </p>
           </div>
@@ -72,7 +72,7 @@ export function UserNav({
           asChild
         >
           <LogoutLink>
-            Logout{" "}
+            Logout
             <span>
               <DoorClosed className="w-4 h-4" />
             </span>

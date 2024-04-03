@@ -17,7 +17,7 @@ export function Coffee() {
     
     <Drawer>
       <DrawerTrigger asChild>
-        <Button variant="aibutton" size="sm" className="flex gap-2">
+        <Button variant="outline" size="sm" className="flex h-11 gap-2">
         <span className='relative flex h-3 w-3'>
             <span className='absolute inline-flex h-full w-full animate-ping rounded-full bg-aired opacity-75' />
             <span className='relative inline-flex h-3 w-3 rounded-full bg-aired' />

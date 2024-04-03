@@ -15,7 +15,7 @@ const Footer = () => {
   // eslint-disable-next-line no-unused-vars
   const currentTheme = theme === 'system' ? systemTheme : theme;
   return (
-    <div className="mt-8 md:mt-0 flex justify-center">
+    <div className="flex justify-center">
       <div className="rounded-full border border-slate-100 dark:border-slate-900 p-1">
         <button
           onClick={() => setTheme('light')}

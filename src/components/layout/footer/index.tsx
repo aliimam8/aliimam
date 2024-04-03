@@ -69,9 +69,6 @@ export function SiteFooter() {
         </Link>
       </div>
 
-      <div className="mt-8 flex flex-wrap justify-center gap-8 px-8">
-        <Coffee />
-      </div>
       <div className="mt-8 flex flex-wrap justify-center gap-8 px-12">
         <NowPlaying />
       </div>
@@ -100,8 +97,9 @@ export function SiteFooter() {
         </div>
       </div>
 
-      <div className='flex flex-wrap justify-center'>
-        <div className="flex flex-wrap items-center justify-center gap-6 gap-y-4 px-8">
+      <div className='flex flex-wrap justify-center gap-y-6'>
+      <Coffee />
+        <div className="flex flex-wrap items-center justify-center gap-6 gap-y-4 px-6">
           <Link href="tel:+919650133705" rel="noreferrer" target="_blank" className={Underline}>
             <Icons.phone strokeWidth={1.5} className="h-5 w-5" />
           </Link>
@@ -154,7 +152,7 @@ export function SiteFooter() {
             <Icons.Linked className="h-5 w-5" />
           </Link>
           <Link
-            href="https://www.youtube.com/channel/UCZYm9jYmDesAGzbyFacUSfA"
+            href="https://www.youtube.com/@aliimam_in"
             rel="noreferrer"
             target="_blank"
             className={Underline}
@@ -162,7 +160,6 @@ export function SiteFooter() {
             <Icons.youTube className="h-5 w-5" />
           </Link>
         </div>
-
         <ThemeToogle />
       </div>
 

@@ -89,14 +89,19 @@ const CommandMenu = () => {
       name: 'Social',
       actions: [
         {
-          title: 'GitHub',
+          title: 'Instagram',
           icon: <Icons.insta className='mr-3 size-4' />,
           onSelect: () => openLink('https://www.instagram.com/aliimam.in/')
         },
         {
-          title: 'Facebook',
-          icon: <Icons.insta className='mr-3 size-4' />,
-          onSelect: () => openLink('https://www.instagram.com/aliimam.in/')
+          title: 'Linkedin',
+          icon: <Icons.Linked className='mr-3 size-4' />,
+          onSelect: () => openLink('https://www.linkedin.com/in/aliimam-in/')
+        },
+        {
+          title: 'Youtube',
+          icon: <Icons.youTube className='mr-3 size-4' />,
+          onSelect: () => openLink('https://www.youtube.com/@aliimam_in')
         }
       ]
     }

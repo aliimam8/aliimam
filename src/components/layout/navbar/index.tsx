@@ -24,7 +24,7 @@ export async function Navbar() {
             <span className="sr-only">Home</span>
           </Link>
           <NavMenu />
-          <div className="mx-auto flex h-12 flex-1 items-center justify-end gap-3 px-12 md:px-0">
+          <div className="mx-auto flex h-12 flex-1 items-center justify-end gap-3 px-10 md:px-0">
 
             <ThemeToggle />
             <Separator orientation="vertical" className="mr-2 h-6 bg-slate-400 dark:bg-slate-600" />
@@ -41,7 +41,7 @@ export async function Navbar() {
                 <LoginNav />
               )}
             </div>
-            <div className="pr-2 text-slate-600 hover:text-black dark:text-slate-400 hover:dark:text-white">
+            <div className=" text-slate-600 hover:text-black dark:text-slate-400 hover:dark:text-white">
               <CommandMenu />
             </div>
           </div>
