@@ -16,7 +16,9 @@ const nextConfig = {
   experimental: {
     appDir: true,
     serverComponentsExternalPackages: ["@prisma/client"],
-    concurrentFeatures: false
+    concurrentFeatures: false,
+    missingSuspenseWithCSRBailout: false,
+    runtime?: 'nodejs' | 'edge'
   },
   images: {
     domains: ['res.cloudinary.com', 'khhamnquzieyqedqyvfw.supabase.co', 'images.remotePatterns'],
@@ -36,10 +38,6 @@ const nextConfig = {
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return config;
-  },
-
-  experimental: {
-    missingSuspenseWithCSRBailout: false,
   },
 
 };
