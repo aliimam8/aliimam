@@ -16,9 +16,8 @@ const nextConfig = {
   experimental: {
     appDir: true,
     serverComponentsExternalPackages: ["@prisma/client"],
-    concurrentFeatures: false,
+    concurrentFeatures: true,
     missingSuspenseWithCSRBailout: false,
-    runtime?: 'nodejs' | 'edge'
   },
   images: {
     domains: ['res.cloudinary.com', 'khhamnquzieyqedqyvfw.supabase.co', 'images.remotePatterns'],
