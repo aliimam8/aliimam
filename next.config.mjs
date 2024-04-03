@@ -16,17 +16,12 @@ const nextConfig = {
   experimental: {
     appDir: true,
     serverComponentsExternalPackages: ["@prisma/client"],
+    concurrentFeatures: true,
+    missingSuspenseWithCSRBailout: false,
   },
   images: {
     domains: ['res.cloudinary.com', 'khhamnquzieyqedqyvfw.supabase.co', 'images.remotePatterns'],
-    formats: ['image/avif', 'image/webp'],
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'cdn.shopify.com',
-        pathname: '/s/files/**'
-      }
-    ]
+    formats: ['image/avif', 'image/webp']
   },
   webpack: (config) => {
     config.infrastructureLogging = {
@@ -35,10 +30,6 @@ const nextConfig = {
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return config;
-  },
-
-  experimental: {
-    missingSuspenseWithCSRBailout: false,
   },
 
 };

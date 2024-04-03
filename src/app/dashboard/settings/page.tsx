@@ -105,26 +105,7 @@ export default async function SettingPage() {
                 />
               </div>
 
-              <div className="space-y-1">
-                <Label>Color Scheme</Label>
-                <Select name="color" defaultValue={data?.colorScheme}>
-                  <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Select a color" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectGroup>
-                      <SelectLabel>Color</SelectLabel>
-                      <SelectItem value="theme-green">Green</SelectItem>
-                      <SelectItem value="theme-blue">Blue</SelectItem>
-                      <SelectItem value="theme-violet">Violet</SelectItem>
-                      <SelectItem value="theme-yellow">Yellow</SelectItem>
-                      <SelectItem value="theme-orange">Orange</SelectItem>
-                      <SelectItem value="theme-red">Red</SelectItem>
-                      <SelectItem value="theme-rose">Rose</SelectItem>
-                    </SelectGroup>
-                  </SelectContent>
-                </Select>
-              </div>
+              
             </div>
           </CardContent>
 
