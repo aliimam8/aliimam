@@ -16,6 +16,7 @@ const nextConfig = {
   experimental: {
     appDir: true,
     serverComponentsExternalPackages: ["@prisma/client"],
+    concurrentFeatures: true
   },
   images: {
     domains: ['res.cloudinary.com', 'khhamnquzieyqedqyvfw.supabase.co', 'images.remotePatterns'],
