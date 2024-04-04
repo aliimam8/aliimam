@@ -25,108 +25,43 @@ export const docsConfig: DocsConfig = {
       title: "Documentation",
       items: [
         {
-          title: "Introduction",
+          title: "Layout",
           href: "/designs/documentation",
         },
         {
-          title: "Contentlayer",
-          href: "/designs/in-progress",
-          disabled: true,
-        },
-        {
-          title: "Components",
-          href: "/designs/documentation/components",
-        },
-        {
-          title: "Code Blocks",
-          href: "/designs/documentation/code-blocks",
-        },
-        {
-          title: "Style Guide",
-          href: "/designs/documentation/style-guide",
-        },
-        {
-          title: "Search",
-          href: "/designs/in-progress",
-          disabled: true,
-        },
-      ],
-    },
-    {
-      title: "Blog",
-      items: [
-        {
-          title: "Introduction",
-          href: "/designs/in-progress",
-          disabled: true,
-        },
-        {
-          title: "Build your own",
-          href: "/designs/in-progress",
-          disabled: true,
-        },
-        {
-          title: "Writing Posts",
-          href: "/designs/in-progress",
-          disabled: true,
-        },
-      ],
-    },
-    {
-      title: "Dashboard",
-      items: [
-        {
-          title: "Introduction",
-          href: "/designs/in-progress",
-          disabled: true,
-        },
-        {
-          title: "Layouts",
-          href: "/designs/in-progress",
-          disabled: true,
-        },
-        {
-          title: "Server Components",
-          href: "/designs/in-progress",
-          disabled: true,
-        },
-        {
-          title: "Authentication",
-          href: "/designs/in-progress",
-          disabled: true,
-        },
-        {
-          title: "Database with Prisma",
-          href: "/designs/in-progress",
-          disabled: true,
-        },
-        {
-          title: "API Routes",
-          href: "/designs/in-progress",
-          disabled: true,
-        },
-      ],
-    },
-    {
-      title: "Marketing Site",
-      items: [
-        {
-          title: "Introduction",
-          href: "/designs/in-progress",
-          disabled: true,
-        },
-        {
-          title: "File Structure",
-          href: "/designs/in-progress",
-          disabled: true,
-        },
-        {
-          title: "Tailwind CSS",
-          href: "/designs/in-progress",
-          disabled: true,
+          title: "Color Theory",
+          href: "/designs/documentation/",
         },
         {
           title: "Typography",
+          href: "/designs/documentation/",
+        },
+        {
+          title: "Visual Hierarchy",
+          href: "/designs/documentation/",
+        },
+        {
+          title: "Imagery",
+          href: "/designs/documentation/",
+        },
+        {
+          title: "Whitespace",
+          href: "/designs/documentation/",
+        },
+        {
+          title: "Consistency",
+          href: "/designs/documentation/",
+        },
+        {
+          title: "Unity",
+          href: "/designs/documentation/",
+        },
+        {
+          title: "Functionality",
+          href: "/designs/documentation/",
+        },
+        {
+          title: "Somthing New",
           href: "/designs/in-progress",
           disabled: true,
         },

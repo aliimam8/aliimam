@@ -3,7 +3,7 @@
 import { useLenis } from '@studio-freight/react-lenis';
 import { useRef, useState } from 'react';
 import { Icons } from 'src/components/icons';
-import { AISeparator } from "@/components/ui/seperator"
+import { Separator } from "@/components/ui/seperator"
 import { HighlighterItem, HighlightGroup } from "src/components/ui/highlighter";
 
 function opacityForBlock(sectionProgress: number, blockNumber: number) {
@@ -68,14 +68,14 @@ export default function Intro() {
                       />{' '}
                       language.
                     </div>
-                    <AISeparator />
+                    <Separator />
                     <span
                       className="introText inline-block after:content-['_'] px-8"
                       style={{ opacity: opacityForBlock(progress, 1) }}
                     >
                       I leverage my passion and skills to create digital products and experiences.
                     </span>
-                    <AISeparator />
+                    <Separator />
                     <span
                       className="introText inline-block px-8"
                       style={{ opacity: opacityForBlock(progress, 2) }}

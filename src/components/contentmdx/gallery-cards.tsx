@@ -11,6 +11,7 @@ import { type GalleryPostCore, type Likes, type Views } from '@/types';
 
 import Image from '../mdx/image';
 import { cn } from '@/lib/utils';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '../ui/carousel';
 
 type PostCardsProps = {
   posts: GalleryPostCore[];
@@ -47,10 +48,25 @@ const PostCards = (props: PostCardsProps) => {
 
   return (
     <>
-      <div className="group mt-2 grid gap-4 md:grid-cols-3" data-testid="post-cards">
-        {Posts.map((post) => (
-          <PostCard key={post._id} {...post} />
-        ))}
+      <div className="" data-testid="post-cards">
+      <Carousel
+        className="w-full max-w-sm md:max-w-full"
+        opts={{
+          align: 'start'
+        }}
+      >
+        <div className="hidden justify-end gap-3 md:flex">
+          <CarouselPrevious />
+          <CarouselNext />
+        </div>
+        <CarouselContent className="">
+          {posts.map((post) => (
+            <CarouselItem className="md:basis-1/3">
+              <PostCard key={post._id} {...post} />
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </Carousel>
       </div>
       
     </>
@@ -84,7 +100,7 @@ const PostCard = (props: PostCardProps) => {
         <div className="bg-background absolute inset-px -z-20 rounded-[inherit]" />
         <Image
           src={`/images/gallery/${slug}/cover.jpg`}
-          className="rounded-2xl hover:saturate-0"
+          className="rounded-2xl object-cover h-full w-full hover:saturate-0"
           width={480}
           height={360}
           alt={title}

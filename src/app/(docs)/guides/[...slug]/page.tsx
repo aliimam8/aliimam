@@ -13,6 +13,7 @@ import "@/styles/mdx.css"
 
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
+import { Separator } from "@/components/ui/seperator"
 
 interface GuidePageProps {
   params: {
@@ -54,11 +55,11 @@ export default async function GuidePage({ params }: GuidePageProps) {
       <div>
         <DocsPageHeader heading={guide.title} text={guide.description} />
         <Mdx code={guide.body.code} />
-        <hr className="my-4" />
-        <div className="flex justify-center py-6 lg:py-10">
+        <Separator className="my-8"/>
+        <div className="flex py-6 lg:py-10">
           <Link
             href="/guides"
-            className={cn(buttonVariants({ variant: "ghost" }))}
+            className={cn(buttonVariants({ variant: "outline", size: "md" }))}
           >
             <Icons.chevronLeft className="mr-2 h-4 w-4" />
             See all guides

@@ -9,6 +9,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <div >
       <div className='my-40'>
+      <div className='relative -top-28'>
         <Image
           src="/images/products/grad.png"
           alt="Your Image"
@@ -16,6 +17,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           width={1000}
           className="-z-10 absolute top-0 min-h-screen w-full object-cover "
         />
+        </div>
         <div className='px-8'>
         <p className='text-center mt-40 text-md text-white lg:text-xl tracking-widest uppercase font-light'>
           Introducing

@@ -24,15 +24,15 @@ export default function GuidesPage() {
   return (
     <div className="py-6 lg:py-10  xl:pr-72">
       <DocsPageHeader
-        heading="Components"
-        text="This section includes end-to-end guides for developing Next.js 13 apps."
+        heading="Guides"
+        text="This section includes end-to-end guides for design and developing."
       />
       {guides?.length ? (
         <div className="grid gap-4 md:grid-cols-2 md:gap-6 ">
           {guides.map((guide) => (
             <article
               key={guide._id}
-              className="group relative rounded-lg border p-6 shadow-md transition-shadow hover:shadow-lg"
+              className="group relative rounded-2xl dark:border-slate-800 border-slate-200 border p-6 transition-shadow hover:shadow-lg"
             >
               {guide.featured && (
                 <span className="absolute right-4 top-4 rounded-full px-3 py-1 text-xs font-medium">
@@ -41,15 +41,15 @@ export default function GuidesPage() {
               )}
               <div className="flex flex-col justify-between space-y-4">
                 <div className="space-y-2">
-                  <h2 className="text-xl font-medium tracking-tight">
+                  <h2 className="text-xl font-semibold tracking-tight">
                     {guide.title}
                   </h2>
                   {guide.description && (
-                    <p className="text-muted-foreground">{guide.description}</p>
+                    <p className="text-slate-600 dark:text-slate-400">{guide.description}</p>
                   )}
                 </div>
                 {guide.date && (
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-xs text-slate-600 dark:text-slate-400">
                     {formatDate(guide.date)}
                   </p>
                 )}

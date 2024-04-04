@@ -41,14 +41,11 @@ const GalleryPage = () => {
   const posts = getAllGalleryPosts();
 
   return (
-    <div className="mx-auto mt-10 max-w-5xl px-6">
-      <div className="my-4 mt-20 flex flex-col items-center">
-      <h1 className="mb-8 md:mb-0 text-center text-sm font-semibold uppercase tracking-[.3em] text-slate-400 ">
-      Where Every Image Unveils a Story!
-        </h1>
-        
-      </div>
+    <div className="mx-auto mt-20 max-w-5xl px-6">
       
+      <h1 className="text-center text-sm font-semibold uppercase tracking-[.3em] text-slate-400 ">
+         Where Every Image Unveils a Story!
+        </h1>
       <GalleryCards posts={posts} />
     </div>
   );

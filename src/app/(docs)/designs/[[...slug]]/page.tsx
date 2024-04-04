@@ -55,7 +55,7 @@ export default async function DocPage({ params }: DocPageProps) {
         <DocsPager doc={doc}/>
       </div>
       <div className="hidden text-sm xl:block">
-      <div className="sticky top-24 border-l border-slate-400 dark:border-slate-600 h-[calc(100vh-3.5rem)] px-12 py-12 overflow-y-auto">
+      <div className="sticky top-24 border-l border-slate-400 dark:border-slate-600 h-[calc(100vh-3.5rem)] p-12 overflow-y-auto">
             <DashboardTableOfContents toc={toc} />
           </div>
       </div>
