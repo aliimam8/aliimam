@@ -1,61 +1,84 @@
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fcommerce&project-name=commerce&repo-name=commerce&demo-title=Next.js%20Commerce&demo-url=https%3A%2F%2Fdemo.vercel.store&demo-image=https%3A%2F%2Fbigcommerce-demo-asset-ksvtgfvnd.vercel.app%2Fbigcommerce.png&env=COMPANY_NAME,SHOPIFY_REVALIDATION_SECRET,SHOPIFY_STORE_DOMAIN,SHOPIFY_STOREFRONT_ACCESS_TOKEN,SITE_NAME,TWITTER_CREATOR,TWITTER_SITE)
+<p align="center">
+  <img alt="" src="[https://aliimam.in/projects/aliimam.jpg](https://raw.githubusercontent.com/aliimam-in/aliimam/main/public/project/aliimam.jpg?token=GHSAT0AAAAAACQQUXNBTX6NYQG3LBA7Y44GZQOFHCQ)">
+</p>
 
-# Next.js Commerce
+<h1 align="center">
+ Ali Imam
+</h1>
 
-A Next.js 14 and App Router-ready ecommerce template featuring:
+<p align="center">
+  <a aria-label="Framework" href="">
+    <img alt="" src="">
+  </a>
+  <img alt="" src="">
+  <a aria-label="License" href="">
+    <img alt="" src="">
+  </a>
+</p>
 
-- Next.js App Router
-- Optimized for SEO using Next.js's Metadata
-- React Server Components (RSCs) and Suspense
-- Server Actions for mutations
-- Edge Runtime
-- New fetching and caching paradigms
-- Dynamic OG images
-- Styling with Tailwind CSS
-- Checkout and payments with Shopify
-- Automatic light/dark mode based on system settings
+Welcome to the monorepo of my personal portfolio! This repository houses the code for my blog, where I share my thoughts, projects, and insights. Feel free to explore and get inspired.
 
-<h3 id="v1-note"></h3>
+## ✨ Features
 
-> Note: Looking for Next.js Commerce v1? View the [code](https://github.com/vercel/commerce/tree/v1), [demo](https://commerce-v1.vercel.store), and [release notes](https://github.com/vercel/commerce/releases/tag/v1).
+- ⚡️ Next.js 14 with App Router (Turbo)
+- 📝 MDX
+- 🎨 Tailwind CSS - for styling
+- 🌈 Radix UI - accessible UI components
+- 🛡 Strict TypeScript and ESLint configuration
+- 📱 Responsive design
+- 🌗 Light / Dark mode
+- 📈 SEO optimized with meta tags and JSON-LD
+- 📰 RSS feed
+- 🗺 Sitemap
+- 📝 Blog with likes, and post views
+- 🔎 Blog post search
+- 📖 Table of contents for blog posts
+- 📷 Image zoom - zoom in on images in blog posts
+- 📝 Code syntax highlighting - using Shiki
+- 🎨 Animation - using Framer Motion
+- 🤖 GitHub Actions for CI/CD
+- 🏠 LightHouse score of nearly 100
+- 🔨 Husky & Lint Staged - lint and format code before committing
+- ✅ Conventional commit lint - make sure commit messages follow the conventional commit format
+- 🔒 NextAuth.js - authentication
+- 💄 Prettier - code formatting
+- 〰️ Drizzle - ORM
+- 👷🏻‍♂️ t3-env - validate environment variables before building
 
-## Providers
+## 🔨 Requirements
 
-Vercel will only be actively maintaining a Shopify version [as outlined in our vision and strategy for Next.js Commerce](https://github.com/vercel/commerce/pull/966).
+- Node, recommended `20.x`
+- npm, recommended `8.14.0`
+- PostgreSQL, recommended `14.x` (optional if you don't need all the functionalities)
 
-Vercel is happy to partner and work with any commerce provider to help them get a similar template up and running and listed below. Alternative providers should be able to fork this repository and swap out the `lib/shopify` file with their own implementation while leaving the rest of the template mostly unchanged.
+## 👋 Getting Started
 
-## Integrations
+Follow these steps to run the project locally on your machine:
 
-Integrations enable upgraded or additional functionality for Next.js Commerce
+Create a `.env.local` file based on the provided `.env.example` file and fill in the necessary variables.
 
-## Running locally
+It will skip the validation of environment variables. And you may notice that some functionalities will not work properly. But it's okay for learning.
 
-You will need to use the environment variables [defined in `.env.example`](.env.example) to run Next.js Commerce. It's recommended you use [Vercel Environment Variables](https://vercel.com/docs/concepts/projects/environment-variables) for this, but a `.env` file is all that is necessary.
+The app will be available at `localhost:3000`.
 
-> Note: You should not commit your `.env` file or it will expose secrets that will allow others to control your Shopify store.
+The `react email` will be available at `localhost:3001`.
 
-1. Install Vercel CLI: `npm i -g vercel`
-2. Link local instance with Vercel and GitHub accounts (creates `.vercel` directory): `vercel link`
-3. Download your environment variables: `vercel env pull`
+## ✈️ TODO
 
-```bash
-pnpm install
-pnpm dev
-```
+- Use strict content security policy - still not working in `14.0.4`
+  - `next/image` - https://github.com/vercel/next.js/issues/45184
+  - `nonces` - https://github.com/vercel/next.js/discussions/54907
+  - `main-app.js` - https://github.com/vercel/next.js/issues/55129
 
-Your app should now be running on [localhost:3000](http://localhost:3000/).
+## ❤️ Credits
 
-<details>
-  <summary>Expand if you work at Vercel and want to run locally and / or contribute</summary>
+Ali Imam
 
-1. Run `vc link`.
-1. Select the `Vercel Solutions` scope.
-1. Connect to the existing `commerce-shopify` project.
-1. Run `vc env pull` to get environment variables.
-1. Run `pnpm dev` to ensure everything is working correctly.
-</details>
+## 🪪 License
 
-## Vercel, Next.js Commerce, and Shopify Integration Guide
+This project is open source and available under the [MIT License](LICENSE).
 
-You can use this comprehensive [integration guide](http://vercel.com/docs/integrations/shopify) with step-by-step instructions on how to configure Shopify as a headless CMS using Next.js Commerce as your headless Shopify storefront on Vercel.
+<hr>
+<p align="center">
+Made with ❤️ in India
+</p>
