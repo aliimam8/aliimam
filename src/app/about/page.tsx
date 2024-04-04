@@ -57,9 +57,8 @@ export default function AboutAI() {
           Worked with Brands Like
         </h1>
         <Logos/>
-
-        <Connect/>
         </div>
+        <Connect/>
     </>
   );
 }
