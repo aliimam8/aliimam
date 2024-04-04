@@ -106,7 +106,7 @@ const AssetPostPage = (props: AssetPostPageProps) => {
   };
 
   return (
-    <div className="mx-auto mt-40 max-w-4xl px-6">
+    <div className="mx-auto my-40 max-w-4xl px-6">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
