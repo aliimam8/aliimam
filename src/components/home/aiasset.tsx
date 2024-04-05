@@ -1,6 +1,6 @@
 import type { Metadata, ResolvingMetadata } from 'next';
 
-import GalleryCards from '../contentmdx/gallery-cards';
+import GalleryCards from './assets-cards';
 
 import site from '@/config/site';
 import { getAllGalleryPosts } from '@/lib/mdx';
@@ -43,7 +43,7 @@ const GalleryPage = () => {
   return (
     <div className="mx-auto mt-20 max-w-5xl px-6">
       
-      <h1 className="text-center text-sm font-semibold uppercase tracking-[.3em] text-slate-400 ">
+      <h1 className="text-center my-4 md:my-8 px-8 text-sm font-semibold uppercase tracking-[.3em] text-slate-400 ">
          Where Every Image Unveils a Story!
         </h1>
       <GalleryCards posts={posts} />

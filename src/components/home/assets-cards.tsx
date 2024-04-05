@@ -64,10 +64,7 @@ const PostCards = (props: PostCardsProps) => {
             align: 'start'
           }}
         >
-          <div className="hidden justify-end gap-3 md:flex">
-            <CarouselPrevious />
-            <CarouselNext />
-          </div>
+          
           <CarouselContent className="">
             {posts.map((post) => (
               <CarouselItem className="md:basis-1/3">
@@ -75,7 +72,12 @@ const PostCards = (props: PostCardsProps) => {
               </CarouselItem>
             ))}
           </CarouselContent>
+          <div className="flex justify-center mt-10 gap-3">
+            <CarouselPrevious />
+            <CarouselNext />
+          </div>
         </Carousel>
+
       </div>
     </motion.div>
   );
