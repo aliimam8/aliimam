@@ -18,6 +18,7 @@ const nextConfig = {
     serverComponentsExternalPackages: ["@prisma/client"],
     concurrentFeatures: true,
     missingSuspenseWithCSRBailout: false,
+    scrollRestoration: true,
   },
   images: {
     domains: ['res.cloudinary.com', 'khhamnquzieyqedqyvfw.supabase.co', 'images.remotePatterns'],

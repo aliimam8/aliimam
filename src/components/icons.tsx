@@ -56,6 +56,7 @@ import {
   Copy,
   ZoomOut,
   LogIn,
+  CornerDownLeft,
   X,
   Youtube
 } from 'lucide-react';
@@ -71,6 +72,7 @@ export const Icons = {
   chevronUp: ChevronUp,
   chevronDown: ChevronDown,
   trash: Trash,
+  enter: CornerDownLeft,
   post: FileText,
   search: Search,
   login: LogIn,
