@@ -104,7 +104,7 @@ const Header = (props: HeaderProps) => {
       >
         <Image
           src={`/images/blogs/${slug}/cover.jpg`}
-          className="rounded-lg"
+          className="rounded-3xl"
           width={1200}
           height={630}
           lazy={false}

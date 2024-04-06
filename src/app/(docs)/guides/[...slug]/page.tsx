@@ -44,10 +44,6 @@ export async function generateStaticParams(): Promise<
 export default async function GuidePage({ params }: GuidePageProps) {
   const guide = await getGuideFromParams(params)
 
-  if (!guide) {
-    notFound()
-  }
-
   const toc = await getTableOfContents(guide.body.raw)
 
   return (

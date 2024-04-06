@@ -52,7 +52,7 @@ const PostCard = (props: PostCardProps) => {
         key={_id}
         href={`/blogs/${slug}`}
         className={cn(
-          'relative flex flex-col rounded-2xl border border-slate-200 p-6 dark:border-slate-800',
+          'relative flex flex-col rounded-3xl border border-slate-200 p-2 dark:border-slate-800',
           'hover:before:opacity-100'
         )}
         data-id="post-card"
@@ -60,17 +60,17 @@ const PostCard = (props: PostCardProps) => {
         <div className="bg-background absolute inset-px -z-20 rounded-[inherit]" />
         <Image
           src={`/images/blogs/${slug}/cover.jpg`}
-          className="rounded-lg hover:saturate-0"
+          className="rounded-2xl hover:saturate-0"
           width={480}
           height={360}
           alt={title}
         />
-        <div className="grow">
-          <h2 className="mb-3 mt-3 text-xl font-semibold">{title}</h2>
+        <div className="grow px-4">
+          <h2 className="my-4 text-2xl font-semibold">{title}</h2>
 
           <div className="text-sm text-slate-600 dark:text-slate-400">{summary}</div>
         </div>
-        <div className="mt-3 flex items-center gap-2 text-sm">
+        <div className="my-4 px-4 flex items-center gap-2 text-sm">
           {formattedDate || <Skeleton className="h-5 w-10" />}
           <div>&middot;</div>
           {likesIsLoading ? (
