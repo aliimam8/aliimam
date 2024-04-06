@@ -123,9 +123,16 @@ export default async function BillingPage() {
   }
 
   return (
-    <div className="space-y-4 ">
-      <Card className="flex flex-wrap justify-between">
-        <CardContent className="py-8">
+    <div className="grid space-y-4 gap-8">
+      <div className="grid gap-1 text-center">
+          <h1 className="text-3xl md:text-4xl font-bold">Subscription</h1>
+          <p className="text-md text-slate-600 dark:text-slate-400">
+          The only creative subscription you need.
+          </p>
+        </div>
+      
+      <Card className="flex flex-wrap justify-between ">
+        <CardContent className="py-6">
           <div>
             <Badge variant="secondary" className="h-10 w-md px-6 text-md">
               Monthly
@@ -144,7 +151,7 @@ export default async function BillingPage() {
           </form>
         </CardContent>
 
-        <div className="flex bg-slate-100 dark:bg-slate-900 p-8 pr-20 m-6 rounded-3xl">
+        <div className="flex md:p-8 md:pr-20 m-6 mb-8 rounded-3xl">
           <ul className="space-y-4">
             {featureItems.map((item, index) => (
               <li key={index} className="flex items-center">

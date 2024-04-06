@@ -58,21 +58,21 @@ export default async function DashboardPage() {
   }
   return (
     <div className="grid items-start gap-y-8">
-      <div className="flex items-center justify-between px-2">
-        <div className="grid gap-1">
+      <div className="flex flex-col gap-4 items-center justify-between px-2">
+        <div className="grid gap-1 text-center">
           <h1 className="text-3xl md:text-4xl font-bold">Your Downloads</h1>
-          <p className="text-lg text-slate-600 dark:text-slate-400">
+          <p className="text-md text-slate-600 dark:text-slate-400">
             Here you can see your downloads.
           </p>
         </div>
 
         {data?.Subscription?.status === "active" ? (
           <Button asChild variant="secondary" size="sm">
-            <Link href="/dashboard/new">Create</Link>
+            <Link href="/dashboard/new">Start Now</Link>
           </Button>
         ) : (
           <Button asChild variant="secondary" size="sm">
-            <Link href="/dashboard/billing">Create</Link>
+            <Link href="/dashboard/billing">Start Now</Link>
           </Button>
         )}
       </div>
@@ -84,24 +84,24 @@ export default async function DashboardPage() {
           </div>
 
           <h2 className="mt-6 text-xl font-semibold">
-            You dont have any notes created
+            You dont have any downloads
           </h2>
           <p className="mb-8 mt-2 text-center text-sm leading-6 text-slate-600 dark:text-slate-400 max-w-sm mx-auto">
-            You currently dont have any notes. please create some so that you
-            can see them right here.
+            You currently dont have any downloads. please download some so that you
+            can see them here.
           </p>
 
           {data?.Subscription?.status === "active" ? (
             <Button asChild
               variant="redbutton"
               size="md">
-              <Link href="/dashboard/new">Create a new Note</Link>
+              <Link href="/dashboard/new">Start to Explore Now</Link>
             </Button>
           ) : (
             <Button asChild
               variant="redbutton"
               size="md">
-              <Link href="/dashboard/billing">Create a new Note</Link>
+              <Link href="/dashboard/billing">Start to Explore Now</Link>
             </Button>
           )}
         </div>

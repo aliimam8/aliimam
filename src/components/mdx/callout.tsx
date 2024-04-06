@@ -6,7 +6,7 @@ interface CalloutProps {
   type?: "default" | "warning" | "danger"
 }
 
-export function Callout({
+export default function Callout({
   children,
   icon,
   type = "default",

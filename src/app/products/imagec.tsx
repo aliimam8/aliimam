@@ -10,7 +10,6 @@ import {
 } from '@/components/ui/select'
 import FileSaver from 'file-saver'
 import { filesize } from 'filesize'
-import { ImageIcon, XIcon } from 'lucide-react'
 import React from 'react'
 import { useDropzone } from 'react-dropzone'
 import toast from 'react-hot-toast'
@@ -47,18 +46,9 @@ const options = [
 
 
 const download = async (result: string, filename: string, to: string) => {
-  try {
-    const response = await fetch(result);
-    if (!response.ok) {
-      throw new Error('Failed to fetch resource');
-    }
-    const blob = await response.blob();
-    FileSaver.saveAs(blob, `${filename.replace(/\.[^./]+$/, '')}.${to}`);
-  } catch (error) {
-    console.error('Error fetching resource:', error);
-  }
+  const blob = await (await fetch(result)).blob();
+  FileSaver.saveAs(blob, `${filename.replace(/\.[^./]+$/, '')}.${to}`)
 }
-
 
 const ImageConverter = () => {
   const [files, setFiles] = React.useState<ImageFile[]>([])
@@ -184,11 +174,12 @@ const ImageConverter = () => {
               </Select>
             </div>
             <div className='flex flex-col md:flex-row items-center justify-center gap-2'>
-              <Button variant='outline' onClick={clearAll} type='button'>
+              <Button variant='outline' size='sm' onClick={clearAll} type='button'>
                 Clear all
               </Button>
               <Button
                 variant='redbutton'
+                size='sm'
                 disabled={
                   files.filter((file) => file.to !== undefined).length !==
                   files.length
@@ -219,6 +210,7 @@ const ImageConverter = () => {
                       {result ? (
                         <Button
                           variant='redbutton'
+                          size='sm'
                           onClick={() => to && download(result, name, to)}
                           type='button'
                         >
@@ -256,7 +248,7 @@ const ImageConverter = () => {
                         onClick={() => deleteHandler(id)}
                         type='button'
                       >
-                        <XIcon />
+                        <Icons.close className='w-5 h-5'/>
                       </Button>
                     </div>
                   </div>

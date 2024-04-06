@@ -4,8 +4,6 @@ import { compareDesc } from "date-fns"
 
 import { formatDate } from "@/lib/utils"
 import { DocsPageHeader } from "@/components/doc/page-header"
-import { DashboardTableOfContents } from "@/components/doc/toc"
-import { getTableOfContents } from "@/lib/toc"
 
 export const metadata = {
   title: "Components",

@@ -4,7 +4,7 @@ import { allGuides } from "contentlayer/generated"
 
 import { getTableOfContents } from "@/lib/toc"
 import { Icons } from "@/components/icons"
-import { Mdx } from "@/components/doc/mdx-components"
+import Mdx from "@/components/mdx"
 import { DocsPageHeader } from "@/components/doc/page-header"
 import { DashboardTableOfContents } from "@/components/doc/toc"
 
