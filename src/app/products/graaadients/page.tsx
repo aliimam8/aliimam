@@ -20,32 +20,6 @@ type UsesPageProps = {
   searchParams: Record<string, never>
 }
 
-export const generateMetadata = async (
-  _: UsesPageProps,
-  parent: ResolvingMetadata
-): Promise<Metadata> => {
-  const previousOpenGraph = (await parent)?.openGraph ?? {}
-  const previousTwitter = (await parent)?.twitter ?? {}
-
-  return {
-    title,
-    description,
-    alternates: {
-      canonical: `${site.url}/uses`
-    },
-    openGraph: {
-      ...previousOpenGraph,
-      url: `${site.url}/uses`,
-      title,
-      description
-    },
-    twitter: {
-      ...previousTwitter,
-      title,
-      description
-    }
-  }
-}
 
 export default function AboutAI() {
 

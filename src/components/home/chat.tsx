@@ -66,7 +66,7 @@ export default function Chat() {
                             <form onSubmit={handleSubmit}>
                                 <div className="">
                                     <Input
-                                        className='pl-10'
+                                        className='pl-12'
                                         value={input}
                                         placeholder="Ask something with AI"
                                         onChange={handleInputChange}
