@@ -42,19 +42,19 @@ export default function Chat() {
                                     animationSpeed={5}
                                     containerClassName="bg-transparent"
                                     colors={[
-                                        [59, 130, 246],
-                                        [139, 92, 246],
+                                        [245, 5, 55],
+                                        [245, 5, 55],
                                     ]}
-                                    opacities={[0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 1]}
+                                    opacities={[0, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 1]}
                                     dotSize={1}
                                 />
                             </motion.div>
                         )}
                     </AnimatePresence>
                     <div className='z-20 w-full'>
-                        <ScrollArea className="h-60 w-full p-2 md:p-4">
+                        <ScrollArea className="h-60 w-full p-2 md:p-4 overflow-y-auto">
                             <div className=''>
-                                {messages.map(m => (
+                                {messages.map(m => ( 
                                     <div key={m.id} className='space-y-2 p-2 overflow-hidden'>
                                         <p className='text-black dark:text-white font-bold'> {m.role === 'user' ? 'User: ' : 'AI: '}</p>
                                         <p className='text-slate-600 dark:text-slate-400'>{m.content}</p>

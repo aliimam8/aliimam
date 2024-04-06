@@ -24,10 +24,10 @@ export default function HomePage() {
     <>
       <Suspense>
         <Hero />
-        <Chat/>
+        <Chat />
         <AboutMe />
         <AssetsPage />
-        <Intro />
+          <Intro />
         <div className="flex flex-wrap items-center justify-center gap-4 py-8">
           <Link
             href="/portfolio"

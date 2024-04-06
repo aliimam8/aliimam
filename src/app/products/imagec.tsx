@@ -45,10 +45,20 @@ const options = [
   { value: 'ico', label: 'ICO' }
 ] as const
 
+
 const download = async (result: string, filename: string, to: string) => {
-  const blob = await (await fetch(result)).blob()
-  FileSaver.saveAs(blob, `${filename.replace(/\.[^./]+$/, '')}.${to}`)
+  try {
+    const response = await fetch(result);
+    if (!response.ok) {
+      throw new Error('Failed to fetch resource');
+    }
+    const blob = await response.blob();
+    FileSaver.saveAs(blob, `${filename.replace(/\.[^./]+$/, '')}.${to}`);
+  } catch (error) {
+    console.error('Error fetching resource:', error);
+  }
 }
+
 
 const ImageConverter = () => {
   const [files, setFiles] = React.useState<ImageFile[]>([])
@@ -142,8 +152,8 @@ const ImageConverter = () => {
   return (
     <div className='flex flex-col items-center justify-center mx-auto mb-10 md:mb-20 max-w-4xl px-6'>
       <p className='text-center my-6 text-xs text-slate-600 dark:text-slate-400 lg:text-md tracking-widest uppercase font-light'>
-          Image Converter
-        </p>
+        Image Converter
+      </p>
       <div
         {...getRootProps()}
         className='hover:bg-slate-100/50 dark:hover:bg-slate-900/50 p-10 flex cursor-pointer flex-col items-center gap-4 rounded-2xl border-2 border-dashed border-slate-200 dark:border-slate-800 transition-colors duration-300'
@@ -178,7 +188,7 @@ const ImageConverter = () => {
                 Clear all
               </Button>
               <Button
-              variant='redbutton'
+                variant='redbutton'
                 disabled={
                   files.filter((file) => file.to !== undefined).length !==
                   files.length
@@ -208,7 +218,7 @@ const ImageConverter = () => {
                     <div className='mt-4 flex items-center justify-between gap-2 sm:mt-0 sm:justify-center'>
                       {result ? (
                         <Button
-                        variant='redbutton'
+                          variant='redbutton'
                           onClick={() => to && download(result, name, to)}
                           type='button'
                         >
