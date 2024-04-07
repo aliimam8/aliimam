@@ -25,7 +25,6 @@ export default function HomePage() {
     <>
       <Suspense>
         <Hero />
-        <Chat />
         <AboutMe />
         <AssetsPage />
         <Intro />
@@ -43,6 +42,7 @@ export default function HomePage() {
             <span className="sr-only">Buy now</span>
           </Link>
         </div>
+        <Chat />
         <Projects />
         <div className="absolute inset-0 -z-10">
           <svg

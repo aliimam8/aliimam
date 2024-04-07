@@ -1,8 +1,8 @@
 import { ScrollArea, ScrollBar } from 'src/components/ui/scroll-area';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from 'src/components/ui/tabs';
 
-import Noise from './types/words';
-import Linear from './types/icons';
+import Words from './types/words';
+import Icons3D from './types/icons';
 
 export function Grads() {
   return (
@@ -11,10 +11,10 @@ export function Grads() {
         <ScrollArea className="whitespace-nowrap">
           <div className="space-x-2">
             <TabsTrigger value="1" className="px-6">
-              3D Icons
+              Gradient
             </TabsTrigger>
             <TabsTrigger value="2" className="px-6">
-              Letters
+              Gray
             </TabsTrigger>
           </div>
           <ScrollBar orientation="horizontal" />
@@ -22,10 +22,10 @@ export function Grads() {
       </TabsList>
 
       <TabsContent value="1">
-        <Noise images={[]} />
+        <Words images={[]} />
       </TabsContent>
       <TabsContent value="2">
-        <Linear images={[]} />
+        <Icons3D images={[]} />
       </TabsContent>
     </Tabs>
   );
