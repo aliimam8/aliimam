@@ -5,6 +5,7 @@ import Projects from '@/components/common/projects';
 import AssetsPage from '@/components/home/aiasset';
 import AboutMe from '@/components/home/about-me';
 import Chat from '@/components/home/chat';
+import { Products } from '@/components/home/products';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { buttonVariants } from '@/components/ui/button';
@@ -27,7 +28,7 @@ export default function HomePage() {
         <Chat />
         <AboutMe />
         <AssetsPage />
-          <Intro />
+        <Intro />
         <div className="flex flex-wrap items-center justify-center gap-4 py-8">
           <Link
             href="/portfolio"

@@ -29,7 +29,7 @@ export default function Chat() {
                 onMouseLeave={() => setHovered(false)}
                 className="overflow-hidden items-center justify-center w-full mx-auto relative"
             >
-                <div className="border rounded-3xl border-slate-200 dark:border-slate-800 mx-auto max-w-2xl flex items-center justify-center w-full mx-auto p-4 relative">
+                <div className="border rounded-3xl border-slate-200 dark:border-slate-800 max-w-2xl flex items-center justify-center w-full mx-auto p-4 relative">
                     <AnimatePresence>
                         {hovered && (
                             <motion.div

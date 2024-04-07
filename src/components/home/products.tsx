@@ -19,7 +19,7 @@ const GRADS = [
 
 const ICONS3D = [
     {
-        id: 1,
+        id: 0,
         name: "3D Icons",
         src: "/images/products/3dicons.jpg",
         designation: "Download. Edit. Upload.",
@@ -31,7 +31,7 @@ const ICONS3D = [
     },
 ];
 
-export function Graaadients() {
+export function Products() {
     return (
         <div className="grid gap-6 justify-center">
         <Link
