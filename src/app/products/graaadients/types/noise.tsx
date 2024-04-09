@@ -11,7 +11,7 @@ cloudinary.config({
 });
 
 export default async function Home({}: { images: ImageProps[] }) {
-  const expression = 'folder=products/graaadients/noise';
+  const expression = 'folder=products/graaadients/mesh';
 
   const { resources } = await cloudinary.search.expression(expression).execute();
 
