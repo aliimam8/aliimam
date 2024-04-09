@@ -1,8 +1,8 @@
 import { ScrollArea, ScrollBar } from 'src/components/ui/scroll-area';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from 'src/components/ui/tabs';
 
-import Noise from './types/noise';
-import Linear from './types/linear';
+import { Grad1, Grad2, Grad3, Grad4 } from './types/mesh';
+import Video from './types/video';
 
 export function Grads() {
   return (
@@ -11,10 +11,10 @@ export function Grads() {
         <ScrollArea className="whitespace-nowrap">
           <div className="space-x-2">
             <TabsTrigger value="1" className="px-6">
-              Mesh Noise
+              Mesh Background
             </TabsTrigger>
             <TabsTrigger value="2" className="px-6">
-              Open Video
+              Open Mesh Video
             </TabsTrigger>
           </div>
           <ScrollBar orientation="horizontal" />
@@ -22,10 +22,13 @@ export function Grads() {
       </TabsList>
 
       <TabsContent value="1">
-        <Noise images={[]} />
+        <Grad1 images={[]} />
+        <Grad2 images={[]} />
+        <Grad3 images={[]} />
+        <Grad4 images={[]} />
       </TabsContent>
       <TabsContent value="2">
-        <Linear images={[]} />
+        <Video />
       </TabsContent>
     </Tabs>
   );

@@ -172,8 +172,8 @@ export function ZoomImage({ images }: { images: { src: string; altText: string }
       <ImageZoom>
       <CldImage
         className="block rounded-lg object-cover object-center saturate-100 transition-all duration-100 hover:saturate-0"
-        width={1280}
-        height={720}
+        width={720}
+        height={480}
         src={images}
         alt={images}
       />

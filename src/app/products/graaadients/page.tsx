@@ -1,8 +1,5 @@
-import { Suspense } from 'react';
 
-import type { Metadata, ResolvingMetadata } from 'next'
 import { Grads } from './grads';
-import site from '@/config/site'
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { Avegra } from '@/app/fonts';
@@ -51,7 +48,7 @@ export default function AboutAI() {
 
         <div className="grid mt-10 justify-center gap-4">
           <Link
-            href="https://drive.google.com/file/d/1_VToKXpc0swtGWnhYKuAGL2LUyEkQtks/view?usp=drive_link"
+            href="https://www.instagram.com/aliimam.in/"
             target='_blank'
             className={cn(
               buttonVariants({
@@ -68,13 +65,15 @@ export default function AboutAI() {
 
       </div><div className='mx-auto mt-10 max-w-5xl px-4 sm:px-6'>
         <Grads />
-      </div><div className='flex mt-10 justify-center mx-auto  max-w-5xl px-4 sm:px-6'>
+      </div>
+      <div className='flex mt-10 justify-center mx-auto  max-w-5xl px-4 sm:px-6'>
         <video autoPlay muted controls loop className='rounded-3xl'>
           <source width={720} height={480} src="/videos/graaadients.mp4" />
         </video>
       </div><p className='text-center mt-10 text-md lg:text-xl text-aired'>
         Download. Edit. Upload.
-      </p><div className='px-8'>
+      </p>
+      <div className='px-8'>
         <h1 className={cn(
           Avegra.className,
           'text-center py-2 text-3xl sm:text-6xl '
@@ -86,7 +85,7 @@ export default function AboutAI() {
           for your amazing design projects.</p>
         <div className="grid mt-10 justify-center gap-4">
           <Link
-            href="https://drive.google.com/file/d/1_VToKXpc0swtGWnhYKuAGL2LUyEkQtks/view?usp=drive_link"
+            href="https://www.instagram.com/aliimam.in/"
             target='_blank'
             className={cn(
               buttonVariants({
