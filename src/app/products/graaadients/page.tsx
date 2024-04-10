@@ -43,8 +43,10 @@ export default function AboutAI() {
           Graaadients
         </h1>
         <p className='text-center md:text-md md:-mt-4 text-white text-sm mx-auto max-w-md font-light'>
-          +100 abstract gradient elements and backgrounds
-          for your amazing design projects.</p>
+          +1000 abstract gradient elements and backgrounds
+          for your amazing design projects.
+        </p>
+
 
         <div className="grid mt-10 justify-center gap-4">
           <Link
@@ -70,7 +72,9 @@ export default function AboutAI() {
         <video autoPlay muted controls loop className='rounded-3xl'>
           <source width={720} height={480} src="/videos/graaadients.mp4" />
         </video>
-      </div><p className='text-center mt-10 text-md lg:text-xl text-aired'>
+      </div>
+      
+      <p className='text-center mt-10 text-md lg:text-xl text-aired'>
         Download. Edit. Upload.
       </p>
       <div className='px-8'>
@@ -81,7 +85,7 @@ export default function AboutAI() {
           The Beauty of Gradients
         </h1>
         <p className='text-center md:text-md text-sm mx-auto max-w-md text-slate-600 dark:text-slate-400 font-light'>
-          +100 abstract gradient elements and backgrounds
+          +1000 abstract gradient elements and backgrounds
           for your amazing design projects.</p>
         <div className="grid mt-10 justify-center gap-4">
           <Link
@@ -98,6 +102,7 @@ export default function AboutAI() {
             <span className="sr-only">Buy now</span>
           </Link>
         </div>
+
       </div>
     </div>
   );

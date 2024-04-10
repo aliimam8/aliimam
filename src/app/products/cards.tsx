@@ -10,7 +10,7 @@ const GRADS = [
         designation: "Download. Edit. Upload.",
         content: (
             <p>
-                +100 abstract gradient elements and backgrounds
+                +1000 abstract gradient elements and backgrounds
                 for your amazing design projects.
             </p>
         ),
