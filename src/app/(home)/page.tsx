@@ -4,7 +4,6 @@ import Intro from '@/components/home/intro';
 import Projects from '@/components/common/projects';
 import AssetsPage from '@/components/home/aiasset';
 import AboutMe from '@/components/home/about-me';
-import Chat from '@/components/home/chat';
 import { Products } from '@/components/home/products';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
@@ -42,7 +41,6 @@ export default function HomePage() {
             <span className="sr-only">Buy now</span>
           </Link>
         </div>
-        <Chat />
         <Projects />
         <div className="absolute inset-0 -z-10">
           <svg

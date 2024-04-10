@@ -26,8 +26,8 @@ export default function AboutAI() {
         <Image
           src="/images/products/grad.png"
           alt="Your Image"
-          height={1000}
-          width={1000}
+          height={700}
+          width={700}
           className="-z-10 absolute top-0 min-h-screen w-full object-cover "
         />
       </div>
@@ -48,7 +48,7 @@ export default function AboutAI() {
 
         <div className="grid mt-10 justify-center gap-4">
           <Link
-            href="https://www.instagram.com/aliimam.in/"
+            href="https://drive.google.com/file/d/1zAO2dwMuho4zuTSyZQ5WiEa-OZxeiI3e/view?usp=sharing"
             target='_blank'
             className={cn(
               buttonVariants({
@@ -85,7 +85,7 @@ export default function AboutAI() {
           for your amazing design projects.</p>
         <div className="grid mt-10 justify-center gap-4">
           <Link
-            href="https://www.instagram.com/aliimam.in/"
+            href="https://drive.google.com/file/d/1zAO2dwMuho4zuTSyZQ5WiEa-OZxeiI3e/view?usp=sharing"
             target='_blank'
             className={cn(
               buttonVariants({

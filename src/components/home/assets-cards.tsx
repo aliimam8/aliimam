@@ -72,7 +72,7 @@ const PostCards = (props: PostCardsProps) => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <div className="flex justify-center mt-10 gap-3">
+          <div className="md:flex hidden justify-center mt-10 gap-3">
             <CarouselPrevious />
             <CarouselNext />
           </div>

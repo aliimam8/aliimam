@@ -23,13 +23,13 @@ export default function Chat() {
     const [hovered, setHovered] = React.useState(false);
 
     return (
-        <div className="w-full md:mt-6 mb-16 gap-4 mx-auto px-8">
+        <div className="w-full mb-16 gap-4 mx-auto">
             <div
                 onMouseEnter={() => setHovered(true)}
                 onMouseLeave={() => setHovered(false)}
                 className="overflow-hidden items-center justify-center w-full mx-auto relative"
             >
-                <div className="border rounded-3xl border-slate-200 dark:border-slate-800 max-w-2xl flex items-center justify-center w-full mx-auto p-4 relative">
+                <div className="border rounded-3xl border-slate-200 dark:border-slate-800 max-w-5xl flex items-center justify-center w-full mx-auto p-4 relative">
                     <AnimatePresence>
                         {hovered && (
                             <motion.div

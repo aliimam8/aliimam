@@ -25,7 +25,7 @@ export default function GuidesPage() {
       <div className="">
         <div className="py-6 lg:py-10">
           <DocsPageHeader
-            heading="Guides"
+            heading="This page is still under construction..."
             text="This section includes end-to-end guides for design and developing."
           />
           <div className="grid gap-4 md:grid-cols-2 md:gap-6">
