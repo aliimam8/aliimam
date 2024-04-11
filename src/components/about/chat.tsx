@@ -4,6 +4,7 @@ import { useChat } from 'ai/react';
 import { Input } from '../ui/input';
 import { ScrollArea } from "@/components/ui/scroll-area"
 import React from "react";
+import 'src/styles/text.css';
 
 import { AnimatePresence, motion } from "framer-motion";
 import { CanvasRevealEffect } from "@/components/ui/canvas-effect";
@@ -53,10 +54,46 @@ export default function Chat() {
                     </AnimatePresence>
                     <div className='z-20 w-full'>
                         <ScrollArea className="h-60 w-full p-2 md:p-4 overflow-y-auto">
+                            <div className="px-6">
+                                <div className="relative w-full h-full text-center justify-center flex">
+
+                                    <h1 className="tracking-tight flex select-none py-2 flex-col text-center text-4xl font-extrabold leading-none sm:text-5xl md:flex-col lg:flex-row">
+
+                                        <span
+                                            data-content="AI."
+                                            className="before:animate-gradient-background-1 relative before:absolute before:bottom-4 before:left-0 before:top-0 before:z-0  before:w-full before:px-2 before:content-[attr(data-content)]  sm:before:top-0"
+                                        >
+                                            <span className="from-gradient-1-start to-gradient-1-end animate-gradient-foreground-1 bg-gradient-to-r bg-clip-text px-2 text-transparent ">
+                                                AI.
+                                            </span>
+                                        </span>
+                                        <span
+                                            data-content="Chat."
+                                            className="before:animate-gradient-background-2 relative before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:w-full before:px-2 before:content-[attr(data-content)] sm:before:top-0"
+                                        >
+                                            <span className="from-gradient-2-start to-gradient-2-end animate-gradient-foreground-2 bg-gradient-to-r bg-clip-text px-2 text-transparent ">
+                                                Chat.
+                                            </span>
+                                        </span>
+                                        <span
+                                            data-content="Experience."
+                                            className="before:animate-gradient-background-3 relative before:absolute before:bottom-1 before:left-0 before:top-0 before:z-0 before:w-full before:px-2 before:content-[attr(data-content)] sm:before:top-0"
+                                        >
+                                            <span className="from-gradient-3-start to-gradient-3-end animate-gradient-foreground-3 bg-gradient-to-r bg-clip-text px-2 text-transparent">
+                                            Experience.
+                                            </span>
+                                        </span>
+                                    </h1>
+                                </div>
+                                <p className="md:text-md text-center mx-auto mb-8 mt-2 px-6 text-xs text-slate-600 dark:text-slate-400 sm:px-6 md:max-w-2xl md:px-20 lg:text-md">
+                                How can I help you today?
+                                </p>
+                            </div>
+
                             <div className=''>
-                                {messages.map(m => ( 
+                                {messages.map(m => (
                                     <div key={m.id} className='space-y-2 p-2 overflow-hidden'>
-                                        <p className='text-black dark:text-white font-bold'> {m.role === 'user' ? 'User: ' : 'AI: '}</p>
+                                        <p className='text-black dark:text-white font-bold'> {m.role === 'user' ? 'You: ' : 'AI: '}</p>
                                         <p className='text-slate-600 dark:text-slate-400'>{m.content}</p>
                                     </div>
                                 ))}
