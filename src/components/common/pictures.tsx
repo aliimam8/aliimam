@@ -171,9 +171,35 @@ export function ZoomImage({ images }: { images: { src: string; altText: string }
     <div className="w-full">
       <ImageZoom>
       <CldImage
-        className="block  shadow-sm rounded-lg object-cover object-center saturate-100 transition-all duration-100 hover:saturate-0"
-        width={1280}
-        height={720}
+        className="block rounded-lg object-cover object-center saturate-100 transition-all duration-100 hover:saturate-0"
+        width={720}
+        height={480}
+        src={images}
+        alt={images}
+      />
+      </ImageZoom>
+    </div>
+  );
+}
+
+export function ZoomImageBG({ images }: { images: { src: string; altText: string }[] }) {
+  function toggleFullScreen() {
+    if (document.fullscreenElement) {
+      document.exitFullscreen();
+    } else {
+      const element = document.querySelector('.PhotoView-Portal');
+      if (element) {
+        element.requestFullscreen();
+      }
+    }
+  }
+  return (
+    <div className="w-full">
+      <ImageZoom>
+      <CldImage
+        className="block bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl object-cover object-center saturate-100 transition-all duration-100 hover:saturate-0"
+        width={800}
+        height={800}
         src={images}
         alt={images}
       />

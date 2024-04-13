@@ -57,10 +57,10 @@ export default async function SettingPage() {
 
   return (
     <div className="grid items-start gap-8">
-      <div className="flex items-center justify-between">
+      <div className="text-center">
         <div className="grid gap-1">
           <h1 className="text-3xl font-bold md:text-4xl">Settings</h1>
-          <p className="text-lg text-slate-600 dark:text-slate-400">Your Profile settings</p>
+          <p className="text-md text-slate-600 dark:text-slate-400">Your Profile settings</p>
         </div>
       </div>
 

@@ -1,4 +1,4 @@
-import { DocsConfig } from "@/components/doc/types"
+import { DocsConfig, GuidesConfig } from "@/components/doc/types"
 
 export const docsConfig: DocsConfig = {
   mainNav: [
@@ -69,3 +69,46 @@ export const docsConfig: DocsConfig = {
     },
   ],
 }
+
+
+export const guidesConfig: GuidesConfig = {
+  mainNav: [
+    {
+      title: "Designs",
+      href: "/designs",
+    },
+    {
+      title: "Guides",
+      href: "/guides",
+    },
+  ],
+  sidebarNav: [
+    {
+      title: "Getting Started",
+      items: [
+        {
+          title: "Introduction",
+          href: "/guides",
+        },
+      ],
+    },
+    {
+      title: "Documentation",
+      items: [
+        {
+          title: "Layout",
+          href: "/guides/documentation",
+        },
+        {
+          title: "Color Theory",
+          href: "/guides/documentation/",
+        },
+        {
+          title: "Typography",
+          href: "/guides/documentation/",
+        }
+      ],
+    },
+  ],
+}
+

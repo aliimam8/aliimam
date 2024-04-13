@@ -5,24 +5,28 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navItems } from "@/components/layout/navbar/UserNav";
 
+
 export function DashboardNav() {
   const pathname = usePathname();
   console.log(pathname);
   return (
-    <nav className="flex justify-center items-start gap-3">
+    <div className="flex justify-center">
+    <nav className="flex gap-1 bg-slate-100 dark:bg-slate-900 p-1 rounded-full">
       {navItems.map((item, index) => (
-        <Link key={index} href={item.href}>
+        <Link key={index} href={item.href}
+        className="">
           <span
             className={cn(
-              "flex items-center rounded-full px-6 py-3 text-sm font-medium hover:bg-aired hover:text-white dark:hover:bg-aired dark:hover:text-white",
-              pathname === item.href ? "bg-aired text-white" : "bg-slate-100 dark:bg-slate-900"
+              "flex items-center rounded-full px-5 py-3 text-sm ",
+              pathname === item.href ? "bg-aired text-white" : ""
             )}
           >
-            <item.icon className="mr-2 h-4 w-4 text-primary" />
+            <item.icon className="mr-1 h-4 w-4" />
             <span>{item.name}</span>
           </span>
         </Link>
       ))}
     </nav>
+    </div>
   );
 }

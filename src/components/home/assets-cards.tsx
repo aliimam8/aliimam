@@ -64,10 +64,7 @@ const PostCards = (props: PostCardsProps) => {
             align: 'start'
           }}
         >
-          <div className="hidden justify-end gap-3 md:flex">
-            <CarouselPrevious />
-            <CarouselNext />
-          </div>
+          
           <CarouselContent className="">
             {posts.map((post) => (
               <CarouselItem className="md:basis-1/3">
@@ -75,7 +72,12 @@ const PostCards = (props: PostCardsProps) => {
               </CarouselItem>
             ))}
           </CarouselContent>
+          <div className="md:flex hidden justify-center mt-10 gap-3">
+            <CarouselPrevious />
+            <CarouselNext />
+          </div>
         </Carousel>
+
       </div>
     </motion.div>
   );
@@ -103,7 +105,7 @@ const PostCard = (props: PostCardProps) => {
     <>
         <Link
           key={_id}
-          href={`/Gallery/${slug}`}
+          href={`/gallery/${slug}`}
           className={cn(
             'relative flex flex-col rounded-3xl border border-slate-200 p-2 dark:border-slate-800',
             'hover:before:opacity-100'
@@ -113,7 +115,7 @@ const PostCard = (props: PostCardProps) => {
 
           <div className="bg-background absolute inset-px -z-20 rounded-[inherit]" />
           <Image
-            src={`/images/Gallery/${slug}/cover.jpg`}
+            src={`/images/gallery/${slug}/cover.jpg`}
             className="rounded-2xl hover:saturate-0"
             width={480}
             height={360}

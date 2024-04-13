@@ -2,7 +2,7 @@ import { ReactNode, Suspense } from 'react';
 import { SiteFooter } from '@/components/layout/footer';
 import 'src/styles/globals.css';
 import { Navbar } from '../components/layout/navbar';
-import { ThemeProvider, LenisProvider } from '../components/providers';
+import { ThemeProvider } from '../components/providers';
 import { inter } from './fonts';
 import Analytics from '@/components/analytics';
 import { Metadata } from 'next';
@@ -27,10 +27,8 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
       <body className="bg-white dark:bg-black">
         <ThemeProvider enableSystem={true} attribute="class">
           <Navbar />
-          <LenisProvider>
             <main>{children}</main>
             <Toaster />
-          </LenisProvider>
           <SiteFooter />
           <Analytics />
         </ThemeProvider>

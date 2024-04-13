@@ -10,18 +10,18 @@ const GRADS = [
         designation: "Download. Edit. Upload.",
         content: (
             <p>
-                +100 abstract gradient elements and backgrounds
+                +1000 abstract gradient elements and backgrounds
                 for your amazing design projects.
             </p>
         ),
     },
 ];
 
-const BLOCKS = [
+const ICONS3D = [
     {
-        id: 0,
-        name: "Blocks",
-        src: "/images/products/blocks.jpg",
+        id: 1,
+        name: "3D Icons",
+        src: "/images/products/3dicons.jpg",
         designation: "Download. Edit. Upload.",
         content: (
             <p>
@@ -34,6 +34,10 @@ const BLOCKS = [
 export function Graaadients() {
     return (
         <div className="grid gap-6 justify-center">
+        <Link
+            href="/products/3dicons">
+            <CardStack items={ICONS3D} />
+        </Link>
             <Link
                 href="/products/graaadients">
                 <CardStack items={GRADS} />

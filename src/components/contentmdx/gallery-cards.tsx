@@ -11,7 +11,6 @@ import { type GalleryPostCore, type Likes, type Views } from '@/types';
 
 import Image from '../mdx/image';
 import { cn } from '@/lib/utils';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '../ui/carousel';
 
 type PostCardsProps = {
   posts: GalleryPostCore[];
@@ -48,27 +47,14 @@ const PostCards = (props: PostCardsProps) => {
 
   return (
     <>
-      <div className="" data-testid="post-cards">
-      <Carousel
-        className="w-full max-w-sm md:max-w-full"
-        opts={{
-          align: 'start'
-        }}
-      >
-        <div className="hidden justify-end gap-3 md:flex">
-          <CarouselPrevious />
-          <CarouselNext />
-        </div>
-        <CarouselContent className="">
-          {posts.map((post) => (
-            <CarouselItem className="md:basis-1/3">
-              <PostCard key={post._id} {...post} />
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-      </Carousel>
+      <div className="grid md:grid-cols-3 gap-3" data-testid="post-cards">
+        {posts.map((post) => (
+
+          <PostCard key={post._id} {...post} />
+
+        ))}
       </div>
-      
+
     </>
   );
 };
@@ -108,25 +94,25 @@ const PostCard = (props: PostCardProps) => {
         <div className="p-3">
           <div className='flex justify-between items-start'>
             <div>
-          <div className="grow ">
-            <h2 className="text-xl font-semibold ">{title}</h2>
+              <div className="grow ">
+                <h2 className="text-xl font-semibold ">{title}</h2>
+              </div>
+              <div className="mt-1 flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+                {likesIsLoading ? (
+                  <Skeleton className="h-5 w-10 rounded-md" />
+                ) : (
+                  <div>{likesData?.likes} likes</div>
+                )}
+                <div>&middot;</div>
+                {viewsIsLoading ? (
+                  <Skeleton className="h-5 w-10 rounded-md" />
+                ) : (
+                  <div>{viewsData?.views} views</div>
+                )}
+              </div>
+            </div>
+
           </div>
-          <div className="mt-1 flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
-            {likesIsLoading ? (
-              <Skeleton className="h-5 w-10 rounded-md" />
-            ) : (
-              <div>{likesData?.likes} likes</div>
-            )}
-            <div>&middot;</div>
-            {viewsIsLoading ? (
-              <Skeleton className="h-5 w-10 rounded-md" />
-            ) : (
-              <div>{viewsData?.views} views</div>
-            )}
-          </div>
-          </div>
-          
-        </div>
 
         </div>
       </Link>

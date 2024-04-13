@@ -76,7 +76,7 @@ export default async function DashboardLayout({
   });
 
   return (
-    <div className="flex flex-col mx-auto my-40 max-w-3xl px-6 md:max-w-5xl">
+    <div className="flex flex-col mx-auto my-40 px-6 md:max-w-5xl">
       <div className="grid">
         <aside className="mb-10 flex-col flex">
           <DashboardNav />

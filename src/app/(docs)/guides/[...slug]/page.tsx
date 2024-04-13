@@ -4,7 +4,7 @@ import { allGuides } from "contentlayer/generated"
 
 import { getTableOfContents } from "@/lib/toc"
 import { Icons } from "@/components/icons"
-import { Mdx } from "@/components/doc/mdx-components"
+import Mdx from "@/components/mdx"
 import { DocsPageHeader } from "@/components/doc/page-header"
 import { DashboardTableOfContents } from "@/components/doc/toc"
 
@@ -43,10 +43,6 @@ export async function generateStaticParams(): Promise<
 
 export default async function GuidePage({ params }: GuidePageProps) {
   const guide = await getGuideFromParams(params)
-
-  if (!guide) {
-    notFound()
-  }
 
   const toc = await getTableOfContents(guide.body.raw)
 

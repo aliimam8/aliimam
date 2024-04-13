@@ -7,7 +7,7 @@ interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   disabled?: boolean
 }
 
-export function MdxCard({
+export default function MdxCard({
   href,
   className,
   children,

@@ -126,7 +126,7 @@ export const Connect: React.FC = () => {
                                         </div>
                                     </div>
 
-                                    <div className='flex flex-col justify-center -mt-20 md:-mt-4 p-4 h-full md:w-[400px] md:ml-10'>
+                                    <div className='flex flex-col justify-center -mt-20 md:-mt-4 p-2 h-full md:w-[400px] md:ml-10'>
                                         <div className="flex flex-col items-center">
                                             <h3 className="inline-flex items-baseline pb-1 mt-6 font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-600 via-slate-400 to-slate-600 dark:bg-clip-text dark:bg-gradient-to-r dark:from-slate-600 dark:via-slate-200 dark:to-slate-600">
                                                 <span className="text-2xl md:text-4xl">Any questions about Design?</span>
@@ -136,7 +136,7 @@ export const Connect: React.FC = () => {
                                             Feel free to reach out to me!
 
                                         </p>
-                                        <div className="flex gap-3">
+                                        <div className="flex gap-2">
                                         <Link
                                                 href="mailto:imam30114@gmail.com"
                                                 target="_blank"
@@ -147,7 +147,7 @@ export const Connect: React.FC = () => {
                                                     })
                                                 )}
                                             >
-                                                <span className="flex gap-1 px-1 items-center">
+                                                <span className="flex gap-1 items-center">
                                                     <Icons.mail className="w-3 h-3" />
                                                     Contact AI
                                                 </span>
@@ -162,7 +162,7 @@ export const Connect: React.FC = () => {
                                                     })
                                                 )}
                                             >
-                                                <span className="flex gap-1 px-1">
+                                                <span className="flex gap-1 items-center">
                                                     <Icons.whatsapp className="w-3 " />
                                                     Join Whatsapp
                                                 </span>

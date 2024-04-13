@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import { allPages } from 'contentlayer/generated';
 import { type Metadata } from 'next';
 import { Separator } from 'src/components/ui/seperator';
-import { Mdx } from '@/components/contentmdx/mdx-components';
+import Mdx from '@/components/mdx';
 import {
   PageHeader,
   PageHeaderDescription,

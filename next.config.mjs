@@ -18,6 +18,7 @@ const nextConfig = {
     serverComponentsExternalPackages: ["@prisma/client"],
     concurrentFeatures: true,
     missingSuspenseWithCSRBailout: false,
+    scrollRestoration: true,
   },
   images: {
     domains: ['res.cloudinary.com', 'khhamnquzieyqedqyvfw.supabase.co', 'images.remotePatterns'],
@@ -26,7 +27,7 @@ const nextConfig = {
   webpack: (config) => {
     config.infrastructureLogging = {
       level: 'error'
-    };
+    }
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return config;

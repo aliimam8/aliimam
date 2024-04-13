@@ -39,11 +39,11 @@ export const DashboardAbout = () => {
 
     {
       title: 'Total Views',
-      link: '/store',
+      link: '/gallery',
       value: viewsData?.views,
       target: "",
       icon: <Icons.aiLogo color='#f50537' className="w-7" />,
-      linkText: 'AI Store',
+      linkText: 'Gallery',
       gradient: {
         startColor: '#f50537',
         endColor: '#a1a1aa'
@@ -51,11 +51,11 @@ export const DashboardAbout = () => {
     },
     {
       title: 'Total Likes',
-      link: '/assets',
+      link: '/products',
       target: "",
       value: likesData?.likes,
       icon: <Icons.heart color='#f50537' className="w-7" />,
-      linkText: 'Assets',
+      linkText: 'Products',
       gradient: {
         startColor: '#f50537',
         endColor: '#a1a1aa'
@@ -153,11 +153,11 @@ export const DashboardHome = () => {
 
     {
       title: 'Total Views',
-      link: '/store',
+      link: '/gallery',
       value: viewsData?.views,
       target: "",
       icon: <Icons.aiLogo color='#f50537' className="w-5" />,
-      linkText: 'AI Store',
+      linkText: 'Gallery',
       gradient: {
         startColor: '#f50537',
         endColor: '#f50537'
@@ -165,11 +165,11 @@ export const DashboardHome = () => {
     },
     {
       title: 'Total Likes',
-      link: '/assets',
+      link: '/products',
       target: "",
       value: likesData?.likes,
       icon: <Icons.heart color='#f50537' className="w-5" />,
-      linkText: 'Assets',
+      linkText: 'Products',
       gradient: {
         startColor: '#f50537',
         endColor: '#f50537'

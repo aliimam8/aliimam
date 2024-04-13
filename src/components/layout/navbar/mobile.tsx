@@ -17,7 +17,7 @@ const navigation = [
   { name: 'Gallery', href: '/gallery', current: true },
   { name: 'Portfolio', href: '/portfolio', current: true },
   { name: 'Products', href: '/products', current: true },
-  { name: 'Blog', href: '/blog', current: true },
+  { name: 'Blogs', href: '/blogs', current: true },
   { name: 'Designs', href: '/designs', current: true }
 ];
 

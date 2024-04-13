@@ -4,6 +4,7 @@ import Intro from '@/components/home/intro';
 import Projects from '@/components/common/projects';
 import AssetsPage from '@/components/home/aiasset';
 import AboutMe from '@/components/home/about-me';
+import { Products } from '@/components/home/products';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { buttonVariants } from '@/components/ui/button';
