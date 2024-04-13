@@ -96,17 +96,9 @@ export const guidesConfig: GuidesConfig = {
       title: "Documentation",
       items: [
         {
-          title: "Layout",
-          href: "/guides/documentation",
+          title: "Social Media",
+          href: "/guides/socialmedia",
         },
-        {
-          title: "Color Theory",
-          href: "/guides/documentation/",
-        },
-        {
-          title: "Typography",
-          href: "/guides/documentation/",
-        }
       ],
     },
   ],

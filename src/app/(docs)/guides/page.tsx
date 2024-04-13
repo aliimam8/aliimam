@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { allGuides } from "contentlayer/generated"
 import { compareDesc } from "date-fns"
+import { Cards } from "./cards"
 
 import { formatDate } from "@/lib/utils"
 import { DocsPageHeader } from "@/components/doc/page-header"
@@ -22,11 +23,12 @@ export default function GuidesPage() {
   return (
     <div className="relative lg:gap-10 grid xl:grid-cols-[1fr_260px]">
 
-      <div className="">
         <div className="py-6 lg:py-10">
           <DocsPageHeader
-            heading="This page is still under construction..."
-            text="This section includes end-to-end guides for design and developing."
+            heading="Introduction"
+            text="Welcome to the AI Guides!
+
+            "
           />
           <div className="grid gap-4 md:grid-cols-2 md:gap-6">
             {guides.map((guide) => (
@@ -61,10 +63,8 @@ export default function GuidesPage() {
             ))}
           </div>
         </div>
-
-      </div>
-      <div className="hidden xl:block sticky top-24 border-l border-slate-400 dark:border-slate-600 h-[calc(100vh-3.5rem)] p-12 overflow-y-auto">
-        A
+      <div className="hidden xl:block sticky top-24 border-l border-slate-400 dark:border-slate-600 h-[calc(100vh-3.5rem)] pt-6 overflow-y-auto">
+        <Cards />
       </div>
     </div>
   )

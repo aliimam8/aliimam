@@ -14,7 +14,7 @@ import {
 import ImageZoom from '../common/image-zoom';
 import Image from './image';
 import ItemGrid from './item-grid';
-import FlexGrid from './flex-grid';
+import { FlexGrid, TabGrid } from './flex-grid';
 import ImageGrid from './image-grid';
 import Link from './link';
 import LinkCard from './link-card'; 
@@ -147,15 +147,6 @@ const components: MDXComponents = {
       {...props}
     />
   ),
-  pre: ({ className, ...props }: React.HTMLAttributes<HTMLPreElement>) => (
-    <pre
-      className={cn(
-        "mb-4 mt-6 overflow-x-auto rounded-3xl border border-aired  bg-black p-6 py-4",
-        className
-      )}
-      {...props}
-    />
-  ),
   code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
     <code
       className={cn(
@@ -228,10 +219,12 @@ const components: MDXComponents = {
   AlertDescription: (props: React.ComponentPropsWithoutRef<typeof AlertDescription>) => (
     <AlertDescription {...props} />
   ),
+  pre: Pre,
   ItemGrid,
   FlexGrid,
   Callout, 
   ImageGrid,
+  TabGrid,
   Table,
   Tree,
   Video,
