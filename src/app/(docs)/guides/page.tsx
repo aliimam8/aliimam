@@ -30,7 +30,7 @@ export default function GuidesPage() {
 
             "
           />
-          <div className="grid gap-4 md:grid-cols-2 md:gap-6">
+          <div className="grid pb-10 gap-4 md:grid-cols-2 md:gap-6">
             {guides.map((guide) => (
               <article
                 key={guide._id}

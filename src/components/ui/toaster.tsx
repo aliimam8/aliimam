@@ -31,7 +31,7 @@ export const Toaster = (props: ToasterProps) => {
         ...toastOptions
       }}
       icons={{
-        success: <CheckCircle2Icon className='size-5 text-green-500' />,
+        success: <CheckCircle2Icon className='size-5 text-aired' />,
         error: <AlertCircleIcon className='size-5 text-red-500' />,
         warning: <AlertTriangle className='size-5 text-yellow-500' />,
         info: <InfoIcon className='size-5 text-blue-500' />

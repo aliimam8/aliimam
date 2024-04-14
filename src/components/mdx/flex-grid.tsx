@@ -67,14 +67,20 @@ export const TabGrid = (props: ItemGridProps) => {
     <div className='mb-8 mt-4 md:flex grid gap-2 '>
       {items.map((item) => (
         <div className='p-2 rounded-2xl border border-slate-200 dark:border-slate-800'>
-         
+         <Image
+            src={item.image}
+            width={300}
+            height={300}
+            alt={item.name}
+            className='shrink-0'
+            imageClassName='m-0 mb-4 rounded-lg h-full w-full'
+          />
           <div className='flex px-2 flex-col justify-center gap-2'>
             <div className='flex justify-between gap-4 items-center'>
               <div className='text-lg font-extrabold'>{item.name}</div>
               <div className='text-sm  text-slate-600 dark:text-slate-400'>{item.description}</div>
               <div className='text-sm text-slate-600 dark:text-slate-400'>{item.size}</div>
               <span className='flex text-sm items-center text-slate-600 dark:text-slate-400'>
-                
                 <CopyButton text={item.name} />
               </span>
             </div>
@@ -92,7 +98,7 @@ const CopyButton = (props: CopyButtonProps) => {
   return (
     <Button
       className={cn(
-        'size-8 p-0 bg-aired ',
+        'size-8 p-0 bg-aired text-white',
         className
       )}
       variant='outline'
