@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 
 import { Graaadients } from "./cards"
 import ImageConvt from "./imagec"
+import WordCounter from "./wordcount"
 import { type Metadata } from 'next';
 import { Avegra } from '../fonts';
 import { cn } from '@/lib/utils';
@@ -26,6 +27,7 @@ export default function AboutAI() {
           <hr className="mx-auto my-4 mb-16 h-1 w-6 rounded border-0 bg-aired"></hr>
         </div>
         <Graaadients />
+        <WordCounter/>
         <ImageConvt/>
       </div>
     </>

@@ -7,7 +7,7 @@ import Video from './types/video';
 export function Grads() {
   return (
     <Tabs defaultValue="1" className=" items-center justify-center text-center">
-      <TabsList className="sticky top-24 z-20 w-full items-center justify-center text-center lg:w-auto">
+      <TabsList className="w-auto sticky top-24 z-20 items-center justify-center text-center lg:w-auto">
         <ScrollArea className="whitespace-nowrap">
           <div className="space-x-2">
             <TabsTrigger value="1" className="px-6">
