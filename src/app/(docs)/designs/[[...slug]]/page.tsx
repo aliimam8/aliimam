@@ -39,10 +39,11 @@ export async function generateStaticParams(): Promise<
 
 export default async function DocPage({ params }: DocPageProps) {
   const doc = await getDocFromParams(params)
+  const slug = getDocFromParams(params)
 
   if (!doc) {
     notFound()
-  }
+  } 
 
   const toc = await getTableOfContents(doc.body.raw)
 

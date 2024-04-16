@@ -14,7 +14,28 @@ type ItemGridProps = {
 }
 
 
-const ItemGrid = (props: ItemGridProps) => {
+export const ImageGridTWO = (props: ItemGridProps) => {
+  const { items } = props
+
+  return (
+    <div className='mb-2 grid grid-cols-2 gap-2'>
+      {items.map((item) => (
+        <ImageZoom>
+          <Image
+            src={item.image}
+            width={500}
+            height={500}
+            alt={item.name}
+            className='shrink-0'
+            imageClassName='m-0 rounded-lg lg:rounded-2xl h-full w-full'
+          />
+          </ImageZoom>
+      ))}
+    </div>
+  )
+}
+
+export const ImageGridTHREE = (props: ItemGridProps) => {
   const { items } = props
 
   return (
@@ -35,4 +56,23 @@ const ItemGrid = (props: ItemGridProps) => {
   )
 }
 
-export default ItemGrid
+export const ImageGrid = (props: ItemGridProps) => {
+  const { items } = props
+
+  return (
+    <div className='mb-2 grid grid-cols-3 gap-2'>
+      {items.map((item) => (
+        <ImageZoom>
+          <Image
+            src={item.image}
+            width={500}
+            height={500}
+            alt={item.name}
+            className='shrink-0'
+            imageClassName='m-0 rounded-lg lg:rounded-2xl h-full w-full'
+          />
+          </ImageZoom>
+      ))}
+    </div>
+  )
+}

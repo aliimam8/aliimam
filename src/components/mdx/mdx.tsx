@@ -14,8 +14,8 @@ import {
 import ImageZoom from '../common/image-zoom';
 import Image from './image';
 import ItemGrid from './item-grid';
-import { FlexGrid, TabGrid } from './flex-grid';
-import ImageGrid from './image-grid';
+import { FlexGrid, TabGrid, FlexGridTWO } from './flex-grid';
+import { ImageGrid, ImageGridTWO, ImageGridTHREE } from './image-grid';
 import Link from './link';
 import LinkCard from './link-card'; 
 import Pre from './pre';
@@ -222,7 +222,10 @@ const components: MDXComponents = {
   pre: Pre,
   ItemGrid,
   FlexGrid,
+  FlexGridTWO,
   Callout, 
+  ImageGridTWO,
+  ImageGridTHREE,
   ImageGrid,
   TabGrid,
   Table,

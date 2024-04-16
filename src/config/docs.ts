@@ -25,46 +25,29 @@ export const docsConfig: DocsConfig = {
       title: "Documentation",
       items: [
         {
-          title: "Layout",
-          href: "/designs/documentation",
+          title: "Portfolio",
+          href: "/designs/openfile/portfolio",
         },
         {
-          title: "Color Theory",
-          href: "/designs/documentation/",
+          title: "Graaadients",
+          href: "/designs/openfile/graaadients",
         },
         {
-          title: "Typography",
-          href: "/designs/documentation/",
+          title: "Grad Reel",
+          href: "/designs/openfile/grad-reel",
         },
         {
-          title: "Visual Hierarchy",
-          href: "/designs/documentation/",
+          title: "Grad Carousel",
+          href: "/designs/openfile/grad-carousel",
         },
         {
-          title: "Imagery",
-          href: "/designs/documentation/",
+          title: "SM Cheat Sheet",
+          href: "/designs/openfile/sm-cheat-sheet",
         },
         {
-          title: "Whitespace",
-          href: "/designs/documentation/",
-        },
-        {
-          title: "Consistency",
-          href: "/designs/documentation/",
-        },
-        {
-          title: "Unity",
-          href: "/designs/documentation/",
-        },
-        {
-          title: "Functionality",
-          href: "/designs/documentation/",
-        },
-        {
-          title: "Somthing New",
-          href: "/designs/in-progress",
-          disabled: true,
-        },
+          title: "3D Icons",
+          href: "/designs/openfile/3dicons",
+        }
       ],
     },
   ],

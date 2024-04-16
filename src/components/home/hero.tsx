@@ -41,7 +41,7 @@ const Hero = () => {
               <div className="absolute inset-0 flex " aria-hidden="true" />
               Subscribe{' '}
               <span aria-hidden="true">
-                <Icons.arrowUp className="h-4 w-4  rotate-45" />
+                <Icons.arrowUp className="h-4 w-4 rotate-45" />
               </span>
             </a>
           </div>

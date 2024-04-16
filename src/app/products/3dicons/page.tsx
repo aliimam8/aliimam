@@ -71,7 +71,7 @@ export default function AboutAI() {
             <span className="sr-only">Buy now</span>
           </Link>
         </div>
-        <p className='text-center text-white font-semibold ml-2 mt-6'>All 3D icons are 100% free.</p>
+        <p className='text-center font-semibold ml-2 mt-6'>All 3D icons are 100% free.</p>
 
       </div><div className='mx-auto mt-10 max-w-5xl px-4 sm:px-6'>
         <Icooons />
