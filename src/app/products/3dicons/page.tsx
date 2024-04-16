@@ -26,9 +26,6 @@ export default function AboutAI() {
     <div className='my-40'>
       
       <div className='px-8'>
-      <p className='text-center mt-40 my-4 text-md text-aired  lg:text-xl tracking-widest uppercase font-bold'>
-      This page is still under construction...
-        </p>
         <p className='text-center text-md  lg:text-xl tracking-widest uppercase font-light'>
           Introducing
         </p>
