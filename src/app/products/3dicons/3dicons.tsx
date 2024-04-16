@@ -6,7 +6,7 @@ import CapsWords from './types/capswords';
 import Numbers from './types/numbers';
 import Icons3D from './types/icons';
 
-export function Grads() {
+export function Icooons() {
   return (
     <Tabs defaultValue="1" className=" items-center justify-center text-center">
       <TabsList className="sticky top-24 z-20 w-full items-center justify-center text-center lg:w-auto">

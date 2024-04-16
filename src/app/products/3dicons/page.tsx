@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 
 import type { Metadata, ResolvingMetadata } from 'next'
-import { Grads } from './3dicons';
+import { Icooons } from './3dicons';
 import site from '@/config/site'
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
@@ -46,9 +46,9 @@ export default function AboutAI() {
         +100 3D icons 
           for your amazing design projects.</p>
 
-        <div className="grid mt-10 justify-center gap-4">
+        <div className="flex mt-10 justify-center gap-4">
           <Link
-            href="/products"
+            href="https://drive.google.com/file/d/1yYm0Xwfz_a9Q6lLqsRNTK6X10egd5O0N/view?usp=drive_link"
             target='_blank'
             className={cn(
               buttonVariants({
@@ -57,14 +57,27 @@ export default function AboutAI() {
               })
             )}
           >
-            Download Full Pack
+            Download Gradient Pack
+            <span className="sr-only">Buy now</span>
+          </Link>
+          <Link
+            href="https://drive.google.com/file/d/10UB_7Jj5xIZ7GzLhZ6ZmTdGxMVVZfnQE/view?usp=drive_link"
+            target='_blank'
+            className={cn(
+              buttonVariants({
+                variant: 'outline',
+                size: 'md'
+              })
+            )}
+          >
+            Download Gray Pack
             <span className="sr-only">Buy now</span>
           </Link>
         </div>
         <p className='text-center text-white font-semibold ml-2 mt-6'>All 3D icons are 100% free.</p>
 
       </div><div className='mx-auto mt-10 max-w-5xl px-4 sm:px-6'>
-        <Grads />
+        <Icooons />
       </div>
       
       <p className='text-center mt-10 text-md lg:text-xl text-aired'>
@@ -79,9 +92,9 @@ export default function AboutAI() {
         <p className='text-center md:text-md text-sm mx-auto max-w-md text-slate-600 dark:text-slate-400 font-light'>
           +100 3D icons 
           for your amazing design projects.</p>
-        <div className="grid mt-10 justify-center gap-4">
+          <div className="flex mt-10 justify-center gap-4">
           <Link
-            href="/products"
+            href="https://drive.google.com/file/d/1yYm0Xwfz_a9Q6lLqsRNTK6X10egd5O0N/view?usp=drive_link"
             target='_blank'
             className={cn(
               buttonVariants({
@@ -90,7 +103,20 @@ export default function AboutAI() {
               })
             )}
           >
-            Download Full Pack
+            Download Gradient Pack
+            <span className="sr-only">Buy now</span>
+          </Link>
+          <Link
+            href="https://drive.google.com/file/d/10UB_7Jj5xIZ7GzLhZ6ZmTdGxMVVZfnQE/view?usp=drive_link"
+            target='_blank'
+            className={cn(
+              buttonVariants({
+                variant: 'outline',
+                size: 'md'
+              })
+            )}
+          >
+            Download Gray Pack
             <span className="sr-only">Buy now</span>
           </Link>
         </div>

@@ -7,6 +7,7 @@ import { inter } from './fonts';
 import Analytics from '@/components/analytics';
 import { Metadata } from 'next';
 import { Toaster } from "@/components/ui/toaster"
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 export const metadata: Metadata = {
   title: 'Ali Imam',
@@ -20,6 +21,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
         <link rel="apple-touch-icon" sizes="76x76" href="/favicon.svg" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon.svg" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon.svg" />
+        <meta name="google-adsense-account" content="ca-pub-8509771369416706"/>
         <meta name="msapplication-TileColor" content="#000000" />
         <meta name="theme-color" content="#000000" />
         <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
@@ -31,6 +33,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
             <Toaster />
           <SiteFooter />
           <Analytics />
+          <GoogleAnalytics gaId="G-7DJXCEPQ1E" />
         </ThemeProvider>
       </body>
     </html>
