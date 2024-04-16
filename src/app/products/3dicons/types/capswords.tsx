@@ -11,7 +11,7 @@ cloudinary.config({
 });
 
 export default async function Home({}: { images: ImageProps[] }) {
-  const expression = 'folder=products/3dicons/gradient/icons';
+  const expression = 'folder=products/3dicons/gradient/capswords';
 
   const { resources } = await cloudinary.search.expression(expression).execute();
 
