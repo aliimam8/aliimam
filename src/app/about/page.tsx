@@ -1,4 +1,4 @@
-import { Suspense } from 'react';
+"use client"
 import Image from 'next/image';
 import About from '@/components/about/about';
 import Logos from 'src/components/common/logos';
