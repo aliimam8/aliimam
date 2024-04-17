@@ -25,13 +25,12 @@ const nextConfig = {
     formats: ['image/avif', 'image/webp']
   },
   webpack: (config) => {
-    config.infrastructureLogging = {
-      level: 'error'
-    }
+    config.externals.push({
+      canvas: 'canvas'
+    })
 
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-    return config;
-  },
+    return config
+  }
 
 };
 

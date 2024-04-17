@@ -46,7 +46,7 @@ const options = [
 
 
 const download = async (result: string, filename: string, to: string) => {
-  const blob = await (await fetch(result)).blob();
+  const blob = await (await fetch(result)).blob()
   FileSaver.saveAs(blob, `${filename.replace(/\.[^./]+$/, '')}.${to}`)
 }
 
