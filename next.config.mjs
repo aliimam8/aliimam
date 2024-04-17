@@ -23,13 +23,6 @@ const nextConfig = {
   images: {
     domains: ['res.cloudinary.com', 'khhamnquzieyqedqyvfw.supabase.co', 'images.remotePatterns'],
     formats: ['image/avif', 'image/webp']
-  },
-  webpack: (config) => {
-    config.externals.push({
-      canvas: 'canvas'
-    })
-
-    return config
   }
 
 };
