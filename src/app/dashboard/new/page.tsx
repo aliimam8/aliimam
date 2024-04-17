@@ -40,7 +40,7 @@ export default async function NewNoteRoute() {
       },
     });
 
-    return redirect("/dashboard");
+    return redirect("/products");
   }
 
   return (

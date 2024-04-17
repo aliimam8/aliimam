@@ -17,9 +17,9 @@ const buttonVariants = cva(
         ghost: '',
         link: 'text-primary underline-offset-4 hover:underline',
         aibutton:
-          'px-3 py-2 rounded-full inset-px z-10 grid place-items-center ring-1 ring-aired dark:bg-black hover:bg-aired hover:dark:bg-aired bg-white font-regular hover:text-white hover:dark:text-white text-black dark:text-white text-sm',
+          'px-3 py-2 rounded-full inset-px z-10 flex place-items-center ring-1 ring-aired dark:bg-black hover:bg-aired hover:dark:bg-aired bg-white font-regular hover:text-white hover:dark:text-white text-black dark:text-white text-sm',
         redbutton:
-          'px-3 py-2 rounded-full inset-px z-10 grid place-items-center bg-aired font-regular text-white dark:text-white text-sm hover:bg-aired/80'
+          'px-3 py-2 flex gap-2 rounded-full inset-px z-10 place-items-center bg-aired font-regular text-white dark:text-white text-sm hover:bg-aired/80'
       },
       size: {
         default: 'h-9 px-3 py-1',

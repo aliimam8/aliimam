@@ -5,8 +5,6 @@ import Logos from 'src/components/common/logos';
 import { Experience } from '@/components/about/experience';
 import { DashboardAbout } from 'src/components/common/dashboard';
 import { Connect } from '@/components/about/connect';
-import Chat from '@/components/about/chat';
-import 'src/styles/text.css';
 
 import ImageZoom from '@/components/common/image-zoom';
 import { Icons } from '@/components/icons';
@@ -40,7 +38,6 @@ export default function AboutAI() {
             </div>
         </div>
         <div className="mx-auto mt-20 max-w-3xl  md:max-w-5xl px-6 ">
-        <Chat />
           <About />
           <Experience />
           <div className="flex flex-col items-center">

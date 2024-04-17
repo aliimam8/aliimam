@@ -24,7 +24,7 @@ export default function Chat() {
     const [hovered, setHovered] = React.useState(false);
 
     return (
-        <div className="w-full mb-16 gap-4 mx-auto">
+        <div className="w-full mb-16 md:mb-32 gap-4 mx-auto max-w-5xl px-6">
             <div
                 onMouseEnter={() => setHovered(true)}
                 onMouseLeave={() => setHovered(false)}
