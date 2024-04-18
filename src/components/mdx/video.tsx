@@ -19,6 +19,7 @@ const Video = (props: VideoProps) => {
         className={cn('object-fit my-4 w-full h-full md:w-[360px] lg:w-[630px]  object-cover rounded-2xl shadow-lg ', className)}
         loop
         muted
+        autoPlay
         src={src}
         controls={controls}
         width={width}
