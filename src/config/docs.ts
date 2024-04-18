@@ -47,6 +47,10 @@ export const docsConfig: DocsConfig = {
         {
           title: "3D Icons",
           href: "/designs/openfile/3dicons",
+        },
+        {
+          title: "Pure White",
+          href: "/designs/openfile/pure-white",
         }
       ],
     },
