@@ -25,7 +25,20 @@ const ICONS3D = [
         designation: "",
         content: (
             <p>
-               
+
+            </p>
+        ),
+    },
+];
+
+const PORT = [
+    {
+        id: 2,
+        name: "",
+        src: "/images/blogs/port/cover.jpg",
+        designation: "",
+        content: (
+            <p>
             </p>
         ),
     },
@@ -34,15 +47,18 @@ const ICONS3D = [
 export function Cards() {
     return (
         <div className="grid gap-3 justify-center">
-        <Link
-            href="/products/3dicons">
-            <MiniCardStack items={ICONS3D} />
-        </Link>
+            <Link
+                href="/products/3dicons">
+                <MiniCardStack items={ICONS3D} />
+            </Link>
             <Link
                 href="/products/graaadients">
                 <MiniCardStack items={GRADS} />
             </Link>
-
+            <Link
+                href="/designs/openfile/portfolio">
+                <MiniCardStack items={PORT} />
+            </Link>
         </div>
     );
 }

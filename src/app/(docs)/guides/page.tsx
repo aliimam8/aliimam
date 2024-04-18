@@ -25,7 +25,7 @@ export default function GuidesPage() {
 
       <div className="py-6 lg:py-10">
         <DocsPageHeader
-          heading="Introduction"
+          heading="This section is still under construction..."
           text="Welcome to the AI Guides!  "
         />
 

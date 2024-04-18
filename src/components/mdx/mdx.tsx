@@ -44,7 +44,7 @@ const components: MDXComponents = {
   h2: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h2
       className={cn(
-        "mt-10 scroll-m-20 border-b border-slate-200 dark:border-slate-800 pb-2 text-3xl font-semibold tracking-tight first:mt-0",
+        "mt-10 scroll-m-20 border-b border-slate-200 dark:border-slate-800 pb-4 text-3xl font-semibold tracking-tight first:mt-0",
         className
       )}
       {...props}
