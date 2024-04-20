@@ -42,6 +42,11 @@ export const items: Menus[] = [
     target: ''
   },
   {
+    text: '3D Icons',
+    href: '/products/3dicons',
+    target: ''
+  },
+  {
     text: 'Designs',
     href: '/designs',
     target: ''

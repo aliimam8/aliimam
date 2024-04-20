@@ -43,7 +43,7 @@ export default function Intro() {
 
   return (
     <>
-      <div  className="mx-auto max-w-5xl my-10 mt-20 px-6 z-10" >
+      <div  className="mx-auto max-w-5xl my-10 md:mt-16 mt-10 px-6 z-10" >
         <div className="relative flex flex-col items-center border border-slate-200 dark:border-slate-800">
 
           <div className="absolute -left-1.5 -top-1.5 h-3 w-3 bg-aired text-white" />
