@@ -5,7 +5,7 @@ import { CarouselSpacing } from 'src/components/common/carousel';
 import { type Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Portfolio',
+  title: 'Portfolio - Ali Imam',
   description: 'Explore the latest news and updates from the community'
 };
 

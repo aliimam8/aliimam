@@ -21,24 +21,20 @@ import {
 } from "@/components/ui/dialog"
 
 import { Icons } from '@/components/icons';
+import { AnimatedGradient } from "@/components/common/animated-gradient"
 
-
-const title = '3D Icons'
-const description =
-  'This is the equipment I currently use for graphic designing, programming, making videos, and every day.'
-
-type UsesPageProps = {
-  params: Record<string, never>
-  searchParams: Record<string, never>
+export const metadata = {
+  title: "3D Icons - Ali Imam",
+  description:
+    "This section includes end-to-end guides for developing Next.js 13 apps.",
 }
-
 
 export default async function AboutAI() {
   const { isAuthenticated } = getKindeServerSession();
 
   return (
     <div className='my-40'>
-
+      <AnimatedGradient />
       <div className='px-8'>
         <p className='text-center text-md  lg:text-xl tracking-widest uppercase font-light'>
           Introducing
@@ -146,7 +142,7 @@ export default async function AboutAI() {
         <p className='text-center md:text-md text-sm mx-auto max-w-md text-slate-600 dark:text-slate-400 font-light'>
           +100 3D icons
           for your amazing design projects.</p>
-          <div className="grid mt-10 justify-center gap-4">
+        <div className="grid mt-10 justify-center gap-4">
           {(await isAuthenticated()) ? (
             <div className="flex mt-10 justify-center gap-4">
               <Link

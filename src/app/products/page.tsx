@@ -8,7 +8,7 @@ import { Avegra } from '../fonts';
 import { cn } from '@/lib/utils';
 
 export const metadata: Metadata = {
-  title: 'Products',
+  title: 'Products - Ali Imam',
   description: 'Explore the latest news and updates from the community'
 };
 

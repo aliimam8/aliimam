@@ -18,6 +18,12 @@ import {
 import { unstable_noStore as noStore } from "next/cache";
 import { Badge } from "@/components/ui/badge";
 
+export const metadata = {
+  title: "Billing - Ali Imam",
+  description:
+    "This section includes end-to-end guides for developing Next.js 13 apps.",
+}
+
 const featureItems = [
   { name: "Unlimited downloads" },
   { name: "Cancel any time" },

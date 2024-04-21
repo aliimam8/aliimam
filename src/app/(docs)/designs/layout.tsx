@@ -2,6 +2,12 @@ import { docsConfig } from "@/config/docs"
 import { DocsSidebarNav } from "@/components/doc/sidebar-nav"
 import { ScrollArea } from "@/components/ui/scroll-area"
 
+export const metadata = {
+  title: "Design - Ali Imam",
+  description:
+    "This section includes end-to-end guides for developing Next.js 13 apps.",
+}
+
 interface DocsLayoutProps {
   children: React.ReactNode
 }

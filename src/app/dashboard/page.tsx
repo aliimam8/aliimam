@@ -8,6 +8,12 @@ import { Card } from "@/components/ui/card";
 import { TrashDelete } from "@/components/dashboard/Submitbuttons";
 import { revalidatePath, unstable_noStore as noStore } from "next/cache";
 
+export const metadata = {
+  title: "Home - Ali Imam",
+  description:
+    "This section includes end-to-end guides for developing Next.js 13 apps.",
+}
+
 async function getData(userId: string) {
   noStore();
   const data = await prisma.user.findUnique({

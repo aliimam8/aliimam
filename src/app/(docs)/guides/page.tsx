@@ -7,7 +7,7 @@ import { formatDate } from "@/lib/utils"
 import { DocsPageHeader } from "@/components/doc/page-header"
 
 export const metadata = {
-  title: "Components",
+  title: "Coding - Ali Imam",
   description:
     "This section includes end-to-end guides for developing Next.js 13 apps.",
 }

@@ -19,6 +19,12 @@ import {
 
 import { Icons } from '@/components/icons';
 
+export const metadata = {
+  title: "Graaadients - Ali Imam",
+  description:
+    "This section includes end-to-end guides for developing Next.js 13 apps.",
+}
+
 
 export default async function AboutAI() {
   const { isAuthenticated } = getKindeServerSession();
